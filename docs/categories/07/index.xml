@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>07 on World of Forks</title>
-    <link>https://stkevintan.github.io/categories/07/</link>
+    <link>http://localhost:3000/categories/07/</link>
     <description>Recent content in 07 on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Thu, 31 Jul 2014 03:50:40 +0800</lastBuildDate>
     
-	<atom:link href="https://stkevintan.github.io/categories/07/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:3000/categories/07/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HDU4005 The war</title>
-      <link>https://stkevintan.github.io/post/hdu4005-the-war/</link>
+      <link>http://localhost:3000/post/hdu4005-the-war/</link>
       <pubDate>Thu, 31 Jul 2014 03:50:40 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu4005-the-war/</guid>
+      <guid>http://localhost:3000/post/hdu4005-the-war/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HDU4888 Redraw Beautiful Drawings </title>
-      <link>https://stkevintan.github.io/post/hdu4888-redraw-beautiful-drawings/</link>
+      <link>http://localhost:3000/post/hdu4888-redraw-beautiful-drawings/</link>
       <pubDate>Wed, 30 Jul 2014 05:43:58 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu4888-redraw-beautiful-drawings/</guid>
+      <guid>http://localhost:3000/post/hdu4888-redraw-beautiful-drawings/</guid>
       <description></description>
     </item>
     

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Acm on World of Forks</title>
-    <link>https://stkevintan.github.io/categories/acm/</link>
+    <link>http://localhost:3000/categories/acm/</link>
     <description>Recent content in Acm on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Sat, 08 Nov 2014 02:32:21 +0800</lastBuildDate>
     
-	<atom:link href="https://stkevintan.github.io/categories/acm/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:3000/categories/acm/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ZOJ month contest D.Determinant and Matrix</title>
-      <link>https://stkevintan.github.io/post/zoj-month-contest-d-determinant-and-matrix/</link>
+      <link>http://localhost:3000/post/zoj-month-contest-d-determinant-and-matrix/</link>
       <pubDate>Sat, 08 Nov 2014 02:32:21 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/zoj-month-contest-d-determinant-and-matrix/</guid>
+      <guid>http://localhost:3000/post/zoj-month-contest-d-determinant-and-matrix/</guid>
       <description>&lt;hr /&gt;
 
 &lt;p&gt;&lt;center style=&#34;color: #000000;&#34;&gt;&lt;span style=&#34;color: green;&#34;&gt;Time Limit: &lt;/span&gt;2 Seconds      &lt;span style=&#34;color: green;&#34;&gt;Memory Limit: &lt;/span&gt;65536 KB&lt;/center&gt;&lt;/p&gt;
@@ -30,10 +30,10 @@ Recently, LBH is learning the curse linear algebra. Thus he is very interested i
     
     <item>
       <title>baylor 6622 Absurdistan Roads（ NWERC Contest）</title>
-      <link>https://stkevintan.github.io/post/baylor6622-absurdistan-roads/</link>
+      <link>http://localhost:3000/post/baylor6622-absurdistan-roads/</link>
       <pubDate>Fri, 07 Nov 2014 01:05:34 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/baylor6622-absurdistan-roads/</guid>
+      <guid>http://localhost:3000/post/baylor6622-absurdistan-roads/</guid>
       <description>&lt;p&gt;原题pdf：&lt;a href=&#34;https://icpcarchive.ecs.baylor.edu/external/66/6622.pdf&#34;&gt;click here&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
@@ -49,10 +49,10 @@ city using the newly built roads.&lt;/p&gt;</description>
     
     <item>
       <title>Timus 1996 Cipher Message 3 KMP&#43;FFT求卷积</title>
-      <link>https://stkevintan.github.io/post/timus-1996-cipher-message-3-kmpfft/</link>
+      <link>http://localhost:3000/post/timus-1996-cipher-message-3-kmpfft/</link>
       <pubDate>Thu, 06 Nov 2014 06:13:15 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/timus-1996-cipher-message-3-kmpfft/</guid>
+      <guid>http://localhost:3000/post/timus-1996-cipher-message-3-kmpfft/</guid>
       <description>&lt;p&gt;题目链接：&lt;a href=&#34;http://acm.timus.ru/problem.aspx?space=1&amp;amp;amp;num=1996&#34;&gt;click here&lt;/a&gt;
 ##description
 Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has been the head of the Empire Armed Forces. However, the Rebel movement is strong like it never used to be. One of the rebel leaders, Princess Leia from Alderaan, managed to get hold of secret blueprints of the Death Star, the imperial war station.&lt;/p&gt;
@@ -62,19 +62,19 @@ Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has be
     
     <item>
       <title>（转）关于卷积的一个血腥的讲解，看完给跪了</title>
-      <link>https://stkevintan.github.io/post/intro-of-fft/</link>
+      <link>http://localhost:3000/post/intro-of-fft/</link>
       <pubDate>Thu, 06 Nov 2014 04:40:10 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/intro-of-fft/</guid>
+      <guid>http://localhost:3000/post/intro-of-fft/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ACM International Collegiate Programming Contest Asia Regional Contest, Tokyo Problem D Space Golf</title>
-      <link>https://stkevintan.github.io/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</link>
+      <link>http://localhost:3000/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</link>
       <pubDate>Mon, 20 Oct 2014 05:20:03 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</guid>
+      <guid>http://localhost:3000/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</guid>
       <description>&lt;p&gt;原题pdf：&lt;a href=&#34;http://judge.u-aizu.ac.jp/onlinejudge/contest/ICPCOOC2014/D.pdf&#34;&gt;click here&lt;/a&gt;
 &lt;br/&gt;&lt;/p&gt;
 
@@ -90,10 +90,10 @@ Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has be
     
     <item>
       <title>HDU 4965 Fast Matrix Calculation</title>
-      <link>https://stkevintan.github.io/post/hdu-4965-fast-matrix-calculation/</link>
+      <link>http://localhost:3000/post/hdu-4965-fast-matrix-calculation/</link>
       <pubDate>Wed, 20 Aug 2014 04:37:28 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu-4965-fast-matrix-calculation/</guid>
+      <guid>http://localhost:3000/post/hdu-4965-fast-matrix-calculation/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;2000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1000&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;131072&lt;/sup&gt;&amp;frasl;&lt;sub&gt;131072&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 206    Accepted Submission(s): 116
 &lt;/span&gt;&lt;/strong&gt;
@@ -112,10 +112,10 @@ Step 4: Calculate the sum of all the elements in M’.&lt;/p&gt;</description>
     
     <item>
       <title>HDU 4952 Number Transformation</title>
-      <link>https://stkevintan.github.io/post/hdu-4952-number-transformation/</link>
+      <link>http://localhost:3000/post/hdu-4952-number-transformation/</link>
       <pubDate>Sat, 16 Aug 2014 01:22:13 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu-4952-number-transformation/</guid>
+      <guid>http://localhost:3000/post/hdu-4952-number-transformation/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;2000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1000&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;65536&lt;/sup&gt;&amp;frasl;&lt;sub&gt;65536&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 612    Accepted Submission(s): 310
 &lt;/span&gt;&lt;/strong&gt;
@@ -132,10 +132,10 @@ Total Submission(s): 612    Accepted Submission(s): 310
     
     <item>
       <title>HDU 4945 2048</title>
-      <link>https://stkevintan.github.io/post/hdu-4945-2048/</link>
+      <link>http://localhost:3000/post/hdu-4945-2048/</link>
       <pubDate>Sat, 16 Aug 2014 00:56:19 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu-4945-2048/</guid>
+      <guid>http://localhost:3000/post/hdu-4945-2048/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;3000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1500&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;65536&lt;/sup&gt;&amp;frasl;&lt;sub&gt;65536&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 590    Accepted Submission(s): 136
 &lt;/span&gt;&lt;/strong&gt;
@@ -153,19 +153,19 @@ Total Submission(s): 590    Accepted Submission(s): 136
     
     <item>
       <title>HDU 2874 Connections between cities</title>
-      <link>https://stkevintan.github.io/post/hdu-2874-connections-between-cities/</link>
+      <link>http://localhost:3000/post/hdu-2874-connections-between-cities/</link>
       <pubDate>Thu, 14 Aug 2014 06:00:34 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu-2874-connections-between-cities/</guid>
+      <guid>http://localhost:3000/post/hdu-2874-connections-between-cities/</guid>
       <description>&lt;h1 id=&#34;connections-between-cities&#34;&gt;Connections between cities&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>内网 2085马农</title>
-      <link>https://stkevintan.github.io/post/zjnu2085/</link>
+      <link>http://localhost:3000/post/zjnu2085/</link>
       <pubDate>Thu, 14 Aug 2014 05:09:40 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/zjnu2085/</guid>
+      <guid>http://localhost:3000/post/zjnu2085/</guid>
       <description>&lt;p&gt;##Description
  在观看完战马检阅之后，来自大草原的两兄弟决心成为超级“马农”，专门饲养战马。&lt;/p&gt;
 
@@ -180,10 +180,10 @@ Total Submission(s): 590    Accepted Submission(s): 136
     
     <item>
       <title>内网2082 字母</title>
-      <link>https://stkevintan.github.io/post/zjnu2082/</link>
+      <link>http://localhost:3000/post/zjnu2082/</link>
       <pubDate>Wed, 13 Aug 2014 06:10:46 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/zjnu2082/</guid>
+      <guid>http://localhost:3000/post/zjnu2082/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;乐乐开始学习英文字母了，小C为他准备了很多字母牌，每张牌有一个英文字母。有天乐乐把所有的牌排成一行，这些字母竟然形成了一个回文串。小C想知道，乐乐在排字母的时候，有多少种情况，最后的字母形成回文串。&lt;/p&gt;
@@ -202,10 +202,10 @@ AAAAB AABB CD&lt;/p&gt;</description>
     
     <item>
       <title>HDU4944 FSF’s game</title>
-      <link>https://stkevintan.github.io/post/hdu4944-fsfs-game/</link>
+      <link>http://localhost:3000/post/hdu4944-fsfs-game/</link>
       <pubDate>Wed, 13 Aug 2014 04:59:32 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu4944-fsfs-game/</guid>
+      <guid>http://localhost:3000/post/hdu4944-fsfs-game/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;9000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4500&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;131072&lt;/sup&gt;&amp;frasl;&lt;sub&gt;131072&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 166    Accepted Submission(s): 76
 &lt;/span&gt;&lt;/strong&gt;
@@ -224,10 +224,10 @@ There are N&lt;/em&gt;(N+1)/2 levels in this game, and every level is an unique 
     
     <item>
       <title>内网2073 城主GeassCode</title>
-      <link>https://stkevintan.github.io/post/zjnu2073-geasscode/</link>
+      <link>http://localhost:3000/post/zjnu2073-geasscode/</link>
       <pubDate>Sat, 02 Aug 2014 04:18:37 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/zjnu2073-geasscode/</guid>
+      <guid>http://localhost:3000/post/zjnu2073-geasscode/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;GeassCode凭借自己在topcoder上的超凡表现，赢得了国王的喜爱，国王赏赐他一座城池。这座城池里有n个 村子，m条路连接这些村子。坐上城主的GeassCode决定要修路，他打算用最少的代价把所以的村子连在一起。据探子回报，有些村子之间虽然原来没有路 径，但是可以强行的去建一条路。GeassCode想知道，如果强行在某两个村子之间建一条路，最后的总花费是多少？&lt;/p&gt;
@@ -237,10 +237,10 @@ There are N&lt;/em&gt;(N+1)/2 levels in this game, and every level is an unique 
     
     <item>
       <title>POJ1989 Distance Queries</title>
-      <link>https://stkevintan.github.io/post/poj1989-distance-queries/</link>
+      <link>http://localhost:3000/post/poj1989-distance-queries/</link>
       <pubDate>Fri, 01 Aug 2014 22:30:11 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/poj1989-distance-queries/</guid>
+      <guid>http://localhost:3000/post/poj1989-distance-queries/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;Farmer John&amp;rsquo;s cows refused to run in his marathon since he chose a path much too long for their leisurely lifestyle. He therefore wants to find a path of a more reasonable length. The input to this problem consists of the same input as in &amp;ldquo;Navigation Nightmare&amp;rdquo;,followed by a line containing a single integer K, followed by K &amp;ldquo;distance queries&amp;rdquo;. Each distance query is a line of input containing two integers, giving the numbers of two farms between which FJ is interested in computing distance (measured in the length of the roads along the path between the two farms). Please answer FJ&amp;rsquo;s distance queries as quickly as possible!
@@ -250,10 +250,10 @@ There are N&lt;/em&gt;(N+1)/2 levels in this game, and every level is an unique 
     
     <item>
       <title>POJ1330 Nearest Common Ancestors</title>
-      <link>https://stkevintan.github.io/post/poj1330-nearest-common-ancestors/</link>
+      <link>http://localhost:3000/post/poj1330-nearest-common-ancestors/</link>
       <pubDate>Fri, 01 Aug 2014 18:43:01 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/poj1330-nearest-common-ancestors/</guid>
+      <guid>http://localhost:3000/post/poj1330-nearest-common-ancestors/</guid>
       <description>&lt;p&gt;Time Limit: 1000MS Memory Limit: 10000K&lt;br /&gt;
 Total Submissions: 17734 Accepted: 9405&lt;/p&gt;
 
@@ -267,28 +267,28 @@ For other examples, the nearest common ancestor of nodes 2 and 3 is node 10, the
     
     <item>
       <title>2014 Multi-University Training Contest 4</title>
-      <link>https://stkevintan.github.io/post/2014-multi-university-training-contest-4/</link>
+      <link>http://localhost:3000/post/2014-multi-university-training-contest-4/</link>
       <pubDate>Fri, 01 Aug 2014 03:09:32 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/2014-multi-university-training-contest-4/</guid>
+      <guid>http://localhost:3000/post/2014-multi-university-training-contest-4/</guid>
       <description>心情就像倒数第二楼那样。 CLJ，我也保证不打死你…… PS:最后一楼朱大神还暴露了。</description>
     </item>
     
     <item>
       <title>HDU4612 Warm up</title>
-      <link>https://stkevintan.github.io/post/hdu4612-warm-up/</link>
+      <link>http://localhost:3000/post/hdu4612-warm-up/</link>
       <pubDate>Thu, 31 Jul 2014 03:37:32 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu4612-warm-up/</guid>
+      <guid>http://localhost:3000/post/hdu4612-warm-up/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HDU4888 Redraw Beautiful Drawings </title>
-      <link>https://stkevintan.github.io/post/hdu4888-redraw-beautiful-drawings/</link>
+      <link>http://localhost:3000/post/hdu4888-redraw-beautiful-drawings/</link>
       <pubDate>Wed, 30 Jul 2014 05:43:58 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/hdu4888-redraw-beautiful-drawings/</guid>
+      <guid>http://localhost:3000/post/hdu4888-redraw-beautiful-drawings/</guid>
       <description></description>
     </item>
     

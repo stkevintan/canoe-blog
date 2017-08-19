@@ -24,7 +24,7 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
+  <link rel="stylesheet" href="{{ $.Site.BaseURL }}/css/styles.css">
   <!-- RSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="{{ $.Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
@@ -32,7 +32,7 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="{{ .Site.BaseURL }}/favicon.ico" rel="shortcut icon">
+  <link href="{{ $.Site.BaseURL }}/favicon.ico" rel="shortcut icon">
 </head>
 
 {{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }}
@@ -66,7 +66,7 @@
           <ul class="center tabs tabs-transparent hide-on-med-and-down">
             {{ range . }}
             <li class="tab">
-              <a href="{{ .url }}" class='{{ if eq $curType (trim .url "/") }} active {{ end }}'>
+              <a href="{{ $.Site.BaseURL }}{{ .url }}" class='{{ if eq $curType (trim .url "/") }} active {{ end }}'>
                 {{ .name }}
               </a>
             </li>

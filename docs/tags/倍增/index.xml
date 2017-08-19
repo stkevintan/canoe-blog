@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>倍增 on World of Forks</title>
-    <link>https://stkevintan.github.io/tags/%E5%80%8D%E5%A2%9E/</link>
+    <link>http://localhost:3000/tags/%E5%80%8D%E5%A2%9E/</link>
     <description>Recent content in 倍增 on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Fri, 01 Aug 2014 18:43:01 +0800</lastBuildDate>
     
-	<atom:link href="https://stkevintan.github.io/tags/%E5%80%8D%E5%A2%9E/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:3000/tags/%E5%80%8D%E5%A2%9E/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>POJ1330 Nearest Common Ancestors</title>
-      <link>https://stkevintan.github.io/post/poj1330-nearest-common-ancestors/</link>
+      <link>http://localhost:3000/post/poj1330-nearest-common-ancestors/</link>
       <pubDate>Fri, 01 Aug 2014 18:43:01 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/post/poj1330-nearest-common-ancestors/</guid>
+      <guid>http://localhost:3000/post/poj1330-nearest-common-ancestors/</guid>
       <description>&lt;p&gt;Time Limit: 1000MS Memory Limit: 10000K&lt;br /&gt;
 Total Submissions: 17734 Accepted: 9405&lt;/p&gt;
 
