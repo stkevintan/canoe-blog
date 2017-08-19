@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>10 on World of Forks</title>
-    <link>http://localhost:3000/categories/10/</link>
+    <link>https://stkevintan.github.io/sfork/categories/10/</link>
     <description>Recent content in 10 on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Mon, 20 Oct 2014 05:20:03 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:3000/categories/10/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stkevintan.github.io/sfork/categories/10/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ACM International Collegiate Programming Contest Asia Regional Contest, Tokyo Problem D Space Golf</title>
-      <link>http://localhost:3000/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</link>
+      <link>https://stkevintan.github.io/sfork/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</link>
       <pubDate>Mon, 20 Oct 2014 05:20:03 +0800</pubDate>
       
-      <guid>http://localhost:3000/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</guid>
+      <guid>https://stkevintan.github.io/sfork/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</guid>
       <description>&lt;p&gt;原题pdf：&lt;a href=&#34;http://judge.u-aizu.ac.jp/onlinejudge/contest/ICPCOOC2014/D.pdf&#34;&gt;click here&lt;/a&gt;
 &lt;br/&gt;&lt;/p&gt;
 
@@ -33,10 +33,10 @@
     
     <item>
       <title>优化Wine程序的字体显示</title>
-      <link>http://localhost:3000/post/wine-font-config/</link>
+      <link>https://stkevintan.github.io/sfork/post/wine-font-config/</link>
       <pubDate>Mon, 13 Oct 2014 20:42:42 +0800</pubDate>
       
-      <guid>http://localhost:3000/post/wine-font-config/</guid>
+      <guid>https://stkevintan.github.io/sfork/post/wine-font-config/</guid>
       <description>&lt;p&gt;默认Wine的字体太难看，而且有时候还会显示不出来。开启Wine字体的反锯齿及平滑功能以及将字体映射成文泉驿微米黑的方法是：&lt;/p&gt;
 
 &lt;p&gt;1.新建文本文件a.reg，放入如下内容：

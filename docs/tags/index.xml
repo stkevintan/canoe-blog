@@ -2,139 +2,121 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on World of Forks</title>
-    <link>http://localhost:3000/tags/</link>
+    <link>https://stkevintan.github.io/sfork/tags/</link>
     <description>Recent content in Tags on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Tue, 24 Feb 2015 18:50:00 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:3000/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stkevintan.github.io/sfork/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Asp.Net Mvc4</title>
-      <link>http://localhost:3000/tags/asp.net-mvc4/</link>
+      <link>https://stkevintan.github.io/sfork/tags/asp.net-mvc4/</link>
       <pubDate>Tue, 24 Feb 2015 18:50:00 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/asp.net-mvc4/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/asp.net-mvc4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C#</title>
-      <link>http://localhost:3000/tags/c#/</link>
+      <link>https://stkevintan.github.io/sfork/tags/c#/</link>
       <pubDate>Tue, 24 Feb 2015 18:50:00 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/c#/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Html</title>
-      <link>http://localhost:3000/tags/html/</link>
-      <pubDate>Thu, 26 Feb 2015 06:57:00 +0800</pubDate>
-      
-      <guid>http://localhost:3000/tags/html/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/c#/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Lca</title>
-      <link>http://localhost:3000/tags/lca/</link>
+      <link>https://stkevintan.github.io/sfork/tags/lca/</link>
       <pubDate>Sat, 02 Aug 2014 04:18:37 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/lca/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/lca/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Polymer</title>
-      <link>http://localhost:3000/tags/polymer/</link>
+      <link>https://stkevintan.github.io/sfork/tags/polymer/</link>
       <pubDate>Sun, 02 Jul 2017 22:56:11 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/polymer/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/polymer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Rmq</title>
-      <link>http://localhost:3000/tags/rmq/</link>
+      <link>https://stkevintan.github.io/sfork/tags/rmq/</link>
       <pubDate>Fri, 01 Aug 2014 22:30:11 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/rmq/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/rmq/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tarjan</title>
-      <link>http://localhost:3000/tags/tarjan/</link>
+      <link>https://stkevintan.github.io/sfork/tags/tarjan/</link>
       <pubDate>Sat, 02 Aug 2014 04:18:37 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/tarjan/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/tarjan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>倍增</title>
-      <link>http://localhost:3000/tags/%E5%80%8D%E5%A2%9E/</link>
+      <link>https://stkevintan.github.io/sfork/tags/%E5%80%8D%E5%A2%9E/</link>
       <pubDate>Fri, 01 Aug 2014 18:43:01 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/%E5%80%8D%E5%A2%9E/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/%E5%80%8D%E5%A2%9E/</guid>
       <description></description>
     </item>
     
     <item>
       <title>图论</title>
-      <link>http://localhost:3000/tags/%E5%9B%BE%E8%AE%BA/</link>
+      <link>https://stkevintan.github.io/sfork/tags/%E5%9B%BE%E8%AE%BA/</link>
       <pubDate>Sat, 02 Aug 2014 04:18:37 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/%E5%9B%BE%E8%AE%BA/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/%E5%9B%BE%E8%AE%BA/</guid>
       <description></description>
     </item>
     
     <item>
       <title>暴力</title>
-      <link>http://localhost:3000/tags/%E6%9A%B4%E5%8A%9B/</link>
+      <link>https://stkevintan.github.io/sfork/tags/%E6%9A%B4%E5%8A%9B/</link>
       <pubDate>Thu, 14 Aug 2014 05:09:40 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/%E6%9A%B4%E5%8A%9B/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/%E6%9A%B4%E5%8A%9B/</guid>
       <description></description>
     </item>
     
     <item>
       <title>树形dp</title>
-      <link>http://localhost:3000/tags/%E6%A0%91%E5%BD%A2dp/</link>
+      <link>https://stkevintan.github.io/sfork/tags/%E6%A0%91%E5%BD%A2dp/</link>
       <pubDate>Thu, 31 Jul 2014 03:50:40 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/%E6%A0%91%E5%BD%A2dp/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/%E6%A0%91%E5%BD%A2dp/</guid>
       <description></description>
     </item>
     
     <item>
       <title>树的直径</title>
-      <link>http://localhost:3000/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</link>
+      <link>https://stkevintan.github.io/sfork/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</link>
       <pubDate>Thu, 31 Jul 2014 03:37:32 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</guid>
       <description></description>
     </item>
     
     <item>
       <title>矩阵暴力</title>
-      <link>http://localhost:3000/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B/</link>
+      <link>https://stkevintan.github.io/sfork/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B/</link>
       <pubDate>Wed, 20 Aug 2014 04:37:28 +0800</pubDate>
       
-      <guid>http://localhost:3000/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>美化</title>
-      <link>http://localhost:3000/tags/%E7%BE%8E%E5%8C%96/</link>
-      <pubDate>Thu, 26 Feb 2015 06:57:00 +0800</pubDate>
-      
-      <guid>http://localhost:3000/tags/%E7%BE%8E%E5%8C%96/</guid>
+      <guid>https://stkevintan.github.io/sfork/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B/</guid>
       <description></description>
     </item>
     

@@ -42,7 +42,7 @@
   <div id="modal1" class="modal">
     <div class="modal-content">
       <form action="//www.google.com/search" method="get" accept-charset="utf-8">
-        <input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}">
+        <input type="hidden" name="sitesearch" value="{{ $.Site.BaseURL }}">
         <div class="input-field">
           <input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"/>
         </div>

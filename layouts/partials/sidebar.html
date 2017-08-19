@@ -1,15 +1,15 @@
 <aside class="side-panel">
   <div class="inner">
     <div class="profile">
-      <div class="profile__bg" style="background-image:url('{{ .Site.Params.profile_bg }}')"></div>
-      <img class="profile__avatar" src="{{ .Site.Params.logo }}" alt="avatar" /> {{ with .Site.Params.author }}
+      <div class="profile__bg" style="background-image:url('{{ $.Site.BaseURL }}{{ .Site.Params.profile_bg }}')"></div>
+      <img class="profile__avatar" src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}" alt="avatar" /> {{ with .Site.Params.author }}
       <h3 class="profile__name">{{ . }}</h3>{{ end }} {{ with .Site.Params.subtitle }}
       <p class="profile__desc">{{ . }}</p>{{ end }}
     </div>
     <ul class="nav-group show-on-medium-and-down menu ">
       {{ with .Site.Params.Menu }} {{ range .}}
       <li>
-        <a class="collapsible-header waves-effect waves-indigo" href="{{.url }}">
+        <a class="collapsible-header waves-effect waves-indigo" href="{{$.Site.BaseURL}}{{.url }}">
           <i class="material-icons">{{ index . "icon" | default "folder"}}</i>
           <span class="content">{{ .name }}</span>
           <i class="material-icons">chevron_right</i>

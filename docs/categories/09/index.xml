@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>09 on World of Forks</title>
-    <link>http://localhost:3000/categories/09/</link>
+    <link>https://stkevintan.github.io/sfork/categories/09/</link>
     <description>Recent content in 09 on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Wed, 17 Sep 2014 00:45:07 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:3000/categories/09/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stkevintan.github.io/sfork/categories/09/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>用Sublime Text 3 dev 做网页开发的配置</title>
-      <link>http://localhost:3000/post/sublime-config-web/</link>
+      <link>https://stkevintan.github.io/sfork/post/sublime-config-web/</link>
       <pubDate>Wed, 17 Sep 2014 00:45:07 +0800</pubDate>
       
-      <guid>http://localhost:3000/post/sublime-config-web/</guid>
+      <guid>https://stkevintan.github.io/sfork/post/sublime-config-web/</guid>
       <description>文件：click here</description>
     </item>
     

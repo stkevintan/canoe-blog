@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>08 on World of Forks</title>
-    <link>http://localhost:3000/categories/08/</link>
+    <link>https://stkevintan.github.io/sfork/categories/08/</link>
     <description>Recent content in 08 on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Thu, 14 Aug 2014 06:00:34 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:3000/categories/08/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://stkevintan.github.io/sfork/categories/08/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HDU 2874 Connections between cities</title>
-      <link>http://localhost:3000/post/hdu-2874-connections-between-cities/</link>
+      <link>https://stkevintan.github.io/sfork/post/hdu-2874-connections-between-cities/</link>
       <pubDate>Thu, 14 Aug 2014 06:00:34 +0800</pubDate>
       
-      <guid>http://localhost:3000/post/hdu-2874-connections-between-cities/</guid>
+      <guid>https://stkevintan.github.io/sfork/post/hdu-2874-connections-between-cities/</guid>
       <description>&lt;h1 id=&#34;connections-between-cities&#34;&gt;Connections between cities&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>内网 2085马农</title>
-      <link>http://localhost:3000/post/zjnu2085/</link>
+      <link>https://stkevintan.github.io/sfork/post/zjnu2085/</link>
       <pubDate>Thu, 14 Aug 2014 05:09:40 +0800</pubDate>
       
-      <guid>http://localhost:3000/post/zjnu2085/</guid>
+      <guid>https://stkevintan.github.io/sfork/post/zjnu2085/</guid>
       <description>&lt;p&gt;##Description
  在观看完战马检阅之后，来自大草原的两兄弟决心成为超级“马农”，专门饲养战马。&lt;/p&gt;
 
@@ -41,10 +41,10 @@
     
     <item>
       <title>内网2073 城主GeassCode</title>
-      <link>http://localhost:3000/post/zjnu2073-geasscode/</link>
+      <link>https://stkevintan.github.io/sfork/post/zjnu2073-geasscode/</link>
       <pubDate>Sat, 02 Aug 2014 04:18:37 +0800</pubDate>
       
-      <guid>http://localhost:3000/post/zjnu2073-geasscode/</guid>
+      <guid>https://stkevintan.github.io/sfork/post/zjnu2073-geasscode/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;GeassCode凭借自己在topcoder上的超凡表现，赢得了国王的喜爱，国王赏赐他一座城池。这座城池里有n个 村子，m条路连接这些村子。坐上城主的GeassCode决定要修路，他打算用最少的代价把所以的村子连在一起。据探子回报，有些村子之间虽然原来没有路 径，但是可以强行的去建一条路。GeassCode想知道，如果强行在某两个村子之间建一条路，最后的总花费是多少？&lt;/p&gt;
