@@ -36,7 +36,7 @@
 </head>
 
 {{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }}
-{{ $curType := index $path 0 }}
+{{ $curType := index $path (sub (len $path) 2)}}
 <body>
   <!-- Modal Structure -->
   <div id="modal1" class="modal">
@@ -66,7 +66,8 @@
           <ul class="center tabs tabs-transparent hide-on-med-and-down">
             {{ range . }}
             <li class="tab">
-              <a href="{{ $.Site.BaseURL }}{{ .url }}" class='{{ if eq $curType (trim .url "/") }} active {{ end }}'>
+              <a href="{{ $.Site.BaseURL }}{{ .url }}" 
+              class='{{ if eq $curType (trim .url "/") }} active {{ end }}'>
                 {{ .name }}
               </a>
             </li>
