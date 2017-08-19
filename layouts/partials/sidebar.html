@@ -42,7 +42,7 @@
         <div class="collapsible-body">
           <div class="collection">
             {{ range $value.ByCount }}
-            <a class="collection-item" href="{{$.Site.BaseURL}}{{$key}}/{{ .Name | urlize }}"> {{ .Name }}<span class="badge">{{ .Count }}</span></a>            {{end }}
+            <a class="collection-item" href="{{$.Site.BaseURL}}/{{$key}}/{{ .Name | urlize }}"> {{ .Name }}<span class="badge">{{ .Count }}</span></a>            {{end }}
           </div>
         </div>
       </li>
