@@ -1,0 +1,20 @@
+i[data-svg-icon] {
+    // color: #000bca;
+    // background-attachment: scroll;
+    // background-repeat: no-repeat;
+    // background-size:  contain;
+    // background-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: 50%;
+}
+
+i[data-svg-icon="github"] {
+    background-color: $off-black-light-1;
+    mask-image: url(/img/github.svg)
+}
+
+i[data-svg-icon="twitter"] {
+    background-color: $off-black-light-1;
+    mask-image: url(/img/twitter.svg);
+}

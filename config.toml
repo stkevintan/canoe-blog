@@ -1,0 +1,78 @@
+baseURL = "https://stkevintan.github.io"
+languageCode = "zh-cn"
+title = "World of Forks"
+disqusShortname = 'keyin'
+# if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
+hasCJKLanguage = true
+
+publishDir = "docs"
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[Params]
+  author = "Kevin Tan"
+  subtitle = "Tempora mutantur, nos et mutamur in illis ..."
+  copyright = "Copyleft@Kevin Tan"
+  logo = "/img/avatar.png"
+  profile_bg = "/img/profile-bg.jpg"
+
+[[Params.Menu]]
+    name = "Home"
+    icon = "home"
+    url = "/"
+
+[[Params.Menu]]
+    name = "Archive"
+    icon = "archive"
+    url = "/archive/"
+
+[[Params.Menu]]
+    name = "About"
+    icon = "person"
+    url = "/about/"
+
+
+[[Params.FriendLink]]
+  name = "Frantic1048"
+  url = "https://frantic1048.logdown.com/"
+
+[[Params.FriendLink]]
+  name = "HclMaster"
+  url = "https://hclmaster.github.io/"
+
+[[Params.FriendLink]]
+  name = "WANG Hsü-Tung"
+  url = "https://whst.github.io/"
+
+
+[[Params.ExternalLink]]
+  icon = "github"
+  name = "Github"
+  id = "@stkevintan"
+  url = "https://github.com/stkevintan"
+
+
+
+[[Params.ExternalLink]]
+  icon = "twitter"
+  name = "Twitter"
+  id = "@kevinsfork"
+  url = "https://twitter.com/kevinsfork"
+
+[[Params.ExternalLink]]
+  icon = "email"
+  name = "E-mail"
+  id = "stkevintan@foxmail.com"
+  url = "mailto:stkevintan@zju.edu.cn"
+
+[Params.Tax]
+  [Params.Tax.Tag]
+  icon = "local_offer"
+  name = "Tag"
+
+  [Params.Tax.Category]
+  icon = "view_list"
+  name = "Category"

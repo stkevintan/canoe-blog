@@ -1,0 +1,24 @@
+#archive {
+    .inner {
+        max-width: 900px;
+    }
+    .breadcrumbs{
+      margin-left: 24px;
+      margin-right: 24px;
+    }
+    .collapsible {
+        .collapsible-header {
+            transition: all .2s ease-in;
+            &.active {
+                background: $primary-color;
+                color: #fff;
+                i.material-icons {
+                    color: #fff;
+                }
+            }
+        }
+        .collapsible-body {
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.toc-panel {
+    position: relative;
+    display:none;
+    float: right;
+    width: 320px;
+    height: 100%;
+    nav {
+        padding-top: 2 * $gutter-width;
+        width: 320px;
+        &.fixed {
+            position: fixed;
+        }
+        &.absolute {
+            position: absolute;
+        }
+    }
+    nav>ul {
+        margin: 0;
+        margin: 0;
+        font-size: 13px;
+        padding: 0 $gutter-width /2;
+        &>li a {
+            color: $off-black;
+            display: block;
+            line-height: 1.5rem;
+            transition: all .2s ease-in;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            width: 100%;
+            padding: 3px 10px;
+            border-left: 3px solid transparent;
+            &.active {
+                border-left: 3px solid $primary-color;
+                background-color: darken($body-bg, 5);
+            }
+        }
+    }
+}
+
+@media(min-width: $main-inner-min-width) {
+    .toc-panel {
+        display: block;
+    }
+}

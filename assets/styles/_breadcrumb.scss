@@ -1,0 +1,22 @@
+.breadcrumbs {
+    height: 64px;
+    line-height: 64px;
+    &,
+    a,
+    .breadcrumb:before {
+        color: $link-color;
+    }
+    .breadcrumb:last-child,
+    span.breadcrumb,
+    span.breadcrumb:before {
+        color: $secondary-color;
+    }
+    .breadcrumb {
+        i.material-icons {
+            vertical-align: top;
+            margin-right: 10px;
+            float: none;
+            line-height: 61px;
+        }
+    }
+}

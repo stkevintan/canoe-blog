@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    HDU4888 Redraw Beautiful Drawings  | World of Forks
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://stkevintan.github.io/post/hdu4888-redraw-beautiful-drawings/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stkevintan.github.io/css/styles-d3e13fbeab.css">
+  
+  <link href="https://stkevintan.github.io/index.xml" rel="alternate" type="application/rss+xml" title="World of Forks" />
+  <link href="https://stkevintan.github.io/index.xml" rel="feed" type="application/rss+xml" title="World of Forks" />
+
+  
+  <link href="https://stkevintan.github.io/favicon.ico" rel="shortcut icon">
+</head>
+
+
+
+<body>
+  
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form action="//www.google.com/search" method="get" accept-charset="utf-8">
+        <input type="hidden" name="sitesearch" value="https://stkevintan.github.io">
+        <div class="input-field">
+          <input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"/>
+        </div>
+    </form>
+    </div>
+  </div>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-wrapper container">
+        <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="javascript:void(0)" class="brand-logo"><i class="material-icons">restaurant_menu</i> 
+          World of Forks
+        </a>
+
+        <ul class="right">
+           
+          <li ><a class="modal-trigger" href='#modal1'><i class="material-icons">search</i></a></li>
+          <li><a href='https://stkevintan.github.io/index.xml' target="_blank" ><i class="material-icons">rss_feed</i></a></li>
+        </ul>
+        
+          <ul class="center tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="/" class=' active '>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="/archive/" class=''>
+                Archive
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="/about/" class=''>
+                About
+              </a>
+            </li>
+             
+          </ul>
+         
+      </div>
+    </nav>
+  </div> <aside class="side-panel">
+  <div class="inner">
+    <div class="profile">
+      <div class="profile__bg" style="background-image:url('/img/profile-bg-7c6e6a1672.jpg')"></div>
+      <img class="profile__avatar" src="/img/avatar-66318e716f.png" alt="avatar" /> 
+      <h3 class="profile__name">Kevin Tan</h3> 
+      <p class="profile__desc">Tempora mutantur, nos et mutamur in illis ...</p>
+    </div>
+    <ul class="nav-group show-on-medium-and-down menu ">
+       
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/">
+          <i class="material-icons">home</i>
+          <span class="content">Home</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/archive/">
+          <i class="material-icons">archive</i>
+          <span class="content">Archive</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/about/">
+          <i class="material-icons">person</i>
+          <span class="content">About</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+       
+    </ul>
+    <ul class="collapsible nav-group" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">whatshot</i>
+          <span class="content">Latest</span>
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-7-helper-element/">Polymer 2.0 文档笔记(7) Helper Element</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-6-data-binding/">Polymer 2.0 文档笔记(6) Data Binding</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-5-observers-and-computed-properties/">Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-4-data-system/">Polymer 2.0 文档笔记(4) Data System</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-3-events/">Polymer 2.0 文档笔记(3) Events</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-2-shadowdom/">Polymer 2.0 文档笔记(2) ShadowDOM</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-1-custom-elements/">Polymer 2.0 文档笔记(1) Custom Elements</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/hello-world/">网易云音乐新API浅析</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/shadowsocks-account/">Shadowsocks免费账号网址集</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/asp-net-mvc4note2/">ASP.NET MVC 4笔记（二）</a> 
+          </div>
+        </div>
+      </li>
+       
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">view_list</i>
+          <span class="content">Category </span>
+          
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/acm"> acm<span class="badge">18</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/web"> web<span class="badge">7</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/08"> 08<span class="badge">3</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/07"> 07<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/10"> 10<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/11"> 11<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/02"> 02<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/09"> 09<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/asp.net"> asp.net<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/ide/editor"> ide/editor<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/wine"> wine<span class="badge">1</span></a>            
+          </div>
+        </div>
+      </li>
+       
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">local_offer</i>
+          <span class="content">Tag </span>
+          
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.iotags/polymer"> polymer<span class="badge">7</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/tarjan"> tarjan<span class="badge">5</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E5%9B%BE%E8%AE%BA"> 图论<span class="badge">5</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/lca"> lca<span class="badge">3</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/asp.net-mvc4"> asp.net-mvc4<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/c"> c#<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/rmq"> rmq<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E5%80%8D%E5%A2%9E"> 倍增<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%9A%B4%E5%8A%9B"> 暴力<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%A0%91%E5%BD%A2dp"> 树形dp<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84"> 树的直径<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B"> 矩阵暴力<span class="badge">1</span></a>            
+          </div>
+        </div>
+      </li>
+      
+    </ul>
+    <ul class="nav-group external-link">
+       
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="https://github.com/stkevintan" target="_blank">
+          <i class="material-icons" data-svg-icon="github">github</i>
+          <span class="content">Github<small>@stkevintan</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="https://twitter.com/kevinsfork" target="_blank">
+          <i class="material-icons" data-svg-icon="twitter">twitter</i>
+          <span class="content">Twitter<small>@kevinsfork</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="mailto:stkevintan@zju.edu.cn" target="_blank">
+          <i class="material-icons" data-svg-icon="email">email</i>
+          <span class="content">E-mail<small>stkevintan@foxmail.com</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+       
+    </ul>
+  </div>
+</aside>
+
+<main id="single" role="main" class="main-panel ">
+  <section class="container">
+    <div class="inner">
+       <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+   
+   
+   
+  
+    <a class="breadcrumb" href="https://stkevintan.github.io"><i class="material-icons">location_on</i>Home</a>
+    
+       
+      
+      
+      
+       
+    
+       
+      
+      
+      
+       
+        
+          <a class="breadcrumb" href='https://stkevintan.github.io/post/'>Post</a>
+         
+       
+    
+       
+      
+      
+      
+       
+        
+          <span class="breadcrumb">HDU4888 Redraw Beautiful Drawings </span>
+         
+       
+    
+       
+      
+      
+      
+       
+     
+</div>
+      <div class="toc-panel">
+        
+      </div>
+      <div class="post">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">HDU4888 Redraw Beautiful Drawings  </span>
+            <span class="card-meta">
+              <time>
+                
+                <span> 2014-6-30</span>
+            </time>
+            <address>
+              
+              <a href="https://stkevintan.github.io/categories/acm">ACM</a>&nbsp; 
+              <a href="https://stkevintan.github.io/categories/07">07</a>&nbsp; 
+            </address>
+
+            </span>
+
+            <article class="article">
+              <p><div class="panel_title" align="left">Problem Description</div>
+<div class="panel_content">Alice and Bob are playing together. Alice is crazy about art and she has visited many museums around the world. She has a good memory and she can remember all drawings she has seen.Today Alice designs a game using these drawings in her memory. First, she matches K+1 colors appears in the picture to K+1 different integers(from 0 to K). After that, she slices the drawing into grids and there are N rows and M columns. Each grid has an integer on it(from 0 to K) representing the color on the corresponding position in the original drawing. Alice wants to share the wonderful drawings with Bob and she tells Bob the size of the drawing, the number of different colors, and the sum of integers on each row and each column. Bob has to redraw the drawing with Alice&rsquo;s information. Unfortunately, somtimes, the information Alice offers is wrong because of Alice&rsquo;s poor math. And sometimes, Bob can work out multiple different drawings using the information Alice provides. Bob gets confused and he needs your help. You have to tell Bob if Alice&rsquo;s information is right and if her information is right you should also tell Bob whether he can get a unique drawing.</div>
+<div class="panel_bottom"></div>
+
+&nbsp;
+<div class="panel_title" align="left">Input</div>
+<div class="panel_content">The input contains mutiple testcases.For each testcase, the first line contains three integers N(1 ≤ N ≤ 400) , M(1 ≤ M ≤ 400) and K(1 ≤ K ≤ 40).
+N integers are given in the second line representing the sum of N rows.
+M integers are given in the third line representing the sum of M columns.The input is terminated by EOF.</div>
+<div class="panel_bottom"></div>
+&nbsp;
+<div class="panel_title" align="left">Output</div>
+<div class="panel_content">For each testcase, if there is no solution for Bob, output &ldquo;Impossible&rdquo; in one line(without the quotation mark); if there is only one solution for Bob, output &ldquo;Unique&rdquo; in one line(without the quotation mark) and output an N * M matrix in the following N lines representing Bob&rsquo;s unique solution; if there are many ways for Bob to redraw the drawing, output &ldquo;Not Unique&rdquo; in one line(without the quotation mark).</div>
+<div class="panel_bottom"></div>
+&nbsp;
+<div class="panel_title" align="left">Sample Input</div>
+<div class="panel_content">
+<div style="font-family: Courier New,Courier,monospace;">2 2 4 4 2 4 2 4 2 2 2 2 5 0 5 4 1 4 3 9 1 2 3 3</div>
+</div>
+<div class="panel_bottom"></div>
+&nbsp;
+<div class="panel_title" align="left">Sample Output</div>
+<div class="panel_content">
+<div style="font-family: Courier New,Courier,monospace;">Not Unique Impossible Unique 1 2 3 3</div>
+</div>
+&nbsp;</p>
+
+<hr />
+
+<p>第一步，考虑如何求是否有解。使用网络流求解，每一行和每一列分别对应一个点，加上源点和汇点一共有N+M+2个点。有三类边：</p>
+
+<ol>
+<li>源点 -&gt; 每一行对应的点，流量限制为该行的和</li>
+<li>每一行对应的点 -&gt; 每一列对应的点，流量限制为 K</li>
+<li>每一列对应的点 -&gt; 汇点，流量限制为该列的和
+&nbsp;</li>
+</ol>
+
+<p>对上图做最大流，若源点出发的边和到达汇点的边全都满流，则有解，否则无解。若要求构造方案，则 (i,j) 对应的整数就是行 i–&gt; 列 j 的流量。</p>
+
+<p>第二步，考虑解是否唯一。显然，解唯一的充分必要条件是完成最大流后的残余网络没有长度大于 2 的环。所以，判断解的唯一性可使用dfs，注意遍历的时候不可以在走完一条边后马上走其反向边，加此限制检查是否有环即可判断解是否唯一。</p>
+
+<p>至此，全题已解决。</p>
+
+<pre><code class="language-C++">#include &amp;lt;iostream&amp;gt; 
+#include &amp;lt;cstring&amp;gt; 
+#include &amp;lt;cstdio&amp;gt; 
+#include &amp;lt;queue&amp;gt; 
+#include &amp;lt;cstdlib&amp;gt;
+using namespace std;
+
+const int maxn=500,maxm=maxn*maxn;
+int next[maxm*2],num[maxm*2],r[maxm*2],a[maxn*2],row_sum[maxn],col_sum[maxn],n,m,K,tt,T,d[maxn*2],st[maxn*2],cod[maxn][maxn];
+int h[maxn*2],vh[maxn*2];
+bool don[maxm*2],in[maxn*2];
+
+void insert(int x,int y,int rr)
+{
+    next[++tt]=a[x];num[tt]=y;r[tt]=rr;a[x]=tt;
+    next[++tt]=a[y];num[tt]=x;r[tt]=0;a[y]=tt;
+}
+
+void construct()
+{
+    tt=1;T=n+m+1;
+    for (int i=0;i&amp;lt;=T;i++) a[i]=0;
+    for (int i=1;i&amp;lt;=n;i++) insert(0,i,row_sum[i]);
+    for (int i=1;i&amp;lt;=m;i++) insert(i+n,T,col_sum[i]);
+    for (int i=1;i&amp;lt;=n;i++)
+    {
+        for (int j=1;j&amp;lt;=m;j++)
+        {
+            insert(i,j+n,K);
+            cod[i][j]=tt;
+        }
+    }
+}
+
+int dfs(int x,int y)
+{
+    if (x==T) return y;
+    int sig=st[x],minh=T+1;
+    do
+    {
+        if (r[st[x]])
+        {
+            if (h[num[st[x]]]+1==h[x])
+            {
+                int k=dfs(num[st[x]],min(y,r[st[x]]));
+                if (k)
+                {
+                    r[st[x]]-=k;
+                    r[st[x]^1]+=k;
+                    return k;
+                }
+            }
+            minh=min(minh,h[num[st[x]]]+1);
+            if (h[0]&amp;gt;T) return 0;
+        }
+        st[x]=next[st[x]];
+        if (st[x]==0) st[x]=a[x];
+    }while (sig!=st[x]);
+    if (vh[h[x]]--==0) h[0]=T+1;
+    vh[h[x]=minh]++;
+    return 0;
+}
+
+int max_flow()
+{
+    for (int i=0;i&amp;lt;=T;i++) h[i]=vh[i]=0;
+    for (int i=0;i&amp;lt;=T;i++) st[i]=a[i];
+    vh[0]=T+1;
+    int ret=0;
+    while (h[0]&amp;lt;=T) ret+=dfs(0,K+1);
+    return ret;
+}
+
+/*bool find_circle()
+{
+    deque  q;
+    for (int i=0;i&amp;lt;=T;i++) d[i]=0;
+    for (int i=0;i&amp;lt;=T;i++)
+    {
+        for (int p=a[i];p;p=next[p])
+        {
+            if (r[p]) d[i]++;
+        }
+        if (d[i]==0) q.push_back(i);
+    }
+    int cnt=T+1;
+    while (!q.empty())
+    {
+        int x=q.front();
+        cnt--;
+        q.pop_front();
+        for (int p=a[x];p;p=next[p])
+        {
+            if (r[p^1]) 
+            {
+                d[num[p]]--;
+                if (d[num[p]]==0) q.push_back(num[p]);
+            }
+        }
+    }
+    return cnt;
+}*/
+
+bool visit(int x,int ed)
+{
+    if (don[ed]) 
+        return in[x];
+    don[ed]=true;
+    in[x]=true;
+    for (int p=a[x];p;p=next[p])
+    {
+        if (r[p] &amp;amp;&amp;amp; (ed^p)!=1)
+            if (visit(num[p],p)) return true;
+    }
+    in[x]=false;
+    return false;
+}
+
+bool find_circle()
+{
+    for (int i=0;i&amp;lt;=T;i++) in[i]=false;
+    for (int i=1;i&amp;lt;=tt;i++) don[i]=false;
+    int col=0;
+    for (int i=2;i&amp;lt;=tt;i++)
+    {
+        if (r[i] &amp;amp;&amp;amp; !don[i])
+        {
+            in[num[i^1]]=true;
+            if (visit(num[i],i)) return true; 
+            in[num[i^1]]=false;
+        }
+    }
+    return false;
+}
+
+void print_scheme()
+{
+    printf(&quot;Unique\n&quot;);
+    for (int i=1;i&amp;lt;=n;i++)
+    {
+        printf(&quot;%d&quot;,r[cod[i][1]]);
+        for (int j=2;j&amp;lt;=m;j++) printf(&quot; %d&quot;,r[cod[i][j]]);
+        printf(&quot;\n&quot;);
+    }
+}
+
+int main()
+{
+    while (scanf(&quot;%d%d%d&quot;,&amp;amp;n,&amp;amp;m,&amp;amp;K)!=EOF)
+    {
+        int tmp=0;
+        for (int i=1;i&amp;lt;=n;i++)
+        {
+            scanf(&quot;%d&quot;,&amp;amp;row_sum[i]);
+            tmp+=row_sum[i];
+        }
+        int sum=tmp;
+        for (int i=1;i&amp;lt;=m;i++)
+        {
+            scanf(&quot;%d&quot;,&amp;amp;col_sum[i]);
+            tmp-=col_sum[i];
+        }
+        if (tmp) 
+        {
+            printf(&quot;Impossible\n&quot;);
+            continue;
+        }
+        construct();
+        if (max_flow()&amp;lt;sum)
+        {
+            printf(&quot;Impossible\n&quot;);
+            continue;
+        }
+        if (find_circle())
+        {
+            printf(&quot;Not Unique\n&quot;);
+        }else print_scheme();
+    }
+
+    return 0;
+}
+</code></pre>
+            </article>
+
+          </div>
+          
+          <div class="card-action">
+            
+ <div class="comments"><div id="disqus_thread"></div></div>
+
+<script type="text/javascript">
+     
+    var disqus_shortname = 'keyin';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+          </div>
+        </div>
+        
+          <div class="pagination-single">
+             
+          
+            <span class="pagination-item next">
+            <i class="material-icons">navigate_next</i>
+            <a href="https://stkevintan.github.io/post/hdu4612-warm-up/" rel="next">HDU4612 Warm up</a> 
+          </span> 
+          </div>
+        
+      </div>
+    </div>
+  </section>
+  
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">World of Forks</h5>
+        <p class="grey-text text-lighten-4">Theme <a href="" target="_blank">YAMT</a> designed by <a href="#!">Kevin Tan</a> with ❤</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">My Friends</h5>
+        <ul>
+          
+          <li><a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a></li>
+          
+          <li><a class="grey-text text-lighten-3" href="https://hclmaster.github.io/" target="_blank">HclMaster</a></li>
+          
+          <li><a class="grey-text text-lighten-3" href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">Copyleft@Kevin Tan</div>
+  </div>
+</footer>
+
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
+<script type="text/javascript" src="/js/index-51aa3898b6.js"></script>
+
+
+
+
+
+</body>
+
+</html>
+</main>

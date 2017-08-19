@@ -1,0 +1,88 @@
+$body-bg: #ebecee;
+$waterfall-item-width: 400px;
+$aside-width: 320px;
+$profile-bg-height: 150px;
+$profile-avatar-size: 100px;
+$main-inner-min-width: 960px;
+$main-inner-max-width: 1400px;
+$toc-width: 300px;
+body {
+    background-color: $body-bg;
+    font-family: 'Roboto', Helvetica, "Hiragino Sans GB", "Hiragino Sans GB W3", Source Han Sans CN Regular, WenQuanYi Micro Hei, "Microsoft YaHei", Arial, sans-serif;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-rendering: optimizelegibility;
+}
+
+a.unstyled {
+    color: inherit;
+    &:hover,
+    &:active {
+        color: inherit;
+    }
+}
+
+.nowrap {
+    vertical-align: middle;
+    width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+@import "materialize/index";
+@import "svgIcon";
+@import "layout";
+@import "typo";
+@import "toc";
+@import "breadcrumb";
+@import "archive";
+.waterfall {
+    columns: $waterfall-item-width;
+    column-gap: 0;
+    margin: -$gutter-width/2;
+    &__item {
+        padding: $gutter-width/2;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid-column;
+        .card {
+            margin: 0;
+        }
+    }
+}
+
+.post {
+    max-width: 100%;
+}
+
+//single pagination
+.pagination-single {
+    height: 64px;
+    margin: $gutter-width 0;
+    line-height: 64px;
+    .pagination-item {
+        @extend .nowrap;
+        width: 50%;
+        padding-right: $gutter-width/2;
+        &.next {
+            padding-right: 0;
+            padding-left: $gutter-width/2;
+            float: right;
+            direction: rtl;
+        }
+        a,
+        i {
+            direction: ltr;
+            vertical-align: middle;
+        }
+    }
+}
+
+#modal1 .modal-content{
+    padding: 0 24px;
+}
+
+// @media #{$medium-and-down} {}

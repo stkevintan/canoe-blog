@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://stkevintan.github.io/archive/</loc>
+    <lastmod>2017-08-19T21:37:49+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/about/</loc>
+    <lastmod>2017-08-19T20:09:28+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/polymer-2-7-helper-element/</loc>
+    <lastmod>2017-07-02T22:56:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/polymer-2-6-data-binding/</loc>
+    <lastmod>2017-07-02T22:55:28+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/polymer-2-5-observers-and-computed-properties/</loc>
+    <lastmod>2017-07-02T22:54:06+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/polymer-2-4-data-system/</loc>
+    <lastmod>2017-07-02T22:53:02+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/polymer-2-3-events/</loc>
+    <lastmod>2017-07-02T22:52:21+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/polymer-2-2-shadowdom/</loc>
+    <lastmod>2017-07-02T22:51:37+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/polymer-2-1-custom-elements/</loc>
+    <lastmod>2017-07-02T22:49:25+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hello-world/</loc>
+    <lastmod>2017-06-12T10:00:59+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/shadowsocks-account/</loc>
+    <lastmod>2015-02-25T00:26:42+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/asp-net-mvc4note2/</loc>
+    <lastmod>2015-02-24T18:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/asp-net-mvc4-note1-simplemembership/</loc>
+    <lastmod>2015-02-24T18:45:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/zoj-month-contest-d-determinant-and-matrix/</loc>
+    <lastmod>2014-11-08T02:32:21+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/fft-thoughts/</loc>
+    <lastmod>2014-11-07T04:15:54+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/baylor6622-absurdistan-roads/</loc>
+    <lastmod>2014-11-07T01:05:34+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/timus-1996-cipher-message-3-kmpfft/</loc>
+    <lastmod>2014-11-06T06:13:15+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/intro-of-fft/</loc>
+    <lastmod>2014-11-06T04:40:10+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</loc>
+    <lastmod>2014-10-20T05:20:03+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/wine-font-config/</loc>
+    <lastmod>2014-10-13T20:42:42+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/sublime-config-web/</loc>
+    <lastmod>2014-09-17T00:45:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu-4965-fast-matrix-calculation/</loc>
+    <lastmod>2014-08-20T04:37:28+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu-4952-number-transformation/</loc>
+    <lastmod>2014-08-16T01:22:13+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu-4945-2048/</loc>
+    <lastmod>2014-08-16T00:56:19+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu-2874-connections-between-cities/</loc>
+    <lastmod>2014-08-14T06:00:34+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/zjnu2085/</loc>
+    <lastmod>2014-08-14T05:09:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/zjnu2082/</loc>
+    <lastmod>2014-08-13T06:10:46+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu4944-fsfs-game/</loc>
+    <lastmod>2014-08-13T04:59:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/zjnu2073-geasscode/</loc>
+    <lastmod>2014-08-02T04:18:37+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/poj1989-distance-queries/</loc>
+    <lastmod>2014-08-01T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/poj1330-nearest-common-ancestors/</loc>
+    <lastmod>2014-08-01T18:43:01+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/2014-multi-university-training-contest-4/</loc>
+    <lastmod>2014-08-01T03:09:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu4005-the-war/</loc>
+    <lastmod>2014-07-31T03:50:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu4612-warm-up/</loc>
+    <lastmod>2014-07-31T03:37:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/hdu4888-redraw-beautiful-drawings/</loc>
+    <lastmod>2014-07-30T05:43:58+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/02/</loc>
+    <lastmod>2015-02-24T18:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/07/</loc>
+    <lastmod>2014-07-31T03:50:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/08/</loc>
+    <lastmod>2014-08-14T06:00:34+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/09/</loc>
+    <lastmod>2014-09-17T00:45:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/10/</loc>
+    <lastmod>2014-10-20T05:20:03+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/11/</loc>
+    <lastmod>2014-11-07T04:15:54+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/acm/</loc>
+    <lastmod>2014-11-08T02:32:21+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/asp.net/</loc>
+    <lastmod>2015-02-24T18:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/asp.net-mvc4/</loc>
+    <lastmod>2015-02-24T18:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/c#/</loc>
+    <lastmod>2015-02-24T18:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/</loc>
+    <lastmod>2015-02-24T18:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/ide/editor/</loc>
+    <lastmod>2014-09-17T00:45:07+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/lca/</loc>
+    <lastmod>2014-08-02T04:18:37+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/polymer/</loc>
+    <lastmod>2017-07-02T22:56:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/post/</loc>
+    <lastmod>2017-07-02T22:56:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/rmq/</loc>
+    <lastmod>2014-08-01T22:30:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/</loc>
+    <lastmod>2015-02-24T18:50:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/tarjan/</loc>
+    <lastmod>2014-08-02T04:18:37+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/web/</loc>
+    <lastmod>2017-07-02T22:56:11+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/categories/wine/</loc>
+    <lastmod>2014-10-13T20:42:42+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/</loc>
+    <lastmod>2017-08-19T21:37:49+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/%E5%80%8D%E5%A2%9E/</loc>
+    <lastmod>2014-08-01T18:43:01+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/%E5%9B%BE%E8%AE%BA/</loc>
+    <lastmod>2014-08-02T04:18:37+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/%E6%9A%B4%E5%8A%9B/</loc>
+    <lastmod>2014-08-14T05:09:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/%E6%A0%91%E5%BD%A2dp/</loc>
+    <lastmod>2014-07-31T03:50:40+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</loc>
+    <lastmod>2014-07-31T03:37:32+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://stkevintan.github.io/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B/</loc>
+    <lastmod>2014-08-20T04:37:28+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

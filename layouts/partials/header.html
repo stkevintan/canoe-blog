@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="{{.Site.LanguageCode}}">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="UTF-8">
+  <title>
+    {{ $isHomePage := eq .Title .Site.Title }}{{ .Title }}{{ if eq $isHomePage false }} | {{ .Site.Title }}{{ end }}
+  </title>
+
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  <!-- HTTPS Canonical URL
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="canonical" href="{{ .Permalink }}" />
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ .Site.BaseURL }}/css/styles.css">
+  <!-- RSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="{{ $.Site.RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+  <link href="{{ $.Site.RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="{{ .Site.BaseURL }}/favicon.ico" rel="shortcut icon">
+</head>
+
+{{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }}
+{{ $curType := index $path 0 }}
+<body>
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form action="//www.google.com/search" method="get" accept-charset="utf-8">
+        <input type="hidden" name="sitesearch" value="{{ .Site.BaseURL }}">
+        <div class="input-field">
+          <input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"/>
+        </div>
+    </form>
+    </div>
+  </div>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-wrapper container">
+        <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="javascript:void(0)" class="brand-logo"><i class="material-icons">restaurant_menu</i> 
+          {{ .Site.Title }}
+        </a>
+
+        <ul class="right">
+           <!-- https://www.google.com.hk/search?sitesearch={{ .Site.BaseURL }} -->
+          <li ><a class="modal-trigger" href='#modal1'><i class="material-icons">search</i></a></li>
+          <li><a href='{{ $.Site.RSSLink }}' target="_blank" ><i class="material-icons">rss_feed</i></a></li>
+        </ul>
+        {{ with .Site.Params.Menu }}
+          <ul class="center tabs tabs-transparent hide-on-med-and-down">
+            {{ range . }}
+            <li class="tab">
+              <a href="{{ .url }}" class='{{ if eq $curType (trim .url "/") }} active {{ end }}'>
+                {{ .name }}
+              </a>
+            </li>
+            {{end}} 
+          </ul>
+         {{end}}
+      </div>
+    </nav>
+  </div>

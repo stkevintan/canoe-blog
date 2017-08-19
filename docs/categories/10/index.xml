@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>10 on World of Forks</title>
+    <link>https://stkevintan.github.io/categories/10/</link>
+    <description>Recent content in 10 on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Mon, 20 Oct 2014 05:20:03 +0800</lastBuildDate>
+    
+	<atom:link href="https://stkevintan.github.io/categories/10/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ACM International Collegiate Programming Contest Asia Regional Contest, Tokyo Problem D Space Golf</title>
+      <link>https://stkevintan.github.io/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</link>
+      <pubDate>Mon, 20 Oct 2014 05:20:03 +0800</pubDate>
+      
+      <guid>https://stkevintan.github.io/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</guid>
+      <description>&lt;p&gt;原题pdf：&lt;a href=&#34;http://judge.u-aizu.ac.jp/onlinejudge/contest/ICPCOOC2014/D.pdf&#34;&gt;click here&lt;/a&gt;
+&lt;br/&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;日本的亚洲区域赛真心简单啊。两个小时就刷了5题有余了。排名第一的队伍才做出7道。&lt;/p&gt;
+
+&lt;p&gt;题目真心长的可以了，看了半个小时才明白。。&lt;/p&gt;
+
+&lt;p&gt;题意其实也就是太空中向前方抛小球，问小球能够穿过N个障碍物后到达制定地点的最小初始速度是多少。非常暴力的模拟题。离散化后直接枚举弹跳的次数再取最小值即可。注意45°方向能成功的话，那还是45°最优。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>优化Wine程序的字体显示</title>
+      <link>https://stkevintan.github.io/post/wine-font-config/</link>
+      <pubDate>Mon, 13 Oct 2014 20:42:42 +0800</pubDate>
+      
+      <guid>https://stkevintan.github.io/post/wine-font-config/</guid>
+      <description>&lt;p&gt;默认Wine的字体太难看，而且有时候还会显示不出来。开启Wine字体的反锯齿及平滑功能以及将字体映射成文泉驿微米黑的方法是：&lt;/p&gt;
+
+&lt;p&gt;1.新建文本文件a.reg，放入如下内容：
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

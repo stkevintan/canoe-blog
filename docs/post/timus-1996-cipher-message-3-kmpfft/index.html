@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Timus 1996 Cipher Message 3 KMP&#43;FFT求卷积 | World of Forks
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://stkevintan.github.io/post/timus-1996-cipher-message-3-kmpfft/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stkevintan.github.io/css/styles-d3e13fbeab.css">
+  
+  <link href="https://stkevintan.github.io/index.xml" rel="alternate" type="application/rss+xml" title="World of Forks" />
+  <link href="https://stkevintan.github.io/index.xml" rel="feed" type="application/rss+xml" title="World of Forks" />
+
+  
+  <link href="https://stkevintan.github.io/favicon.ico" rel="shortcut icon">
+</head>
+
+
+
+<body>
+  
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form action="//www.google.com/search" method="get" accept-charset="utf-8">
+        <input type="hidden" name="sitesearch" value="https://stkevintan.github.io">
+        <div class="input-field">
+          <input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"/>
+        </div>
+    </form>
+    </div>
+  </div>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-wrapper container">
+        <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="javascript:void(0)" class="brand-logo"><i class="material-icons">restaurant_menu</i> 
+          World of Forks
+        </a>
+
+        <ul class="right">
+           
+          <li ><a class="modal-trigger" href='#modal1'><i class="material-icons">search</i></a></li>
+          <li><a href='https://stkevintan.github.io/index.xml' target="_blank" ><i class="material-icons">rss_feed</i></a></li>
+        </ul>
+        
+          <ul class="center tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="/" class=' active '>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="/archive/" class=''>
+                Archive
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="/about/" class=''>
+                About
+              </a>
+            </li>
+             
+          </ul>
+         
+      </div>
+    </nav>
+  </div> <aside class="side-panel">
+  <div class="inner">
+    <div class="profile">
+      <div class="profile__bg" style="background-image:url('/img/profile-bg-7c6e6a1672.jpg')"></div>
+      <img class="profile__avatar" src="/img/avatar-66318e716f.png" alt="avatar" /> 
+      <h3 class="profile__name">Kevin Tan</h3> 
+      <p class="profile__desc">Tempora mutantur, nos et mutamur in illis ...</p>
+    </div>
+    <ul class="nav-group show-on-medium-and-down menu ">
+       
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/">
+          <i class="material-icons">home</i>
+          <span class="content">Home</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/archive/">
+          <i class="material-icons">archive</i>
+          <span class="content">Archive</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/about/">
+          <i class="material-icons">person</i>
+          <span class="content">About</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+       
+    </ul>
+    <ul class="collapsible nav-group" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">whatshot</i>
+          <span class="content">Latest</span>
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-7-helper-element/">Polymer 2.0 文档笔记(7) Helper Element</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-6-data-binding/">Polymer 2.0 文档笔记(6) Data Binding</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-5-observers-and-computed-properties/">Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-4-data-system/">Polymer 2.0 文档笔记(4) Data System</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-3-events/">Polymer 2.0 文档笔记(3) Events</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-2-shadowdom/">Polymer 2.0 文档笔记(2) ShadowDOM</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-1-custom-elements/">Polymer 2.0 文档笔记(1) Custom Elements</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/hello-world/">网易云音乐新API浅析</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/shadowsocks-account/">Shadowsocks免费账号网址集</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/asp-net-mvc4note2/">ASP.NET MVC 4笔记（二）</a> 
+          </div>
+        </div>
+      </li>
+       
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">view_list</i>
+          <span class="content">Category </span>
+          
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/acm"> acm<span class="badge">18</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/web"> web<span class="badge">7</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/08"> 08<span class="badge">3</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/07"> 07<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/10"> 10<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/11"> 11<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/02"> 02<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/09"> 09<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/asp.net"> asp.net<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/ide/editor"> ide/editor<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/wine"> wine<span class="badge">1</span></a>            
+          </div>
+        </div>
+      </li>
+       
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">local_offer</i>
+          <span class="content">Tag </span>
+          
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.iotags/polymer"> polymer<span class="badge">7</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/tarjan"> tarjan<span class="badge">5</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E5%9B%BE%E8%AE%BA"> 图论<span class="badge">5</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/lca"> lca<span class="badge">3</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/asp.net-mvc4"> asp.net-mvc4<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/c"> c#<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/rmq"> rmq<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E5%80%8D%E5%A2%9E"> 倍增<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%9A%B4%E5%8A%9B"> 暴力<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%A0%91%E5%BD%A2dp"> 树形dp<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84"> 树的直径<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B"> 矩阵暴力<span class="badge">1</span></a>            
+          </div>
+        </div>
+      </li>
+      
+    </ul>
+    <ul class="nav-group external-link">
+       
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="https://github.com/stkevintan" target="_blank">
+          <i class="material-icons" data-svg-icon="github">github</i>
+          <span class="content">Github<small>@stkevintan</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="https://twitter.com/kevinsfork" target="_blank">
+          <i class="material-icons" data-svg-icon="twitter">twitter</i>
+          <span class="content">Twitter<small>@kevinsfork</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="mailto:stkevintan@zju.edu.cn" target="_blank">
+          <i class="material-icons" data-svg-icon="email">email</i>
+          <span class="content">E-mail<small>stkevintan@foxmail.com</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+       
+    </ul>
+  </div>
+</aside>
+
+<main id="single" role="main" class="main-panel ">
+  <section class="container">
+    <div class="inner">
+       <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+   
+   
+   
+  
+    <a class="breadcrumb" href="https://stkevintan.github.io"><i class="material-icons">location_on</i>Home</a>
+    
+       
+      
+      
+      
+       
+    
+       
+      
+      
+      
+       
+        
+          <a class="breadcrumb" href='https://stkevintan.github.io/post/'>Post</a>
+         
+       
+    
+       
+      
+      
+      
+       
+        
+          <span class="breadcrumb">Timus 1996 Cipher Message 3 KMP&#43;FFT求卷积</span>
+         
+       
+    
+       
+      
+      
+      
+       
+     
+</div>
+      <div class="toc-panel">
+        <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#input">Input</a></li>
+<li><a href="#output">Output</a></li>
+<li><a href="#samples">Samples</a></li>
+</ul></li>
+</ul>
+</nav>
+      </div>
+      <div class="post">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">Timus 1996 Cipher Message 3 KMP&#43;FFT求卷积 </span>
+            <span class="card-meta">
+              <time>
+                
+                <span> 2014-6-6</span>
+            </time>
+            <address>
+              
+              <a href="https://stkevintan.github.io/categories/acm">ACM</a>&nbsp; 
+            </address>
+
+            </span>
+
+            <article class="article">
+              <p>题目链接：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;amp;num=1996">click here</a>
+##description
+Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has been the head of the Empire Armed Forces. However, the Rebel movement is strong like it never used to be. One of the rebel leaders, Princess Leia from Alderaan, managed to get hold of secret blueprints of the Death Star, the imperial war station.</p>
+
+<p>The Princess was going to deliver the station plan to the secret base for further analysis and searching for vulnerable spots. But her ship was attacked by the space destroyer &ldquo;Devastator&rdquo; headed by Darth Vader. At the last moment Princess Leia managed to send her findings to one of the closest planet called Tatooine with her droid R2-D2. Quite conveniently, an old friend of her father Obi-Wan Kenobi lives on that planet.</p>
+
+<p>R2-D2 realizes the importance of his mission. He is going to encrypt the information so that the wrong people won’t get it.
+
+The memory of R2-D2 has many files with images. First he wanted to use a well-known encrypting algorithm. The point of the method is to replace the least significant bits of the image with the encrypted message bits. The difference is practically unnoticeable on the picture, so one won’t suspect that it contains a hidden message.</p>
+
+<p>But then R2-D2 decided that this method is quite well-known and the information won’t be protected enough. He decided to change the least significant bits of the image so that the secret information was a continuous sequence of the bytes of the image file. Help the droid determine if it is possible. And if it is, find the minimum number of bits to alter.</p>
+
+<h2 id="input">Input</h2>
+
+<p>The first line of the input contains integers _n_ and _m_ (1 ≤ <em>n</em>, _m_ ≤ 250 000) — the sizes of the image file and of the file with the secret information in bytes. On the second line the content of the file with an image is given and the third line contains the secret information. The files are given as a sequence of space-separated bytes. Each byte is written as a sequence of eight bits in the order from the most to the least significant bit.</p>
+
+<h2 id="output">Output</h2>
+
+<p>Print &ldquo;No&rdquo;, if it is impossible to encrypt information in this image. Otherwise, print in the first line &ldquo;Yes&rdquo;, and in the second line — the number of bits to alter and the number of the byte in the file with the image, starting from which the secret information will be recorded. If there are multiple possible variants, print the one where the secret information is written closer to the beginning of the image file.</p>
+
+<h2 id="samples">Samples</h2>
+
+<p>| input | output |
+|</p>
+            </article>
+
+          </div>
+          
+          <div class="card-action">
+            
+ <div class="comments"><div id="disqus_thread"></div></div>
+
+<script type="text/javascript">
+     
+    var disqus_shortname = 'keyin';
+
+     
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+
+
+          </div>
+        </div>
+        
+          <div class="pagination-single">
+             
+            <span class="pagination-item previous">
+            <i class="material-icons">navigate_before</i>
+            <a href="https://stkevintan.github.io/post/intro-of-fft/" rel="prev">（转）关于卷积的一个血腥的讲解，看完给跪了</a>
+          </span>  
+          
+            <span class="pagination-item next">
+            <i class="material-icons">navigate_next</i>
+            <a href="https://stkevintan.github.io/post/baylor6622-absurdistan-roads/" rel="next">baylor 6622 Absurdistan Roads（ NWERC Contest）</a> 
+          </span> 
+          </div>
+        
+      </div>
+    </div>
+  </section>
+  
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">World of Forks</h5>
+        <p class="grey-text text-lighten-4">Theme <a href="" target="_blank">YAMT</a> designed by <a href="#!">Kevin Tan</a> with ❤</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">My Friends</h5>
+        <ul>
+          
+          <li><a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a></li>
+          
+          <li><a class="grey-text text-lighten-3" href="https://hclmaster.github.io/" target="_blank">HclMaster</a></li>
+          
+          <li><a class="grey-text text-lighten-3" href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">Copyleft@Kevin Tan</div>
+  </div>
+</footer>
+
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
+<script type="text/javascript" src="/js/index-51aa3898b6.js"></script>
+
+
+
+
+
+</body>
+
+</html>
+</main>

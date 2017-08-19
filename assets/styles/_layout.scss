@@ -1,0 +1,192 @@
+html,
+body,
+// body>.container 
+{
+    height: 100%;
+    min-height: 100%;
+}
+
+body.covered {
+    overflow: hidden;
+}
+
+// body>.container {
+//     margin-top: -$navbar-height-mobile;
+//     padding-top: $navbar-height-mobile;
+//     @media #{$medium-and-up} {
+//         margin-top: -$navbar-height;
+//         padding-top: $navbar-height;
+//     }
+// }
+//navbar 
+.navbar .brand-logo i.material-icons {
+    display: none;
+}
+
+// main
+.main-panel {
+    transition: all .2s ease-in; // padding-left: $aside-width;
+    &>.container {
+        margin: $gutter-width 0 2*$gutter-width;
+    }
+    .inner {
+        max-width: $main-inner-max-width; // min-width: $main-inner-min-width;
+        margin: 0 auto;
+        position: relative;
+        .post {
+            .card-title {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 1rem;
+            }
+            margin-right: $toc-width+$gutter-width;
+            @media #{$medium-and-down} {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.main-panel.no-toc {
+    .toc-panel {
+        display: none;
+    }
+    .inner {
+        //without toc, the max width must decrease
+        max-width: $main-inner-max-width - $toc-width - $gutter-width;
+    }
+    .inner .post {
+        margin-right: 0;
+    }
+}
+
+//side
+.side-panel {
+    transition: transform .2s ease-in;
+    padding-top: $navbar-height-mobile;
+    max-width: 100%;
+    z-index: 996;
+    @extend .z-depth-1;
+    width: $aside-width;
+    transform: translateX(-$aside-width);
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: hidden;
+    .inner {
+        // transition: padding .1s linear .2s;
+        height: 100%;
+        margin-right: -20px;
+        overflow-y: scroll;
+    }
+    .profile {
+        text-align: center;
+        &__bg {
+            width: 100%;
+            height: $profile-bg-height;
+            background-size: 150%;
+            background-position: center;
+        }
+        &__avatar {
+            transition: all .2s ease-in;
+            display: block;
+            width: $profile-avatar-size;
+            height: $profile-avatar-size;
+            margin: -$profile-avatar-size / 1.5 auto 0;
+            border-radius: 50%;
+            @extend .z-depth-1;
+            @media #{$small-and-down} {
+                margin-top: -$profile-avatar-size - ($profile-bg-height - $profile-avatar-size)/2;
+                margin-bottom: ($profile-bg-height - $profile-avatar-size)/2 + $gutter-width;
+            }
+        }
+        &__name {
+            font-size: 1.4rem;
+            margin: 10px 0 5px;
+        }
+        &__desc {
+            font-size: 1rem;
+            color: $off-black-light-2;
+            margin: 0 0 10px;
+        }
+    }
+    .collapsible {
+        border: none;
+        box-shadow: none;
+        margin: 0; // text-transform: capitalize;
+        .collapsible-body {
+            padding: 0;
+        }
+        .collection {
+            border-top: 1px solid $collection-border-color;
+            &>.collection-item {
+                border: none;
+            }
+        }
+    }
+    .collapsible-header {
+        color: $off-black;
+        border: none;
+        .angle {
+            transition: transform .2s ease-in;
+        }
+        &.active .angle {
+            transform: rotate(180deg);
+        }
+        small {
+            // margin-right: 1rem;
+        }
+    }
+    .nav-group {
+        margin: $gutter-width/2 0 0;
+        border-top: 1px solid #e0e0e0;
+        &.menu {
+            display: none;
+        }
+    }
+}
+
+.side-panel.open {
+    transform: none;
+}
+
+#js-cover {
+    position: 'fixed';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 995;
+    cursor: pointer;
+    display: none;
+}
+
+@media #{$medium-and-up} {
+    .side-panel {
+        padding-top: $navbar-height;
+    }
+}
+
+@media (min-width: $main-inner-min-width + $aside-width) {
+    .side-panel {
+        transform: none;
+    }
+    .main-panel {
+        padding-left: $aside-width;
+    }
+    .button-collapse {
+        display: none;
+    }
+    .navbar .brand-logo i.material-icons {
+        display: inline-block;
+    }
+    #js-cover {
+        display: none !important;
+    }
+    body.covered {
+        overflow: auto;
+    }
+}

@@ -1,0 +1,59 @@
+{{ partial "header.html" . }} {{partial "sidebar.html" .}}
+{{ $tocable := and (index .Params "toc" | default  true) (gt .WordCount 400) }}
+<main id="single" role="main" class="main-panel {{if eq $tocable false}} no-toc {{end}}">
+  <section class="container">
+    <div class="inner">
+       {{ partial "breadcrumb.html" . }}
+      <div class="toc-panel">
+        {{ .TableOfContents }}
+      </div>
+      <div class="post">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</span>
+            <span class="card-meta">
+              <time>
+                <!-- <i class="label material-icons">date_range</i> -->
+                <span>{{ .Date.Format " 2006-6-2" }}</span>
+            </time>
+            <address>
+              {{ range .Params.categories }}
+              <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
+            </address>
+
+            </span>
+
+            <article class="article">
+              {{.Content }}
+            </article>
+
+          </div>
+          {{ with .Params.tags }}
+          <div class="card-action">
+            <i class="material-icons">local_offer</i> {{ range . }}
+            <a class="tag" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">#{{ . }}</a>&nbsp; {{ end }}
+          </div>
+          {{ end }}
+          <div class="card-action">
+            {{ partial "disqus.html" . }}
+          </div>
+        </div>
+        {{ if eq .Type "post" }}
+          <div class="pagination-single">
+            {{ with .Next }} {{if eq .Type "post" }}
+            <span class="pagination-item previous">
+            <i class="material-icons">navigate_before</i>
+            <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a>
+          </span> {{ end }}{{ end }} 
+          {{ with .Prev }}{{if eq .Type "post"}}
+            <span class="pagination-item next">
+            <i class="material-icons">navigate_next</i>
+            <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a> 
+          </span> {{ end }}{{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ partial "footer.html" . }}
+</main>

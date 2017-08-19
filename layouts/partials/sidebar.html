@@ -1,0 +1,63 @@
+<aside class="side-panel">
+  <div class="inner">
+    <div class="profile">
+      <div class="profile__bg" style="background-image:url('{{ .Site.Params.profile_bg }}')"></div>
+      <img class="profile__avatar" src="{{ .Site.Params.logo }}" alt="avatar" /> {{ with .Site.Params.author }}
+      <h3 class="profile__name">{{ . }}</h3>{{ end }} {{ with .Site.Params.subtitle }}
+      <p class="profile__desc">{{ . }}</p>{{ end }}
+    </div>
+    <ul class="nav-group show-on-medium-and-down menu ">
+      {{ with .Site.Params.Menu }} {{ range .}}
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="{{.url }}">
+          <i class="material-icons">{{ index . "icon" | default "folder"}}</i>
+          <span class="content">{{ .name }}</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      {{end}} {{ end }}
+    </ul>
+    <ul class="collapsible nav-group" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">whatshot</i>
+          <span class="content">Latest</span>
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            {{ range first 10 (where $.Site.Pages "Type" "post")}}
+            <a class="collection-item" href="{{ .Permalink }}">{{ .Title }}</a> {{ end }}
+          </div>
+        </div>
+      </li>
+      {{ range $key, $value := .Site.Taxonomies }} {{ $keyLocal := lower $key | singularize | index $.Site.Params.Tax}}
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">{{index $keyLocal "icon"}}</i>
+          <span class="content">{{ index $keyLocal "name" | humanize }} </span>
+          <!-- | singularize | upper -->
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            {{ range $value.ByCount }}
+            <a class="collection-item" href="{{$.Site.BaseURL}}{{$key}}/{{ .Name | urlize }}"> {{ .Name }}<span class="badge">{{ .Count }}</span></a>            {{end }}
+          </div>
+        </div>
+      </li>
+      {{end}}
+    </ul>
+    <ul class="nav-group external-link">
+      {{ with .Site.Params.ExternalLink }} {{ range . }}
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="{{.url}}" target="_blank">
+          <i class="material-icons" data-svg-icon="{{.icon}}">{{ .icon }}</i>
+          <span class="content">{{ .name }}<small>{{ .id }}</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      {{ end }} {{ end }}
+    </ul>
+  </div>
+</aside>

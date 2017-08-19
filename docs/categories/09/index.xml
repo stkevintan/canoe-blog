@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>09 on World of Forks</title>
+    <link>https://stkevintan.github.io/categories/09/</link>
+    <description>Recent content in 09 on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Wed, 17 Sep 2014 00:45:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://stkevintan.github.io/categories/09/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用Sublime Text 3 dev 做网页开发的配置</title>
+      <link>https://stkevintan.github.io/post/sublime-config-web/</link>
+      <pubDate>Wed, 17 Sep 2014 00:45:07 +0800</pubDate>
+      
+      <guid>https://stkevintan.github.io/post/sublime-config-web/</guid>
+      <description>文件：click here</description>
+    </item>
+    
+  </channel>
+</rss>

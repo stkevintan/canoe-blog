@@ -1,0 +1,245 @@
+.article {
+    font-size: 14px;
+    line-height: 1.7em
+}
+
+.article:after {
+    content: " ";
+    display: block;
+    clear: both
+}
+
+.article .wrapper {
+    padding: 116px 16px 92px
+}
+
+.article {
+    h1 {
+        font-size: 30px;
+        line-height: 1.333334em;
+    }
+    h2 {
+        font-size: 25px;
+        line-height: 1.4em;
+        // padding-top: 92px;
+        // margin-top: -56px
+    }
+    h3,
+    h4 {
+        font-size: 20px;
+        // padding-top: 76px;
+        // margin-top: -56px
+    }
+}
+
+.article h1,
+.article h2 {
+    color: $primary-color;
+}
+
+.article code:not(.hljs) {
+    background: #eee;
+    padding: 0 8px;
+    color: $primary-color;
+}
+
+.article kbd {
+    color: #555;
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    border-bottom-color: #bbb;
+    border-radius: 3px;
+    box-shadow: inset 0 -1px 0 #bbb
+}
+
+.article h1 {
+    border-bottom: 1px solid rgba(0, 0, 0, .12)
+}
+
+.article a {
+    border-bottom: 1px dotted
+}
+
+.article a:focus,
+.article a:hover {
+    color: $primary-color;
+}
+
+.article .headerlink {
+    color: rgba(0, 0, 0, .26);
+    border: none
+}
+
+.article table {
+    box-shadow: 0 1.5px 3px rgba(0, 0, 0, .24), 0 3px 8px rgba(0, 0, 0, .05);
+    border-radius: 3px
+}
+
+.article table th {
+    background: $primary-color;
+    color: #fff
+}
+
+.article table td {
+    border-top: 1px solid rgba(0, 0, 0, .05)
+}
+
+.article blockquote {
+    border-left: 2px solid $primary-color;
+    color: $off-black-light-1;
+    background: #fafafa;
+}
+
+.article .headerlink {
+    float: right;
+    margin-left: 20px;
+    font-size: 14px
+}
+
+h1 .article .headerlink {
+    display: none
+}
+
+.article ol,
+.article p,
+.article ul {
+    margin-top: 1.5em
+}
+
+.article li,
+.article li ol,
+.article li ul {
+    margin-top: .75em
+}
+
+.article li {
+    margin-left: 18px
+}
+
+.article li p {
+    display: inline
+}
+
+//https://stackoverflow.com/questions/7250381/html-code-for-the-dot
+.article ul>li:before {
+    content: "\25CF";
+    display: block;
+    color: $off-black-light-1;
+    float: left;
+    font-size: 16px;
+    width: 1em;
+    margin-left: -1em;
+    vertical-align: middle;
+    line-height: 23px;
+}
+
+.article p>code {
+    white-space: nowrap;
+    padding: 2px 4px
+}
+
+.article kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    line-height: 10px
+}
+
+.article hr {
+    margin-top: 1.5em
+}
+
+.article img {
+    max-width: 100%
+}
+
+.article pre {
+    padding: 16px;
+    margin: 1.5em -16px 0;
+    line-height: 1.5em;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+.article table {
+    margin: 1.5em 0 1.5em;
+    font-size: 13px;
+    overflow: hidden
+}
+
+.no-js .article table {
+    display: inline-block;
+    max-width: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch
+}
+
+.article table th {
+    min-width: 100px;
+    font-size: 12px;
+    text-align: left
+}
+
+.article table td,
+.article table th {
+    padding: 12px 16px;
+    vertical-align: top
+}
+
+.article blockquote {
+    padding-left: 16px
+}
+
+.article .data {
+    margin: 1.5em -16px;
+    padding: 1.5em 0;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    text-align: center
+}
+
+.article .data table {
+    display: inline-block;
+    margin: 0 16px;
+    text-align: left
+}
+
+.article h3 {
+    font-weight: 700
+}
+
+.article h4 {
+    font-weight: 400;
+    font-style: italic
+}
+
+.article h2 a,
+.article h3 a,
+.article h4 a,
+.article h5 a,
+.article h6 a {
+    font-weight: 400;
+    font-style: normal
+}
+
+.post-summary .article {
+    h1 {
+        font-size: 25px;
+        line-height: 1.333334em;
+    }
+    h2 {
+        font-size: 20px;
+        line-height: 1.4em;
+        padding: 0;
+        margin: 10px 0;
+    }
+    h3,
+    h4 {
+        font-size: 15px;
+        padding: 0;
+        margin: 10px 0;
+    }
+    pre {
+        padding: 0;
+        margin: 10px 0;
+    }
+}

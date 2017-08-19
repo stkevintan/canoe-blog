@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>11 on World of Forks</title>
+    <link>https://stkevintan.github.io/categories/11/</link>
+    <description>Recent content in 11 on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Fri, 07 Nov 2014 04:15:54 +0800</lastBuildDate>
+    
+	<atom:link href="https://stkevintan.github.io/categories/11/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>FFT求快速卷积的思考</title>
+      <link>https://stkevintan.github.io/post/fft-thoughts/</link>
+      <pubDate>Fri, 07 Nov 2014 04:15:54 +0800</pubDate>
+      
+      <guid>https://stkevintan.github.io/post/fft-thoughts/</guid>
+      <description>离散型卷积的定义是：$$y(n)=\sum_{m=0}^{n} x(m)h(n-m)$$ 注意，h函数是反转的。 在Chipher Messages一题中，b串需要反转再</description>
+    </item>
+    
+    <item>
+      <title>（转）关于卷积的一个血腥的讲解，看完给跪了</title>
+      <link>https://stkevintan.github.io/post/intro-of-fft/</link>
+      <pubDate>Thu, 06 Nov 2014 04:40:10 +0800</pubDate>
+      
+      <guid>https://stkevintan.github.io/post/intro-of-fft/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

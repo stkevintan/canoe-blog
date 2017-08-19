@@ -1,0 +1,646 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Posts | World of Forks
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://stkevintan.github.io/post/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://stkevintan.github.io/css/styles-d3e13fbeab.css">
+  
+  <link href="https://stkevintan.github.io/index.xml" rel="alternate" type="application/rss+xml" title="World of Forks" />
+  <link href="https://stkevintan.github.io/index.xml" rel="feed" type="application/rss+xml" title="World of Forks" />
+
+  
+  <link href="https://stkevintan.github.io/favicon.ico" rel="shortcut icon">
+</head>
+
+
+
+<body>
+  
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <form action="//www.google.com/search" method="get" accept-charset="utf-8">
+        <input type="hidden" name="sitesearch" value="https://stkevintan.github.io">
+        <div class="input-field">
+          <input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"/>
+        </div>
+    </form>
+    </div>
+  </div>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-wrapper container">
+        <a href="#" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="javascript:void(0)" class="brand-logo"><i class="material-icons">restaurant_menu</i> 
+          World of Forks
+        </a>
+
+        <ul class="right">
+           
+          <li ><a class="modal-trigger" href='#modal1'><i class="material-icons">search</i></a></li>
+          <li><a href='https://stkevintan.github.io/index.xml' target="_blank" ><i class="material-icons">rss_feed</i></a></li>
+        </ul>
+        
+          <ul class="center tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="/" class=' active '>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="/archive/" class=''>
+                Archive
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="/about/" class=''>
+                About
+              </a>
+            </li>
+             
+          </ul>
+         
+      </div>
+    </nav>
+  </div> 
+<aside class="side-panel">
+  <div class="inner">
+    <div class="profile">
+      <div class="profile__bg" style="background-image:url('/img/profile-bg-7c6e6a1672.jpg')"></div>
+      <img class="profile__avatar" src="/img/avatar-66318e716f.png" alt="avatar" /> 
+      <h3 class="profile__name">Kevin Tan</h3> 
+      <p class="profile__desc">Tempora mutantur, nos et mutamur in illis ...</p>
+    </div>
+    <ul class="nav-group show-on-medium-and-down menu ">
+       
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/">
+          <i class="material-icons">home</i>
+          <span class="content">Home</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/archive/">
+          <i class="material-icons">archive</i>
+          <span class="content">Archive</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="/about/">
+          <i class="material-icons">person</i>
+          <span class="content">About</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+       
+    </ul>
+    <ul class="collapsible nav-group" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">whatshot</i>
+          <span class="content">Latest</span>
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-7-helper-element/">Polymer 2.0 文档笔记(7) Helper Element</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-6-data-binding/">Polymer 2.0 文档笔记(6) Data Binding</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-5-observers-and-computed-properties/">Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-4-data-system/">Polymer 2.0 文档笔记(4) Data System</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-3-events/">Polymer 2.0 文档笔记(3) Events</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-2-shadowdom/">Polymer 2.0 文档笔记(2) ShadowDOM</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/polymer-2-1-custom-elements/">Polymer 2.0 文档笔记(1) Custom Elements</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/hello-world/">网易云音乐新API浅析</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/shadowsocks-account/">Shadowsocks免费账号网址集</a> 
+            <a class="collection-item" href="https://stkevintan.github.io/post/asp-net-mvc4note2/">ASP.NET MVC 4笔记（二）</a> 
+          </div>
+        </div>
+      </li>
+       
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">view_list</i>
+          <span class="content">Category </span>
+          
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/acm"> acm<span class="badge">18</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/web"> web<span class="badge">7</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/08"> 08<span class="badge">3</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/07"> 07<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/10"> 10<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/11"> 11<span class="badge">2</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/02"> 02<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/09"> 09<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/asp.net"> asp.net<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/ide/editor"> ide/editor<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iocategories/wine"> wine<span class="badge">1</span></a>            
+          </div>
+        </div>
+      </li>
+       
+      <li>
+        <div class="collapsible-header waves-effect waves-indigo">
+          <i class="material-icons">local_offer</i>
+          <span class="content">Tag </span>
+          
+          <i class="material-icons angle">expand_more</i>
+        </div>
+        <div class="collapsible-body">
+          <div class="collection">
+            
+            <a class="collection-item" href="https://stkevintan.github.iotags/polymer"> polymer<span class="badge">7</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/tarjan"> tarjan<span class="badge">5</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E5%9B%BE%E8%AE%BA"> 图论<span class="badge">5</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/lca"> lca<span class="badge">3</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/asp.net-mvc4"> asp.net-mvc4<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/c"> c#<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/rmq"> rmq<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E5%80%8D%E5%A2%9E"> 倍增<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%9A%B4%E5%8A%9B"> 暴力<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%A0%91%E5%BD%A2dp"> 树形dp<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84"> 树的直径<span class="badge">1</span></a>            
+            <a class="collection-item" href="https://stkevintan.github.iotags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B"> 矩阵暴力<span class="badge">1</span></a>            
+          </div>
+        </div>
+      </li>
+      
+    </ul>
+    <ul class="nav-group external-link">
+       
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="https://github.com/stkevintan" target="_blank">
+          <i class="material-icons" data-svg-icon="github">github</i>
+          <span class="content">Github<small>@stkevintan</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="https://twitter.com/kevinsfork" target="_blank">
+          <i class="material-icons" data-svg-icon="twitter">twitter</i>
+          <span class="content">Twitter<small>@kevinsfork</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo" href="mailto:stkevintan@zju.edu.cn" target="_blank">
+          <i class="material-icons" data-svg-icon="email">email</i>
+          <span class="content">E-mail<small>stkevintan@foxmail.com</small></span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+       
+    </ul>
+  </div>
+</aside>
+<main id="index" role="main" class="main-panel">
+  <section class="container">
+    <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+   
+   
+   
+  
+    <a class="breadcrumb" href="https://stkevintan.github.io"><i class="material-icons">location_on</i>Home</a>
+    
+       
+      
+      
+      
+       
+    
+       
+      
+      
+      
+       
+        
+          <a class="breadcrumb" href='https://stkevintan.github.io/post//https://stkevintan.github.io/post/'>Post</a>
+         
+       
+    
+       
+      
+      
+      
+       
+     
+</div>
+    <div class="waterfall">
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/asp-net-mvc4-note1-simplemembership/">ASP.NET MVC4笔记（一） 扩展Simplemembership </a></span>
+            <span class="card-meta">
+              <time> 2015-6-24</time>
+              <address>
+                
+              </address>
+            </span>
+            <article class="article"><pre><code class="language-C#">using System.Web.Mvc;
+
+namespace MvcClassManageSystem.ActionFilters
+{
+    public class LogStateFilterAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            base.OnActionExecuting(filterContext);
+            //string controller = filterContext.RouteData.Values[&quot;controller&quot;].ToString();
+            //string action = filterContext.RouteData.Values[&quot;action&quot;].ToString();
+            //System.Diagnostics.Debug.WriteLine(&quot;OnAction:&quot; + controller + &quot;/&quot; + action);
+
+            if (WebMatrix.WebData.WebSecurity.IsAuthenticated == true)
+            {
+                filterContext.Result = new RedirectToRouteResult(new System.Web.Routing.RouteValueDictionary(new { Controller = &quot;Home&quot;, action = &quot;Index&quot; }));
+            }
+        }
+    }
+}
+</code></pre>
+
+<p></p>...<a href="https://stkevintan.github.io/post/asp-net-mvc4-note1-simplemembership/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/zoj-month-contest-d-determinant-and-matrix/">ZOJ month contest D.Determinant and Matrix </a></span>
+            <span class="card-meta">
+              <time> 2014-6-8</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/acm">ACM</a>
+                
+              </address>
+            </span>
+            <article class="article"><hr />
+
+<p><center style="color: #000000;"><span style="color: green;">Time Limit: </span>2 Seconds      <span style="color: green;">Memory Limit: </span>65536 KB</center></p>
+
+<hr />
+
+<p>##Description
+Recently, LBH is learning the curse linear algebra. Thus he is very interested in matrix and determinant now. In order to practice his ability of solving the problem of linear algebra, he just invent some problems by himself. Once the problems was create, he would solve it immediately. However, he meet a problem that was so hard that he couldn&rsquo;t work out even though racked his brains. The problem was described as follow:</p>...<a href="https://stkevintan.github.io/post/zoj-month-contest-d-determinant-and-matrix/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/fft-thoughts/">FFT求快速卷积的思考 </a></span>
+            <span class="card-meta">
+              <time> 2014-6-7</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/11">11</a>
+                
+              </address>
+            </span>
+            <article class="article">离散型卷积的定义是：$$y(n)=\sum_{m=0}^{n} x(m)h(n-m)$$ 注意，h函数是反转的。 在Chipher Messages一题中，b串需要反转再...<a href="https://stkevintan.github.io/post/fft-thoughts/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/baylor6622-absurdistan-roads/">baylor 6622 Absurdistan Roads（ NWERC Contest） </a></span>
+            <span class="card-meta">
+              <time> 2014-6-7</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/acm">ACM</a>
+                
+              </address>
+            </span>
+            <article class="article"><p>原题pdf：<a href="https://icpcarchive.ecs.baylor.edu/external/66/6622.pdf">click here</a></p>
+
+<h3 id="description">Description</h3>
+
+<p>The people of Absurdistan discovered how to build roads only last year. After the discovery, every city
+decided to build their own road connecting their city with another city. Each newly built road can be
+used in both directions.</p>
+
+<p>Absurdistan is full of surprising coincidences. It took all N cities precisely one year to build their
+roads. And even more surprisingly, in the end it was possible to travel from every city to every other
+city using the newly built roads.</p>...<a href="https://stkevintan.github.io/post/baylor6622-absurdistan-roads/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/timus-1996-cipher-message-3-kmpfft/">Timus 1996 Cipher Message 3 KMP&#43;FFT求卷积 </a></span>
+            <span class="card-meta">
+              <time> 2014-6-6</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/acm">ACM</a>
+                
+              </address>
+            </span>
+            <article class="article"><p>题目链接：<a href="http://acm.timus.ru/problem.aspx?space=1&amp;amp;num=1996">click here</a>
+##description
+Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has been the head of the Empire Armed Forces. However, the Rebel movement is strong like it never used to be. One of the rebel leaders, Princess Leia from Alderaan, managed to get hold of secret blueprints of the Death Star, the imperial war station.</p>
+
+<p>The Princess was going to deliver the station plan to the secret base for further analysis and searching for vulnerable spots. But her ship was attacked by the space destroyer &ldquo;Devastator&rdquo; headed by Darth Vader. At the last moment Princess Leia managed to send her findings to one of the closest planet called Tatooine with her droid R2-D2. Quite conveniently, an old friend of her father Obi-Wan Kenobi lives on that planet.</p>...<a href="https://stkevintan.github.io/post/timus-1996-cipher-message-3-kmpfft/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/intro-of-fft/">（转）关于卷积的一个血腥的讲解，看完给跪了 </a></span>
+            <span class="card-meta">
+              <time> 2014-6-6</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/acm">ACM</a>
+                
+                  <a href="https://stkevintan.github.io/categories/11">11</a>
+                
+              </address>
+            </span>
+            <article class="article">...<a href="https://stkevintan.github.io/post/intro-of-fft/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/">ACM International Collegiate Programming Contest Asia Regional Contest, Tokyo Problem D Space Golf </a></span>
+            <span class="card-meta">
+              <time> 2014-6-20</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/acm">ACM</a>
+                
+                  <a href="https://stkevintan.github.io/categories/10">10</a>
+                
+              </address>
+            </span>
+            <article class="article"><p>原题pdf：<a href="http://judge.u-aizu.ac.jp/onlinejudge/contest/ICPCOOC2014/D.pdf">click here</a>
+<br/></p>
+
+<hr />
+
+<p>日本的亚洲区域赛真心简单啊。两个小时就刷了5题有余了。排名第一的队伍才做出7道。</p>
+
+<p>题目真心长的可以了，看了半个小时才明白。。</p>
+
+<p>题意其实也就是太空中向前方抛小球，问小球能够穿过N个障碍物后到达制定地点的最小初始速度是多少。非常暴力的模拟题。离散化后直接枚举弹跳的次数再取最小值即可。注意45°方向能成功的话，那还是45°最优。
+</p>...<a href="https://stkevintan.github.io/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/wine-font-config/">优化Wine程序的字体显示 </a></span>
+            <span class="card-meta">
+              <time> 2014-6-13</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/wine">Wine</a>
+                
+                  <a href="https://stkevintan.github.io/categories/10">10</a>
+                
+              </address>
+            </span>
+            <article class="article"><p>默认Wine的字体太难看，而且有时候还会显示不出来。开启Wine字体的反锯齿及平滑功能以及将字体映射成文泉驿微米黑的方法是：</p>
+
+<p>1.新建文本文件a.reg，放入如下内容：
+</p>...<a href="https://stkevintan.github.io/post/wine-font-config/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/sublime-config-web/">用Sublime Text 3 dev 做网页开发的配置 </a></span>
+            <span class="card-meta">
+              <time> 2014-6-17</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/ide/editor">IDE/Editor</a>
+                
+                  <a href="https://stkevintan.github.io/categories/09">09</a>
+                
+              </address>
+            </span>
+            <article class="article">文件：click here...<a href="https://stkevintan.github.io/post/sublime-config-web/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="waterfall__item">
+        <div class="card post-summary">
+          <div class="card-content">
+            <span class="card-title"><a href="https://stkevintan.github.io/post/hdu-4965-fast-matrix-calculation/">HDU 4965 Fast Matrix Calculation </a></span>
+            <span class="card-meta">
+              <time> 2014-6-20</time>
+              <address>
+                
+                  <a href="https://stkevintan.github.io/categories/acm">ACM</a>
+                
+              </address>
+            </span>
+            <article class="article"><p><strong><span style="font-family: Arial; font-size: 12px; font-weight: bold; color: green;">Time Limit: <sup>2000</sup>&frasl;<sub>1000</sub> MS (Java/Others)    Memory Limit: <sup>131072</sup>&frasl;<sub>131072</sub> K (Java/Others)
+Total Submission(s): 206    Accepted Submission(s): 116
+</span></strong>
+<div class="panel_title" align="left">Problem Description</div>
+<div class="panel_content"></p>
+
+<p>One day, Alice and Bob felt bored again, Bob knows Alice is a girl who loves math and is just learning something about matrix, so he decided to make a crazy problem for her.</p>
+
+<p>Bob has a six-faced dice which has numbers 0, 1, 2, 3, 4 and 5 on each face. At first, he will choose a number N (4 &lt;= N &lt;= 1000), and for N times, he keeps throwing his dice for K times (2 &lt;=K &lt;= 6) and writes down its number on the top face to make an N*K matrix A, in which each element is not less than 0 and not greater than 5. Then he does similar thing again with a bit difference: he keeps throwing his dice for N times and each time repeat it for K times to write down a K*N matrix B, in which each element is not less than 0 and not greater than 5. With the two matrix A and B formed, Alice’s task is to perform the following 4-step calculation.
+
+Step 1: Calculate a new N*N matrix C = A*B.
+Step 2: Calculate M = C^(N*N).
+Step 3: For each element x in M, calculate x % 6. All the remainders form a new matrix M’.
+Step 4: Calculate the sum of all the elements in M’.</p>...<a href="https://stkevintan.github.io/post/hdu-4965-fast-matrix-calculation/" style="border-bottom: none">Read More</a></article>
+          </div>
+          
+          <div class="card-action">
+            <i class="material-icons">local_offer</i> 
+            
+              <a href="https://stkevintan.github.io/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B">#[矩阵,暴力]</a>&nbsp;
+            
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    <div class="center">
+      <div class="pagination">
+         
+
+<ul class="pagination">
+    
+    <li>
+        <a href="/post/" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li
+    >
+    <a href="/post/" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/post/">1</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    class="active"><a href="/post/page/2/">2</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/post/page/3/">3</a></li>
+    
+    
+    
+    
+    
+     
+        
+        
+    
+    
+    <li
+    ><a href="/post/page/4/">4</a></li>
+    
+    
+    <li
+    >
+    <a href="/post/page/3/" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li>
+        <a href="/post/page/4/" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
+
+      </div>
+    </div>
+  </section>
+  
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">World of Forks</h5>
+        <p class="grey-text text-lighten-4">Theme <a href="" target="_blank">YAMT</a> designed by <a href="#!">Kevin Tan</a> with ❤</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">My Friends</h5>
+        <ul>
+          
+          <li><a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a></li>
+          
+          <li><a class="grey-text text-lighten-3" href="https://hclmaster.github.io/" target="_blank">HclMaster</a></li>
+          
+          <li><a class="grey-text text-lighten-3" href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">Copyleft@Kevin Tan</div>
+  </div>
+</footer>
+
+
+
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/materialize.min.js"></script>
+<script type="text/javascript" src="/js/index-51aa3898b6.js"></script>
+
+
+
+
+
+</body>
+
+</html>
+</main>
