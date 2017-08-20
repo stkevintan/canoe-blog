@@ -4,6 +4,7 @@
   <section class="container">
     <div class="inner">
        {{ partial "breadcrumb.html" . }}
+       <section class="post-wrapper">
       <div class="toc-panel">
         {{ .TableOfContents }}
       </div>
@@ -53,6 +54,7 @@
           </div>
         {{ end }}
       </div>
+    </section>
     </div>
   </section>
   {{ partial "footer.html" . }}
