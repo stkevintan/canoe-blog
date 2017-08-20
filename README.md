@@ -1,5 +1,5 @@
 # hugo-YAMT-theme
-Yet Another Material Theme for hugo.
+Yet Another Material Theme for hugo. [demo](http://keyin.me). 
 
 ## Feature
 
@@ -7,6 +7,8 @@ Yet Another Material Theme for hugo.
 2. Full screen / Responsive layout
 3. Material Design
 
-## Demo
-<http://keyin.me>
 
+## Snapshot
+
+![home page](https://raw.githubusercontent.com/stkevintan/hugo-YAMT-theme/master/snapshots/home.png)
+![article page](https://raw.githubusercontent.com/stkevintan/hugo-YAMT-theme/master/snapshots/article.png)
