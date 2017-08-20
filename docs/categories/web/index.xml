@@ -2,76 +2,76 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web on World of Forks</title>
-    <link>https://stkevintan.github.io/sfork/categories/web/</link>
+    <link>http://keyin.me/categories/web/</link>
     <description>Recent content in Web on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Sun, 02 Jul 2017 22:56:11 +0800</lastBuildDate>
     
-	<atom:link href="https://stkevintan.github.io/sfork/categories/web/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://keyin.me/categories/web/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Polymer 2.0 文档笔记(7) Helper Element</title>
-      <link>https://stkevintan.github.io/sfork/post/polymer-2-7-helper-element/</link>
+      <link>http://keyin.me/post/polymer-2-7-helper-element/</link>
       <pubDate>Sun, 02 Jul 2017 22:56:11 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/polymer-2-7-helper-element/</guid>
+      <guid>http://keyin.me/post/polymer-2-7-helper-element/</guid>
       <description>Polymer提供一系列的自定义元素来简化一些共有的数据绑定逻辑： dom-repeat 遍历显示数组 array-selector 数组选择器 dom-if 条件显示 dom-bind 自动绑定 2.0 tip. The data binding helper elements are bundled in to the backward-compatible, polymer.html</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(6) Data Binding</title>
-      <link>https://stkevintan.github.io/sfork/post/polymer-2-6-data-binding/</link>
+      <link>http://keyin.me/post/polymer-2-6-data-binding/</link>
       <pubDate>Sun, 02 Jul 2017 22:55:28 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/polymer-2-6-data-binding/</guid>
+      <guid>http://keyin.me/post/polymer-2-6-data-binding/</guid>
       <description>A data binding connects data from a custom element (the host element) to a property or attribute of an element in its local DOM (the child or target element). The host element data can be a property or sub-property represented by a data path, or data generated based on one or more paths. 数据绑定能够将host元素和tar</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</title>
-      <link>https://stkevintan.github.io/sfork/post/polymer-2-5-observers-and-computed-properties/</link>
+      <link>http://keyin.me/post/polymer-2-5-observers-and-computed-properties/</link>
       <pubDate>Sun, 02 Jul 2017 22:54:06 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/polymer-2-5-observers-and-computed-properties/</guid>
+      <guid>http://keyin.me/post/polymer-2-5-observers-and-computed-properties/</guid>
       <description>有两种监听器： 1. 简单监听器，只能监听单一的property 2. 复杂监听器：可以监听一到多个property 每个监听器都有一个或多个 依赖 ，当依赖</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(4) Data System</title>
-      <link>https://stkevintan.github.io/sfork/post/polymer-2-4-data-system/</link>
+      <link>http://keyin.me/post/polymer-2-4-data-system/</link>
       <pubDate>Sun, 02 Jul 2017 22:53:02 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/polymer-2-4-data-system/</guid>
+      <guid>http://keyin.me/post/polymer-2-4-data-system/</guid>
       <description>Polymer提供观察函数、计算属性、数据绑定三大模型功能： &amp;gt;- Observers Callbacks invoked when data changes. &amp;gt;- Computed properties Virtual properties computed based on other properties, and recomputed when the input data changes. &amp;gt;- Data bindings Annotations that update the properties, attributes, or text content of a DOM node</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(3) Events</title>
-      <link>https://stkevintan.github.io/sfork/post/polymer-2-3-events/</link>
+      <link>http://keyin.me/post/polymer-2-3-events/</link>
       <pubDate>Sun, 02 Jul 2017 22:52:21 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/polymer-2-3-events/</guid>
+      <guid>http://keyin.me/post/polymer-2-3-events/</guid>
       <description>Normal Events Polymer elements can use the standard DOM APIs for creating, dispatching, and listening for events. Polymer also provides annotated event listeners, which allow you to specify event listeners declaratively as part of the element&amp;rsquo;s DOM template. Add annotated event listeners 这个其实就是在标签上使用on-event属性。 &amp;lt;dom-module id=&amp;quot;x-custom&amp;quot;&amp;gt; &amp;lt;template&amp;gt; &amp;lt;button on-click=&amp;quot;handleClick&amp;quot;&amp;gt;Kick</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(2) ShadowDOM</title>
-      <link>https://stkevintan.github.io/sfork/post/polymer-2-2-shadowdom/</link>
+      <link>http://keyin.me/post/polymer-2-2-shadowdom/</link>
       <pubDate>Sun, 02 Jul 2017 22:51:37 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/polymer-2-2-shadowdom/</guid>
+      <guid>http://keyin.me/post/polymer-2-2-shadowdom/</guid>
       <description>ShadowDOM API var div = document.createElement(&#39;div&#39;); var shadowRoot = div.attachShadow({mode: &#39;open&#39;}); shadowRoot.innerHTML = &#39;&amp;lt;h1&amp;gt;Hello Shadow DOM&amp;lt;/h1&amp;gt;&#39;; ShadowDOM Composition 主要概念： - LightDOM: 元素的实际子孙节点，浏览器不会对LightDOM做任何的修改和移动。但是渲染的时候会渲染到</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(1) Custom Elements</title>
-      <link>https://stkevintan.github.io/sfork/post/polymer-2-1-custom-elements/</link>
+      <link>http://keyin.me/post/polymer-2-1-custom-elements/</link>
       <pubDate>Sun, 02 Jul 2017 22:49:25 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/polymer-2-1-custom-elements/</guid>
+      <guid>http://keyin.me/post/polymer-2-1-custom-elements/</guid>
       <description>https://www.polymer-project.org/2.0/docs/devguide/custom-elements Custom element names. By specification, the custom element&amp;rsquo;s name must start with a lower-case ASCII letter and must contain a dash (-). There&amp;rsquo;s also a short list of prohibited element names that match existing names. For details, see the Custom elements core concepts section in the HTML specification. 自定义元素的命名规则： 按照规范，自定义元素</description>
     </item>
     

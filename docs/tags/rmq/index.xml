@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Rmq on World of Forks</title>
-    <link>https://stkevintan.github.io/sfork/tags/rmq/</link>
+    <link>http://keyin.me/tags/rmq/</link>
     <description>Recent content in Rmq on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Fri, 01 Aug 2014 22:30:11 +0800</lastBuildDate>
     
-	<atom:link href="https://stkevintan.github.io/sfork/tags/rmq/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://keyin.me/tags/rmq/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>POJ1989 Distance Queries</title>
-      <link>https://stkevintan.github.io/sfork/post/poj1989-distance-queries/</link>
+      <link>http://keyin.me/post/poj1989-distance-queries/</link>
       <pubDate>Fri, 01 Aug 2014 22:30:11 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/poj1989-distance-queries/</guid>
+      <guid>http://keyin.me/post/poj1989-distance-queries/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;Farmer John&amp;rsquo;s cows refused to run in his marathon since he chose a path much too long for their leisurely lifestyle. He therefore wants to find a path of a more reasonable length. The input to this problem consists of the same input as in &amp;ldquo;Navigation Nightmare&amp;rdquo;,followed by a line containing a single integer K, followed by K &amp;ldquo;distance queries&amp;rdquo;. Each distance query is a line of input containing two integers, giving the numbers of two farms between which FJ is interested in computing distance (measured in the length of the roads along the path between the two farms). Please answer FJ&amp;rsquo;s distance queries as quickly as possible!

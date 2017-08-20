@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>02 on World of Forks</title>
-    <link>https://stkevintan.github.io/sfork/categories/02/</link>
+    <link>http://keyin.me/categories/02/</link>
     <description>Recent content in 02 on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Tue, 24 Feb 2015 18:50:00 +0800</lastBuildDate>
     
-	<atom:link href="https://stkevintan.github.io/sfork/categories/02/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://keyin.me/categories/02/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ASP.NET MVC 4笔记（二）</title>
-      <link>https://stkevintan.github.io/sfork/post/asp-net-mvc4note2/</link>
+      <link>http://keyin.me/post/asp-net-mvc4note2/</link>
       <pubDate>Tue, 24 Feb 2015 18:50:00 +0800</pubDate>
       
-      <guid>https://stkevintan.github.io/sfork/post/asp-net-mvc4note2/</guid>
+      <guid>http://keyin.me/post/asp-net-mvc4note2/</guid>
       <description>有Timestamp修饰的表在修改已有的记录是一定要将该字段复制，也就是说一定要在Edit网页里面添加一行： @Html.HiddenFor(model =&amp;gt; model.RowVersion) WebSecurity.C</description>
     </item>
     
