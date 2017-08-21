@@ -15,8 +15,6 @@ const replace = require('gulp-rev-replace');
 const $if = require('gulp-if');
 const runseq = require('run-sequence');
 const pngquant = require('imagemin-pngquant');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('cssnano');
 const cp = require('child_process');
 const fs = require('fs');
 const toml = require('toml');
@@ -61,8 +59,18 @@ $.task('style', () => {
   return $.src(src.css)
     .pipe(plumber())
     .pipe(changed(dest.css))
+    .pipe($if(!prod, sourcemaps.init()))
     .pipe(sass().on('error', sass.logError))
-    .pipe($if(prod, postcss()))
+    .pipe($if(!prod, sourcemaps.write()))
+    .pipe(
+      $if(
+        prod,
+        postcss([
+          require('autoprefixer')({ browsers: c.browserslist }),
+          require('cssnano')()
+        ])
+      )
+    )
     .pipe($.dest(dest.css))
     .pipe(bs.stream({ match: '**/*.css' }));
 });
@@ -72,7 +80,20 @@ $.task('script', () => {
     .pipe(plumber())
     .pipe(changed(dest.js))
     .pipe($if(!prod, sourcemaps.init()))
-    .pipe(babel())
+    .pipe(
+      babel({
+        presets: [
+          [
+            'env',
+            {
+              targets: {
+                browsers: c.browserslist
+              }
+            }
+          ]
+        ]
+      })
+    )
     .pipe($if(!prod, sourcemaps.write()))
     .pipe($if(prod, uglify()))
     .pipe($.dest(dest.js))
@@ -124,7 +145,7 @@ $.task('ref', () => {
 
 $.task('htmlmin', () => {
   return $.src(`${dest.root}/**/*.{html,xml}`)
-    .pipe($if('*.html',htmlmin({ collapseWhitespace: true })))
+    .pipe($if('*.html', htmlmin({ collapseWhitespace: true })))
     .pipe($.dest(publish.root));
 });
 

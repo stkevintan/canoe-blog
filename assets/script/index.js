@@ -1,4 +1,4 @@
-$(function() {
+$(() => {
   // enable `a` click event inside `li.tab`
   $('.tab').click(function(e) {
     window.location.href = $(this).find('a').prop('href');
@@ -8,24 +8,24 @@ $(function() {
   setAsideToggle();
 });
 
-var setTocToggle = function() {
-  var onscrollSelect = true;
-  var $toc = $('.toc-panel nav');
-  var $footer = $('footer.page-footer');
-  var $post = $('.post .card');
-  var $header = $('nav.navbar');
-  var items = [].slice.call($toc.find('li a'));
+const setTocToggle = () => {
+  let onscrollSelect = true;
+  const $toc = $('.toc-panel nav');
+  const $footer = $('footer.page-footer');
+  const $post = $('.post .card');
+  const $header = $('nav.navbar');
+  const items = Array.from($toc.find('li a'));
 
-  var tocHeight = $toc.outerHeight(); // 包括内边距
-  var postOffset = $post.offset();
-  var headerHeight = $header.height();
-  var correction = headerHeight + 20;
-  var anchor = getAnchor();
+  let tocHeight = $toc.outerHeight(); // 包括内边距
+  let postOffset = $post.offset();
+  let headerHeight = $header.height();
+  let correction = headerHeight + 20;
+  let anchor = getAnchor();
   //function animate above will convert float to int.
   function getAnchor() {
-    return items.map(function(elem) {
-      return Math.floor($(elem.getAttribute('href')).offset().top - correction);
-    });
+    return items.map(elem =>
+      Math.floor($(elem.getAttribute('href')).offset().top - correction)
+    );
   }
 
   function scrolltoElement(elem, cb) {
@@ -43,15 +43,14 @@ var setTocToggle = function() {
     e.preventDefault();
     e.stopPropagation();
     onscrollSelect = false;
-    var $elem = $(this);
     $toc.find('a').removeClass('active');
-    scrolltoElement(this, function() {
+    scrolltoElement(this, () => {
       onscrollSelect = true;
-      $elem.addClass('active');
+      $(this).addClass('active');
     });
   });
 
-  var scrollListener = function() {
+  var scrollListener = () => {
     if (!anchor) return;
     var postHeight = $post.height();
     var scrollTop = $('html').scrollTop() || $('body').scrollTop();
@@ -87,7 +86,7 @@ var setTocToggle = function() {
     }
   };
 
-  $(window).resize(function() {
+  $(window).resize(() => {
     anchor = getAnchor();
     postOffset = $post.offset();
     tocHeight = $toc.outerHeight(); // 包括内边距
@@ -97,20 +96,18 @@ var setTocToggle = function() {
     scrollListener();
   });
 
-  $(window).scroll(function() {
-    scrollListener();
-  });
+  $(window).scroll(() => scrollListener());
 
   scrollListener();
 };
 
-var setAsideToggle = function() {
-  var $aside = $('aside.side-panel');
-  var $body = $('body');
-  var $swither = $('.button-collapse');
-  var $icon = $('i.material-icons', $swither);
-  var $cover = $('<div id="js-cover"></div>');
-  function onSwitcherClick() {
+const setAsideToggle = () => {
+  const $aside = $('aside.side-panel');
+  const $body = $('body');
+  const $swither = $('.button-collapse');
+  const $icon = $('i.material-icons', $swither);
+  const $cover = $('<div id="js-cover"></div>');
+  const onSwitcherClick = () => {
     if ($aside.hasClass('open')) {
       $aside.removeClass('open');
       $cover.fadeOut(400);
@@ -122,13 +119,13 @@ var setAsideToggle = function() {
       $body.addClass('covered');
       $icon.text('close');
     }
-  }
-  $cover.click(function(e) {
+  };
+
+  $cover.click(e => {
     e.stopPropagation();
     e.preventDefault();
     onSwitcherClick();
   });
-
   $cover.appendTo($body);
 
   $swither.click(onSwitcherClick);
