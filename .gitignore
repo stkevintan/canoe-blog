@@ -1,4 +1,4 @@
-static/
-staging/
-.tmp-server/
+/static/
+/staging/
+/.tmp-server/
 node_modules/
