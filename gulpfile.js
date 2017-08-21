@@ -124,7 +124,7 @@ $.task('ref', () => {
 
 $.task('htmlmin', () => {
   return $.src(`${dest.root}/**/*.{html,xml}`)
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe($if('*.html',htmlmin({ collapseWhitespace: true })))
     .pipe($.dest(publish.root));
 });
 
