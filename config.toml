@@ -35,6 +35,7 @@ publishDir = "docs"
     url = "/about/"
 
 
+
 [[Params.FriendLink]]
   name = "Frantic1048"
   url = "https://frantic1048.logdown.com/"
@@ -48,8 +49,9 @@ publishDir = "docs"
   url = "https://whst.github.io/"
 
 
+
 [[Params.ExternalLink]]
-  icon = "github"
+  pre = "<svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>"
   name = "Github"
   id = "@stkevintan"
   url = "https://github.com/stkevintan"
@@ -57,16 +59,18 @@ publishDir = "docs"
 
 
 [[Params.ExternalLink]]
-  icon = "twitter"
+  pre = "<svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>"
   name = "Twitter"
   id = "@kevinsfork"
   url = "https://twitter.com/kevinsfork"
 
 [[Params.ExternalLink]]
-  icon = "email"
-  name = "E-mail"
-  id = "stkevintan@foxmail.com"
-  url = "mailto:stkevintan@zju.edu.cn"
+  pre = "<svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>"
+  name = "Weibo"
+  id = "@白夜繁星o_O"
+  url = "http://weibo.com/kevinclasky"
+
+
 
 [Params.Tax]
   [Params.Tax.Tag]

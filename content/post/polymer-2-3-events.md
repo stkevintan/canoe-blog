@@ -4,8 +4,8 @@ title = "Polymer 2.0 文档笔记(3) Events"
 tags = ["Polymer"]
 categories = ["Web"]
 +++
-
 ## Normal Events
+
 >Polymer elements can use the standard DOM APIs for creating, dispatching, and listening for events. 
 Polymer also provides annotated event listeners, which allow you to specify event listeners declaratively as part of the element's DOM template. 
 
@@ -30,6 +30,7 @@ customElements.define(XCustom.is, XCustom);
 </dom-module> 
 ```
 需要注意的有： 
+
 1. 如果添加了手势事件则应当使用`on-tap`事件代替`on-click`事件，提供更好的移动浏览器支持。 
 2. 因为html属性的限制，所有的事件名称都将转化为小写字母。(To avoid confusion, always use lowercase event names. )
  
@@ -40,6 +41,7 @@ customElements.define(XCustom.is, XCustom);
 直接使用原生的`CustomEvent`和`dispatchEvent` 
  
 ## Event Retargeting
+
 1. 为了保持ShadowDOM的隐蔽性。元素内部ShadowDOM触发的一些事件在网上传播时会将target重定向到当前元素。 
 2. `event.composedPath()` : 包含事件传递过程中所经过的nodes路径列表。  
 
@@ -65,6 +67,7 @@ var event = new CustomEvent('my-event', {bubbles: true, composed: true});
  
  
 包含以下几种手势事件，包含在e.detail中。 
+
 - down—finger/button went down 
   - `x`—clientX coordinate for event 
   - `y`—clientY coordinate for event 

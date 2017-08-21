@@ -1,14 +1,11 @@
 $(function() {
-  Materialize.scrollFire([{ selector: '.waterfall', offset: 200 }]);
-
-  setTocToggle();
-  setAsideToggle();
-
   // enable `a` click event inside `li.tab`
   $('.tab').click(function(e) {
     window.location.href = $(this).find('a').prop('href');
   });
   $('.modal').modal();
+  setTocToggle();
+  setAsideToggle();
 });
 
 var setTocToggle = function() {
@@ -107,19 +104,13 @@ var setTocToggle = function() {
   scrollListener();
 };
 
-var setAsideToggle = (function() {
+var setAsideToggle = function() {
   var $aside = $('aside.side-panel');
   var $body = $('body');
   var $swither = $('.button-collapse');
   var $icon = $('i.material-icons', $swither);
   var $cover = $('<div id="js-cover"></div>');
-  $cover.click(function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    _setAsideToggle();
-  });
-  $cover.appendTo($body);
-  function _setAsideToggle() {
+  function onSwitcherClick() {
     if ($aside.hasClass('open')) {
       $aside.removeClass('open');
       $cover.fadeOut(400);
@@ -132,7 +123,13 @@ var setAsideToggle = (function() {
       $icon.text('close');
     }
   }
-  return function() {
-    $swither.click(_setAsideToggle);
-  };
-})();
+  $cover.click(function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    onSwitcherClick();
+  });
+
+  $cover.appendTo($body);
+
+  $swither.click(onSwitcherClick);
+};

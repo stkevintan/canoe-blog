@@ -31,30 +31,25 @@ helper elements you're using.
 
 有两种用法:
 
-- 在Polymer element template内部，可以直接使用简写
-    
+-   在Polymer element template内部，可以直接使用简写
     ```html
-    <template is="dom-repeat" items="{{items}}">
-      ...
-    </template>
+      <template is="dom-repeat" items="{{items}}">
+        ...
+      </template>
     ```
-
-- 在Polymer element template外部，使用`<dom-repeat>`标签
-    
+*   在Polymer element template外部，使用`<dom-repeat>`标签
     ```html
-      <dom-repeat>
-        <template>
-          ...
-        </template>
-      </dom-repeat>
+        <dom-repeat>
+          <template>
+            ...
+          </template>
+        </dom-repeat>
     ```
     在这种情况下，还需要手动使用js给`<dom-repeat>`标签设置数据：
     ```js
         var repeater = document.querySelector('dom-repeat');
         repeater.items = someArray;
     ```
-
-代码示范：
 
 ```html
 <link rel="import" href="components/polymer/polymer-element.html">
@@ -192,6 +187,7 @@ You can use these to manipulate the model, using paths _relative to template ins
 
 >The `model` property is **not** added for event listeners registered imperatively (using `addEventListener`), or listeners added to one of the `dom-repeat` template's parent nodes. In these cases, you can use the `dom-repeat` `modelForElement` method to retrieve the model data that generated a given element. (There are also corresponding `itemForElement` and `indexForElement` methods.)
 外部如果使用标准的DOM API`addEventListener`来监听子元素的事件时，则事件参数里面没有`e.model`属性，可以使用下面几个函数手动获得：
+
 - `dom-repeat.modelForElement`
 - `dom-repeat.itemForElement`
 - `dom-repeat.indexForElement`
@@ -344,6 +340,7 @@ different name for the index property.
 
 默认的`dom-repeat`是异步执行的，但是可以调用`render`方法使之立即同步渲染。
 此方法性能代价比较大，适用于下面几种情况：
+
 - 单元测试的时候保证检查之前所有的选项都被渲染完毕
 - 在要滚动到某一特定元素之前保证其已经渲染完毕
 - 当外部数据变化导致的`sort/filter`方法需要重新运行
@@ -352,6 +349,7 @@ different name for the index property.
 
 ### Forcing the template to update
 强制刷新列表元素，像之前所说过的三种解决方案：
+
 - `notifySplices`，如果你知道数组的具体变更方式
 - 克隆数组，如果必要，可以深度克隆，性能不佳
 - 使用`mutableData`标签再`this.notifyPath(items)`
@@ -433,6 +431,7 @@ different name for the index property.
 
 </dom-module>
 ```
+
 - `items`属性接收一个数组。
 - 两个常见API: `select(item)\deselect(item)`
 - 对于数组元素子属性的任何变化都会同步到items数组中（path已经link了）
@@ -446,6 +445,7 @@ different name for the index property.
 跟`dom-if`一样，有两种方式来定义：
 
 *  在Polymer element template内部，使用简写方式
+
    ```html
     <template is="dom-if" if="{{condition}}">
       ...
@@ -464,49 +464,52 @@ different name for the index property.
     var conditional = document.querySelector('dom-if');
     conditional.if = true;
     ```
+
 代码实例：
-```html
-<link rel="import" href="components/polymer/polymer-element.html">
-<! -- import conditional template -->
-<link rel="import" href="components/polymer/lib/elements/dom-if.html">
 
-<dom-module id="x-custom">
+  ```html
+  <link rel="import" href="components/polymer/polymer-element.html">
+  <! -- import conditional template -->
+  <link rel="import" href="components/polymer/lib/elements/dom-if.html">
 
-  <template>
+  <dom-module id="x-custom">
 
-    <!-- All users will see this -->
-    <my-user-profile user="{{user}}"></my-user-profile>
+    <template>
+
+      <!-- All users will see this -->
+      <my-user-profile user="{{user}}"></my-user-profile>
 
 
-    <template is="dom-if" if="{{user.isAdmin}}">
-      <!-- Only admins will see this. -->
-      <my-admin-panel user="{{user}}"></my-admin-panel>
+      <template is="dom-if" if="{{user.isAdmin}}">
+        <!-- Only admins will see this. -->
+        <my-admin-panel user="{{user}}"></my-admin-panel>
+      </template>
+
     </template>
 
-  </template>
+    <script>
+      class XCustom extends Polymer.Element {
 
-  <script>
-    class XCustom extends Polymer.Element {
+        static get is() { return 'x-custom'; }
 
-      static get is() { return 'x-custom'; }
-
-      static get properties() {
-        return {
-          user: Object
+        static get properties() {
+          return {
+            user: Object
+          }
         }
+
       }
 
-    }
+      customElements.define(XCustom.is, XCustom);
+    </script>
 
-    customElements.define(XCustom.is, XCustom);
-  </script>
-
-</dom-module>
-```
+  </dom-module>
+  ```
 >Conditional templates introduce some overhead, so they shouldn't be used for small UI elements that could be easily shown and hidden using CSS.
 
 条件模板会引入一些开销，因此不适合一些可以直接设置CSS来控制显示和隐藏的小元素。
 但是条件模板也适用于下面几种情况：
+
 -   懒惰加载
 -   节省大型复杂网站的内存消耗（`restam=true`会带来性能上的损失）
 
@@ -560,6 +563,7 @@ Polymer的数据绑定只能在template中，为了简化流程，使用自动�
 ```
 
 注意：
+
 1. 自动绑定只能在Polymer element之外定义(因此只有一种定义方式)
 2. `dom-bind`也提供了一个`render`方法来进行强制同步刷新。
 3. `dom-bind`同样也用一个`mutableData`属性来开关脏检测机制。

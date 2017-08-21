@@ -1,349 +1,7 @@
-<!DOCTYPE html>
-<html lang="zh-cn">
-
-<head>
-
-  
-  <meta charset="UTF-8">
-  <title>
-    Polymer 2.0 文档笔记(6) Data Binding | World of Forks
-  </title>
-
-
-  
-  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
-
-  
-  <link rel="canonical" href="http://keyin.me/post/polymer-2-6-data-binding/" />
-
-  
-  
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="http://keyin.me/css/styles-d3e13fbeab.css">
-  
-  <link href="http://keyin.me/index.xml" rel="alternate" type="application/rss+xml" title="World of Forks" />
-  <link href="http://keyin.me/index.xml" rel="feed" type="application/rss+xml" title="World of Forks" />
-
-  
-  <link href="http://keyin.me/favicon.ico" rel="shortcut icon">
-</head>
-
-
-
-<body>
-  
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <form action="//www.google.com/search" method="get" accept-charset="utf-8">
-        <input type="hidden" name="sitesearch" value="http://keyin.me">
-        <div class="input-field">
-          <input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"/>
-        </div>
-    </form>
-    </div>
-  </div>
-  <div class="navbar-fixed">
-    <nav class="navbar">
-      <div class="nav-wrapper container">
-        <a href="javascript:void(0)" class="button-collapse"><i class="material-icons">menu</i></a>
-        <a href="http://keyin.me" class="brand-logo"><i class="material-icons">restaurant_menu</i> 
-          World of Forks
-        </a>
-
-        <ul class="right">
-           
-          <li ><a class="modal-trigger" href='#modal1'><i class="material-icons">search</i></a></li>
-          <li><a href='http://keyin.me/index.xml' target="_blank" ><i class="material-icons">rss_feed</i></a></li>
-        </ul>
-        
-          <ul class="center tabs tabs-transparent hide-on-med-and-down">
-            
-            <li class="tab">
-              <a href="http://keyin.me/" 
-              class=''>
-                Home
-              </a>
-            </li>
-            
-            <li class="tab">
-              <a href="http://keyin.me/archive/" 
-              class=''>
-                Archive
-              </a>
-            </li>
-            
-            <li class="tab">
-              <a href="http://keyin.me/about/" 
-              class=''>
-                About
-              </a>
-            </li>
-             
-          </ul>
-         
-      </div>
-    </nav>
-  </div> <aside class="side-panel">
-  <div class="inner">
-    <div class="profile">
-      <div class="profile__bg" style="background-image:url('http://keyin.me/img/profile-bg-7c6e6a1672.jpg')"></div>
-      <img class="profile__avatar" src="http://keyin.me/img/avatar-66318e716f.png" alt="avatar" /> 
-      <h3 class="profile__name">Kevin Tan</h3> 
-      <p class="profile__desc">Tempora mutantur, nos et mutamur in illis ...</p>
-    </div>
-    <ul class="nav-group show-on-medium-and-down menu ">
-       
-      <li>
-        <a class="collapsible-header waves-effect waves-indigo" href="http://keyin.me/">
-          <i class="material-icons">home</i>
-          <span class="content">Home</span>
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-      
-      <li>
-        <a class="collapsible-header waves-effect waves-indigo" href="http://keyin.me/archive/">
-          <i class="material-icons">archive</i>
-          <span class="content">Archive</span>
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-      
-      <li>
-        <a class="collapsible-header waves-effect waves-indigo" href="http://keyin.me/about/">
-          <i class="material-icons">person</i>
-          <span class="content">About</span>
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-       
-    </ul>
-    <ul class="collapsible nav-group" data-collapsible="accordion">
-      <li>
-        <div class="collapsible-header waves-effect waves-indigo">
-          <i class="material-icons">whatshot</i>
-          <span class="content">Latest</span>
-          <i class="material-icons angle">expand_more</i>
-        </div>
-        <div class="collapsible-body">
-          <div class="collection">
-            
-            <a class="collection-item" href="http://keyin.me/post/polymer-2-7-helper-element/">Polymer 2.0 文档笔记(7) Helper Element</a> 
-            <a class="collection-item" href="http://keyin.me/post/polymer-2-6-data-binding/">Polymer 2.0 文档笔记(6) Data Binding</a> 
-            <a class="collection-item" href="http://keyin.me/post/polymer-2-5-observers-and-computed-properties/">Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</a> 
-            <a class="collection-item" href="http://keyin.me/post/polymer-2-4-data-system/">Polymer 2.0 文档笔记(4) Data System</a> 
-            <a class="collection-item" href="http://keyin.me/post/polymer-2-3-events/">Polymer 2.0 文档笔记(3) Events</a> 
-            <a class="collection-item" href="http://keyin.me/post/polymer-2-2-shadowdom/">Polymer 2.0 文档笔记(2) ShadowDOM</a> 
-            <a class="collection-item" href="http://keyin.me/post/polymer-2-1-custom-elements/">Polymer 2.0 文档笔记(1) Custom Elements</a> 
-            <a class="collection-item" href="http://keyin.me/post/hello-world/">网易云音乐新API浅析</a> 
-            <a class="collection-item" href="http://keyin.me/post/shadowsocks-account/">Shadowsocks免费账号网址集</a> 
-            <a class="collection-item" href="http://keyin.me/post/asp-net-mvc4note2/">ASP.NET MVC 4笔记（二）</a> 
-          </div>
-        </div>
-      </li>
-       
-      <li>
-        <div class="collapsible-header waves-effect waves-indigo">
-          <i class="material-icons">view_list</i>
-          <span class="content">Category </span>
-          
-          <i class="material-icons angle">expand_more</i>
-        </div>
-        <div class="collapsible-body">
-          <div class="collection">
-            
-            <a class="collection-item" href="http://keyin.me/categories/acm"> acm<span class="badge">18</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/web"> web<span class="badge">7</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/08"> 08<span class="badge">3</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/07"> 07<span class="badge">2</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/10"> 10<span class="badge">2</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/11"> 11<span class="badge">2</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/02"> 02<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/09"> 09<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/asp.net"> asp.net<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/ide/editor"> ide/editor<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/categories/wine"> wine<span class="badge">1</span></a>            
-          </div>
-        </div>
-      </li>
-       
-      <li>
-        <div class="collapsible-header waves-effect waves-indigo">
-          <i class="material-icons">local_offer</i>
-          <span class="content">Tag </span>
-          
-          <i class="material-icons angle">expand_more</i>
-        </div>
-        <div class="collapsible-body">
-          <div class="collection">
-            
-            <a class="collection-item" href="http://keyin.me/tags/polymer"> polymer<span class="badge">7</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/tarjan"> tarjan<span class="badge">5</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/%E5%9B%BE%E8%AE%BA"> 图论<span class="badge">5</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/lca"> lca<span class="badge">3</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/asp.net-mvc4"> asp.net-mvc4<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/c"> c#<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/rmq"> rmq<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/%E5%80%8D%E5%A2%9E"> 倍增<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/%E6%9A%B4%E5%8A%9B"> 暴力<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/%E6%A0%91%E5%BD%A2dp"> 树形dp<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84"> 树的直径<span class="badge">1</span></a>            
-            <a class="collection-item" href="http://keyin.me/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B"> 矩阵暴力<span class="badge">1</span></a>            
-          </div>
-        </div>
-      </li>
-      
-    </ul>
-    <ul class="nav-group external-link">
-       
-      <li>
-        <a class="collapsible-header waves-effect waves-indigo" href="https://github.com/stkevintan" target="_blank">
-          <i class="material-icons" data-svg-icon="github">github</i>
-          <span class="content">Github<small>@stkevintan</small></span>
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-      
-      <li>
-        <a class="collapsible-header waves-effect waves-indigo" href="https://twitter.com/kevinsfork" target="_blank">
-          <i class="material-icons" data-svg-icon="twitter">twitter</i>
-          <span class="content">Twitter<small>@kevinsfork</small></span>
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-      
-      <li>
-        <a class="collapsible-header waves-effect waves-indigo" href="mailto:stkevintan@zju.edu.cn" target="_blank">
-          <i class="material-icons" data-svg-icon="email">email</i>
-          <span class="content">E-mail<small>stkevintan@foxmail.com</small></span>
-          <i class="material-icons">chevron_right</i>
-        </a>
-      </li>
-       
-    </ul>
-  </div>
-</aside>
-
-<main id="single" role="main" class="main-panel ">
-  <section class="container">
-    <div class="inner">
-       <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
-   
-   
-   
-  
-    <a class="breadcrumb" href="http://keyin.me"><i class="material-icons">location_on</i>Home</a>
-    
-       
-      
-      
-      
-       
-    
-       
-      
-      
-      
-       
-        
-          <a class="breadcrumb" href='http://keyin.me/post/'>Post</a>
-         
-       
-    
-       
-      
-      
-      
-       
-        
-          <span class="breadcrumb">Polymer 2.0 文档笔记(6) Data Binding</span>
-         
-       
-    
-       
-      
-      
-      
-       
-     
-</div>
-       <section class="post-wrapper">
-      <div class="toc-panel">
-        <nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#anatomy-of-a-data-binding">Anatomy of a data binding</a></li>
-<li><a href="#bind-to-a-target-property">Bind to a target property</a>
-<ul>
-<li><a href="#bind-to-text-content">Bind to text content</a></li>
-<li><a href="#bind-to-a-target-attribute">Bind to a target attribute</a></li>
-<li><a href="#native-properties-that-don-t-support-property-binding">Native properties that don&rsquo;t support property binding</a></li>
-<li><a href="#logical-not-operator">Logical not operator</a></li>
-<li><a href="#computed-bindings">Computed bindings</a></li>
-</ul></li>
-<li><a href="#compound-bindings">Compound bindings</a></li>
-<li><a href="#binding-to-array-items">Binding to array items</a>
-<ul>
-<li><a href="#two-way-binding-to-a-non-polymer-element">Two-way binding to a non-Polymer element</a></li>
-</ul></li>
-</ul></li>
-</ul>
-</nav>
-      </div>
-      <div class="post">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">Polymer 2.0 文档笔记(6) Data Binding </span>
-            <span class="card-meta">
-              <time>
-                
-                <span> 2017-6-2</span>
-            </time>
-            <address>
-              
-              <a href="http://keyin.me/categories/web">Web</a>&nbsp; 
-            </address>
-
-            </span>
-
-            <article class="article">
-              
-
-<blockquote>
-<p>A <em>data binding</em> connects data from a custom element (the <em>host element</em>) to a property or attribute of an element in its local DOM (the <em>child</em>
-or <em>target element</em>). The host element data can be a property or sub-property represented by a <a href="data-system#paths">data path</a>, or data generated based on one or more paths.
-数据绑定能够将host元素和target元素的property或者attribute相互链接床单。这里数据指的是路径(Paths)</p>
-</blockquote>
-
-<h2 id="anatomy-of-a-data-binding">Anatomy of a data binding</h2>
-
-<p>数据绑定有两种绑定方式：</p>
-
-<pre><code class="language-html">&lt;custom-element property-name=annotation-or-compound-binding &gt;&lt;/custom-element&gt;
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="UTF-8"><title>Polymer 2.0 文档笔记(6) Data Binding | World of Forks</title><meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1"><link rel="canonical" href="http://keyin.me/post/polymer-2-6-data-binding/"><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"><link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet"><link rel="stylesheet" href="http://keyin.me/css/index-c9c4ce3d9f.css"><link href="http://keyin.me/index.xml" rel="alternate" type="application/rss+xml" title="World of Forks"><link href="http://keyin.me/index.xml" rel="feed" type="application/rss+xml" title="World of Forks"><link href="http://keyin.me/favicon.ico" rel="shortcut icon"></head><body><div id="modal1" class="modal"><div class="modal-content"><form action="//www.google.com/search" method="get" accept-charset="utf-8"><input type="hidden" name="sitesearch" value="http://keyin.me"><div class="input-field"><input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"></div></form></div></div><div class="navbar-fixed"><nav class="navbar"><div class="nav-wrapper container"><a href="javascript:void(0)" class="button-collapse"><i class="material-icons">menu</i></a> <a href="http://keyin.me" class="brand-logo"><i class="material-icons">restaurant_menu</i> World of Forks</a><ul class="right hide-on-med-and-down"><li><a class="modal-trigger" href="#modal1"><i class="material-icons">search</i></a></li><li><a href="http://keyin.me/index.xml" target="_blank"><i class="material-icons">rss_feed</i></a></li></ul><ul class="center tabs tabs-transparent hide-on-med-and-down"><li class="tab"><a href="http://keyin.me/" class="">Home</a></li><li class="tab"><a href="http://keyin.me/archive/" class="">Archive</a></li><li class="tab"><a href="http://keyin.me/about/" class="">About</a></li></ul></div></nav></div><aside class="side-panel"><div class="inner"><div class="profile"><div class="profile__bg" style="background-image:url('http://keyin.me/img/profile-bg-7c6e6a1672.jpg')"></div><img class="profile__avatar" src="http://keyin.me/img/avatar-66318e716f.png" alt="avatar"><h3 class="profile__name">Kevin Tan</h3><p class="profile__desc">Tempora mutantur, nos et mutamur in illis ...</p></div><ul class="nav-group show-on-medium-and-down menu"><li><a class="collapsible-header waves-effect waves-indigo" href="http://keyin.me/"><i class="material-icons">home</i> <span class="content">Home</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" href="http://keyin.me/archive/"><i class="material-icons">archive</i> <span class="content">Archive</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" href="http://keyin.me/about/"><i class="material-icons">person</i> <span class="content">About</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo modal-trigger" href="#modal1"><i class="material-icons">search</i> <span class="content">Search</span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" target="_blank" href="http://keyin.me/index.xml"><i class="material-icons">rss_feed</i> <span class="content">RSS Feed</span> <i class="material-icons">chevron_right</i></a></li></ul><ul class="collapsible nav-group" data-collapsible="accordion"><li><div class="collapsible-header waves-effect waves-indigo"><i class="material-icons">whatshot</i> <span class="content">Latest</span> <i class="material-icons angle">expand_more</i></div><div class="collapsible-body"><div class="collection"><a class="collection-item" href="http://keyin.me/post/polymer-2-7-helper-element/">Polymer 2.0 文档笔记(7) Helper Element</a> <a class="collection-item" href="http://keyin.me/post/polymer-2-6-data-binding/">Polymer 2.0 文档笔记(6) Data Binding</a> <a class="collection-item" href="http://keyin.me/post/polymer-2-5-observers-and-computed-properties/">Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</a> <a class="collection-item" href="http://keyin.me/post/polymer-2-4-data-system/">Polymer 2.0 文档笔记(4) Data System</a> <a class="collection-item" href="http://keyin.me/post/polymer-2-3-events/">Polymer 2.0 文档笔记(3) Events</a> <a class="collection-item" href="http://keyin.me/post/polymer-2-2-shadowdom/">Polymer 2.0 文档笔记(2) ShadowDOM</a> <a class="collection-item" href="http://keyin.me/post/polymer-2-1-custom-elements/">Polymer 2.0 文档笔记(1) Custom Elements</a> <a class="collection-item" href="http://keyin.me/post/hello-world/">网易云音乐新API浅析</a> <a class="collection-item" href="http://keyin.me/post/shadowsocks-account/">Shadowsocks免费账号网址集</a> <a class="collection-item" href="http://keyin.me/post/asp-net-mvc4note2/">ASP.NET MVC 4笔记（二）</a></div></div></li><li><div class="collapsible-header waves-effect waves-indigo"><i class="material-icons">view_list</i> <span class="content">Category </span><i class="material-icons angle">expand_more</i></div><div class="collapsible-body"><div class="collection"><a class="collection-item" href="http://keyin.me/categories/acm">acm<span class="badge">18</span></a> <a class="collection-item" href="http://keyin.me/categories/web">web<span class="badge">7</span></a> <a class="collection-item" href="http://keyin.me/categories/08">08<span class="badge">3</span></a> <a class="collection-item" href="http://keyin.me/categories/07">07<span class="badge">2</span></a> <a class="collection-item" href="http://keyin.me/categories/10">10<span class="badge">2</span></a> <a class="collection-item" href="http://keyin.me/categories/11">11<span class="badge">2</span></a> <a class="collection-item" href="http://keyin.me/categories/02">02<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/categories/09">09<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/categories/asp.net">asp.net<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/categories/ide/editor">ide/editor<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/categories/wine">wine<span class="badge">1</span></a></div></div></li><li><div class="collapsible-header waves-effect waves-indigo"><i class="material-icons">local_offer</i> <span class="content">Tag </span><i class="material-icons angle">expand_more</i></div><div class="collapsible-body"><div class="collection"><a class="collection-item" href="http://keyin.me/tags/polymer">polymer<span class="badge">7</span></a> <a class="collection-item" href="http://keyin.me/tags/tarjan">tarjan<span class="badge">5</span></a> <a class="collection-item" href="http://keyin.me/tags/%E5%9B%BE%E8%AE%BA">图论<span class="badge">5</span></a> <a class="collection-item" href="http://keyin.me/tags/lca">lca<span class="badge">3</span></a> <a class="collection-item" href="http://keyin.me/tags/asp.net-mvc4">asp.net-mvc4<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/tags/c">c#<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/tags/rmq">rmq<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/tags/%E5%80%8D%E5%A2%9E">倍增<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/tags/%E6%9A%B4%E5%8A%9B">暴力<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/tags/%E6%A0%91%E5%BD%A2dp">树形dp<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84">树的直径<span class="badge">1</span></a> <a class="collection-item" href="http://keyin.me/tags/%E7%9F%A9%E9%98%B5%E6%9A%B4%E5%8A%9B">矩阵暴力<span class="badge">1</span></a></div></div></li></ul><ul class="nav-group external-link"><li><a class="collapsible-header waves-effect waves-indigo" href="https://github.com/stkevintan" target="_blank"><svg class="svg-icons svg-icons-github"><use xlink:href="#svg-icons-github"></use></svg> <span class="content">Github<small>@stkevintan</small></span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" href="https://twitter.com/kevinsfork" target="_blank"><svg class="svg-icons svg-icons-twitter"><use xlink:href="#svg-icons-twitter"></use></svg> <span class="content">Twitter<small>@kevinsfork</small></span> <i class="material-icons">chevron_right</i></a></li><li><a class="collapsible-header waves-effect waves-indigo" href="http://weibo.com/kevinclasky" target="_blank"><svg class="svg-icons svg-icons-sina-weibo"><use xlink:href="#svg-icons-sina-weibo"></use></svg> <span class="content">Weibo<small>@白夜繁星o_O</small></span> <i class="material-icons">chevron_right</i></a></li></ul></div></aside><main id="single" role="main" class="main-panel"><section class="container"><div class="inner"><div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation"><a class="breadcrumb" href="http://keyin.me"><i class="material-icons">location_on</i>Home</a> <a class="breadcrumb" href="http://keyin.me/post/">Post</a> <span class="breadcrumb">Polymer 2.0 文档笔记(6) Data Binding</span></div><section class="post-wrapper"><div class="toc-panel"><nav id="TableOfContents"><ul><li><ul><li><a href="#anatomy-of-a-data-binding">Anatomy of a data binding</a></li><li><a href="#bind-to-a-target-property">Bind to a target property</a><ul><li><a href="#bind-to-text-content">Bind to text content</a></li><li><a href="#bind-to-a-target-attribute">Bind to a target attribute</a></li><li><a href="#native-properties-that-don-t-support-property-binding">Native properties that don&rsquo;t support property binding</a></li><li><a href="#logical-not-operator">Logical not operator</a></li><li><a href="#computed-bindings">Computed bindings</a></li></ul></li><li><a href="#compound-bindings">Compound bindings</a></li><li><a href="#binding-to-array-items">Binding to array items</a><ul><li><a href="#two-way-binding-to-a-non-polymer-element">Two-way binding to a non-Polymer element</a></li></ul></li></ul></li></ul></nav></div><div class="post"><div class="card"><div class="card-content"><span class="card-title">Polymer 2.0 文档笔记(6) Data Binding </span><span class="card-meta"><time><span>2017-6-2</span></time><address><a href="http://keyin.me/categories/web">Web</a>&nbsp;</address></span><article class="article"><blockquote><p>A <em>data binding</em> connects data from a custom element (the <em>host element</em>) to a property or attribute of an element in its local DOM (the <em>child</em> or <em>target element</em>). The host element data can be a property or sub-property represented by a <a href="data-system#paths">data path</a>, or data generated based on one or more paths.</p></blockquote><p>数据绑定能够将host元素和target元素的property或者attribute相互链接床单。这里数据指的是路径(Paths)</p><h2 id="anatomy-of-a-data-binding">Anatomy of a data binding</h2><p>数据绑定有两种绑定方式：</p><pre><code class="language-html">&lt;custom-element property-name=annotation-or-compound-binding &gt;&lt;/custom-element&gt;
 &lt;custom-element attribute-name$=annotation-or-compound-binding&gt;&lt;/custom-element&gt;
-</code></pre>
-
-<ol>
-<li><code>=</code>绑定property,<code>$=</code>绑定attribute(href,style,&hellip;)</li>
-<li>annotation代表数据绑定标记: <code>[[ ]]</code>或者<code>{{ }}</code></li>
-<li>compound-binding:包含标记的字符串: <code>&quot;my name is {{ name }}&quot;</code></li>
-</ol>
-
-<h2 id="bind-to-a-target-property">Bind to a target property</h2>
-
-<p>将target元素的name属性绑定到当前元素的my-Name属性。
-注意驼峰式和dash式命名的转换规则(property name to attribute name mapping)</p>
-
-<pre><code class="language-html">&lt;target-element name=&quot;{{myName}}&quot;&gt;&lt;/target-element&gt;
-</code></pre>
-
-<h3 id="bind-to-text-content">Bind to text content</h3>
-
-<p>相当于绑定到target元素的<code>textContent</code>属性上</p>
-
-<pre><code class="language-js">&lt;dom-module id=&quot;user-view&quot;&gt;
+</code></pre><ol><li><code>=</code>绑定property,<code>$=</code>绑定attribute(href,style,&hellip;)</li><li>annotation代表数据绑定标记: <code>[[ ]]</code>或者<code>\{\{ \}\}</code></li><li>compound-binding:包含标记的字符串: <code>&quot;my name is {{ name }}&quot;</code></li></ol><h2 id="bind-to-a-target-property">Bind to a target property</h2><p>将target元素的name属性绑定到当前元素的my-Name属性。 注意驼峰式和dash式命名的转换规则(property name to attribute name mapping)</p><pre><code class="language-html">&lt;target-element name=&quot;{{myName}}&quot;&gt;&lt;/target-element&gt;
+</code></pre><h3 id="bind-to-text-content">Bind to text content</h3><p>相当于绑定到target元素的<code>textContent</code>属性上</p><pre><code class="language-js">&lt;dom-module id=&quot;user-view&quot;&gt;
   &lt;template&gt;
     &lt;div&gt;[[name]]&lt;/div&gt;
   &lt;/template&gt;
@@ -364,29 +22,9 @@ or <em>target element</em>). The host element data can be a property or sub-prop
 
 &lt;!-- usage --&gt;
 &lt;user-view name=&quot;Samuel&quot;&gt;&lt;/user-view&gt;
-</code></pre>
-
-<blockquote>
-<p>Binding to text content is always one-way, host-to-target.</p>
-</blockquote>
-
-<p>注意，文字节点的绑定永远都是单向的(host to target)</p>
-
-<h3 id="bind-to-a-target-attribute">Bind to a target attribute</h3>
-
-<p>attribute绑定相当于</p>
-
-<pre><code class="language-javascript">element.setAttribute(attr,value)
-</code></pre>
-
-<p>property绑定相当于</p>
-
-<pre><code class="language-javascript">element.property = 'value'
-</code></pre>
-
-<p>因此，一些attribute同样可以使用property形式绑定：</p>
-
-<pre><code class="language-html">&lt;template&gt;
+</code></pre><blockquote><p>Binding to text content is always one-way, host-to-target.</p></blockquote><p>注意，文字节点的绑定永远都是单向的(host to target)</p><h3 id="bind-to-a-target-attribute">Bind to a target attribute</h3><p>attribute绑定相当于</p><pre><code class="language-javascript">element.setAttribute(attr,value)
+</code></pre><p>property绑定相当于</p><pre><code class="language-javascript">element.property = 'value'
+</code></pre><p>因此，一些attribute同样可以使用property形式绑定：</p><pre><code class="language-html">&lt;template&gt;
   &lt;!-- Attribute binding --&gt;
   &lt;my-element selected$=&quot;[[value]]&quot;&gt;&lt;/my-element&gt;
   &lt;!-- results in &lt;my-element&gt;.setAttribute('selected', this.value); --&gt;
@@ -395,74 +33,7 @@ or <em>target element</em>). The host element data can be a property or sub-prop
   &lt;my-element selected=&quot;{{value}}&quot;&gt;&lt;/my-element&gt;
   &lt;!-- results in &lt;my-element&gt;.selected = this.value; --&gt;
 &lt;/template&gt;
-</code></pre>
-
-<p>需要注意的是： attribute形式的数据绑定只能是单向的(<code>[[ ]]</code>)</p>
-
-<h3 id="native-properties-that-don-t-support-property-binding">Native properties that don&rsquo;t support property binding</h3>
-
-<blockquote>
-<p>There are a handful of common native element properties that Polymer can&rsquo;t data-bind to directly,
-because the binding causes issues on one or more browsers.</p>
-</blockquote>
-
-<p>一些原生的property无法使用<code>=</code>绑定数据，需要使用attribute形式的<code>$=</code>才能成功绑定。</p>
-
-<table>
-<thead>
-<tr>
-<th>Attribute</th>
-<th>Property</th>
-<th>Notes</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><code>class</code></td>
-<td><code>classList</code>, <code>className</code></td>
-<td>Maps to two properties with different formats.</td>
-</tr>
-
-<tr>
-<td><code>style</code></td>
-<td><code>style</code></td>
-<td>By specification, <code>style</code> is considered a read-only reference to a <code>CSSStyleDeclaration</code> object.</td>
-</tr>
-
-<tr>
-<td><code>href</code></td>
-<td><code>href</code></td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>for</code></td>
-<td><code>htmlFor</code></td>
-<td></td>
-</tr>
-
-<tr>
-<td><code>data-*</code></td>
-<td><code>dataset</code></td>
-<td>Custom data attributes (attribute names starting with <code>data-</code>) are stored on the <code>dataset</code> property.</td>
-</tr>
-
-<tr>
-<td><code>value</code></td>
-<td><code>value</code></td>
-<td>Only for <code>&lt;input type=&quot;number&quot;&gt;</code>.</td>
-</tr>
-</tbody>
-</table>
-
-<blockquote>
-<p>data binding to the <code>value</code> property doesn&rsquo;t work on IE for <strong><em>numeric input types</em></strong>. For
-this specific case, you can use one-way attribute binding to set the <code>value</code> of a numeric input. Or
-use another element such as <code>iron-input</code> or <code>paper-input</code> that handles two-way binding correctly.</p>
-</blockquote>
-
-<pre><code class="language-html">&lt;!-- class --&gt;
+</code></pre><p>需要注意的是： attribute形式的数据绑定只能是单向的(<code>[[ ]]</code>)</p><h3 id="native-properties-that-don-t-support-property-binding">Native properties that don&rsquo;t support property binding</h3><blockquote><p>There are a handful of common native element properties that Polymer can&rsquo;t data-bind to directly, because the binding causes issues on one or more browsers.</p></blockquote><p>一些原生的property无法使用<code>=</code>绑定数据，需要使用attribute形式的<code>$=</code>才能成功绑定。</p><table><thead><tr><th>Attribute</th><th>Property</th><th>Notes</th></tr></thead><tbody><tr><td><code>class</code></td><td><code>classList</code>, <code>className</code></td><td>Maps to two properties with different formats.</td></tr><tr><td><code>style</code></td><td><code>style</code></td><td>By specification, <code>style</code> is considered a read-only reference to a <code>CSSStyleDeclaration</code> object.</td></tr><tr><td><code>href</code></td><td><code>href</code></td><td></td></tr><tr><td><code>for</code></td><td><code>htmlFor</code></td><td></td></tr><tr><td><code>data-*</code></td><td><code>dataset</code></td><td>Custom data attributes (attribute names starting with <code>data-</code>) are stored on the <code>dataset</code> property.</td></tr><tr><td><code>value</code></td><td><code>value</code></td><td>Only for <code>&lt;input type=&quot;number&quot;&gt;</code>.</td></tr></tbody></table><blockquote><p>data binding to the <code>value</code> property doesn&rsquo;t work on IE for <strong><em>numeric input types</em></strong>. For this specific case, you can use one-way attribute binding to set the <code>value</code> of a numeric input. Or use another element such as <code>iron-input</code> or <code>paper-input</code> that handles two-way binding correctly.</p></blockquote><pre><code class="language-html">&lt;!-- class --&gt;
 &lt;div class$=&quot;[[foo]]&quot;&gt;&lt;/div&gt;
 
 &lt;!-- style --&gt;
@@ -480,41 +51,11 @@ use another element such as <code>iron-input</code> or <code>paper-input</code> 
 &lt;!-- ARIA --&gt;
 &lt;button aria-label$=&quot;[[buttonLabel]]&quot;&gt;&lt;/button&gt;
 
-</code></pre>
-
-<h3 id="logical-not-operator">Logical not operator</h3>
-
-<p>可以在data-binding表达式前面添加<code>!</code>号取反</p>
-
-<pre><code class="language-html">&lt;template&gt;
+</code></pre><h3 id="logical-not-operator">Logical not operator</h3><p>可以在data-binding表达式前面添加<code>!</code>号取反</p><pre><code class="language-html">&lt;template&gt;
   &lt;my-page show-login=&quot;[[!isLoggedIn]]&quot;&gt;&lt;/my-page&gt;
 &lt;/template&gt;
-</code></pre>
-
-<p>注意：
-1. 逻辑非只能用在单项绑定中使用
-2. 只能有一个<code>!</code>不能<code>!!</code></p>
-
-<h3 id="computed-bindings">Computed bindings</h3>
-
-<p>computed binding类似于computed property。</p>
-
-<pre><code class="language-js">&lt;div&gt;[[_formatName(first, last, title)]]&lt;/div&gt;
-</code></pre>
-
-<blockquote>
-<p>An element can have multiple computed bindings in its template that refer to the same computing
-function.
-一个元素里面可以有多个使用同样的computing function的computed binding</p>
-</blockquote>
-
-<p>computed binding并不完全等同于computed property，差异有下面几点：
-- computed binding的依赖路径是相对于元素当前的data scope的
-- computed binding的参数不仅可以有computed property那样的路径参数，也可以是单纯的字符串或者数字等
-- computed binding可以没有参数，这种情况下，函数只会被调用一次
-- computed binding函数要等所有的参数中的依赖全部初始化(!=undefined)之后才会执行</p>
-
-<pre><code class="language-html">&lt;dom-module id=&quot;x-custom&quot;&gt;
+</code></pre><p>注意：</p><ol><li>逻辑非只能用在单项绑定中使用</li><li>只能有一个<code>!</code>不能<code>!!</code></li></ol><h3 id="computed-bindings">Computed bindings</h3><p>computed binding类似于computed property。</p><pre><code class="language-js">&lt;div&gt;[[_formatName(first, last, title)]]&lt;/div&gt;
+</code></pre><blockquote><p>An element can have multiple computed bindings in its template that refer to the same computing function. 一个元素里面可以有多个使用同样的computing function的computed binding</p></blockquote><p>computed binding并不完全等同于computed property，差异有下面几点：</p><ul><li>computed binding的依赖路径是相对于元素当前的data scope的</li><li>computed binding的参数不仅可以有computed property那样的路径参数，也可以是单纯的字符串或者数字等</li><li>computed binding可以没有参数，这种情况下，函数只会被调用一次</li><li>computed binding函数要等所有的参数中的依赖全部初始化(!=undefined)之后才会执行</li></ul><pre><code class="language-html">&lt;dom-module id=&quot;x-custom&quot;&gt;
 
   &lt;template&gt;
     My name is &lt;span&gt;[[_formatName(first, last)]]&lt;/span&gt;
@@ -539,61 +80,19 @@ function.
   &lt;/script&gt;
 
 &lt;/dom-module&gt;
-</code></pre>
-
-<blockquote>
-<p><strong>Commas in literal strings:</strong> Any comma occurring in a string literal <strong>must</strong> be escaped using a
-backslash (<code>\</code>).</p>
-</blockquote>
-
-<p>如果参数是字符串，那么字符串里面所有的逗号都要被转义</p>
-
-<pre><code class="language-html">&lt;dom-module id=&quot;x-custom&quot;&gt;
+</code></pre><blockquote><p><strong>Commas in literal strings:</strong> Any comma occurring in a string literal <strong>must</strong> be escaped using a backslash (<code>\</code>).</p></blockquote><p>如果参数是字符串，那么字符串里面所有的逗号都要被转义</p><pre><code class="language-html">&lt;dom-module id=&quot;x-custom&quot;&gt;
   &lt;template&gt;
     &lt;span&gt;{{translate('Hello\, nice to meet you', first, last)}}&lt;/span&gt;
   &lt;/template&gt;
 &lt;/dom-module&gt;
-</code></pre>
-
-<blockquote>
-<p><strong>Computed bindings are one-way.</strong> A computed binding is always one-way, host-to-target.</p>
-</blockquote>
-
-<p>computed binding只能在单向绑定中使用</p>
-
-<h2 id="compound-bindings">Compound bindings</h2>
-
-<p>可以在字符串里面或者textContent里面使用绑定标记</p>
-
-<pre><code class="language-html">&lt;img src$=&quot;https://www.example.com/profiles/[[userId]].jpg&quot;&gt;
+</code></pre><blockquote><p><strong>Computed bindings are one-way.</strong> A computed binding is always one-way, host-to-target.</p></blockquote><p>computed binding只能在单向绑定中使用</p><h2 id="compound-bindings">Compound bindings</h2><p>可以在字符串里面或者textContent里面使用绑定标记</p><pre><code class="language-html">&lt;img src$=&quot;https://www.example.com/profiles/[[userId]].jpg&quot;&gt;
 
 &lt;span&gt;Name: [[lastname]], [[firstname]]&lt;/span&gt;
-</code></pre>
-
-<p>注意：
-1. undefined会输出成空字符串
-2. Compound binding永远是单向绑定，虽然你也可以使用<code>{{ }}</code>记号。</p>
-
-<h2 id="binding-to-array-items">Binding to array items</h2>
-
-<blockquote>
-<p>To keep annotation parsing simple, <strong>Polymer doesn&rsquo;t provide a way to bind directly to an array
-item</strong>.
-为了解析简单，Polymer无法直接绑定一个数组里面的元素</p>
-</blockquote>
-
-<pre><code class="language-html">&lt;!-- Don't do this! --&gt;
+</code></pre><p>注意：</p><ol><li>undefined会输出成空字符串</li><li>Compound binding永远是单向绑定，虽然你也可以使用<code>\{\{ \}\}</code>记号。</li></ol><h2 id="binding-to-array-items">Binding to array items</h2><blockquote><p>To keep annotation parsing simple, <strong>Polymer doesn&rsquo;t provide a way to bind directly to an array item</strong>.</p></blockquote><p>为了解析简单，Polymer无法直接绑定一个数组里面的元素</p><pre><code class="language-html">&lt;!-- Don't do this! --&gt;
 &lt;span&gt;{{array[0]}}&lt;/span&gt;
 &lt;!-- Or this! --&gt;
 &lt;span&gt;{{array.0}}&lt;/span&gt;
-</code></pre>
-
-<p>有下面几种方法可以解决：
-- <code>dom-repeat</code>里面已经为每个数组里面的元素创建了一个子scope，因此可以直接binding
-- <code>array-selector</code> 同上，可以直接绑定一个元素或者被选择的元素集合
-- 使用computed binding来间接绑定，见下面例子</p>
-
-<pre><code class="language-html">&lt;dom-module id=&quot;x-custom&quot;&gt;
+</code></pre><p>有下面几种方法可以解决： - <code>dom-repeat</code>里面已经为每个数组里面的元素创建了一个子scope，因此可以直接binding - <code>array-selector</code> 同上，可以直接绑定一个元素或者被选择的元素集合 - 使用computed binding来间接绑定，见下面例子</p><pre><code class="language-html">&lt;dom-module id=&quot;x-custom&quot;&gt;
 
   &lt;template&gt;
     &lt;div&gt;[[arrayItem(myArray.*, 0, 'name')]]&lt;/div&gt;
@@ -636,16 +135,8 @@ item</strong>.
   &lt;/script&gt;
 
 &lt;/dom-module&gt;
-</code></pre>
-
-<h3 id="two-way-binding-to-a-non-polymer-element">Two-way binding to a non-Polymer element</h3>
-
-<p>为了达到非Polymer元素上面的双向绑定，可以使用下面的标记：</p>
-
-<pre><code class="language-js">target-prop=&quot;{{hostProp::target-change-event}}&quot;
-</code></pre>
-
-<pre><code class="language-html">&lt;!-- Listens for `input` event and sets hostValue to &lt;input&gt;.value --&gt;
+</code></pre><h3 id="two-way-binding-to-a-non-polymer-element">Two-way binding to a non-Polymer element</h3><p>为了达到非Polymer元素上面的双向绑定，可以使用下面的标记：</p><pre><code class="language-js">target-prop=&quot;{{hostProp::target-change-event}}&quot;
+</code></pre><pre><code class="language-html">&lt;!-- Listens for `input` event and sets hostValue to &lt;input&gt;.value --&gt;
 &lt;input value=&quot;{{hostValue::input}}&quot;&gt;
 
 &lt;!-- Listens for `change` event and sets hostChecked to &lt;input&gt;.checked --&gt;
@@ -653,108 +144,16 @@ item</strong>.
 
 &lt;!-- Listens for `timeupdate ` event and sets hostTime to &lt;video&gt;.currentTime --&gt;
 &lt;video url=&quot;...&quot; current-time=&quot;{{hostTime::timeupdate}}&quot;&gt;
-</code></pre>
-
-<p>基于约定大于配置的原理，如果<code>target-prop</code>的变化通知函数是<code>target-prop-changed</code>则该定义可以省略。</p>
-
-<pre><code class="language-html">&lt;!-- Listens for `value-changed` event --&gt;
+</code></pre><p>基于约定大于配置的原理，如果<code>target-prop</code>的变化通知函数是<code>target-prop-changed</code>则该定义可以省略。</p><pre><code class="language-html">&lt;!-- Listens for `value-changed` event --&gt;
 &lt;my-element value=&quot;{{hostValue::value-changed}}&quot;&gt;
 
 &lt;!-- Listens for `value-changed` event using Polymer convention by default --&gt;
 &lt;my-element value=&quot;{{hostValue}}&quot;&gt;
-</code></pre>
-
-            </article>
-
-          </div>
-          
-          <div class="card-action">
-            <i class="material-icons">local_offer</i> 
-            <a class="tag" href="http://keyin.me/tags/polymer">#Polymer</a>&nbsp; 
-          </div>
-          
-          <div class="card-action">
-            
- <div class="comments"><div id="disqus_thread"></div></div>
-
-<script type="text/javascript">
-     
-    var disqus_shortname = 'keyin';
+</code></pre></article></div><div class="card-action"><i class="material-icons">local_offer</i> <a class="tag" href="http://keyin.me/tags/polymer">#Polymer</a>&nbsp;</div><div class="card-action"><div class="comments"><div id="disqus_thread"></div></div><script type="text/javascript">var disqus_shortname = 'keyin';
 
      
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-
-
-
-          </div>
-        </div>
-        
-          <div class="pagination-single">
-             
-            <span class="pagination-item previous">
-            <i class="material-icons">navigate_before</i>
-            <a href="http://keyin.me/post/polymer-2-5-observers-and-computed-properties/" rel="prev">Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</a>
-          </span>  
-          
-            <span class="pagination-item next">
-            <i class="material-icons">navigate_next</i>
-            <a href="http://keyin.me/post/polymer-2-7-helper-element/" rel="next">Polymer 2.0 文档笔记(7) Helper Element</a> 
-          </span> 
-          </div>
-        
-      </div>
-    </section>
-    </div>
-  </section>
-  
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">World of Forks</h5>
-        <p class="grey-text text-lighten-4">Theme <a href="" target="_blank">YAMT</a> designed by <a href="#!">Kevin Tan</a> with ❤</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">My Friends</h5>
-        <ul>
-          
-          <li><a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a></li>
-          
-          <li><a class="grey-text text-lighten-3" href="https://hclmaster.github.io/" target="_blank">HclMaster</a></li>
-          
-          <li><a class="grey-text text-lighten-3" href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a></li>
-          
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="footer-copyright">
-    <div class="container">Copyleft@Kevin Tan</div>
-  </div>
-</footer>
-
-
-
-
-<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script>
-  hljs.initHighlightingOnLoad();
-</script>
-<script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="http://keyin.me/js/materialize.min.js"></script>
-<script type="text/javascript" src="http://keyin.me/js/index-561271be0b.js"></script>
-
-
-
-
-
-</body>
-
-</html>
-</main>
+    })();</script><noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript></div></div><div class="pagination-single"><span class="pagination-item previous"><i class="material-icons">navigate_before</i> <a href="http://keyin.me/post/polymer-2-5-observers-and-computed-properties/" rel="prev">Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</a> </span><span class="pagination-item next"><i class="material-icons">navigate_next</i> <a href="http://keyin.me/post/polymer-2-7-helper-element/" rel="next">Polymer 2.0 文档笔记(7) Helper Element</a></span></div></div></section></div></section><footer class="page-footer"><div class="container"><div class="row"><div class="col l6 s12"><h5 class="white-text">World of Forks</h5><p class="grey-text text-lighten-4">Theme <a href="" target="_blank">YAMT</a> designed by <a href="#!">Kevin Tan</a> with ❤</p></div><div class="col l4 offset-l2 s12"><h5 class="white-text">My Friends</h5><ul><li><a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a></li><li><a class="grey-text text-lighten-3" href="https://hclmaster.github.io/" target="_blank">HclMaster</a></li><li><a class="grey-text text-lighten-3" href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a></li></ul></div></div></div><div class="footer-copyright"><div class="container">Copyleft@Kevin Tan</div></div></footer></main><svg style="position: absolute; width: 0; height: 0; overflow: hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><symbol id="svg-icons-google-plus3" viewBox="0 0 32 32"><title>google-plus3</title><path d="M16 0c-8.838 0-16 7.162-16 16s7.162 16 16 16 16-7.163 16-16-7.163-16-16-16zM12 24c-4.425 0-8-3.575-8-8s3.575-8 8-8c2.162 0 3.969 0.787 5.363 2.094l-2.175 2.088c-0.594-0.569-1.631-1.231-3.188-1.231-2.731 0-4.963 2.263-4.963 5.050s2.231 5.050 4.963 5.050c3.169 0 4.356-2.275 4.538-3.45h-4.537v-2.744h7.556c0.069 0.4 0.125 0.8 0.125 1.325 0 4.575-3.063 7.819-7.681 7.819zM26 16v2h-2v-2h-2v-2h2v-2h2v2h2v2h-2z"></path></symbol><symbol id="svg-icons-twitter" viewBox="0 0 32 32"><title>twitter</title><path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path></symbol><symbol id="svg-icons-sina-weibo" viewBox="0 0 32 32"><title>sina-weibo</title><path d="M13.444 28.063c-5.3 0.525-9.875-1.875-10.219-5.35-0.344-3.481 3.675-6.719 8.969-7.244 5.3-0.525 9.875 1.875 10.213 5.35 0.35 3.481-3.669 6.725-8.963 7.244zM24.038 16.519c-0.45-0.137-0.762-0.225-0.525-0.819 0.512-1.287 0.563-2.394 0.006-3.188-1.038-1.481-3.881-1.406-7.137-0.037 0 0-1.025 0.444-0.762-0.363 0.5-1.613 0.425-2.956-0.356-3.738-1.769-1.769-6.469 0.069-10.5 4.1-3.013 3.006-4.763 6.213-4.763 8.981 0 5.288 6.787 8.506 13.425 8.506 8.7 0 14.494-5.056 14.494-9.069 0-2.431-2.044-3.806-3.881-4.375z"></path><path d="M29.819 6.831c-2.1-2.331-5.2-3.219-8.063-2.612v0c-0.663 0.144-1.081 0.794-0.938 1.45 0.144 0.662 0.788 1.081 1.45 0.938 2.038-0.431 4.238 0.2 5.731 1.856s1.9 3.912 1.256 5.888v0c-0.206 0.644 0.144 1.331 0.788 1.544 0.644 0.206 1.331-0.144 1.544-0.787v-0.006c0.9-2.762 0.331-5.938-1.769-8.269z"></path><path d="M26.587 9.75c-1.025-1.137-2.538-1.569-3.925-1.269-0.569 0.119-0.931 0.688-0.813 1.256 0.125 0.569 0.688 0.931 1.25 0.806v0c0.681-0.144 1.419 0.069 1.919 0.619 0.5 0.556 0.637 1.313 0.419 1.975v0c-0.175 0.55 0.125 1.15 0.681 1.331 0.556 0.175 1.15-0.125 1.331-0.681 0.438-1.356 0.163-2.906-0.863-4.037z"></path><path d="M13.738 21.769c-0.188 0.319-0.594 0.469-0.912 0.337-0.319-0.125-0.412-0.488-0.231-0.794 0.188-0.306 0.581-0.456 0.894-0.337 0.313 0.113 0.425 0.469 0.25 0.794zM12.044 23.931c-0.512 0.819-1.613 1.175-2.438 0.8-0.813-0.369-1.056-1.319-0.544-2.119 0.506-0.794 1.569-1.15 2.387-0.806 0.831 0.356 1.1 1.3 0.594 2.125zM13.969 18.144c-2.519-0.656-5.369 0.6-6.463 2.819-1.119 2.262-0.037 4.781 2.506 5.606 2.637 0.85 5.75-0.456 6.831-2.894 1.069-2.394-0.262-4.85-2.875-5.531z"></path></symbol><symbol id="svg-icons-github" viewBox="0 0 32 32"><title>github</title><path d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path></symbol></defs></svg><script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script><script type="text/javascript" src="http://keyin.me/js/materialize.min.js"></script><script type="text/javascript" src="http://keyin.me/js/index-2283cb9245.js"></script></body></html>

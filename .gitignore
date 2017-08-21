@@ -1,2 +1,4 @@
 static/
 staging/
+.tmp-server/
+node_modules/

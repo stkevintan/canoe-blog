@@ -5,10 +5,13 @@ tags = ["Polymer"]
 categories = ["Web"]
 +++
 
-Polymer提供观察函数、计算属性、数据绑定三大模型功能： 
+Polymer提供观察函数、计算属性、数据绑定三大模型功能：
+
 >- __Observers__ Callbacks invoked when data changes. 
 >- __Computed properties__ Virtual properties computed based on other properties, and recomputed when the input data changes. 
 >- __Data bindings__ Annotations that update the properties, attributes, or text content of a DOM node when data changes. 
+
+
  ```html
 <dom-module id="name-card"> 
   <template> 
@@ -128,6 +131,7 @@ Polymer是以路径来监听数据变化的。所以，就算两个路径实际�
 3. 数组路径后面接下标代表数组里面对应的项，比如`users.12`
 
 注意： 
+
 1. 通配符只能用在observers、computed properties里面的路径中，不能用在数据绑定里
 2. 观察`splices`路径时，事件参数中只提供当前数组发生变化的元素组成的子数组，所以在一般情况下通配符路径比`splices`路径要实用
 
@@ -136,6 +140,7 @@ Polymer是以路径来监听数据变化的。所以，就算两个路径实际�
 如果两条路径都指向同一个对象,如下图,需要使用`linkPaths`方法将它们关联起来。
 ![two-paths](https://www.polymer-project.org/images/1.0/data-system/linked-paths-new.png)
 注意： 
+
 1. 两条路径必须在同一个data scope下
 2. 如果需要接触两条路径的关联，使用`unlinkPaths`, __该函数只接受`linkPaths`调用时的第一条路径__
 
@@ -158,7 +163,7 @@ Polymer的数据传递是同步的，除非调用一个外部异步函数
 数据流的方向主要由两个地方控制：数据绑定方式和属性配置项。
 
 数据绑定主要有两种方式：
--   __Automatic__ ：双向绑定，包括向上(upward,target to host)和向下(downward.host to target),使用`{{ }}`
+-   __Automatic__ ：双向绑定，包括向上(upward,target to host)和向下(downward.host to target),使用 `\{\{ \}\}`
     ```html
     <my-input value="{{name}}"></my-input>
     ```
@@ -237,6 +242,7 @@ referenced by multiple elements, and there's no way to prevent one element from 
 array or changing a subproperty of an object.
 As a result, Polymer treats the contents of arrays and objects as always being **available** for two-
 way binding. That is:
+
 >*   Data updates always flow downwards, even if the target property is marked read-only.
 >*   Change events for upward data flow are always fired, even if the target property is not marked
     as notifying.
@@ -249,16 +255,16 @@ notifications from being propagated to the host element.
 ### Change notification events 
 当一个元素某路径比如`property`发生变化，则会响应的触发一个`property-changed`的通知事件。
 事件内容根据路径类型相关：
+
 1. 属性变化： 新值将储存`detail.value`中
 2. 子属性变化：子属性的路径将会储存在`detail.path`中，新值将会储存在`detail.value`中。
 3. 数组变化：变化路径将会储存在`detail.path`中(比如： `myArray.splices`)，新值将会被储存在`detail.value`中。
 
-_不是很明白`myArray.splices`是什么鬼，文档不清楚_
 
 >**Don't stop propagation on change notification events.** To avoid creating and discarding
-event objects, Polymer uses cached event objects for change notifications. Calling `stopPropagation`
-on a change notification event **prevents all future events for that property.** Change notification
-events don't bubble, so there should be no reason to stop propagation.
+>event objects, Polymer uses cached event objects for change notifications. Calling `stopPropagation`
+>on a change notification event **prevents all future events for that property.** Change notification
+>events don't bubble, so there should be no reason to stop propagation.
 
 注意： __不要在通知事件里面使用`stopPropagation`__
 
@@ -283,6 +289,7 @@ changes.
 
 ### Property effects
 当属性变化的时候，下面的任务会依次执行：
+
 1. 重写计算受到影响的属性的值 - 此步将会更新计算属性(computed properties)
 2. 更新数据绑定
 3. 更新host元素上面的html属性

@@ -15,12 +15,14 @@ shadowRoot.innerHTML = '<h1>Hello Shadow DOM</h1>';
 
 ## ShadowDOM Composition
 主要概念： 
+
 - LightDOM: 元素的实际子孙节点，浏览器不会对LightDOM做任何的修改和移动。但是渲染的时候会渲染到相对于的slot节点之下，如果找不到对应的slot节点，则不会渲染。
 - ShadowDOM: 不解释。。。 
 - Slot:  slot标签是LightDOM插入到ShadowDOM中的标记。可以设置name属性来匹配对应的LightDOM。Slot标签不会渲染，但是还是会存在（即能够参与事件传递）。另外如果一个LightDOM找不到匹配的slot插入点，则改LightDOM也不会被渲染。 
 - Flatterned Tree: LightDOM通过ShadowDOM里面的slot标记合并在一起（flattern）的抽象的DOM树（devTools中不可见），是最后浏览器实际用来渲染的DOM树。 
 
 需要注意的是：
+
 >Slots can only be selected explicitly, by slot name. It's impossible to select content implicitly, based on a tag name or an arbitrary selector like `:not(.header)`.
 
 slot只能用slot name来区分、选中。不能用其他任意的css选择器。
@@ -49,12 +51,13 @@ slot只能用slot name来区分、选中。不能用其他任意的css选择器�
 
 ## Slot APIs && Observe added and removed children 
  
-`HTMLElement.assignedSlot`
-`HTMLSlotElement.assignedNodes` 
-`HTMLSlotElement.slotchange(event)` 
-`Polymer.FlattenedNodesObserver` 
-`Polymer.FlattenedNodesObserver.getFlattenedNodes(node)`
-`new Polymer.FlattenedNodesObserver(this.$.slot,(info)=>{})`
+- `HTMLElement.assignedSlot`
+- `HTMLSlotElement.assignedNodes` 
+- `HTMLSlotElement.slotchange(event)` 
+- `Polymer.FlattenedNodesObserver` 
+- `Polymer.FlattenedNodesObserver.getFlattenedNodes(node)`
+- `new Polymer.FlattenedNodesObserver(this.$.slot,(info)=>{})`
+
 详情参考<https://www.polymer-project.org/2.0/docs/devguide/shadow-dom>  
 
 
@@ -77,6 +80,7 @@ Scoped CSS特性的实现原理跟Vue相似：对元素的ShadowDOM添加class�
 
 ## ShadowDOM styling
 ShadowDOM样式三大原则： 
+
 1. 外层的样式不会对内层样式进行匹配。 
 2. 内层样式不会影响外层样式。 
 3. 可继承的css属性（例如：color）等，内层可以照样继承自外层。 
@@ -104,42 +108,43 @@ ShadowDOM样式三大原则：
   - `slotted(*)` 选择默认的LightDOM(不包含有name值的slot)
   - `slotted(slot=tkw)` 选择name为tkw的LightDOM
 
-```html
-<dom-module>
-<template>
-  <style>
-    ::slotted(img){ 
-      border-radius: 103%;
+  ```html
+  <dom-module>
+  <template>
+    <style>
+      ::slotted(img){ 
+        border-radius: 103%;
+      }
+    </style>
+    <div><slot></slot></div>
+  </template>
+  <script>
+    // define the element's class element
+    class XFoo extends Polymer.Element {
+      // 'is' getter, return the tag name which is lowercased. required.
+      static get is(){
+        return 'x-foo';
+      }
+      // Define the properties.
+      static get properties() {}
+      // Element class can define custom element reactions
+      constructor() { super(); }
+      connectedCallback() {
+        super.connectedCallback();
+        console.log('x-foo created!');
+      }
     }
-  </style>
-  <div><slot></slot></div>
-</template>
-<script>
-  // define the element's class element
-  class XFoo extends Polymer.Element {
-    // 'is' getter, return the tag name which is lowercased. required.
-    static get is(){
-      return 'x-foo';
-    }
-    // Define the properties.
-    static get properties() {}
-    // Element class can define custom element reactions
-    constructor() { super(); }
-    connectedCallback() {
-      super.connectedCallback();
-      console.log('x-foo created!');
-    }
-  }
-  
-  window.customElements.define(XFoo.is, XFoo);
-</script>
-</dom-module>
+    
+    window.customElements.define(XFoo.is, XFoo);
+  </script>
+  </dom-module>
 
-<x-foo>
-  <h1>A logo</h1>
-  <img />
-</x-foo>
-```
+  <x-foo>
+    <h1>A logo</h1>
+    <img />
+  </x-foo>
+  ```
+
 ### Share styles between elements
 
 ```html
@@ -326,6 +331,8 @@ customElements.define('my-element', MyElement);
 注意：
 1. 不要对父类的template直接修改，应该先拷贝一份出来。 
 2. 如果需要做一些耗资源的操作，应该对你修改的template进行缓存，以免重复调用。 
+
+
 ```javascript
 (function() { 
   let memoizedTemplate; 
@@ -374,11 +381,13 @@ class MyExtension extends MySuperClass {
 >Polymer builds a static map of node IDs when the element initializes its DOM template, to provide convenient access to frequently used nodes without the need to query for them manually. Any node specified in the element's template with an id is stored on the this.$ hash by id. 
  The this.$ hash is created when the shadow DOM is initialized. In the ready callback, you must call super.ready() before accessing this.$. 
  
-这个主要是Polymer提供的一个可以快速访问DOM节点的方式。可以通过`this.$[id]`来获取拥有对应id的元素/自定义元素。 
-相当于`document.getElementById`的升级版类似于react中的`this.refs` 
-`this.$`接口只能在ready回调函数的`super.ready()`之后被调用。 
-动态创建的节点（`dom-repeat`\ `dom-if`）并不包含在`this.$`集合里，但是还是可以用标准的`querySelector`方法获取。 
-```javascript
+这个主要是Polymer提供的一个可以快速访问DOM节点的方式。可以通过`this.$[id]`来获取拥有对应id的元素/自定义元素。  
+相当于`document.getElementById`的升级版类似于react中的`this.refs`   
+`this.$`接口只能在ready回调函数的`super.ready()`之后被调用。   
+动态创建的节点（`dom-repeat`\ `dom-if`）并不包含在`this.$`集合里，但是还是可以用标准的`querySelector`方法获取。    
+
+
+```html
 <dom-module id="x-custom"> 
  
 <template> 

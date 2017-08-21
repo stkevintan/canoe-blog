@@ -65,11 +65,13 @@ ready() {
 } 
 ```
 
->Elements have a custom element state that takes one of the following values: 
->1. `uncustomized`: The element does not have a valid custom element name. It is either a built-in element (`<p>`, `<input>`) or an unknown element that cannot become a custom element (`<nonsense>`) 
->2. `undefined`: The element has a valid custom element name (such as "my-element"), but has not been defined. 
->3. `custom`: The element has a valid custom element name and has been defined and upgraded. 
->4. `failed`: An attempt to upgrade the element failed (for example, because the class was invalid). 
+>Elements have a custom element state that takes one of the following values:  
+>  
+>1. `uncustomized`: The element does not have a valid custom element name. It is either a built-in element (`<p>`, `<input>`) or an unknown element that cannot become a custom element (`<nonsense>`)    
+>2. `undefined`: The element has a valid custom element name (such as "my-element"), but has not been defined.    
+>3. `custom`: The element has a valid custom element name and has been defined and upgraded.    
+>4. `failed`: An attempt to upgrade the element failed (for example, because the class was invalid).    
+
 
 元素内部拥有四个状态，我们不能直接获得，但是可以使用:defined伪类来选择"uncustomized"和"custom"的元素。 
 
@@ -92,6 +94,7 @@ ready() {
 
 
 #### Class-based elements
+
 ```javascript
 // define the element's class element
 class MyElement extends Polymer.Element {
@@ -124,6 +127,7 @@ var el2 = new MyElement();
 ```
 
 #### Legacy elements
+
 ```javascript
 // register an element  
 MyElement = Polymer({  
@@ -136,6 +140,7 @@ var el1 = document.createElement('my-element');
 // ... or with the constructor: 
 var el2 = new MyElement();
 ```
+
 Legacy元素的生命周期有着不同的名字：
 
 | Legacy lifecycle cb | Class-based lifecycle cb    |
@@ -153,6 +158,7 @@ Legacy元素的生命周期有着不同的名字：
 自定义属性主要在`properties` getter中定义。可以直接传一个字符串。也可以传给他们一个Object。
 Object需要包含下面几个属性：
 #### type 数据类型 
+
 >Type: constructor  
 >Attribute type, used for deserializing from an attribute. Polymer supports deserializing the following types: Boolean, Date, Number, String, Array and Object. You can add support for other types by overriding the element's  _deserializeValue method. 
 >Unlike 0.5, the property's type is explicit, specified using the type's constructor. Seeattribute deserialization for more information. 
@@ -167,7 +173,8 @@ Object需要包含下面几个属性：
 
 `Array`和`Object`需要写成JSON的形式，`Date`需要写成任何符合Date解析形式的String。
 
-可以重写属性序列化函数： `_serializeValue method`. 
+可以重写属性序列化函数： `_serializeValue method`.
+
 ```javascript
 _serializeValue(value) { 
   if (value instanceof MyCustomType) { 
@@ -178,10 +185,12 @@ _serializeValue(value) {
 ```
 
 #### value 默认值
+
 >Type: `boolean`, `number`, `string` or `function`. 
 >Default value for the property. If value is a function, the function is invoked and the return value is used as the default value of the property. If the default value should be an array or object unique to the instance, create the array or object inside a function. See Configuring default property values for more information
 
-跟Vue一样，如果一个属性的默认值是以Array或者Object,那么所有该元素的实例的默认值都共享一个变量。如果要使每个元素拥有一份完全独立的拷贝的话，需要在这个值外面包一个函数。
+跟Vue一样，如果一个属性的默认值是以Array或者Object,那么所有该元素的实例的默认值都共享一个变量。如果要使每个元素拥有一份完全独立的拷贝的话，需要在这个值外面包一个函数。  
+
 ```javascript
 class XCustom extends Polymer.Element { 
 static get properties() { 
@@ -201,6 +210,7 @@ static get properties() {
 
 
 #### reflectToAttribute
+
 >Type: boolean 
 >Set to true to cause the corresponding attribute to be set on the host node when the property value changes. If the property value is Boolean, the attribute is created as a standard HTML boolean attribute (set if true, not set if false). For other property types, the attribute value is a string representation of the property value. Equivalent to reflect in Polymer 0.5. See Reflecting properties to attributes for more information
 
@@ -213,16 +223,20 @@ static get properties() {
 Boolean类型的属性只能把默认值设为false，因为标准的HTML属性行为（存在为true，不存在为false）,如果必须把默认值设为true，可以用String或者Number类型属性代替。 
 
 #### readOnly
+
 >Type: boolean 
 >If true, the property can't be set directly by assignment or data binding.
 
 #### notify
+
 >Type: boolean 
 >If true, the property is available for two-way data binding. In addition, an event, property-name-changed is fired whenever the property changes
 
 DOM上面的属性变化是否调用回调（反向绑定）属性`this.firstName`的变化会触发`first-name-changed`事件。这些事件被用在了双向绑定系统，在外部代码里面我们可以直接使用`addEventListener`。 
 _有点像Java里面的约定大于配置的思想，这样能使代码变得简单易懂_
+
 #### computed
+
 >Type: string 
 >The value is interpreted as a method name and argument list. The method is invoked to calculate the value whenever any of the argument values changes. Computed properties are always read-only. See Computed properties for more information
 
@@ -231,6 +245,7 @@ _有点像Java里面的约定大于配置的思想，这样能使代码变得简
 
 
 #### observer
+
 >Type: string 
 >The value is interpreted as a method name to be invoked when the property value changes. Note that unlike in 0.5, property change handlers must be registered 
 >explicitly. The propertyNameChanged method will not be invoked automatically. See Property change callbacks (observers) for more information
@@ -239,8 +254,8 @@ _有点像Java里面的约定大于配置的思想，这样能使代码变得简
 
 
 ### 其他
-1. 隐式声明属性: if you add it to a data binding or add it as a dependency of an observer, computed property, or computed binding. 
 
+1. 隐式声明属性: if you add it to a data binding or add it as a dependency of an observer, computed property, or computed binding. 
 2. Priavte和Protected属性：分别用__prop和_prop表示。
 
 

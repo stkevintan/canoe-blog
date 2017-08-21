@@ -16,6 +16,20 @@
         </a>
       </li>
       {{end}} {{ end }}
+      <li>
+        <a class="collapsible-header waves-effect waves-indigo modal-trigger" href='#modal1'>
+          <i class="material-icons">search</i>
+          <span class="content">Search</span>
+          <i class="material-icons">chevron_right</i>
+        </a>
+      </li>
+        <li>
+          <a class="collapsible-header waves-effect waves-indigo" target="_blank" href='{{ $.Site.RSSLink }}'>
+            <i class="material-icons">rss_feed</i>
+            <span class="content">RSS Feed</span>
+            <i class="material-icons">chevron_right</i>
+          </a>
+        </li>
     </ul>
     <ul class="collapsible nav-group" data-collapsible="accordion">
       <li>
@@ -35,7 +49,7 @@
       <li>
         <div class="collapsible-header waves-effect waves-indigo">
           <i class="material-icons">{{index $keyLocal "icon"}}</i>
-          <span class="content">{{ index $keyLocal "name" | humanize }} </span>
+          <span class="content">{{ index $keyLocal "name" | title }} </span>
           <!-- | singularize | upper -->
           <i class="material-icons angle">expand_more</i>
         </div>
@@ -52,7 +66,7 @@
       {{ with .Site.Params.ExternalLink }} {{ range . }}
       <li>
         <a class="collapsible-header waves-effect waves-indigo" href="{{.url}}" target="_blank">
-          <i class="material-icons" data-svg-icon="{{.icon}}">{{ .icon }}</i>
+          {{ .pre | safeHTML }}
           <span class="content">{{ .name }}<small>{{ .id }}</small></span>
           <i class="material-icons">chevron_right</i>
         </a>

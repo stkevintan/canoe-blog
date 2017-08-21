@@ -5,9 +5,9 @@ tags = ["Polymer"]
 categories = ["Web"]
 +++
 
-
 >A _data binding_ connects data from a custom element (the _host element_) to a property or attribute of an element in its local DOM (the _child_
 or _target element_). The host element data can be a property or sub-property represented by a [data path](data-system#paths), or data generated based on one or more paths.
+
 数据绑定能够将host元素和target元素的property或者attribute相互链接床单。这里数据指的是路径(Paths)
 
 ## Anatomy of a data binding
@@ -18,8 +18,9 @@ or _target element_). The host element data can be a property or sub-property re
 <custom-element property-name=annotation-or-compound-binding ></custom-element>
 <custom-element attribute-name$=annotation-or-compound-binding></custom-element>
 ```
+
 1. `=`绑定property,`$=`绑定attribute(href,style,...)
-2. annotation代表数据绑定标记: `[[ ]]`或者`{{ }}`
+2. annotation代表数据绑定标记: `[[ ]]`或者`\{\{ \}\}`
 3. compound-binding:包含标记的字符串: `"my name is {{ name }}"`
 
 
@@ -70,9 +71,11 @@ attribute绑定相当于
 element.setAttribute(attr,value)
 ```
 property绑定相当于
+
 ```javascript
 element.property = 'value'
 ```
+
 因此，一些attribute同样可以使用property形式绑定：
 ```html
 <template>
@@ -137,6 +140,7 @@ use another element such as `iron-input` or `paper-input` that handles two-way b
 </template>
 ```
 注意：
+
 1. 逻辑非只能用在单项绑定中使用
 2. 只能有一个`!`不能`!!`
 
@@ -154,6 +158,7 @@ function.
 一个元素里面可以有多个使用同样的computing function的computed binding
 
 computed binding并不完全等同于computed property，差异有下面几点：
+
 - computed binding的依赖路径是相对于元素当前的data scope的
 - computed binding的参数不仅可以有computed property那样的路径参数，也可以是单纯的字符串或者数字等
 - computed binding可以没有参数，这种情况下，函数只会被调用一次
@@ -214,8 +219,9 @@ computed binding只能在单向绑定中使用
 <span>Name: [[lastname]], [[firstname]]</span>
 ```
 注意：
+
 1. undefined会输出成空字符串
-2. Compound binding永远是单向绑定，虽然你也可以使用`{{ }}`记号。
+2. Compound binding永远是单向绑定，虽然你也可以使用`\{\{ \}\}`记号。
 
 
 
@@ -224,6 +230,7 @@ computed binding只能在单向绑定中使用
 
 >To keep annotation parsing simple, **Polymer doesn't provide a way to bind directly to an array
 item**.
+
 为了解析简单，Polymer无法直接绑定一个数组里面的元素
 
 ```html
