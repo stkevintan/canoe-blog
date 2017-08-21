@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>树的直径 on World of Forks</title>
+    <link>http://keyin.me/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/</link>
+    <description>Recent content in 树的直径 on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Thu, 31 Jul 2014 03:37:32 +0800</lastBuildDate>
+    
+	<atom:link href="http://keyin.me/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HDU4612 Warm up</title>
+      <link>http://keyin.me/post/hdu4612-warm-up/</link>
+      <pubDate>Thu, 31 Jul 2014 03:37:32 +0800</pubDate>
+      
+      <guid>http://keyin.me/post/hdu4612-warm-up/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

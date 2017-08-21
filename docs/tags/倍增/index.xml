@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>倍增 on World of Forks</title>
+    <link>http://keyin.me/tags/%E5%80%8D%E5%A2%9E/</link>
+    <description>Recent content in 倍增 on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Fri, 01 Aug 2014 18:43:01 +0800</lastBuildDate>
+    
+	<atom:link href="http://keyin.me/tags/%E5%80%8D%E5%A2%9E/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>POJ1330 Nearest Common Ancestors</title>
+      <link>http://keyin.me/post/poj1330-nearest-common-ancestors/</link>
+      <pubDate>Fri, 01 Aug 2014 18:43:01 +0800</pubDate>
+      
+      <guid>http://keyin.me/post/poj1330-nearest-common-ancestors/</guid>
+      <description>&lt;p&gt;Time Limit: 1000MS Memory Limit: 10000K&lt;br /&gt;
+Total Submissions: 17734 Accepted: 9405&lt;/p&gt;
+
+&lt;p&gt;##Description
+A rooted tree is a well-known data structure in computer science and engineering. An example is shown below:&lt;/p&gt;
+
+&lt;p&gt;In the figure, each node is labeled with an integer from {1, 2,&amp;hellip;,16}. Node 8 is the root of the tree. Node x is an ancestor of node y if node x is in the path between the root and node y. For example, node 4 is an ancestor of node 16. Node 10 is also an ancestor of node 16. As a matter of fact, nodes 8, 4, 10, and 16 are the ancestors of node 16. Remember that a node is an ancestor of itself. Nodes 8, 4, 6, and 7 are the ancestors of node 7. A node x is called a common ancestor of two different nodes y and z if node x is an ancestor of node y and an ancestor of node z. Thus, nodes 8 and 4 are the common ancestors of nodes 16 and 7. A node x is called the nearest common ancestor of nodes y and z if x is a common ancestor of y and z and nearest to y and z among their common ancestors. Hence, the nearest common ancestor of nodes 16 and 7 is node 4. Node 4 is nearer to nodes 16 and 7 than node 8 is.
+
+For other examples, the nearest common ancestor of nodes 2 and 3 is node 10, the nearest common ancestor of nodes 6 and 13 is node 8, and the nearest common ancestor of nodes 4 and 12 is node 4. In the last example, if y is an ancestor of z, then the nearest common ancestor of y and z is y.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
