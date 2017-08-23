@@ -1,23 +1,11 @@
 $(() => {
-  hideSidePanelScrollBar();
   initPlugins();
   setTocToggle();
   setAsideToggle();
   loadSvg();
   setSearchBoard();
 });
-function hideSidePanelScrollBar() {
-  const $outer = $('<div>')
-    .css({ visibility: 'hidden', width: 100, overflow: 'scroll' })
-    .appendTo('body');
-  const widthWithScroll = $('<div>')
-    .css({ width: '100%' })
-    .appendTo($outer)
-    .outerWidth();
-  $outer.remove();
-  const scrollBarWidth = 100 - widthWithScroll;
-  $('.side-panel .inner').css('margin-right', -scrollBarWidth);
-}
+
 
 const initPlugins = () => {
   // enable `a` click event inside `li.tab`
