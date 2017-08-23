@@ -1,20 +1,118 @@
 $(() => {
+  hideSidePanelScrollBar();
+  initPlugins();
+  setTocToggle();
+  setAsideToggle();
+  loadSvg();
+  setSearchBoard();
+});
+function hideSidePanelScrollBar() {
+  const $outer = $('<div>')
+    .css({ visibility: 'hidden', width: 100, overflow: 'scroll' })
+    .appendTo('body');
+  const widthWithScroll = $('<div>')
+    .css({ width: '100%' })
+    .appendTo($outer)
+    .outerWidth();
+  $outer.remove();
+  const scrollBarWidth = 100 - widthWithScroll;
+  $('.side-panel .inner').css('margin-right', -scrollBarWidth);
+}
+
+const initPlugins = () => {
   // enable `a` click event inside `li.tab`
   $('.tab').click(function(e) {
     window.location.href = $(this).find('a').prop('href');
   });
   $('.modal').modal();
-  setTocToggle();
-  setAsideToggle();
-});
+};
 
+const loadSvg = () => {
+  const url = window.origin + '/svg/icon.svg';
+  const $area = $('<div style="display:none"></div>').appendTo($('body'));
+  $area.load(url);
+};
+
+const loadLunrDB = (() => {
+  let db = null;
+  return () => {
+    if (db) return db;
+    const url = window.origin + '/index.json';
+    db = $.getJSON(url)
+      .then(pages => ({
+        pageMap: pages.reduce((map, page) => {
+          map[page.uri] = page;
+          return map;
+        }, Object.create(null)),
+        index: lunr(function() {
+          this.field('title', { boost: 10 });
+          this.field('tags', { boost: 5 });
+          this.field('content');
+          this.ref('uri');
+          pages.forEach(page => this.add(page));
+        })
+      }))
+      .fail((jqxhr, textStatus, error) => {
+        console.error(
+          'Error getting Hugo index flie:',
+          textStatus + ', ' + error
+        );
+        db = null;
+      });
+    return db;
+  };
+})();
+
+const search = query =>
+  loadLunrDB().then(data =>
+    data.index.search(query).map(item => data.pageMap[item.ref])
+  );
+
+const setSearchBoard = () => {
+  const $in = $('#in-search');
+  const $out = $('#out-search');
+  const clear = (text = 'No Result...') =>
+    $out
+      .empty()
+      .append(`<span class="collection-item text-grey">${text}</span>`);
+
+  clear();
+
+  const add = items => {
+    if (!items || !items.length) {
+      clear();
+      return;
+    }
+    if (!$.isArray(items)) items = [items];
+    $out
+      .empty()
+      .append(
+        items.map(
+          item =>
+            `<a href="${item.uri}" class="collection-item nowrap"><i class="material-icons">description</i>${item.title}</a>`
+        )
+      );
+  };
+
+  $in.keyup(() => {
+    const query = $in.val().trim();
+    if (query.length < 2) {
+      clear();
+      return;
+    }
+    clear('Searching...');
+    search(query)
+      .then(items => add(items))
+      .fail(() => clear('Fail to execute search, Please check your network.'));
+  });
+};
 const setTocToggle = () => {
   let onscrollSelect = true;
   const $toc = $('.toc-panel nav');
   const $footer = $('footer.page-footer');
   const $post = $('.post .card');
   const $header = $('nav.navbar');
-  const items = Array.from($toc.find('li a'));
+  const items = [].slice.call($toc.find('li a'));
 
   let tocHeight = $toc.outerHeight(); // 包括内边距
   let postOffset = $post.offset();
@@ -106,7 +204,7 @@ const setAsideToggle = () => {
   const $body = $('body');
   const $swither = $('.button-collapse');
   const $icon = $('i.material-icons', $swither);
-  const $cover = $('<div id="js-cover"></div>');
+  const $cover = $('<div id="js-cover"></div>').appendTo($body);
   const onSwitcherClick = () => {
     if ($aside.hasClass('open')) {
       $aside.removeClass('open');
@@ -126,7 +224,6 @@ const setAsideToggle = () => {
     e.preventDefault();
     onSwitcherClick();
   });
-  $cover.appendTo($body);
 
   $swither.click(onSwitcherClick);
 };

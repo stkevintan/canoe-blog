@@ -33,22 +33,32 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="{{ $.Site.BaseURL }}/favicon.ico" rel="shortcut icon">
+
+  <script>
+    window.origin = {{ $.Site.BaseURL }}
+  </script>
 </head>
 
-{{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }}
-{{ $curType := index $path (sub (len $path) 2)}}
+{{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }} {{ $curType := index $path (sub (len $path) 2)}}
+
 <body>
   <!-- Modal Structure -->
-  <div id="modal1" class="modal">
+  <div id="modal-search" class="modal">
     <div class="modal-content">
-      <form action="//www.google.com/search" method="get" accept-charset="utf-8">
-        <input type="hidden" name="sitesearch" value="{{ $.Site.BaseURL }}">
-        <div class="input-field">
-          <input placeholder="Search" id="input-search" name="q" type="text" required aria-required="true"/>
+      <form>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="in-search" type="text" required aria-required="true" />
+            <label for='in-search'>Search</label>
+          </div>
         </div>
-    </form>
+      </form>
+      <div class="out-wrapper row">
+        <div id="out-search" class="collection col s12"></div>
+      </div>
     </div>
   </div>
+
   <div class="navbar-fixed">
     <nav class="navbar">
       <div class="nav-wrapper container">
@@ -57,23 +67,22 @@
           {{ .Site.Title }}
         </a>
 
-        <ul class="right hide-on-med-and-down">
-           <!-- https://www.google.com.hk/search?sitesearch={{ .Site.BaseURL }} -->
-          <li ><a class="modal-trigger" href='#modal1'><i class="material-icons">search</i></a></li>
-          <li><a href='{{ $.Site.RSSLink }}' target="_blank" ><i class="material-icons">rss_feed</i></a></li>
+        <ul class="right hide-on-small-and-down">
+          <!-- https://www.google.com.hk/search?sitesearch={{ .Site.BaseURL }} -->
+          <li><a class="modal-trigger" href='#modal-search'><i class="material-icons">search</i></a></li>
+          <li><a href='{{ $.Site.RSSLink }}' target="_blank"><i class="material-icons">rss_feed</i></a></li>
         </ul>
-        {{ with .Site.Params.Menu }}
-          <ul class="center tabs tabs-transparent hide-on-med-and-down">
-            {{ range . }}
-            <li class="tab">
-              <a href="{{ $.Site.BaseURL }}{{ .url }}" 
-              class='{{ if eq $curType (trim .url "/") }} active {{ end }}'>
-                {{ .name }}
+        {{ with .Site.Menus.main }}
+        <ul class="center tabs tabs-transparent hide-on-med-and-down">
+          {{ range . }}
+          <li class="tab">
+            <a href="{{ $.Site.BaseURL }}{{ .URL }}" class='{{ if eq $curType (trim .URL "/") }} active {{ end }}'>
+                {{ .Name }}
               </a>
-            </li>
-            {{end}} 
-          </ul>
-         {{end}}
+          </li>
+          {{end}}
+        </ul>
+        {{end}}
       </div>
     </nav>
   </div>

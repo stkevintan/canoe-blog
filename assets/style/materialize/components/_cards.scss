@@ -130,21 +130,33 @@
         }
         .card-meta {
             display: block;
-            // margin-bottom: $gutter-width;
-            time{
-                display: inline-block;
-                color: $off-grey;
+            margin-bottom: $gutter-width / 2;
+            line-height: 20px;
+            i {
+                line-height: 20px;
+                color: $secondary-color;
+                vertical-align: middle;
             }
-            a {
+            time {
+                vertical-align: middle;
+                display: inline-block;
                 color: $secondary-color;
             }
             address {
                 display: inline-block;
                 font-style: normal;
-                font-weight: bold;
-                margin-left: 8px;
-                a {
-                    color: $success-color;
+                vertical-align: middle;
+                &:before {
+                    content: '';
+                    margin: 0 2px;
+                    $width: 11px;
+                    display: inline-block;
+                    height: $width;
+                    border: {
+                        top: $width/2 solid transparent;
+                        bottom: $width/2 solid transparent;
+                        left: $width solid $link-color;
+                    }
                 }
             }
         }

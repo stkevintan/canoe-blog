@@ -10,9 +10,9 @@
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text">My Friends</h5>
         <ul>
-          {{ range .Site.Params.FriendLink }}
-          <li><a class="grey-text text-lighten-3" href="{{.url}}" target="_blank">{{.name}}</a></li>
-          {{ end }}
+          {{ with .Site.Menus.friend }}{{ range . }}
+          <li><a class="grey-text text-lighten-3" href="{{ .URL }}" target="_blank">{{ .Name }}</a></li>
+          {{ end }}{{ end }}
         </ul>
       </div>
     </div>

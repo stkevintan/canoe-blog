@@ -57,6 +57,12 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "http://npm.mail.netease.com/registry/amdefine/download/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+ansi-red@^0.1.1:
+  version "0.1.1"
+  resolved "http://npm.mail.netease.com/registry/ansi-red/download/ansi-red-0.1.1.tgz#8c638f9d1080800a353c9c28c8a81ca4705d946c"
+  dependencies:
+    ansi-wrap "0.1.0"
+
 ansi-regex@^0.2.0, ansi-regex@^0.2.1:
   version "0.2.1"
   resolved "http://npm.mail.netease.com/registry/ansi-regex/download/ansi-regex-0.2.1.tgz#0d8e946967a3d8143f93e24e298525fc1b2235f9"
@@ -78,6 +84,10 @@ ansi-styles@^3.1.0:
   resolved "http://npm.mail.netease.com/registry/ansi-styles/download/ansi-styles-3.2.0.tgz#c159b8d5be0f9e5a6f346dab94f16ce022161b88"
   dependencies:
     color-convert "^1.9.0"
+
+ansi-wrap@0.1.0:
+  version "0.1.0"
+  resolved "http://npm.mail.netease.com/registry/ansi-wrap/download/ansi-wrap-0.1.0.tgz#a82250ddb0015e9a27ca82e82ea603bbfa45efaf"
 
 anymatch@^1.3.0:
   version "1.3.2"
@@ -594,6 +604,14 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
+babel-polyfill@^6.26.0:
+  version "6.26.0"
+  resolved "http://npm.mail.netease.com/registry/babel-polyfill/download/babel-polyfill-6.26.0.tgz#379937abc67d7895970adc621f284cd966cf2153"
+  dependencies:
+    babel-runtime "^6.26.0"
+    core-js "^2.5.0"
+    regenerator-runtime "^0.10.5"
+
 babel-preset-env@^1.6.0:
   version "1.6.0"
   resolved "http://npm.mail.netease.com/registry/babel-preset-env/download/babel-preset-env-1.6.0.tgz#2de1c782a780a0a5d605d199c957596da43c44e4"
@@ -1076,6 +1094,10 @@ coa@~1.0.1:
 code-point-at@^1.0.0:
   version "1.1.0"
   resolved "http://npm.mail.netease.com/registry/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
+
+coffee-script@^1.12.4:
+  version "1.12.7"
+  resolved "http://npm.mail.netease.com/registry/coffee-script/download/coffee-script-1.12.7.tgz#c05dae0cb79591d05b3070a8433a98c9a89ccc53"
 
 color-convert@^1.3.0, color-convert@^1.9.0:
   version "1.9.0"
@@ -2226,6 +2248,16 @@ graceful-fs@~1.2.0:
   version "1.0.1"
   resolved "http://npm.mail.netease.com/registry/graceful-readlink/download/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
 
+gray-matter@^2.0.2:
+  version "2.1.1"
+  resolved "http://npm.mail.netease.com/registry/gray-matter/download/gray-matter-2.1.1.tgz#3042d9adec2a1ded6a7707a9ed2380f8a17a430e"
+  dependencies:
+    ansi-red "^0.1.1"
+    coffee-script "^1.12.4"
+    extend-shallow "^2.0.1"
+    js-yaml "^3.8.1"
+    toml "^2.3.2"
+
 gulp-babel@^7.0.0:
   version "7.0.0"
   resolved "http://npm.mail.netease.com/registry/gulp-babel/download/gulp-babel-7.0.0.tgz#7b93c975159f7a0553e4263b4a55100ccc239b28"
@@ -2594,6 +2626,16 @@ http-signature@~1.1.0:
     assert-plus "^0.2.0"
     jsprim "^1.2.2"
     sshpk "^1.7.0"
+
+hugo-lunr@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/hugo-lunr/-/hugo-lunr-0.0.4.tgz#5d6e0e4166433818b54f0c2d5f658c1c916c396e"
+  dependencies:
+    glob "^7.0.0"
+    gray-matter "^2.0.2"
+    remove-markdown "^0.1.0"
+    striptags "^2.1.1"
+    toml "^2.3.0"
 
 imagemin-gifsicle@^5.0.0:
   version "5.2.0"
@@ -2967,7 +3009,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "http://npm.mail.netease.com/registry/js-tokens/download/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@^3.4.3:
+js-yaml@^3.4.3, js-yaml@^3.8.1:
   version "3.9.1"
   resolved "http://npm.mail.netease.com/registry/js-yaml/download/js-yaml-3.9.1.tgz#08775cebdfdd359209f0d2acd383c8f86a6904a0"
   dependencies:
@@ -4419,6 +4461,10 @@ regenerate@^1.2.1:
   version "1.3.2"
   resolved "http://npm.mail.netease.com/registry/regenerate/download/regenerate-1.3.2.tgz#d1941c67bad437e1be76433add5b385f95b19260"
 
+regenerator-runtime@^0.10.5:
+  version "0.10.5"
+  resolved "http://npm.mail.netease.com/registry/regenerator-runtime/download/regenerator-runtime-0.10.5.tgz#336c3efc1220adcedda2c9fab67b5a7955a33658"
+
 regenerator-runtime@^0.11.0:
   version "0.11.0"
   resolved "http://npm.mail.netease.com/registry/regenerator-runtime/download/regenerator-runtime-0.11.0.tgz#7e54fe5b5ccd5d6624ea6255c3473be090b802e1"
@@ -4459,6 +4505,10 @@ regjsparser@^0.1.4:
 relateurl@0.2.x:
   version "0.2.7"
   resolved "http://npm.mail.netease.com/registry/relateurl/download/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
+
+remove-markdown@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/remove-markdown/-/remove-markdown-0.1.0.tgz#cf8b66e9e6fcb4acc9721048adeee7a357698ba9"
 
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
@@ -5000,6 +5050,10 @@ strip-outer@^1.0.0:
   dependencies:
     escape-string-regexp "^1.0.2"
 
+striptags@^2.1.1:
+  version "2.2.1"
+  resolved "http://npm.mail.netease.com/registry/striptags/download/striptags-2.2.1.tgz#4c450b708d41b8bf39cf24c49ff234fc6aabfd32"
+
 sum-up@^1.0.1:
   version "1.0.3"
   resolved "http://npm.mail.netease.com/registry/sum-up/download/sum-up-1.0.3.tgz#1c661f667057f63bcb7875aa1438bc162525156e"
@@ -5178,7 +5232,7 @@ to-fast-properties@^1.0.3:
   version "1.0.3"
   resolved "http://npm.mail.netease.com/registry/to-fast-properties/download/to-fast-properties-1.0.3.tgz#b83571fa4d8c25b82e231b06e3a3055de4ca1a47"
 
-toml@^2.3.2:
+toml@^2.3.0, toml@^2.3.2:
   version "2.3.2"
   resolved "http://npm.mail.netease.com/registry/toml/download/toml-2.3.2.tgz#5eded5ca42887924949fd06eb0e955656001e834"
 

@@ -10,14 +10,7 @@ body.covered {
     overflow: hidden;
 }
 
-// body>.container {
-//     margin-top: -$navbar-height-mobile;
-//     padding-top: $navbar-height-mobile;
-//     @media #{$medium-and-up} {
-//         margin-top: -$navbar-height;
-//         padding-top: $navbar-height;
-//     }
-// }
+
 //navbar 
 .navbar .brand-logo i.material-icons {
     display: none;
@@ -78,7 +71,6 @@ body.covered {
     .inner {
         // transition: padding .1s linear .2s;
         height: 100%;
-        margin-right: -20px;
         overflow-y: scroll;
     }
     .profile {
@@ -142,7 +134,7 @@ body.covered {
     .nav-group {
         margin: $gutter-width/2 0 0;
         border-top: 1px solid #e0e0e0;
-        &.menu {
+        &.menu,&.tools {
             display: none;
         }
     }
@@ -153,7 +145,7 @@ body.covered {
 }
 
 #js-cover {
-    position: 'fixed';
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;

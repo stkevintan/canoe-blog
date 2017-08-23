@@ -18,6 +18,7 @@ const pngquant = require('imagemin-pngquant');
 const cp = require('child_process');
 const fs = require('fs');
 const toml = require('toml');
+const lunr = require('hugo-lunr');
 
 const bs = require('browser-sync').create();
 
@@ -149,8 +150,15 @@ $.task('htmlmin', () => {
     .pipe($.dest(publish.root));
 });
 
+$.task('lunr', cb => {
+  const h = new lunr();
+  const file = `${prod ? publish.root : dest.root}/index.json`;
+  h.index('content/post/**', file);
+  cb();
+});
+
 $.task('build:dev', ['clean'], cb => {
-  runseq('hugo', ['style', 'script', 'image', 'copy:static'], cb);
+  runseq('hugo', ['style', 'script', 'image', 'copy:static'], 'lunr', cb);
 });
 
 $.task('build', ['clean'], cb => {
@@ -174,5 +182,5 @@ $.task('serve', ['build:dev'], () => {
     dest.root + '/**/*.html',
     dest.img + '/**/*.{png,svg,jpg}'
   ];
-  $.watch(reloadSource).on('change', bs.reload);
+  $.watch(reloadSource).on('change', () => bs.reload());
 });

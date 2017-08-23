@@ -5,6 +5,7 @@ disqusShortname = 'keyin'
 # if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
 hasCJKLanguage = true
 
+# DO　NOT MODIFY THIS CONFIG（不要修改这个配置）
 publishDir = "docs"
 
 [sitemap]
@@ -19,64 +20,67 @@ publishDir = "docs"
   logo = "/img/avatar.png"
   profile_bg = "/img/profile-bg.jpg"
 
-[[Params.Menu]]
+# 主菜单
+[[menu.main]]
     name = "Home"
-    icon = "home"
+    weight = 1
+    pre = "<i class='material-icons'>home</i>"
     url = "/"
 
-[[Params.Menu]]
+[[menu.main]]
     name = "Archive"
-    icon = "archive"
+    weight = 2
+    pre = "<i class='material-icons'>archive</i>"
     url = "/archive/"
 
-[[Params.Menu]]
+[[menu.main]]
     name = "About"
-    icon = "person"
+    weight = 3
+    pre = "<i class='material-icons'>person</i>"
     url = "/about/"
 
-
-
-[[Params.FriendLink]]
+#  友情链接
+[[menu.friend]]
   name = "Frantic1048"
   url = "https://frantic1048.logdown.com/"
 
-[[Params.FriendLink]]
+[[menu.friend]]
   name = "HclMaster"
   url = "https://hclmaster.github.io/"
 
-[[Params.FriendLink]]
+[[menu.friend]]
   name = "WANG Hsü-Tung"
   url = "https://whst.github.io/"
 
 
-
-[[Params.ExternalLink]]
+# 社交账号
+[[menu.social]]
   pre = "<svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>"
   name = "Github"
-  id = "@stkevintan"
+  identifier = "@stkevintan"
   url = "https://github.com/stkevintan"
 
-
-
-[[Params.ExternalLink]]
+[[menu.social]]
   pre = "<svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>"
   name = "Twitter"
-  id = "@kevinsfork"
+  identifier = "@kevinsfork"
   url = "https://twitter.com/kevinsfork"
 
-[[Params.ExternalLink]]
+[[menu.social]]
   pre = "<svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>"
   name = "Weibo"
-  id = "@白夜繁星o_O"
+  identifier = "@白夜繁星o_O"
   url = "http://weibo.com/kevinclasky"
 
 
-
-[Params.Tax]
-  [Params.Tax.Tag]
-  icon = "local_offer"
+# 文章归类类目
+[[menu.taxonomy]]
+  pre = "<i class='material-icons'>local_offer</i>"
   name = "Tag"
+  identifier="tags"
 
-  [Params.Tax.Category]
-  icon = "view_list"
+[[menu.taxonomy]]
+  pre = "<i class='material-icons'>class</i>"
   name = "Category"
+  identifier="categories"
+

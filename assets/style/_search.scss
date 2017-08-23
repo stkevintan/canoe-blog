@@ -1,0 +1,37 @@
+#modal-search {
+    background: #fff;
+    height: 80%;
+    form {
+        height: 77px;
+        position: relative;
+        z-index: 2;
+    }
+    .modal-content {
+        height: 100%;
+        padding: 24px 14px 24px;
+    }
+    .out-wrapper {
+        margin-top: -77px;
+        padding-top: 77px;
+        height: 100%;
+    }
+    .collection {
+        margin: 0;
+        height: 100%;
+        overflow: auto;
+        border:none;
+        .collection-item {
+            display: block;
+            .material-icons {
+                margin-right: 2px;
+            }
+            border-bottom:none;
+            padding-left:0;
+            padding-right:0；
+        }
+        span.collection-item {
+            color: $off-grey;
+            cursor: not-allowed;
+        }
+    }
+}

@@ -6,7 +6,7 @@
       <div class="post">
         <ul class="collapsible popout" data-collapsible="accordion">
           {{ $post := where (where $.Site.Pages "Type" "post") "Kind" "page" }}
-          {{ range $post.GroupByDate "2006年01月" }}
+          {{ range $post.GroupByDate "2006/01" }}
           <li>
             <div class="collapsible-header"><i class="material-icons">today</i>{{ .Key }}</div>
             <div class="collapsible-body">

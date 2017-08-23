@@ -9,6 +9,7 @@
   "dependencies": {
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
@@ -26,6 +27,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "gulp-uglify": "^3.0.0",
+    "hugo-lunr": "^0.0.4",
     "imagemin-pngquant": "^5.0.1",
     "postcss": "^6.0.9",
     "run-sequence": "^2.1.0",

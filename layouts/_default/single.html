@@ -15,13 +15,15 @@
             <span class="card-meta">
               <time>
                 <!-- <i class="label material-icons">date_range</i> -->
-                <span>{{ .Date.Format " 2006-6-2" }}</span>
+                <span>{{ .Date.Format "Mon - 2006/2/26" }}</span>
             </time>
+            {{ with .Params.categories }}
             <address>
-              {{ range .Params.categories }}
-              <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
+              {{ range . }}
+              <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; 
+              {{ end }}
             </address>
-
+            {{ end }}
             </span>
 
             <article class="article">
