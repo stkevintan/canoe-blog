@@ -11,7 +11,7 @@
           <div class="card-content">
             <span class="card-title"><a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a></span>
             <span class="card-meta">
-              <time>{{ .Date.Format "Mon - 2006/2/26" }}</time>
+              <time>{{ .Date.Format "Mon Jan 2 2006" }}</time>
                {{ with .Params.categories }}
                 <address>
                   {{ range . }}
