@@ -6,7 +6,6 @@ $(() => {
   setSearchBoard();
 });
 
-
 const initPlugins = () => {
   // enable `a` click event inside `li.tab`
   $('.tab').click(function(e) {
@@ -59,11 +58,13 @@ const search = query =>
 const setSearchBoard = () => {
   const $in = $('#in-search');
   const $out = $('#out-search');
-  const clear = (text = 'No Result...') =>
-    $out
-      .empty()
-      .append(`<span class="collection-item text-grey">${text}</span>`);
-
+  const clear = (text = 'No Result...') => {
+    const $item = $(
+      `<span class="collection-item text-grey" style="display:none">${text}</span>`
+    );
+    $out.empty().append($item.fadeIn(200));
+    
+  };
   clear();
 
   const add = items => {
@@ -72,14 +73,12 @@ const setSearchBoard = () => {
       return;
     }
     if (!$.isArray(items)) items = [items];
-    $out
-      .empty()
-      .append(
-        items.map(
-          item =>
-            `<a href="${item.uri}" class="collection-item nowrap"><i class="material-icons">description</i>${item.title}</a>`
-        )
-      );
+    const $items = items.map(
+      item =>
+        $(`<a href="${item.uri}" class="collection-item nowrap" style="display:none"><i class="material-icons">description</i>${item.title}</a>`)
+    );
+    $out.empty().append($items);
+    $items.forEach($item => $item.fadeIn(100));
   };
 
   $in.keyup(() => {

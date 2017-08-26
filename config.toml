@@ -1,4 +1,4 @@
-baseURL = "http://keyin.me"
+baseURL = "https://keyin.me"
 languageCode = "zh-cn"
 title = "World of Forks"
 disqusShortname = 'keyin'

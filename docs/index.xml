@@ -2,103 +2,103 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>World of Forks</title>
-    <link>http://keyin.me/</link>
+    <link>https://keyin.me/</link>
     <description>Recent content on World of Forks</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyleft@Kevin Tan</copyright>
     <lastBuildDate>Sat, 19 Aug 2017 21:37:49 +0800</lastBuildDate>
     
-	<atom:link href="http://keyin.me/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keyin.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Archive</title>
-      <link>http://keyin.me/archive/</link>
+      <link>https://keyin.me/archive/</link>
       <pubDate>Sat, 19 Aug 2017 21:37:49 +0800</pubDate>
       
-      <guid>http://keyin.me/archive/</guid>
+      <guid>https://keyin.me/archive/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About Me</title>
-      <link>http://keyin.me/about/</link>
+      <link>https://keyin.me/about/</link>
       <pubDate>Sat, 19 Aug 2017 20:09:28 +0800</pubDate>
       
-      <guid>http://keyin.me/about/</guid>
+      <guid>https://keyin.me/about/</guid>
       <description> Hello World! { &amp;quot;Name&amp;quot;: &amp;quot;Kevin Tan&amp;quot;, &amp;quot;Hobbies&amp;quot;: [&amp;quot;Piano&amp;quot;, &amp;quot;Movie&amp;quot;, &amp;quot;Linux&amp;quot;, &amp;quot;Cycling&amp;quot;, &amp;quot;LoL&amp;quot;], &amp;quot;Location&amp;quot;: &amp;quot;Hangzhou&amp;quot;, &amp;quot;Company&amp;quot;: &amp;quot;Netease&amp;quot;, &amp;quot;School&amp;quot;: &amp;quot;ZJU&amp;quot;, &amp;quot;Contacts&amp;quot;: { &amp;quot;Email&amp;quot;: &amp;quot;stkevintan@zju.edu.cn&amp;quot;, &amp;quot;Telegram&amp;quot;: &amp;quot;@kevinsfork&amp;quot;, &amp;quot;Weibo&amp;quot;: &amp;quot;@kevinclasky&amp;quot; } }  </description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(7) Helper Element</title>
-      <link>http://keyin.me/post/polymer-2-7-helper-element/</link>
+      <link>https://keyin.me/post/polymer-2-7-helper-element/</link>
       <pubDate>Sun, 02 Jul 2017 22:56:11 +0800</pubDate>
       
-      <guid>http://keyin.me/post/polymer-2-7-helper-element/</guid>
+      <guid>https://keyin.me/post/polymer-2-7-helper-element/</guid>
       <description>Polymer提供一系列的自定义元素来简化一些共有的数据绑定逻辑： dom-repeat 遍历显示数组 array-selector 数组选择器 dom-if 条件显示 dom-bind 自动绑定 2.0 tip. The data binding helper elements are bundled in to the backward-compatible, polymer.html</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(6) Data Binding</title>
-      <link>http://keyin.me/post/polymer-2-6-data-binding/</link>
+      <link>https://keyin.me/post/polymer-2-6-data-binding/</link>
       <pubDate>Sun, 02 Jul 2017 22:55:28 +0800</pubDate>
       
-      <guid>http://keyin.me/post/polymer-2-6-data-binding/</guid>
+      <guid>https://keyin.me/post/polymer-2-6-data-binding/</guid>
       <description>A data binding connects data from a custom element (the host element) to a property or attribute of an element in its local DOM (the child or target element). The host element data can be a property or sub-property represented by a data path, or data generated based on one or more paths. 数据绑定能够将host元素和tar</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</title>
-      <link>http://keyin.me/post/polymer-2-5-observers-and-computed-properties/</link>
+      <link>https://keyin.me/post/polymer-2-5-observers-and-computed-properties/</link>
       <pubDate>Sun, 02 Jul 2017 22:54:06 +0800</pubDate>
       
-      <guid>http://keyin.me/post/polymer-2-5-observers-and-computed-properties/</guid>
+      <guid>https://keyin.me/post/polymer-2-5-observers-and-computed-properties/</guid>
       <description>有两种监听器： 简单监听器，只能监听单一的property 复杂监听器：可以监听一到多个property 每个监听器都有一个或多个 依赖 ，当依赖发生</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(4) Data System</title>
-      <link>http://keyin.me/post/polymer-2-4-data-system/</link>
+      <link>https://keyin.me/post/polymer-2-4-data-system/</link>
       <pubDate>Sun, 02 Jul 2017 22:53:02 +0800</pubDate>
       
-      <guid>http://keyin.me/post/polymer-2-4-data-system/</guid>
+      <guid>https://keyin.me/post/polymer-2-4-data-system/</guid>
       <description>Polymer提供观察函数、计算属性、数据绑定三大模型功能： Observers Callbacks invoked when data changes. Computed properties Virtual properties computed based on other properties, and recomputed when the input data changes. Data bindings Annotations that update the properties, attributes, or text content of a DOM node when data changes.</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(3) Events</title>
-      <link>http://keyin.me/post/polymer-2-3-events/</link>
+      <link>https://keyin.me/post/polymer-2-3-events/</link>
       <pubDate>Sun, 02 Jul 2017 22:52:21 +0800</pubDate>
       
-      <guid>http://keyin.me/post/polymer-2-3-events/</guid>
+      <guid>https://keyin.me/post/polymer-2-3-events/</guid>
       <description>Normal Events Polymer elements can use the standard DOM APIs for creating, dispatching, and listening for events. Polymer also provides annotated event listeners, which allow you to specify event listeners declaratively as part of the element&amp;rsquo;s DOM template. Add annotated event listeners 这个其实就是在标签上使用on-event属性。 &amp;lt;dom-module id=&amp;quot;x-custom&amp;quot;&amp;gt; &amp;lt;template&amp;gt; &amp;lt;button on-click=&amp;quot;handleClick&amp;quot;&amp;gt;Kick</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(2) ShadowDOM</title>
-      <link>http://keyin.me/post/polymer-2-2-shadowdom/</link>
+      <link>https://keyin.me/post/polymer-2-2-shadowdom/</link>
       <pubDate>Sun, 02 Jul 2017 22:51:37 +0800</pubDate>
       
-      <guid>http://keyin.me/post/polymer-2-2-shadowdom/</guid>
+      <guid>https://keyin.me/post/polymer-2-2-shadowdom/</guid>
       <description>ShadowDOM API var div = document.createElement(&#39;div&#39;); var shadowRoot = div.attachShadow({mode: &#39;open&#39;}); shadowRoot.innerHTML = &#39;&amp;lt;h1&amp;gt;Hello Shadow DOM&amp;lt;/h1&amp;gt;&#39;; ShadowDOM Composition 主要概念： LightDOM: 元素的实际子孙节点，浏览器不会对LightDOM做任何的修改和移动。但是渲染的时候会渲染到相</description>
     </item>
     
     <item>
       <title>Polymer 2.0 文档笔记(1) Custom Elements</title>
-      <link>http://keyin.me/post/polymer-2-1-custom-elements/</link>
+      <link>https://keyin.me/post/polymer-2-1-custom-elements/</link>
       <pubDate>Sun, 02 Jul 2017 22:49:25 +0800</pubDate>
       
-      <guid>http://keyin.me/post/polymer-2-1-custom-elements/</guid>
+      <guid>https://keyin.me/post/polymer-2-1-custom-elements/</guid>
       <description>https://www.polymer-project.org/2.0/docs/devguide/custom-elements Custom element names. By specification, the custom element&amp;rsquo;s name must start with a lower-case ASCII letter and must contain a dash (-). There&amp;rsquo;s also a short list of prohibited element names that match existing names. For details, see the Custom elements core concepts section in the HTML specification. 自定义元素的命名规则： 按照规范，自定义元素</description>
     </item>
     
     <item>
       <title>网易云音乐新API浅析</title>
-      <link>http://keyin.me/post/hello-world/</link>
+      <link>https://keyin.me/post/hello-world/</link>
       <pubDate>Mon, 12 Jun 2017 10:00:59 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hello-world/</guid>
+      <guid>https://keyin.me/post/hello-world/</guid>
       <description>&lt;p&gt;新API采用了略微修改过的AES和RSA加密，主要用在登陆接口上，对新API进行简单的分析。&lt;/p&gt;
 
 &lt;h2 id=&#34;url&#34;&gt;Url&lt;/h2&gt;
@@ -125,28 +125,28 @@
     
     <item>
       <title>Shadowsocks免费账号网址集</title>
-      <link>http://keyin.me/post/shadowsocks-account/</link>
+      <link>https://keyin.me/post/shadowsocks-account/</link>
       <pubDate>Wed, 25 Feb 2015 00:26:42 +0800</pubDate>
       
-      <guid>http://keyin.me/post/shadowsocks-account/</guid>
+      <guid>https://keyin.me/post/shadowsocks-account/</guid>
       <description>G+圈子很多这样的网站，大部分是由ss-panel这个开源项目建成。不知道他们是乐于分享还是另有目的。下面是列表： Shadow X(ss-panel作者</description>
     </item>
     
     <item>
       <title>ASP.NET MVC 4笔记（二）</title>
-      <link>http://keyin.me/post/asp-net-mvc4note2/</link>
+      <link>https://keyin.me/post/asp-net-mvc4note2/</link>
       <pubDate>Tue, 24 Feb 2015 18:50:00 +0800</pubDate>
       
-      <guid>http://keyin.me/post/asp-net-mvc4note2/</guid>
+      <guid>https://keyin.me/post/asp-net-mvc4note2/</guid>
       <description>有Timestamp修饰的表在修改已有的记录是一定要将该字段复制，也就是说一定要在Edit网页里面添加一行： @Html.HiddenFor(model =&amp;gt; model.RowVersion) WebSecurity.C</description>
     </item>
     
     <item>
       <title>ASP.NET MVC4笔记（一） 扩展Simplemembership</title>
-      <link>http://keyin.me/post/asp-net-mvc4-note1-simplemembership/</link>
+      <link>https://keyin.me/post/asp-net-mvc4-note1-simplemembership/</link>
       <pubDate>Tue, 24 Feb 2015 18:45:07 +0800</pubDate>
       
-      <guid>http://keyin.me/post/asp-net-mvc4-note1-simplemembership/</guid>
+      <guid>https://keyin.me/post/asp-net-mvc4-note1-simplemembership/</guid>
       <description>&lt;pre&gt;&lt;code class=&#34;language-C#&#34;&gt;using System.Web.Mvc;
 
 namespace MvcClassManageSystem.ActionFilters
@@ -174,10 +174,10 @@ namespace MvcClassManageSystem.ActionFilters
     
     <item>
       <title>ZOJ month contest D.Determinant and Matrix</title>
-      <link>http://keyin.me/post/zoj-month-contest-d-determinant-and-matrix/</link>
+      <link>https://keyin.me/post/zoj-month-contest-d-determinant-and-matrix/</link>
       <pubDate>Sat, 08 Nov 2014 02:32:21 +0800</pubDate>
       
-      <guid>http://keyin.me/post/zoj-month-contest-d-determinant-and-matrix/</guid>
+      <guid>https://keyin.me/post/zoj-month-contest-d-determinant-and-matrix/</guid>
       <description>&lt;hr /&gt;
 
 &lt;p&gt;&lt;center style=&#34;color: #000000;&#34;&gt;&lt;span style=&#34;color: green;&#34;&gt;Time Limit: &lt;/span&gt;2 Seconds      &lt;span style=&#34;color: green;&#34;&gt;Memory Limit: &lt;/span&gt;65536 KB&lt;/center&gt;&lt;/p&gt;
@@ -190,19 +190,19 @@ Recently, LBH is learning the curse linear algebra. Thus he is very interested i
     
     <item>
       <title>FFT求快速卷积的思考</title>
-      <link>http://keyin.me/post/fft-thoughts/</link>
+      <link>https://keyin.me/post/fft-thoughts/</link>
       <pubDate>Fri, 07 Nov 2014 04:15:54 +0800</pubDate>
       
-      <guid>http://keyin.me/post/fft-thoughts/</guid>
+      <guid>https://keyin.me/post/fft-thoughts/</guid>
       <description>离散型卷积的定义是：$$y(n)=\sum_{m=0}^{n} x(m)h(n-m)$$ 注意，h函数是反转的。 在Chipher Messages一题中，b串需要反转再</description>
     </item>
     
     <item>
       <title>baylor 6622 Absurdistan Roads（ NWERC Contest）</title>
-      <link>http://keyin.me/post/baylor6622-absurdistan-roads/</link>
+      <link>https://keyin.me/post/baylor6622-absurdistan-roads/</link>
       <pubDate>Fri, 07 Nov 2014 01:05:34 +0800</pubDate>
       
-      <guid>http://keyin.me/post/baylor6622-absurdistan-roads/</guid>
+      <guid>https://keyin.me/post/baylor6622-absurdistan-roads/</guid>
       <description>&lt;p&gt;原题pdf：&lt;a href=&#34;https://icpcarchive.ecs.baylor.edu/external/66/6622.pdf&#34;&gt;click here&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&#34;description&#34;&gt;Description&lt;/h3&gt;
@@ -218,10 +218,10 @@ city using the newly built roads.&lt;/p&gt;</description>
     
     <item>
       <title>Timus 1996 Cipher Message 3 KMP&#43;FFT求卷积</title>
-      <link>http://keyin.me/post/timus-1996-cipher-message-3-kmpfft/</link>
+      <link>https://keyin.me/post/timus-1996-cipher-message-3-kmpfft/</link>
       <pubDate>Thu, 06 Nov 2014 06:13:15 +0800</pubDate>
       
-      <guid>http://keyin.me/post/timus-1996-cipher-message-3-kmpfft/</guid>
+      <guid>https://keyin.me/post/timus-1996-cipher-message-3-kmpfft/</guid>
       <description>&lt;p&gt;题目链接：&lt;a href=&#34;http://acm.timus.ru/problem.aspx?space=1&amp;amp;amp;num=1996&#34;&gt;click here&lt;/a&gt;
 ##description
 Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has been the head of the Empire Armed Forces. However, the Rebel movement is strong like it never used to be. One of the rebel leaders, Princess Leia from Alderaan, managed to get hold of secret blueprints of the Death Star, the imperial war station.&lt;/p&gt;
@@ -231,19 +231,19 @@ Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has be
     
     <item>
       <title>（转）关于卷积的一个血腥的讲解，看完给跪了</title>
-      <link>http://keyin.me/post/intro-of-fft/</link>
+      <link>https://keyin.me/post/intro-of-fft/</link>
       <pubDate>Thu, 06 Nov 2014 04:40:10 +0800</pubDate>
       
-      <guid>http://keyin.me/post/intro-of-fft/</guid>
+      <guid>https://keyin.me/post/intro-of-fft/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ACM International Collegiate Programming Contest Asia Regional Contest, Tokyo Problem D Space Golf</title>
-      <link>http://keyin.me/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</link>
+      <link>https://keyin.me/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</link>
       <pubDate>Mon, 20 Oct 2014 05:20:03 +0800</pubDate>
       
-      <guid>http://keyin.me/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</guid>
+      <guid>https://keyin.me/post/acm-international-collegiate-programming-contest-asia-regional-contest-tokyo-problem-d-space-golf/</guid>
       <description>&lt;p&gt;原题pdf：&lt;a href=&#34;http://judge.u-aizu.ac.jp/onlinejudge/contest/ICPCOOC2014/D.pdf&#34;&gt;click here&lt;/a&gt;
 &lt;br/&gt;&lt;/p&gt;
 
@@ -259,10 +259,10 @@ Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has be
     
     <item>
       <title>优化Wine程序的字体显示</title>
-      <link>http://keyin.me/post/wine-font-config/</link>
+      <link>https://keyin.me/post/wine-font-config/</link>
       <pubDate>Mon, 13 Oct 2014 20:42:42 +0800</pubDate>
       
-      <guid>http://keyin.me/post/wine-font-config/</guid>
+      <guid>https://keyin.me/post/wine-font-config/</guid>
       <description>&lt;p&gt;默认Wine的字体太难看，而且有时候还会显示不出来。开启Wine字体的反锯齿及平滑功能以及将字体映射成文泉驿微米黑的方法是：&lt;/p&gt;
 
 &lt;p&gt;1.新建文本文件a.reg，放入如下内容：
@@ -271,19 +271,19 @@ Emperor Palpatine has been ruling the Empire for 25 years and Darth Vader has be
     
     <item>
       <title>用Sublime Text 3 dev 做网页开发的配置</title>
-      <link>http://keyin.me/post/sublime-config-web/</link>
+      <link>https://keyin.me/post/sublime-config-web/</link>
       <pubDate>Wed, 17 Sep 2014 00:45:07 +0800</pubDate>
       
-      <guid>http://keyin.me/post/sublime-config-web/</guid>
+      <guid>https://keyin.me/post/sublime-config-web/</guid>
       <description>文件：click here</description>
     </item>
     
     <item>
       <title>HDU 4965 Fast Matrix Calculation</title>
-      <link>http://keyin.me/post/hdu-4965-fast-matrix-calculation/</link>
+      <link>https://keyin.me/post/hdu-4965-fast-matrix-calculation/</link>
       <pubDate>Wed, 20 Aug 2014 04:37:28 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu-4965-fast-matrix-calculation/</guid>
+      <guid>https://keyin.me/post/hdu-4965-fast-matrix-calculation/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;2000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1000&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;131072&lt;/sup&gt;&amp;frasl;&lt;sub&gt;131072&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 206    Accepted Submission(s): 116
 &lt;/span&gt;&lt;/strong&gt;
@@ -302,10 +302,10 @@ Step 4: Calculate the sum of all the elements in M’.&lt;/p&gt;</description>
     
     <item>
       <title>HDU 4952 Number Transformation</title>
-      <link>http://keyin.me/post/hdu-4952-number-transformation/</link>
+      <link>https://keyin.me/post/hdu-4952-number-transformation/</link>
       <pubDate>Sat, 16 Aug 2014 01:22:13 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu-4952-number-transformation/</guid>
+      <guid>https://keyin.me/post/hdu-4952-number-transformation/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;2000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1000&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;65536&lt;/sup&gt;&amp;frasl;&lt;sub&gt;65536&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 612    Accepted Submission(s): 310
 &lt;/span&gt;&lt;/strong&gt;
@@ -322,10 +322,10 @@ Total Submission(s): 612    Accepted Submission(s): 310
     
     <item>
       <title>HDU 4945 2048</title>
-      <link>http://keyin.me/post/hdu-4945-2048/</link>
+      <link>https://keyin.me/post/hdu-4945-2048/</link>
       <pubDate>Sat, 16 Aug 2014 00:56:19 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu-4945-2048/</guid>
+      <guid>https://keyin.me/post/hdu-4945-2048/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;3000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1500&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;65536&lt;/sup&gt;&amp;frasl;&lt;sub&gt;65536&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 590    Accepted Submission(s): 136
 &lt;/span&gt;&lt;/strong&gt;
@@ -343,19 +343,19 @@ Total Submission(s): 590    Accepted Submission(s): 136
     
     <item>
       <title>HDU 2874 Connections between cities</title>
-      <link>http://keyin.me/post/hdu-2874-connections-between-cities/</link>
+      <link>https://keyin.me/post/hdu-2874-connections-between-cities/</link>
       <pubDate>Thu, 14 Aug 2014 06:00:34 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu-2874-connections-between-cities/</guid>
+      <guid>https://keyin.me/post/hdu-2874-connections-between-cities/</guid>
       <description>&lt;h1 id=&#34;connections-between-cities&#34;&gt;Connections between cities&lt;/h1&gt;</description>
     </item>
     
     <item>
       <title>内网 2085马农</title>
-      <link>http://keyin.me/post/zjnu2085/</link>
+      <link>https://keyin.me/post/zjnu2085/</link>
       <pubDate>Thu, 14 Aug 2014 05:09:40 +0800</pubDate>
       
-      <guid>http://keyin.me/post/zjnu2085/</guid>
+      <guid>https://keyin.me/post/zjnu2085/</guid>
       <description>&lt;p&gt;##Description
  在观看完战马检阅之后，来自大草原的两兄弟决心成为超级“马农”，专门饲养战马。&lt;/p&gt;
 
@@ -370,10 +370,10 @@ Total Submission(s): 590    Accepted Submission(s): 136
     
     <item>
       <title>内网2082 字母</title>
-      <link>http://keyin.me/post/zjnu2082/</link>
+      <link>https://keyin.me/post/zjnu2082/</link>
       <pubDate>Wed, 13 Aug 2014 06:10:46 +0800</pubDate>
       
-      <guid>http://keyin.me/post/zjnu2082/</guid>
+      <guid>https://keyin.me/post/zjnu2082/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;乐乐开始学习英文字母了，小C为他准备了很多字母牌，每张牌有一个英文字母。有天乐乐把所有的牌排成一行，这些字母竟然形成了一个回文串。小C想知道，乐乐在排字母的时候，有多少种情况，最后的字母形成回文串。&lt;/p&gt;
@@ -392,10 +392,10 @@ AAAAB AABB CD&lt;/p&gt;</description>
     
     <item>
       <title>HDU4944 FSF’s game</title>
-      <link>http://keyin.me/post/hdu4944-fsfs-game/</link>
+      <link>https://keyin.me/post/hdu4944-fsfs-game/</link>
       <pubDate>Wed, 13 Aug 2014 04:59:32 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu4944-fsfs-game/</guid>
+      <guid>https://keyin.me/post/hdu4944-fsfs-game/</guid>
       <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;9000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;4500&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;131072&lt;/sup&gt;&amp;frasl;&lt;sub&gt;131072&lt;/sub&gt; K (Java/Others)
 Total Submission(s): 166    Accepted Submission(s): 76
 &lt;/span&gt;&lt;/strong&gt;
@@ -414,10 +414,10 @@ There are N&lt;/em&gt;(N+1)/2 levels in this game, and every level is an unique 
     
     <item>
       <title>内网2073 城主GeassCode</title>
-      <link>http://keyin.me/post/zjnu2073-geasscode/</link>
+      <link>https://keyin.me/post/zjnu2073-geasscode/</link>
       <pubDate>Sat, 02 Aug 2014 04:18:37 +0800</pubDate>
       
-      <guid>http://keyin.me/post/zjnu2073-geasscode/</guid>
+      <guid>https://keyin.me/post/zjnu2073-geasscode/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;GeassCode凭借自己在topcoder上的超凡表现，赢得了国王的喜爱，国王赏赐他一座城池。这座城池里有n个 村子，m条路连接这些村子。坐上城主的GeassCode决定要修路，他打算用最少的代价把所以的村子连在一起。据探子回报，有些村子之间虽然原来没有路 径，但是可以强行的去建一条路。GeassCode想知道，如果强行在某两个村子之间建一条路，最后的总花费是多少？&lt;/p&gt;
@@ -427,10 +427,10 @@ There are N&lt;/em&gt;(N+1)/2 levels in this game, and every level is an unique 
     
     <item>
       <title>POJ1989 Distance Queries</title>
-      <link>http://keyin.me/post/poj1989-distance-queries/</link>
+      <link>https://keyin.me/post/poj1989-distance-queries/</link>
       <pubDate>Fri, 01 Aug 2014 22:30:11 +0800</pubDate>
       
-      <guid>http://keyin.me/post/poj1989-distance-queries/</guid>
+      <guid>https://keyin.me/post/poj1989-distance-queries/</guid>
       <description>&lt;p&gt;##Description&lt;/p&gt;
 
 &lt;p&gt;Farmer John&amp;rsquo;s cows refused to run in his marathon since he chose a path much too long for their leisurely lifestyle. He therefore wants to find a path of a more reasonable length. The input to this problem consists of the same input as in &amp;ldquo;Navigation Nightmare&amp;rdquo;,followed by a line containing a single integer K, followed by K &amp;ldquo;distance queries&amp;rdquo;. Each distance query is a line of input containing two integers, giving the numbers of two farms between which FJ is interested in computing distance (measured in the length of the roads along the path between the two farms). Please answer FJ&amp;rsquo;s distance queries as quickly as possible!
@@ -440,10 +440,10 @@ There are N&lt;/em&gt;(N+1)/2 levels in this game, and every level is an unique 
     
     <item>
       <title>POJ1330 Nearest Common Ancestors</title>
-      <link>http://keyin.me/post/poj1330-nearest-common-ancestors/</link>
+      <link>https://keyin.me/post/poj1330-nearest-common-ancestors/</link>
       <pubDate>Fri, 01 Aug 2014 18:43:01 +0800</pubDate>
       
-      <guid>http://keyin.me/post/poj1330-nearest-common-ancestors/</guid>
+      <guid>https://keyin.me/post/poj1330-nearest-common-ancestors/</guid>
       <description>&lt;p&gt;Time Limit: 1000MS Memory Limit: 10000K&lt;br /&gt;
 Total Submissions: 17734 Accepted: 9405&lt;/p&gt;
 
@@ -457,37 +457,37 @@ For other examples, the nearest common ancestor of nodes 2 and 3 is node 10, the
     
     <item>
       <title>2014 Multi-University Training Contest 4</title>
-      <link>http://keyin.me/post/2014-multi-university-training-contest-4/</link>
+      <link>https://keyin.me/post/2014-multi-university-training-contest-4/</link>
       <pubDate>Fri, 01 Aug 2014 03:09:32 +0800</pubDate>
       
-      <guid>http://keyin.me/post/2014-multi-university-training-contest-4/</guid>
+      <guid>https://keyin.me/post/2014-multi-university-training-contest-4/</guid>
       <description>心情就像倒数第二楼那样。 CLJ，我也保证不打死你…… PS:最后一楼朱大神还暴露了。</description>
     </item>
     
     <item>
       <title>HDU4005 The war</title>
-      <link>http://keyin.me/post/hdu4005-the-war/</link>
+      <link>https://keyin.me/post/hdu4005-the-war/</link>
       <pubDate>Thu, 31 Jul 2014 03:50:40 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu4005-the-war/</guid>
+      <guid>https://keyin.me/post/hdu4005-the-war/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HDU4612 Warm up</title>
-      <link>http://keyin.me/post/hdu4612-warm-up/</link>
+      <link>https://keyin.me/post/hdu4612-warm-up/</link>
       <pubDate>Thu, 31 Jul 2014 03:37:32 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu4612-warm-up/</guid>
+      <guid>https://keyin.me/post/hdu4612-warm-up/</guid>
       <description></description>
     </item>
     
     <item>
       <title>HDU4888 Redraw Beautiful Drawings </title>
-      <link>http://keyin.me/post/hdu4888-redraw-beautiful-drawings/</link>
+      <link>https://keyin.me/post/hdu4888-redraw-beautiful-drawings/</link>
       <pubDate>Wed, 30 Jul 2014 05:43:58 +0800</pubDate>
       
-      <guid>http://keyin.me/post/hdu4888-redraw-beautiful-drawings/</guid>
+      <guid>https://keyin.me/post/hdu4888-redraw-beautiful-drawings/</guid>
       <description></description>
     </item>
     
