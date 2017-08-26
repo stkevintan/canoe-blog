@@ -2,3 +2,4 @@
 /staging/
 /.tmp-server/
 node_modules/
+yarn.lock
