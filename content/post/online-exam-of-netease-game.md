@@ -81,7 +81,7 @@ int calc(int va,int vb) {
 		tmp[ len * va] = true;
 	}
 	for (int i = 0;; i++) {
-		int len = 2 * i + 1 * s;
+		int len = (2 * i + 1) * s;
 		if (len> t * va)break;
 		if (tmp.find( len * vb)!=tmp.end()) sum++;
 	}
@@ -92,11 +92,11 @@ int main() {
 	while (cin >> s >> va >> vb >> t) {
 		int sum = 0;
 		if (va == 0) {
-			cout << vb * t / s / 2<< endl;
+			cout << (vb * t / s + 1) / 2<< endl;
 			return 0;
 		}
 		if (vb == 0) { 
-			cout << va* t / s / 2 << endl;
+			cout << (va* t / s + 1) / 2 << endl;
 			return 0;
 		}
 		cout << calc(vb, va) + calc(va, vb) << endl;
@@ -120,15 +120,17 @@ int n, m;
 string str1, str2;
 int main() {
 	while (cin >> n >> m >> str1 >> str2) {
+
 		vector<vector<int>> f = vector<vector<int>>(n + 1, vector<int>(m + 1));
-		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < m; j++) {
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= m; j++) {
 				if (i == 0 || j == 0) f[i][j] = 0;
-				else if (str1[i] == str2[j]) f[i][j] = f[i - 1][j - 1] + 1;
+				else if (str1[i - 1] == str2[j - 1]) f[i][j] = f[i - 1][j - 1] + 1;
 				else  f[i][j] = max(f[i][j - 1],f[i-1][j]);
 			}
 		}
-		cout << f[n-1][m-1] << endl;
+		cout << f[n][m] << endl;
+
 	}
 }
 ```
