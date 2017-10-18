@@ -150,8 +150,9 @@ int main() {
 		vt.clear();
 		m--;
 		for (int i = 0; i < n; i++) {
-			scanf("%lld",&a[i]);
+			cin >> a[i];
 			if (mVal == -1 || mVal >= a[i]) {
+				if (mVal > a[i])vt.clear();
 				mVal = a[i];
 				vt.push_back(i);
 			}
