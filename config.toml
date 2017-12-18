@@ -1,4 +1,4 @@
-baseURL = "https://keyin.me"
+baseURL = "https://keyin.netlify.com/"
 languageCode = "zh-cn"
 title = "World of Forks"
 disqusShortname = 'keyin'
