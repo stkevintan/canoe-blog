@@ -1,7 +1,6 @@
-{{ partial "header.html" . }} {{partial "sidebar.html" .}}
+{{ partial "header.html" . }} 
 <main id="archive" role="main" class="main-panel no-toc">
   <section class="container">
-    <div class="inner">
       {{ partial "breadcrumb.html" . }}
       <div class="post">
         <ul class="collapsible popout" data-collapsible="accordion">
@@ -23,7 +22,6 @@
           {{ end }}
         </ul>
       </div>
-    </div>
   </section>
   {{ partial "footer.html" . }}
 </main>

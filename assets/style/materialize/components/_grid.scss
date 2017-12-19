@@ -15,7 +15,14 @@
         padding: 0 $gutter-width/2;
     }
 }
-
+@media #{$small-and-down} {
+    section.container {
+        padding: 0;
+    }
+    .card{
+        box-shadow:none;
+    }
+}
 // @media #{$medium-and-up} {
 //     .container {
 //         width: 85%;

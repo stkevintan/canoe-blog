@@ -97,14 +97,14 @@ const setTocToggle = () => {
   let onscrollSelect = true;
   const $toc = $('.toc-panel nav');
   const $footer = $('footer.page-footer');
-  const $post = $('.post .card');
+  const $post = $('.main-panel .container');
   const $header = $('nav.navbar');
+  const gutterWidth = 20;
   const items = [].slice.call($toc.find('li a'));
-
   let tocHeight = $toc.outerHeight(); // 包括内边距
   let postOffset = $post.offset();
   let headerHeight = $header.height();
-  let correction = headerHeight + 20;
+  let correction = headerHeight + gutterWidth;
   let anchor = getAnchor();
   //function animate above will convert float to int.
   function getAnchor() {
@@ -139,23 +139,13 @@ const setTocToggle = () => {
     if (!anchor) return;
     var postHeight = $post.height();
     var scrollTop = $('html').scrollTop() || $('body').scrollTop();
-    var isset = false;
-
-    if (scrollTop + headerHeight >= postOffset.top) {
-      $toc.removeClass('absolute').addClass('fixed').css('top', headerHeight);
-      isset = true;
+    if (scrollTop + headerHeight + tocHeight + gutterWidth >= postOffset.top + postHeight) {
+      $toc.css({top: postOffset.top + postHeight - (scrollTop + tocHeight + gutterWidth)});
+    }else{
+      $toc.css({top: ''})
     }
 
-    if (scrollTop + headerHeight + tocHeight >= postOffset.top + postHeight) {
-      $toc
-        .removeClass('fixed')
-        .addClass('absolute')
-        .css({ top: postHeight - tocHeight });
-      isset = true;
-    }
-    if (!isset) {
-      $toc.removeClass('fixed').removeClass('absolute').css({ top: 'initial' });
-    }
+    
     if (onscrollSelect) {
       //binary search.
       var l = 0,

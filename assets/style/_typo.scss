@@ -1,5 +1,5 @@
 .article {
-    font-size: 14px;
+    font-size: 15px;
     line-height: 1.7em
 }
 
@@ -154,10 +154,14 @@ h1 .article .headerlink {
 
 .article pre {
     padding: 16px 0;
-    margin: 0;
+    margin: 0 -24px;
     line-height: 1.5em;
     overflow: auto;
-    -webkit-overflow-scrolling: touch
+    -webkit-overflow-scrolling: touch;
+    code{
+        padding-left: 24px;
+        padding-right: 24px;
+    }
 }
 
 .article table {
@@ -221,25 +225,3 @@ h1 .article .headerlink {
     font-style: normal
 }
 
-.post-summary .article {
-    h1 {
-        font-size: 25px;
-        line-height: 1.333334em;
-    }
-    h2 {
-        font-size: 20px;
-        line-height: 1.4em;
-        padding: 0;
-        margin: 10px 0;
-    }
-    h3,
-    h4 {
-        font-size: 15px;
-        padding: 0;
-        margin: 10px 0;
-    }
-    pre {
-        padding: 0;
-        margin: 10px 0;
-    }
-}

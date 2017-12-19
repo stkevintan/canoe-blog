@@ -337,11 +337,27 @@ ul.staggered-list li {
 
 // Footer
 .page-footer {
-    padding-top: 20px;
+    position: relative;
+    z-index: 1;
+    padding-top: $gutter-width;
+    margin-top: $gutter-width;
     color: $footer-font-color;
     background-color: $footer-bg-color;
     a {
         color: $footer-link-color;
+    }
+    ul.slink{
+        margin:$gutter-width  0;
+        list-style: none;
+        & > li{
+            display:inline-block;
+            a {
+                color: #fff;
+            }
+            svg {
+                fill: #fff;
+            }
+        }
     }
     .footer-copyright {
         overflow: hidden;

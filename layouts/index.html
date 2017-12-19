@@ -1,5 +1,4 @@
-{{ partial "header.html" . }} {{partial "sidebar.html" .}}
-
+{{ partial "header.html" . }}
 <main id="index" role="main" class="main-panel">
   <section class="container main-container">
     <div class="waterfall">
@@ -8,7 +7,7 @@
         <div class="card post-summary">
           <div class="card-content">
             <span class="card-title"><a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a></span>
-            <span class="card-meta">
+            <div class="card-meta">
               <time>{{ .Date.Format "Mon Jan 2 2006" }}</time>
               {{ with .Params.categories }}
               <address>
@@ -17,12 +16,17 @@
                 {{ end }}
               </address>
               {{ end }}
-            </span>
-            <article class="article">{{.Summary }}...<a href="{{ .Permalink }}" style="border-bottom: none">Read More</a></article>
+            </div>
+            <article class="article">
+              {{.Summary }}
+              <a href="{{ .Permalink }}" class="readmore">阅读全文</a>
+            </article>
+ 
           </div>
+         
           {{with .Params.tags}}
           <div class="card-action">
-            <i class="material-icons">local_offer</i> {{ range . }}<a href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">#{{ . }}</a>&nbsp;
+            {{ range . }}<a class="btn" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ . }}</a>&nbsp;
             {{ end }}
           </div>
           {{end}}

@@ -2,17 +2,17 @@
     position: relative;
     display:none;
     float: right;
-    width: 320px;
+    width: $toc-width;
     height: 100%;
     nav {
-        padding-top: 2 * $gutter-width;
-        width: 320px;
-        &.fixed {
-            position: fixed;
+        top: $navbar-height-mobile;
+
+        @media #{$medium-and-up} {
+            top: $navbar-height;
         }
-        &.absolute {
-            position: absolute;
-        }
+        padding-top: $breadcrumb-height;
+        width: $toc-width;
+        position: fixed;
     }
     nav>ul {
         margin: 0;
@@ -38,7 +38,7 @@
     }
 }
 
-@media(min-width: $main-inner-min-width) {
+@media(min-width: $container-min-width) {
     .toc-panel {
         display: block;
     }

@@ -1,6 +1,6 @@
 html,
-body,
-.main-panel {
+body
+{
     height: 100%;
     min-height: 100%;
 }
@@ -16,48 +16,22 @@ body.covered {
 
 // main
 .main-panel {
+    min-height: 100%;
     transition: all .2s ease-in; // padding-left: $aside-width;
-    margin-top: - $navbar-height-mobile;
+    margin: - $navbar-height-mobile 0 0;
     padding-top: $navbar-height-mobile;
     @media #{$medium-and-up} {
         margin-top: - $navbar-height;
         padding-top: $navbar-height;
     }
     display: flex;
+    overflow:hidden;
     flex-flow: column nowrap;
     &>.container {
         position: relative;
-        margin: $gutter-width 0 2*$gutter-width;
-        flex: 1;
-    }
-    .inner {
-        max-width: $main-inner-max-width; // min-width: $main-inner-min-width;
         margin: 0 auto;
-        position: relative;
-        .post {
-            .card-title {
-                font-size: 2rem;
-                line-height: 1.2;
-                margin-bottom: 1rem;
-            }
-            margin-right: $toc-width+$gutter-width;
-            @media #{$medium-and-down} {
-                margin-right: 0;
-            }
-        }
-    }
-}
-
-.main-panel.no-toc {
-    .toc-panel {
-        display: none;
-    }
-    .inner {
-        //without toc, the max width must decrease
-        max-width: $main-inner-max-width - $toc-width - $gutter-width;
-    }
-    .inner .post {
-        margin-right: 0;
+        flex: 1;
+        max-width: $container-max-width;
     }
 }
 
@@ -174,12 +148,9 @@ body.covered {
     }
 }
 
-@media (min-width: $main-inner-min-width + $aside-width) {
+@media (min-width: $container-min-width + $aside-width) {
     .side-panel {
         transform: none;
-    }
-    .main-panel {
-        padding-left: $aside-width;
     }
     .button-collapse {
         display: none;

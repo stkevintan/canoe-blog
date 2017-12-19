@@ -6,6 +6,15 @@
       <div class="col l6 s12">
         <h5 class="white-text">{{ .Site.Title }}</h5>
         <p class="grey-text text-lighten-4">Theme <a href="https://github.com/stkevintan/hugo-YAMT-theme" target="_blank">YAMT</a> designed by <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+        <ul class='slink'>
+          {{ with .Site.Menus.social }} {{ range . }}
+          <li>
+            <a href="{{.URL}}" target="_blank" title="{{.Name}}">
+              {{ .Pre | default ("<i class='material-icons'>language</i>" | safeHTML ) }}
+            </a>
+          </li>
+          {{ end }} {{ end }}
+        </ul>
       </div>
       <div class="col l4 offset-l2 s12">
         <h5 class="white-text">My Friends</h5>

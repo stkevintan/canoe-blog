@@ -1,6 +1,10 @@
 .breadcrumbs {
-    height: 64px;
-    line-height: 64px;
+    height: $breadcrumb-height;
+    line-height: $breadcrumb-height;
+    margin-top: $gutter-width;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     &,
     a,
     .breadcrumb:before {

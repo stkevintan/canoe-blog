@@ -19,6 +19,13 @@
         &.activator {
             cursor: pointer;
         }
+        a{
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            width: 100%;
+            display: inline-block;
+        }
     } // Card Sizes
     &.small,
     &.medium,
@@ -123,14 +130,14 @@
         .card-title {
             display: block;
             line-height: 32px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             i {
                 line-height: 32px;
             }
         }
         .card-meta {
             display: block;
-            margin-bottom: $gutter-width / 2;
+            margin-bottom: 15px;
             line-height: 20px;
             i {
                 line-height: 20px;
@@ -176,7 +183,8 @@
         padding: 16px $card-padding;
         a:not(.btn):not(.btn-large):not(.btn-floating) {
             vertical-align: middle;
-            color: $card-link-color;
+            white-space: nowrap;
+            color: $link-color;
             transition: color .3s ease;
             &:hover {
                 color: $card-link-color-light;

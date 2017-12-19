@@ -1,6 +1,6 @@
 {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
 {{ partial "header.html" . }} 
-{{partial "sidebar.html" .}}
+
 <main id="index" role="main" class="main-panel">
   <section class="container">
     {{ partial "breadcrumb.html" . }}

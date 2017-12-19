@@ -64,6 +64,8 @@
       </div>
     </div>
   </div>
+ <!-- Modal Structure  End -->
+ 
 
   <div class="navbar-fixed">
     <nav class="navbar">
@@ -76,10 +78,11 @@
         <ul class="right hide-on-small-and-down">
           <!-- https://www.google.com.hk/search?sitesearch={{ .Site.BaseURL }} -->
           <li><a class="modal-trigger" href='#modal-search'><i class="material-icons">search</i></a></li>
+          <li><a href='#app-panel'><i class="material-icons">apps</i></a></li>
           <li><a href='{{ $.Site.RSSLink }}' target="_blank"><i class="material-icons">rss_feed</i></a></li>
         </ul>
         {{ with .Site.Menus.main }}
-        <ul class="center tabs tabs-transparent hide-on-med-and-down">
+        <ul class="tabs tabs-transparent hide-on-med-and-down">
           {{ range . }}
           <li class="tab">
             <a href="{{ $.Site.BaseURL }}{{ .URL }}" class='{{ if eq $curType (trim .URL "/") }} active {{ end }}'>

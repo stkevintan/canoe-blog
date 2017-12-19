@@ -1,11 +1,13 @@
 baseURL = "https://keyin.netlify.com/"
 languageCode = "zh-cn"
 title = "World of Forks"
-disqusShortname = 'keyin'
+
+
+
 # if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
 hasCJKLanguage = true
 
-# DO　NOT MODIFY THIS CONFIG（不要修改这个配置）
+# DO　NOT MODIFY THIS CONFIG/不要修改这个配置
 publishDir = "docs"
 
 [sitemap]
@@ -13,12 +15,27 @@ publishDir = "docs"
   priority = 0.5
   filename = "sitemap.xml"
 
-[Params]
+[params]
   author = "Kevin Tan"
   subtitle = "Tempora mutantur, nos et mutamur in illis ..."
   copyright = "Copyleft@Kevin Tan"
   logo = "/img/avatar.png"
   profile_bg = "/img/profile-bg.jpg"
+  
+  
+# 评论
+[params.comment]
+  type = "valine"
+
+[params.comment.valine]
+  id = "drenIDLMO3yTwiuCl7Hva9nq-gzGzoHsz"
+  key = "rfotKaw6cevwHhOR8FvhwPAp"
+  placeholder = "写点什么吧..."
+  avatar = "retro"
+
+[params.comment.disqus]
+  shortname = 'keyin'
+
 
 # 主菜单
 [[menu.main]]
@@ -34,8 +51,20 @@ publishDir = "docs"
     url = "/archive/"
 
 [[menu.main]]
-    name = "About"
+    name = "Category"
     weight = 3
+    pre = "<i class='material-icons'>class</i>"
+    url = "/categories/"
+
+[[menu.main]]
+    name = "Tag"
+    weight = 4
+    pre = "<i class='material-icons'>local_offer</i>"
+    url = "/tags/"
+
+[[menu.main]]
+    name = "About"
+    weight = 6
     pre = "<i class='material-icons'>person</i>"
     url = "/about/"
 
@@ -57,19 +86,16 @@ publishDir = "docs"
 [[menu.social]]
   pre = "<svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>"
   name = "Github"
-  identifier = "@stkevintan"
   url = "https://github.com/stkevintan"
 
 [[menu.social]]
   pre = "<svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>"
   name = "Twitter"
-  identifier = "@kevinsfork"
   url = "https://twitter.com/kevinsfork"
 
 [[menu.social]]
   pre = "<svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>"
   name = "Weibo"
-  identifier = "@白夜繁星o_O"
   url = "http://weibo.com/kevinclasky"
 
 
