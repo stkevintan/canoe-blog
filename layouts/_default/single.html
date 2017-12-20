@@ -2,11 +2,12 @@
 {{ $tocable := and (index .Params "toc" | default  true) (gt .WordCount 400) }}
 <main id="single" role="main" class="main-panel {{if eq $tocable false}} no-toc {{end}}">
   <section class="container">
+    <div class="inner">
       <section class="post-wrapper">
         <div class="toc-panel">
           {{ .TableOfContents }}
         </div>
-        <div class="post">
+        <div class="post reveal">
           <div class="card">
             <section class="breadcrumb-wrapper">{{ partial "breadcrumb.html" . }}</section>
             <div class="card-content">
@@ -61,7 +62,8 @@
           
           </div>
         </div>
-    </section>
+      </section>
+    </div>
   </section>
   {{ partial "footer.html" . }}
 </main>

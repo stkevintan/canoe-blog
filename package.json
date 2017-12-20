@@ -39,5 +39,10 @@
       "last 2 versions",
       "ie >= 10"
     ]
+  },
+  "devDependencies": {
+    "@types/jquery": "^2.0.47",
+    "gulp-typescript": "^3.2.3",
+    "typescript": "^2.6.2"
   }
 }

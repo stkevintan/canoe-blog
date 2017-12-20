@@ -1,6 +1,10 @@
 .breadcrumbs {
-    height: $breadcrumb-height;
-    line-height: $breadcrumb-height;
+    height: $navbar-height-mobile;
+    line-height: $navbar-line-height-mobile;
+    @media #{$medium-and-up} {
+        height: $navbar-height;
+        line-height: $navbar-line-height;
+    }
     margin-top: $gutter-width;
     white-space: nowrap;
     overflow: hidden;

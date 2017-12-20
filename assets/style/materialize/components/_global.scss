@@ -9,16 +9,6 @@ html {
     box-sizing: inherit;
 }
 
-body {
-    // display: flex;
-    // min-height: 100vh;
-    // flex-direction: column;
-}
-
-main {
-    // flex: 1 0 auto;
-}
-
 ul {
     &:not(.browser-default) {
         padding-left: 0;
@@ -340,7 +330,6 @@ ul.staggered-list li {
     position: relative;
     z-index: 1;
     padding-top: $gutter-width;
-    margin-top: $gutter-width;
     color: $footer-font-color;
     background-color: $footer-bg-color;
     a {

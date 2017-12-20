@@ -1,0 +1,19 @@
+{
+  "files":[
+    "assets/script/index.ts",
+    "assets/script/search.ts",
+    "assets/script/toc.ts"
+  ],
+  "compilerOptions": {
+      "module": "ES6",
+      "removeComments": true,
+      "target":"es5"
+  },
+  "include": [
+      "node_modules/@types/**/*.ts",
+      "app/scripts/**/*.ts"
+  ],
+  "exclude": [
+      "**/*.spec.ts"
+  ]
+}

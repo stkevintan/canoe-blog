@@ -31,7 +31,6 @@ body.covered {
         position: relative;
         margin: 0 auto;
         flex: 1;
-        max-width: $container-max-width;
     }
 }
 
@@ -148,20 +147,7 @@ body.covered {
     }
 }
 
-@media (min-width: $container-min-width + $aside-width) {
-    .side-panel {
-        transform: none;
-    }
-    .button-collapse {
-        display: none;
-    }
-    .navbar .brand-logo i.material-icons {
-        display: inline-block;
-    }
-    #js-cover {
-        display: none !important;
-    }
-    body.covered {
-        overflow: auto;
-    }
+.inner{
+    max-width: $container-max-width;
+    margin: auto;
 }

@@ -1,0 +1,42 @@
+.splash{
+  height: 344px;
+  width: 100%;
+  background-color: $secondary-color;
+  position: relative;
+  @extend .z-depth-1;
+  .splash-bg{
+    background-repeat: repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .1;
+  }
+  .splash-content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column nowrap;
+    color: #fff;
+    .avatar{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      @extend .z-depth-1;
+    }
+    h3{
+      font-size: 2.5rem;
+      margin: 10px 0;
+    }
+    .desc{
+      margin:0 ;
+    }
+  }
+
+}

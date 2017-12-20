@@ -4,19 +4,21 @@
 {{ $data := .Data }}
 <main id="terms" role="main" class="main-panel no-toc">
   <section class="container">
-    <div class="post-wrapper">
-      <div class="post">
-        <div class="card">
-          <section class="breadcrumb-wrapper">  {{ partial "breadcrumb.html" . }} </section>
-          <div class="card-content">
-             {{ range $key, $value := .Data.Terms.Alphabetical }}
-                <div class="chip">
-                  <a class="unstyled" href="{{ $site.BaseURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">
-                  {{ $value.Name }}
-                  </a>
-                <sup class="tagcount">{{ $value.Count }}</sup>
-              </div>           
-              {{ end }}
+    <div class="inner">
+      <div class="post-wrapper">
+        <div class="post reveal">
+          <div class="card">
+            <section class="breadcrumb-wrapper">  {{ partial "breadcrumb.html" . }} </section>
+            <div class="card-content">
+              {{ range $key, $value := .Data.Terms.Alphabetical }}
+                  <div class="chip">
+                    <a class="unstyled" href="{{ $site.BaseURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">
+                    {{ $value.Name }}
+                    </a>
+                  <sup class="tagcount">{{ $value.Count }}</sup>
+                </div>           
+                {{ end }}
+            </div>
           </div>
         </div>
       </div>

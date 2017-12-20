@@ -21,7 +21,8 @@ publishDir = "docs"
   copyright = "Copyleft@Kevin Tan"
   logo = "/img/avatar.png"
   profile_bg = "/img/profile-bg.jpg"
-  
+  nest_bg = false
+  load_animation = true
   
 # 评论
 [params.comment]
@@ -50,17 +51,17 @@ publishDir = "docs"
     pre = "<i class='material-icons'>archive</i>"
     url = "/archive/"
 
-[[menu.main]]
-    name = "Category"
-    weight = 3
-    pre = "<i class='material-icons'>class</i>"
-    url = "/categories/"
+# [[menu.main]]
+#     name = "Category"
+#     weight = 3
+#     pre = "<i class='material-icons'>class</i>"
+#     url = "/categories/"
 
-[[menu.main]]
-    name = "Tag"
-    weight = 4
-    pre = "<i class='material-icons'>local_offer</i>"
-    url = "/tags/"
+# [[menu.main]]
+#     name = "Tag"
+#     weight = 4
+#     pre = "<i class='material-icons'>local_offer</i>"
+#     url = "/tags/"
 
 [[menu.main]]
     name = "About"
@@ -99,14 +100,14 @@ publishDir = "docs"
   url = "http://weibo.com/kevinclasky"
 
 
-# 文章归类类目
-[[menu.taxonomy]]
-  pre = "<i class='material-icons'>local_offer</i>"
-  name = "Tag"
-  identifier="tags"
+# # 文章归类类目
+# [[menu.taxonomy]]
+#   pre = "<i class='material-icons'>local_offer</i>"
+#   name = "Tag"
+#   identifier="tags"
 
-[[menu.taxonomy]]
-  pre = "<i class='material-icons'>class</i>"
-  name = "Category"
-  identifier="categories"
+# [[menu.taxonomy]]
+#   pre = "<i class='material-icons'>class</i>"
+#   name = "Category"
+#   identifier="categories"
 

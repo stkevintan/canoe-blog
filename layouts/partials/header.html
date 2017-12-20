@@ -33,15 +33,11 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="{{ $.Site.BaseURL }}/favicon.ico" rel="shortcut icon">
-
+  {{ if eq true .Site.Params.load_animation }}
+    <style>.reveal{visibility: hidden; }</style>
+  {{ end }}
   <script>
-    window.origin = {{ $.Site.BaseURL }};
-    // hide sidebar scrollbar
-    var outer = document.createElement('div');
-    outer.style.cssText = "visibility:hidden;width:100%;overflow:scroll";
-    document.documentElement.appendChild(outer);
-    window.scrollWidth = outer.offsetWidth - outer.clientWidth;
-    document.documentElement.removeChild(outer);
+    window.baseURL = {{ $.Site.BaseURL }};
   </script>
 </head>
 

@@ -1,0 +1,11 @@
+<section class="splash">
+  <div class="splash-bg">
+    <canvas id="canvas"></canvas>
+  </div>
+  <div class="splash-content">
+      <img class="avatar reveal" src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}"/>
+      {{ with .Site.Params.author }}<h3 class="nickname">{{ . }}</h3>{{ end }} 
+      {{ with .Site.Params.subtitle }}<p class="desc">{{ . }}</p>{{ end }}
+  </div>
+</section>
+<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/canvas.js"></script> 

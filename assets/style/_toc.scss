@@ -6,11 +6,11 @@
     height: 100%;
     nav {
         top: $navbar-height-mobile;
-
+        padding-top: $navbar-height-mobile;
         @media #{$medium-and-up} {
             top: $navbar-height;
+            padding-top: $navbar-height;
         }
-        padding-top: $breadcrumb-height;
         width: $toc-width;
         position: fixed;
     }
@@ -38,7 +38,7 @@
     }
 }
 
-@media(min-width: $container-min-width) {
+@media(min-width: $article-min-width) {
     .toc-panel {
         display: block;
     }
