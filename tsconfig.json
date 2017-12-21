@@ -1,9 +1,4 @@
 {
-  "files":[
-    "assets/script/index.ts",
-    "assets/script/search.ts",
-    "assets/script/toc.ts"
-  ],
   "compilerOptions": {
       "module": "ES6",
       "removeComments": true,

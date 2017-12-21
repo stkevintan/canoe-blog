@@ -5,11 +5,12 @@ const imagemin = require("gulp-imagemin");
 const clean = require("gulp-clean");
 const changed = require("gulp-changed");
 const sass = require("gulp-sass");
-const babel = require("gulp-babel");
-const ts = require("gulp-typescript");
+const rollup = require("rollup");
+const ts = require("rollup-plugin-typescript");
+const uglify = require("rollup-plugin-uglify");
 const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
-const uglify = require("gulp-uglify");
+
 const htmlmin = require("gulp-htmlmin");
 const rev = require("gulp-rev");
 const replace = require("gulp-rev-replace");
@@ -23,7 +24,6 @@ const lunr = require("hugo-lunr");
 
 const bs = require("browser-sync").create();
 
-const tsProject = ts.createProject("tsconfig.json");
 const c = Object.assign({}, require("./package").config);
 const siteConf = toml.parse(fs.readFileSync("./config.toml"));
 
@@ -33,7 +33,7 @@ let prod = false;
 
 const src = {
   css: "assets/style/**/*.scss",
-  js: "assets/script/**/*.{js,ts}",
+  jsdir: "assets/script/",
   static: "assets/static/**/*",
   img: "assets/image/**/*.{png,svg,jpg}"
 };
@@ -78,16 +78,45 @@ $.task("style", () => {
     .pipe(bs.stream({ match: "**/*.css" }));
 });
 
+function rollupMultiEntry(options) {
+  const watchOptions = [];
+  const rollupResults = options.map(option => {
+    const inputOpts = {
+      input: option.entry,
+      globals: { jquery: "$" },
+      format: "iife",
+      plugins: prod ? [ts(), uglify()] : [ts()]
+    };
+    const outputOpts = {
+      file: option.dest,
+      format: "iife",
+      sourcemap: !prod
+    };
+    watchOptions.push({ ...inputOpts, output: [outputOpts] });
+    return rollup.rollup(inputOpts).then(bundle => bundle.write(outputOpts));
+  });
+  return { promise: Promise.all(rollupResults), watchOptions };
+}
+
 $.task("script", () => {
-  return $.src(src.js)
-    .pipe(plumber())
-    .pipe(changed(dest.js))
-    .pipe($if(!prod, sourcemaps.init()))
-    .pipe(tsProject())
-    .pipe($if(!prod, sourcemaps.write()))
-    .pipe($if(prod, uglify()))
-    .pipe($.dest(dest.js))
-    .pipe(bs.stream({ match: "**/*js" }));
+  const rollupResult = rollupMultiEntry([
+    { entry: `./${src.jsdir}/index.ts`, dest: `./${dest.js}/index.js` },
+    { entry: `./${src.jsdir}/canvas.ts`, dest: `./${dest.js}/canvas.js` }
+  ]);
+  if (!prod) {
+    //watch files in dev mode
+    const watcher = rollup.watch(rollupResult.watchOptions);
+    watcher.on("event", e => {
+      if (e.code === "END") {
+        _.log("rollup updated");
+        bs.reload();
+      }
+      if (e.code === "ERROR") {
+        _.log("rollup error: ", e);
+      }
+    });
+  }
+  return rollupResult.promise;
 });
 
 $.task("image", () => {
@@ -165,7 +194,7 @@ $.task("serve", ["build:dev"], () => {
   });
 
   $.watch(src.css, ["style"]);
-  $.watch(src.js, ["script"]);
+  // $.watch(src.js, ["script"]);
 
   const reloadSource = [
     dest.root + "/**/*.html",

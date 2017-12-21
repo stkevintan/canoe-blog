@@ -1,9 +1,11 @@
 <section class="splash">
-  <div class="splash-bg">
+  <div class="splash-bg" style="background-image:url('{{ .Site.Params.profile_background }}')">
     <canvas id="canvas"></canvas>
   </div>
   <div class="splash-content">
-      <img class="avatar reveal" src="{{ $.Site.BaseURL }}{{ .Site.Params.logo }}"/>
+    {{ with .Site.Params.logo }}
+      <img class="avatar reveal" src="{{ $.Site.BaseURL }}{{ . }}"/>
+    {{ end }}
       {{ with .Site.Params.author }}<h3 class="nickname">{{ . }}</h3>{{ end }} 
       {{ with .Site.Params.subtitle }}<p class="desc">{{ . }}</p>{{ end }}
   </div>

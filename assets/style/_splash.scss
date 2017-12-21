@@ -1,42 +1,56 @@
-.splash{
-  height: 344px;
+.splash {
+  height: 250px;
+  @media #{$medium-and-up} {
+    height: 344px;
+  }
   width: 100%;
   background-color: $secondary-color;
   position: relative;
   @extend .z-depth-1;
-  .splash-bg{
-    background-repeat: repeat;
+  .splash-bg {
+    background-repeat: no-repeat;
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: .1;
+    opacity: 0.4;
+    canvas {
+      width: 100%;
+      height: 100%;
+    }
   }
-  .splash-content{
+  .splash-content {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    flex-flow:column nowrap;
+    flex-flow: column nowrap;
     color: #fff;
-    .avatar{
-      width: 150px;
-      height: 150px;
+    .avatar {
+      width: 120px;
+      height: 120px;
+      @media #{$medium-and-up} {
+        width: 150px;
+        height: 150px;
+      }
       border-radius: 50%;
       @extend .z-depth-1;
     }
-    h3{
-      font-size: 2.5rem;
+    h3 {
+      font-size: 2.2rem;
+      @media #{$medium-and-up} {
+        font-size: 2.5rem;
+      }
       margin: 10px 0;
     }
-    .desc{
-      margin:0 ;
+    .desc {
+      margin: 0;
     }
   }
-
 }

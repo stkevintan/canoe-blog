@@ -1,4 +1,4 @@
-baseURL = "https://keyin.netlify.com/"
+baseURL = "https://keyin.me/"
 languageCode = "zh-cn"
 title = "World of Forks"
 
@@ -19,8 +19,8 @@ publishDir = "docs"
   author = "Kevin Tan"
   subtitle = "Tempora mutantur, nos et mutamur in illis ..."
   copyright = "Copyleft@Kevin Tan"
-  logo = "/img/avatar.png"
-  profile_bg = "/img/profile-bg.jpg"
+  logo = "/img/avatar.jpg"
+  profile_background = "/img/20.jpg"
   nest_bg = false
   load_animation = true
   

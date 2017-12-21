@@ -9,7 +9,7 @@ function initPlugins() {
       .find("a")
       .prop("href");
   });
-
+  ($(".button-collapse") as any).sideNav();
   ($(".modal") as any).modal();
 }
 

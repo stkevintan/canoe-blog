@@ -32,9 +32,12 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="{{ $.Site.BaseURL }}/favicon.ico" rel="shortcut icon">
-  {{ if eq true .Site.Params.load_animation }}
-    <style>.reveal{visibility: hidden; }</style>
+  <link href="{{ $.Site.BaseURL }}/favicon.ico" rel="shortcut icon"> {{ if eq true .Site.Params.load_animation }}
+  <style>
+    .reveal {
+      visibility: hidden;
+    }
+  </style>
   {{ end }}
   <script>
     window.baseURL = {{ $.Site.BaseURL }};
@@ -60,30 +63,45 @@
       </div>
     </div>
   </div>
- <!-- Modal Structure  End -->
- 
+  <!-- Modal Structure  End -->
+
 
   <div class="navbar-fixed">
     <nav class="navbar">
       <div class="nav-wrapper container">
-        <a href="javascript:void(0)" class="button-collapse"><i class="material-icons">menu</i></a>
-        <a href="{{ $.Site.BaseURL }}" class="brand-logo"><i class="material-icons">restaurant_menu</i> 
+        <a href="javascript:void(0)" data-activates="mobile-side" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+        <a href="{{ $.Site.BaseURL }}" class="brand-logo">
+          <i class="material-icons">restaurant_menu</i>
           {{ .Site.Title }}
         </a>
 
         <ul class="right hide-on-small-and-down">
           <!-- https://www.google.com.hk/search?sitesearch={{ .Site.BaseURL }} -->
-          <li><a class="modal-trigger" href='#modal-search'><i class="material-icons">search</i></a></li>
-          <li><a href='#app-panel'><i class="material-icons">apps</i></a></li>
-          <li><a href='{{ $.Site.RSSLink }}' target="_blank"><i class="material-icons">rss_feed</i></a></li>
+          <li>
+            <a class="modal-trigger" href='#modal-search'>
+              <i class="material-icons">search</i>
+            </a>
+          </li>
+          <li>
+            <a href='#app-panel'>
+              <i class="material-icons">apps</i>
+            </a>
+          </li>
+          <li>
+            <a href='{{ $.Site.RSSLink }}' target="_blank">
+              <i class="material-icons">rss_feed</i>
+            </a>
+          </li>
         </ul>
         {{ with .Site.Menus.main }}
         <ul class="tabs tabs-transparent hide-on-med-and-down">
           {{ range . }}
           <li class="tab">
             <a href="{{ $.Site.BaseURL }}{{ .URL }}" class='{{ if eq $curType (trim .URL "/") }} active {{ end }}'>
-                {{ .Name }}
-              </a>
+              {{ .Name }}
+            </a>
           </li>
           {{end}}
         </ul>
@@ -91,3 +109,16 @@
       </div>
     </nav>
   </div>
+
+
+  {{ with .Site.Menus.main }}
+  <ul class="side-nav" id="mobile-side">
+    {{ range . }}
+    <li>
+      <a href="{{ $.Site.BaseURL }}{{ .URL }}" class='{{ if eq $curType (trim .URL "/") }} active {{ end }}'>
+        {{ .Name }}
+      </a>
+    </li>
+    {{end}}
+  </ul>
+  {{end}}
