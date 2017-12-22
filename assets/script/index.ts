@@ -1,27 +1,25 @@
 const baseURL = window["baseURL"];
-import search from "./search";
+import U from "./domutil";
+
+import "./search";
 import toc from "./toc";
 
 function initPlugins() {
   // enable `a` click event inside `li.tab`
-  $(".tab").click(function(e) {
-    window.location.href = $(this)
-      .find("a")
-      .prop("href");
-  });
-  ($(".button-collapse") as any).sideNav();
-  ($(".modal") as any).modal();
 }
 
 function loadSvg() {
   const url = baseURL + "/svg/icon.svg";
-  const $area = $('<div style="display:none"></div>').appendTo($("body"));
-  $area.load(url);
+  const body = U.get("body");
+  const area = U.parseHtml('<div style="display:none"></div>');
+  body.appendChild(area);
+  U.fetch(url)
+    .then(res => res.text())
+    .then(text => (area.innerHTML = text));
 }
 
-$(() => {
+U.domReady(() => {
   initPlugins();
-  toc();
   loadSvg();
-  search();
+  toc();
 });
