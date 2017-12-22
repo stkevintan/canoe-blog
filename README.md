@@ -9,7 +9,8 @@ Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
 
 1. Waterfall
 2. Full screen / Responsive layout
-3. Material Design
+3. Material Design  
+4. Table of Content  
 
 ## Snapshot
 
@@ -17,11 +18,12 @@ Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
 ![article page](https://raw.githubusercontent.com/stkevintan/hugo-YAMT-theme/master/snapshots/article.png)
 
 
-## Usage && Dev
+## How to use or dev
 
-Because this theme is using a workflow of gulp. you should clone this repo and replace my stuff(such as post,pages,link,etc...) with yours. 
-
-This theme is writted by `es6` `sass` and compiled by `gulp`， so, we should install all the dependencies required:
+This theme is writted by `typescript` and `sass` and using `gulp` to control the build progress. 
+First, install `hugo` and make sure you have a node environment.     
+Next, clone this repo and replace my stuff (such as post,pages,link,etc...) with yours.      
+Then, install the node dependencies with `yarn` or `npm`:       
 
 ```bash
   # install glob globally
@@ -30,11 +32,11 @@ This theme is writted by `es6` `sass` and compiled by `gulp`， so, we should in
   yarn install # or npm install
 ``` 
 
-All the available gulp commands:
+Finally, there are 2 gulp task we can run in the terminal:
 
-1. `gulp serve`: start a livereload dev server to devlopment. equivalent to `hugo serve`.
+1. `gulp serve`: start a livereload dev server. equivalent to `hugo serve`.
 2. `gulp build`: generate static file to your publish dir. equivalent to `hugo`.
 
 After using `guilp build`,the static pages should be generated into `docs` folder, all the static resources should be minified and revisioned.   
 
-Finally, push the whole project to your github repo, and enable the github pages with the help of [offical docs](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch) your site will be published online soon.
+Finally, push the whole project to your github repo, and enable the github pages with the help of [offical docs](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#publishing-your-github-pages-site-from-a-docs-folder-on-your-master-branch) your site should be published soon.
