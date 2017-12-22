@@ -20,7 +20,8 @@ Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
 
 ## How to use or dev
 
-This theme is writted by `typescript` and `sass` and using `gulp` to control the build progress. 
+This theme is writted by `typescript` and `sass` and using `gulp` to control the build progress.    
+
 First, install `hugo` and make sure you have a node environment.     
 Next, clone this repo and replace my stuff (such as post,pages,link,etc...) with yours.      
 Then, install the node dependencies with `yarn` or `npm`:       
