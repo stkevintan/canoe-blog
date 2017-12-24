@@ -53,7 +53,6 @@ a.unstyled {
   margin: $gutter-width/-2;
   &__item {
     padding: $gutter-width/2;
-    -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     break-inside: avoid-column;
     .card {

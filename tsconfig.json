@@ -6,7 +6,7 @@
   },
   "include": [
       "node_modules/@types/**/*.ts",
-      "app/scripts/**/*.ts"
+      "script/script/**/*.ts"
   ],
   "exclude": [
       "**/*.spec.ts"

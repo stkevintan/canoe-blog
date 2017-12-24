@@ -8,7 +8,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/jquery": "^2.0.47",
-    "autoprefixer": "^7.1.2",
+    "autoprefixer": "7.2.3",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
@@ -27,6 +27,7 @@
     "imagemin-pngquant": "^5.0.1",
     "postcss": "^6.0.9",
     "rollup": "^0.52.3",
+    "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript": "^0.8.1",
     "rollup-plugin-uglify": "^2.0.1",
@@ -38,7 +39,8 @@
     "port": 3000,
     "browserslist": [
       "last 2 versions",
-      "ie >= 10"
+      "ie >= 10",
+      "firefox >= 20"
     ]
   },
   "dependencies": {

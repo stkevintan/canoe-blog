@@ -42,3 +42,7 @@ function getIdx() {
     });
   return db;
 }
+
+export default function(){
+  
+}

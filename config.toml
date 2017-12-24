@@ -26,7 +26,7 @@ publishDir = "docs"
   
 # 评论
 [params.comment]
-  type = "valine"
+  type = "disqus"
 
 [params.comment.valine]
   id = "drenIDLMO3yTwiuCl7Hva9nq-gzGzoHsz"

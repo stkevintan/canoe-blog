@@ -1,9 +1,4 @@
-window.requestAnimationFrame =
-  window.requestAnimationFrame ||
-  window["mozRequestAnimationFrame"] ||
-  window.webkitRequestAnimationFrame ||
-  window["msRequestAnimationFrame"] ||
-  (cb => window.setTimeout(cb, 1000 / 60));
+import { requestAnimationFrame } from "./animate";
 
 const flakes = [];
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;

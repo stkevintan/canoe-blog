@@ -6,6 +6,8 @@ const clean = require("gulp-clean");
 const changed = require("gulp-changed");
 const sass = require("gulp-sass");
 const rollup = require("rollup");
+const rollupResolve = require("rollup-plugin-node-resolve");
+const rollupCommonjs = require("rollup-plugin-commonjs");
 const ts = require("rollup-plugin-typescript");
 const uglify = require("rollup-plugin-uglify");
 const sourcemaps = require("gulp-sourcemaps");
@@ -69,8 +71,8 @@ $.task("style", () => {
       $if(
         prod,
         postcss([
-          require("autoprefixer")({ browsers: c.browserslist }),
-          require("cssnano")()
+          require("autoprefixer")({ browsers: c.browserslist })
+          // require("cssnano")()
         ])
       )
     )
@@ -80,12 +82,13 @@ $.task("style", () => {
 
 function rollupMultiEntry(options) {
   const watchOptions = [];
+  const plugins = [rollupCommonjs(), rollupResolve(), ts()];
   const rollupResults = options.map(option => {
     const inputOpts = {
       input: option.entry,
       globals: { jquery: "$" },
       format: "iife",
-      plugins: prod ? [ts(), uglify()] : [ts()]
+      plugins: prod ? plugins.concat([uglify()]) : plugins
     };
     const outputOpts = {
       file: option.dest,

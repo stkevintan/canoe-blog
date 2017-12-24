@@ -4,9 +4,7 @@ import U from "./domutil";
 import "./search";
 import toc from "./toc";
 
-function initPlugins() {
-  // enable `a` click event inside `li.tab`
-}
+
 
 function loadSvg() {
   const url = baseURL + "/svg/icon.svg";
@@ -19,7 +17,6 @@ function loadSvg() {
 }
 
 U.domReady(() => {
-  initPlugins();
   loadSvg();
   toc();
 });

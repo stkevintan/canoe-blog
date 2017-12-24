@@ -1,8 +1,8 @@
 import "whatwg-fetch";
+
 const parser = new DOMParser();
 const util = {
-  fetch(url: string, options?) {
-    if (options == null) options = {};
+  fetch(url: string, options: any = {}) {
     if (options.credentials == null) options.credentials = "same-origin";
     return fetch(url, options).then(res => {
       if ((res.status >= 200 && res.status < 300) || res.status == 304) {
@@ -19,20 +19,44 @@ const util = {
   parseHtml(str: string) {
     return parser.parseFromString(str, "text/html").body.firstElementChild;
   },
-  get(selector: string, context?: Element | Document) {
-    if (context == null) context = document;
+  get(selector: string, context: Element | Document = document) {
+    if (context == null) return null;
     return context.querySelector(selector);
   },
-  getAll(selector: string, context?: Element | Document) {
-    if (context == null) context = document;
+  getAll(selector: string, context: Element | Document = document) {
+    if (context == null) return [];
     return context.querySelectorAll(selector);
   },
   offset(el: Element) {
-    const box = el.getBoundingClientRect();
+    const rect = el.getBoundingClientRect();
+    const docElem = document.documentElement;
     return {
-      top: box.top + window.pageYOffset - document.documentElement.clientTop,
-      left: box.left + window.pageXOffset - document.documentElement.clientLeft
+      top: rect.top + window.pageYOffset - (docElem.clientTop || 0),
+      left: rect.left + window.pageXOffset - (docElem.clientLeft || 0)
     };
+  },
+  size(el: Element, outer = false) {
+    const rect = el.getBoundingClientRect();
+    const styles = window.getComputedStyle(el);
+    let width, height;
+    const horGap = () =>
+      parseFloat(styles.paddingLeft) +
+      parseFloat(styles.paddingRight) +
+      parseFloat(styles.borderLeftWidth) +
+      parseFloat(styles.borderRightWidth);
+    const verGap = () =>
+      parseFloat(styles.paddingTop) +
+      parseFloat(styles.paddingBottom) +
+      parseFloat(styles.borderTopWidth) +
+      parseFloat(styles.borderBottomWidth);
+    if (outer) {
+      width = rect.width;
+      height = rect.height;
+    } else {
+      width = rect.width - horGap();
+      height = rect.height - verGap();
+    }
+    return { width: width, height: height };
   }
 };
 
