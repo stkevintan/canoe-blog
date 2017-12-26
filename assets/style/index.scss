@@ -54,6 +54,11 @@ a.unstyled {
   margin-right: auto;
 }
 
+.reveal {
+  visibility: hidden;
+}
+
+
 .waterfall {
   columns: $waterfall-item-width;
   column-gap: 0;
