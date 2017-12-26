@@ -1,20 +1,20 @@
 {{ partial "header.html" . }}
-<main id="archive" role="main" class="main-panel no-toc">
+<main id="archive" role="main" class="main-panel">
   <section class="container">
     <div class="inner">
+        <div class="single-content-wrapper">
       {{ partial "breadcrumb.html" . }}
-      <div class="post reveal">
         <ul class="collapsible popout" data-collapsible="accordion">
-          {{ $post := where (where $.Site.Pages "Type" "post") "Kind" "page" }}
-           {{ range $post.GroupByDate "2006/01" }}
+          {{ $post := where (where $.Site.Pages "Type" "posts") "Kind" "page" }} {{ range $post.GroupByDate "01 - 2006" }}
           <li>
             <div class="collapsible-header">
-              <i class="material-icons">today</i>{{ .Key }}</div>
+              <i class="material-icons">history</i>
+              <span>{{ .Key }}</span>
+            </div>
             <div class="collapsible-body">
               <div class="collection">
                 {{ range .Pages }}
-                <a href="{{ .Permalink }}" class="collection-item nowrap">
-                  <i class="material-icons">description</i>
+                <a href="{{ .Permalink }}" class="collection-item">
                   {{ .Title }}
                 </a>
                 {{ end }}

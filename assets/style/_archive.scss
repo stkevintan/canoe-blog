@@ -1,24 +1,47 @@
 #archive {
-    .inner {
-        max-width: 900px;
+  .breadcrumbs {
+    margin-left: 10px;
+    marign-right: 10px;
+  }
+  .collapsible {
+    margin: 0;
+    padding: 0 $gutter-width;
+    @media #{$medium-and-down} {
+      padding: 0 $gutter-width/2;
     }
-    .breadcrumbs{
-      margin-left: 24px;
-      margin-right: 24px;
+    vertical-align: middle;
+    .collapsible-header {
+      color: $muted-color;
+      height: 50px;
+      line-height: 50px;
+      vertical-align: middle;
+      i,
+      span {
+        display: inline-block;
+        vertical-align: inherit;
+        line-height: inherit;
+      }
+      i.material-icons {
+        margin-right: 6px;
+      }
     }
-    .collapsible {
-        .collapsible-header {
-            transition: all .2s cubic-bezier(0.6, 0.2, 0.1, 1);
-            &.active {
-                background: $primary-color;
-                color: #fff;
-                i.material-icons {
-                    color: #fff;
-                }
-            }
-        }
-        .collapsible-body {
-            padding: 0;
-        }
+
+    li {
+      display: block;
     }
+
+    .collapsible-body {
+      padding: $gutter-width/2 0 $gutter-width 30px;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 0;
+        height: 100%;
+        width: 0;
+        border-left: 2px dashed lighten($muted-color, 30%);
+      }
+    }
+  }
 }

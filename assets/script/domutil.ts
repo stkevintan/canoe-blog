@@ -27,6 +27,14 @@ const util = {
     if (context == null) return [];
     return context.querySelectorAll(selector);
   },
+  remove(el: Element) {
+    const parent = el.parentElement;
+    parent && parent.removeChild(el);
+  },
+  css(el: Element, key: string, value?: string) {
+    if (value == null) return getComputedStyle(el)[key];
+    else (el as HTMLElement).style[key] = value;
+  },
   offset(el: Element) {
     const rect = el.getBoundingClientRect();
     const docElem = document.documentElement;

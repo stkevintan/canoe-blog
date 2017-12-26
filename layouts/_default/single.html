@@ -1,13 +1,16 @@
-{{ partial "header.html" . }}
-{{ $tocable := and (index .Params "toc" | default  true) (gt .WordCount 400) }}
-<main id="single" role="main" class="main-panel {{if eq $tocable false}} no-toc {{end}}">
+{{ partial "header.html" . }} 
+{{ $tocable := and (index .Params "toc" | default true) (gt .WordCount 400) }}
+{{ $tocable := and (ne "" (print .TableOfContents)) $tocable }}
+<main id="single" role="main" class="main-panel">
   <section class="container">
     <div class="inner">
       <section class="post-wrapper">
-        <div class="toc-panel">
-          {{ .TableOfContents }}
-        </div>
-        <div class="post reveal">
+        {{if eq $tocable true}} 
+          <div class="toc-panel">
+            {{ .TableOfContents }}
+          </div>
+        {{ end }}
+        <div class="post reveal {{if eq $tocable false}} single-content-wrapper {{end}}">
           <div class="card">
             <section class="breadcrumb-wrapper">{{ partial "breadcrumb.html" . }}</section>
             <div class="card-content">
@@ -18,15 +21,14 @@
                   <time>
                     <!-- <i class="label material-icons">date_range</i> -->
                     <span>{{ .Date.Format "Mon Jan 2 2006" }}</span>
-                </time>
-        
-                {{ with .Params.categories }}
-                <address>
-                  {{ range . }}
-                  <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; 
+                  </time>
+
+                  {{ with .Params.categories }}
+                  <address>
+                    {{ range . }}
+                    <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
+                  </address>
                   {{ end }}
-                </address>
-                {{ end }}
                 </span>
               </section>
               {{ end }}
@@ -36,30 +38,29 @@
 
             </div>
             {{ with .Params.tags }}
-            <div class="card-action">
+            <div class="card-action card-action-links">
               {{ range . }}
-              <a class="btn tag" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
+              <a class="btn btn-secondary" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ . }}</a> {{ end }}
             </div>
             {{ end }}
             <div class="card-action">
               {{ partial "comment.html" . }}
             </div>
 
-            {{ if eq .Type "post" }}
+            {{ if eq .Type "posts" }}
             <div class="pagination-single">
-              {{ with .Next }} {{if eq .Type "post" }}
+              {{ with .Next }} {{if eq .Type "posts" }}
               <span class="pagination-item previous">
-              <i class="material-icons">navigate_before</i>
-              <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a>
-            </span> {{ end }}{{ end }} 
-            {{ with .Prev }}{{if eq .Type "post"}}
+                <i class="material-icons">navigate_before</i>
+                <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a>
+              </span> {{ end }}{{ end }} {{ with .Prev }}{{if eq .Type "posts"}}
               <span class="pagination-item next">
-              <i class="material-icons">navigate_next</i>
-              <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a> 
-            </span> {{ end }}{{ end }}
+                <i class="material-icons">navigate_next</i>
+                <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a>
+              </span> {{ end }}{{ end }}
             </div>
-          {{ end }}
-          
+            {{ end }}
+
           </div>
         </div>
       </section>
@@ -68,4 +69,4 @@
   {{ partial "footer.html" . }}
 </main>
 
- {{partial "script.html" .}}
+{{partial "script.html" .}}

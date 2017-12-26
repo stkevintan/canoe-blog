@@ -44,75 +44,107 @@
   </script>
 </head>
 
-{{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }} {{ $curType := index $path (sub (len $path) 2)}}
+{{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }}
+
+
+
+<!-- -->
+
+
+
+{{ $curType := index $path (sub (len $path) 2)}}
 
 <body>
-  <!-- Modal Structure -->
-  <div id="modal-search" class="modal">
-    <div class="modal-content">
-      <form>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="in-search" type="text" required aria-required="true" />
-            <label for='in-search'>Search</label>
-          </div>
-        </div>
-      </form>
-      <div class="out-wrapper row">
-        <div id="out-search" class="collection col s12"></div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal Structure  End -->
-
-
   <div class="navbar-fixed">
     <nav class="navbar">
-      <div class="nav-wrapper container">
-        <a href="javascript:void(0)" data-activates="mobile-side" class="button-collapse">
-          <i class="material-icons">menu</i>
-        </a>
-        <a href="{{ $.Site.BaseURL }}" class="brand-logo">
-          <i class="material-icons">restaurant_menu</i>
-          {{ .Site.Title }}
-        </a>
-
-        <ul class="right hide-on-small-and-down">
-          <!-- https://www.google.com.hk/search?sitesearch={{ .Site.BaseURL }} -->
-          <li>
-            <a class="modal-trigger" href='#modal-search'>
-              <i class="material-icons">search</i>
-            </a>
-          </li>
-          <li>
-            <a href='#app-panel'>
-              <i class="material-icons">apps</i>
-            </a>
-          </li>
-          <li>
-            <a href='{{ $.Site.RSSLink }}' target="_blank">
-              <i class="material-icons">rss_feed</i>
-            </a>
-          </li>
-        </ul>
-        {{ with .Site.Menus.main }}
-        <ul class="tabs tabs-transparent hide-on-med-and-down">
-          {{ range . }}
-          <li class="tab">
-            <a href="{{ $.Site.BaseURL }}{{ .URL }}" class='{{ if eq $curType (trim .URL "/") }} active {{ end }}'>
-              {{ .Name }}
-            </a>
-          </li>
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="{{ $.Site.BaseURL }}" class="brand-logo">
+            <i class="material-icons hide-on-med-and-down">restaurant_menu</i>
+            {{ .Site.Title }}
+          </a>
+          {{ with .Site.Menus.main }}
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            {{ range . }}
+            <li class="tab">
+              <a href="{{ $.Site.BaseURL }}{{ .URL }}" class='{{ if eq $curType (trim .URL "/") }} active {{ end }}'>
+                {{ .Name }}
+              </a>
+            </li>
+            {{end}}
+          </ul>
           {{end}}
-        </ul>
-        {{end}}
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            <!-- https://www.google.com.hk/search?sitesearch={{ .Site.BaseURL }} -->
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='{{ $.Site.RSSLink }}' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   </div>
 
+  <!-- mobile search panel -->
+  {{ partial "msearch.html" . }}
+  <!-- END: mobile search panel -->
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel row">
+          {{ with .Site.Menus.taxonomy }}{{ range . }}
+          <div class="col s6">
+            <label>{{ .Name | title }}</label>
+            <ul>
+              {{ $key := .Identifier }} {{ $value := (index $.Site.Taxonomies .Identifier) }} {{ range $value.ByCount }}
+              <li>
+                <a class="btn btn-secondary" href="{{$.Site.BaseURL}}/{{ $key }}/{{ .Name | urlize }}"> {{ .Name }}
+                  <span class="badge">{{ .Count }}</span>
+                </a>
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }} {{end }}
+        </div>
+      </div>
+    </div>
+  </div>
 
   {{ with .Site.Menus.main }}
-  <ul class="side-nav" id="mobile-side">
+  <ul class="side-nav" id="sidebar">
     {{ range . }}
     <li>
       <a href="{{ $.Site.BaseURL }}{{ .URL }}" class='{{ if eq $curType (trim .URL "/") }} active {{ end }}'>
@@ -120,5 +152,20 @@
       </a>
     </li>
     {{end}}
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='{{$.Site.BaseURL}}/categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='{{$.Site.BaseURL}}/tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='{{ $.Site.RSSLink }}' target="_blank">
+        Rss
+      </a>
+    </li>
   </ul>
   {{end}}

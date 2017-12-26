@@ -5,7 +5,6 @@
         height: $navbar-height;
         line-height: $navbar-line-height;
     }
-    margin-top: $gutter-width;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -17,14 +16,14 @@
     .breadcrumb:last-child,
     span.breadcrumb,
     span.breadcrumb:before {
-        color: $secondary-color;
+        color: $muted-color;
     }
     .breadcrumb {
         i.material-icons {
             vertical-align: top;
             margin-right: 10px;
             float: none;
-            line-height: 61px;
+            line-height: inherit;
         }
     }
 }

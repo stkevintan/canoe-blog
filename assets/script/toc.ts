@@ -1,5 +1,5 @@
 import U from "./domutil";
-import easingFunctions, { requestAnimationFrame } from "./animate";
+import easingFunctions, { animate, cancelAnimate } from "./animate";
 
 const tocPanel = U.get(".toc-panel");
 const toc = U.get("nav", tocPanel);
@@ -23,25 +23,21 @@ function getAnchor() {
     return Math.round(U.offset(target).top - headerHeight - 20);
   });
 }
+
+let animateID = null;
 function scrollToElement(elem, cb) {
   if (elem.href) elem = U.get(elem.getAttribute("href"));
   const startOffset = window.pageYOffset;
   const targetOffset = U.offset(elem).top - headerHeight;
   const deltaOffset = targetOffset - startOffset;
-  const duration = 400;
-  const startTimeStamp = performance.now();
-  function step(curTimeStamp = performance.now()) {
-    const delta = curTimeStamp - startTimeStamp;
-    if (delta < duration) {
-      const percent = easingFunctions.easeInCubic(delta / duration);
-      window.scroll(0, startOffset + deltaOffset * percent);
-      requestAnimationFrame(step);
-    } else {
-      window.scroll(0, targetOffset);
-      cb && cb();
-    }
-  }
-  requestAnimationFrame(step);
+
+  animateID && cancelAnimate(animateID);
+  animateID = animate(
+    percent => window.scroll(0, startOffset + deltaOffset * percent),
+    400,
+    easingFunctions.easeInCubic,
+    cb
+  );
 }
 
 function onclick(e) {
@@ -69,10 +65,10 @@ function onscroll() {
   if (isFixed && a_height + headerHeight >= b_height) {
     const top =
       -tocPanel.getBoundingClientRect().top + b_height - a_height + "px";
-    (toc as HTMLElement).style.cssText = `position:absolute;top: ${top}`;
+    U.css(toc, "cssText", `position:absolute;top: ${top}`);
   }
   if (!isFixed && a_height + headerHeight < b_height) {
-    (toc as HTMLElement).style.cssText = "";
+    U.css(toc, "cssText", "");
   }
 
   if (!isTocSelect) return;

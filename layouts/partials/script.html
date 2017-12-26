@@ -3,10 +3,11 @@
 
 
 <script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 <!--Import jQuery before materialize.js-->
-{{ if eq true .Site.Params.load_animation }}
+{{ if eq true .Site.Params.reveal_effect }}
 <script type="text/javascript" src="//cdn.bootcss.com/scrollReveal.js/3.3.6/scrollreveal.min.js"></script>
 <script>
   var sr = ScrollReveal();
@@ -16,11 +17,13 @@
     distance: "-25px"
   });
 </script> {{ end }}
+<script src="https://cdn.bootcss.com/lunr.js/2.1.5/lunr.min.js"></script>
 
 <!-- <script type="text/javascript" src="{{ $.Site.BaseURL }}/js/materialize.min.js"></script> -->
-<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/index.js"></script> {{ with .Site.Params.analytics }}
+<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/index.js"></script> 
 
 
+{{ with .Site.Params.analytics }}
 <script>
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

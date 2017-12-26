@@ -82,7 +82,7 @@ $.task("style", () => {
 
 function rollupMultiEntry(options) {
   const watchOptions = [];
-  const plugins = [rollupCommonjs(), rollupResolve(), ts()];
+  const plugins = [rollupResolve(), rollupCommonjs(), ts()];
   const rollupResults = options.map(option => {
     const inputOpts = {
       input: option.entry,
