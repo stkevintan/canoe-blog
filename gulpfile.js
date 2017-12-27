@@ -27,8 +27,7 @@ const siteConf = toml.parse(fs.readFileSync("./config.toml"));
 
 c.publishDir = siteConf.publishDir || "public";
 
-process.env.NODE_ENV = "dev";
-const isProd = () => process.env.NODE_ENV === "production";
+let isProd = false;
 
 const src = {
   js: "assets/style/**/*.js",
@@ -55,7 +54,7 @@ gulp.task("clean", () =>
   gulp.src([dest.root, publish.root], { read: false }).pipe(clean())
 );
 gulp.task("copy:static", () =>
-  gulp.src(src.static).pipe(gulp.dest(isProd() ? publish.root : dest.root))
+  gulp.src(src.static).pipe(gulp.dest(isProd ? publish.root : dest.root))
 );
 
 gulp.task("style", () => {
@@ -63,12 +62,12 @@ gulp.task("style", () => {
     .src(src.css)
     .pipe(plumber())
     .pipe(changed(dest.css))
-    .pipe($if(!isProd(), sourcemaps.init()))
+    .pipe($if(!isProd, sourcemaps.init()))
     .pipe(sass().on("error", sass.logError))
-    .pipe($if(!isProd(), sourcemaps.write()))
+    .pipe($if(!isProd, sourcemaps.write()))
     .pipe(
       $if(
-        isProd(),
+        isProd,
         postcss([
           require("autoprefixer")({ browsers: c.browserslist }),
           require("cssnano")()
@@ -86,7 +85,7 @@ gulp.task("script", () => {
       { entry: `${dir}/index.ts`, dest: `./${dest.js}/index.js` },
       { entry: `${dir}/canvas.ts`, dest: `./${dest.js}/canvas.js` }
     ],
-    () => bs.reload()
+    isProd ? null : () => bs.reload()
   );
 });
 
@@ -96,7 +95,7 @@ gulp.task("image", () => {
     .pipe(changed(dest.img))
     .pipe(
       $if(
-        isProd(),
+        isProd,
         imagemin({
           progressive: true,
           use: [pngquant({ quality: 90 })]
@@ -110,15 +109,15 @@ gulp.task("hugo", cb => {
   const args = ["-d", `./${dest.root}`];
   const hugo = cp.spawn(
     "hugo",
-    isProd() ? args : args.concat(["-w", "-b", "/."])
+    isProd ? args : args.concat(["-w", "-b", "/."])
   );
   hugo.stdout.on("data", data => util.log(data.toString()));
   hugo.stderr.on("data", data => util.log("error: ", data.toString()));
   hugo.on("exit", code => {
     util.log("hugo process exited with code", code);
-    isProd() && cb();
+    isProd && cb();
   });
-  !isProd() && cb();
+  !isProd && cb();
 });
 
 gulp.task("rev", () => {
@@ -147,7 +146,7 @@ gulp.task("lunr", () => {
   const option = {
     contextPath: "/posts/",
     dir: "content/posts",
-    output: `${isProd() ? publish.root : dest.root}/index.json`
+    output: `${isProd ? publish.root : dest.root}/index.json`
   };
   if (siteConf.metaDataFormat === "yaml") {
     option.matterDelims = "---";
@@ -162,10 +161,8 @@ gulp.task("build:dev", ["clean"], cb => {
 });
 
 gulp.task("build", ["clean"], cb => {
-  process.env.NODE_ENV = "production";
-  run("build:dev", ["rev", "htmlmin"], "ref", () => {
-    process.env.NODE_ENV = "dev" && cb();
-  });
+  isProd = true;
+  run("build:dev", ["rev", "htmlmin"], "ref", cb);
 });
 
 gulp.task("serve", ["build:dev"], () => {
