@@ -1,14 +1,17 @@
 const fs = require("fs");
 const path = require("path");
 const { escape } = require("querystring");
+
 const matter = require("gray-matter");
 const removeMd = require("remove-markdown");
 const striptags = require("striptags");
-const Segment = require("segment");
-const { promisify } = require("util");
+const nodejieba = require("nodejieba");
 
-const segment = new Segment();
-segment.useDefault();
+nodejieba.load({
+  // user dict ...
+});
+
+const { promisify } = require("util");
 
 const readdir = promisify(fs.readdir);
 const readfile = promisify(fs.readFile);
@@ -23,15 +26,19 @@ const defaultOpt = {
   skipDraft: true,
   extensions: ".md"
 };
-("http://localhost:3000/posts/graphql-learn-(5)---introspection");
-("http://localhost:3000/posts/graphql-learn-5---introspection/");
 
-function encodeURIComponent(str) {
-  return escape(
-    str
-      .replace(/\s/g, "-")
-      .replace(/[\(\)&@]/g, "")
-      .toLowerCase()
+function urlize(str) {
+  str = str
+    .replace(/\s/g, "-")
+    .replace(/[\(\)&@]/g, "")
+    .toLowerCase();
+  return escape(str);
+}
+
+function ChinsesCut(str) {
+  return str.replace(
+    /[\u4E00-\u9FA5\uF900-\uFA2D]+/gm,
+    match => ` ${nodejieba.cut(match).join(" ")} `
   );
 }
 
@@ -48,16 +55,16 @@ function handle(filename, option) {
   const plainText =
     pathinfo.ext === ".md" ? removeMd(meta.content) : striptags(meta.content);
 
-  const uri = path.join(option.contextPath, encodeURIComponent(pathinfo.name));
+  const uri = path.join(option.contextPath, urlize(pathinfo.name));
 
   if (meta.data.slug != null) uri = path.dirname(uri) + meta.data.slug;
   if (meta.data.url != null) uri = meta.data.url;
   const tags = meta.data.tags || [];
   //中文分词
-  const content = segment.doSegment(plainText, { simple: true }).join(" ");
-  const title = segment.doSegment(meta.data.title, { simple: true }).join(" ");
+  const content = ChinsesCut(plainText);
+  const title = ChinsesCut(meta.data.title);
 
-  return { uri, tags, content, title, metaTitle: meta.data.title };
+  return { uri, tags, content, title, oriTitle: meta.data.title };
 }
 
 module.exports = function(option = {}) {
