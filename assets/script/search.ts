@@ -82,7 +82,7 @@ function init(input, label, list) {
 
     const itemStr = items.reduce(
       (str, item) =>
-        `${str}<li><a href="${item.uri}">${item.metaTitle}</a></li>`,
+        `${str}<li><a href="${baseURL}${item.uri}">${item.metaTitle}</a></li>`,
       ""
     );
     clear(`搜到了${items.length}项结果`);
