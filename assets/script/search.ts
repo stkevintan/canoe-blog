@@ -81,7 +81,8 @@ function init(input, label, list) {
     if (!Array.isArray(items)) items = [items];
 
     const itemStr = items.reduce(
-      (str, item) => `${str}<li><a href="${item.uri}">${item.title}</a></li>`,
+      (str, item) =>
+        `${str}<li><a href="${item.uri}">${item.metaTitle}</a></li>`,
       ""
     );
     clear(`搜到了${items.length}项结果`);
