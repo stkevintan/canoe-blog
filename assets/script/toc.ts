@@ -17,16 +17,25 @@ function getCurrentValue() {
   isTocSelect = true;
 }
 
+function getAnchorTarget(elem) {
+  //some id may be invalid, use attribute selector !
+  // do not use const target = U.get(elem.getAttribute("href"));
+  const id = elem.getAttribute("href").substr(1);
+  return U.get(`[id="${id}"]`);
+}
+
 function getAnchor() {
   return items.map(elem => {
-    const target = U.get(elem.getAttribute("href"));
+    const target = getAnchorTarget(elem);
+    if (target == null) return 0;
     return Math.round(U.offset(target).top - headerHeight - 20);
   });
 }
 
 let animateID = null;
 function scrollToElement(elem, cb) {
-  if (elem.href) elem = U.get(elem.getAttribute("href"));
+  if (elem.href) elem = getAnchorTarget(elem);
+  if (elem == null) return;
   const startOffset = window.pageYOffset;
   const targetOffset = U.offset(elem).top - headerHeight;
   const deltaOffset = targetOffset - startOffset;

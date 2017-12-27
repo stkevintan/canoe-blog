@@ -17,19 +17,20 @@
                 {{ with .Params.categories }}
                 <address>
                   {{ range . }}
-                  <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
+                  <a href='{{$.Site.BaseURL}}/categories/{{ (replace . "#" "%23") | urlize }}'>{{ . }}</a>
                   {{ end }}
                 </address>
                 {{ end }}
               </span>
-              <article class="article">{{.Summary }}...
-                <a href="{{ .Permalink }}" style="border-bottom: none">Read More</a>
+              <article class="article">
+                {{.Summary }}
+                <a href="{{ .Permalink }}" class="readmore">阅读全文</a>
               </article>
             </div>
             {{ with .Params.tags }}
             <div class="card-action">
               {{ range . }}
-              <a class="btn btn-secondary" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">#{{ . }}</a>{{ end }}
+              <a class="btn btn-secondary" href='{{ $.Site.BaseURL }}/tags/{{ (replace . "#" "%23") | urlize }}'>#{{ . }}</a>{{ end }}
             </div>
             {{end}}
           </div>

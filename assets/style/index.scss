@@ -35,6 +35,13 @@ a.unstyled {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+// change 
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
 
 @import "materialize/index";
 @import "svgIcon";
@@ -47,6 +54,7 @@ a.unstyled {
 @import "post";
 @import "splash";
 @import "archive";
+
 
 .single-content-wrapper {
   max-width: $container-max-width - $toc-width;

@@ -1,7 +1,8 @@
 const baseURL = window["baseURL"];
+const lunr = window["lunr"]; // import will cause js error.
+
 import U from "./domutil";
 import easingFunctions, { cancelAnimate, animate } from "./animate";
-const lunr = window["lunr"];
 
 lunr.trimmer = function(token) {
   //check token is chinese then not replace
@@ -67,6 +68,7 @@ const mobileLabel = U.get("label", mobilePanel);
 const mobileList = U.get("ul", mobilePanel);
 
 function init(input, label, list) {
+  input.value = "";
   const clear = (msg?) => {
     label.textContent = msg || "暂无搜索结果";
     list.innerHTML = "";
@@ -85,9 +87,7 @@ function init(input, label, list) {
     clear(`搜到了${items.length}项结果`);
     list.innerHTML = itemStr;
   };
-  input.addEventListener("keyup", e => {
-    e.preventDefault();
-    e.stopPropagation();
+  const doSearch = () => {
     const query = ("" + input.value).trim();
     if (query.length < 2) {
       clear();
@@ -97,6 +97,11 @@ function init(input, label, list) {
     search(query)
       .then(items => add(items))
       .catch(() => clear("搜索失败, 请检查网络"));
+  };
+  input.addEventListener("keyup", e => {
+    e.preventDefault();
+    e.stopPropagation();
+    doSearch();
   });
 }
 

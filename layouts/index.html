@@ -16,7 +16,7 @@
                 {{ with .Params.categories }}
                 <address>
                   {{ range . }}
-                    <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>
+                    <a href='{{$.Site.BaseURL}}/categories/{{ (replace . "#" "%23") | urlize }}'>{{ . }}</a>
                   {{ end }}
                 </address>
                 {{ end }}
@@ -29,7 +29,9 @@
             </div>
           
             {{with .Params.tags}}
-              <div class="card-action card-action-links">{{ range . }}<a class="btn btn-secondary" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ . }}</a>{{ end }}</div>
+              <div class="card-action card-action-links">{{ range . }}
+                <a class="btn btn-secondary" href='{{ $.Site.BaseURL }}/tags/{{ (replace . "#" "%23") | urlize }}'>{{ . }}</a>{{ end }}
+              </div>
             {{end}}
           </div>
         </div>

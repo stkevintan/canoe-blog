@@ -82,12 +82,14 @@
         height: inherit;
         margin-right: 10px;
       }
+      @include placeholder {
+        color: #ddd;
+        transition: color 0.2s;
+      }
       input {
-        &,
-        &::-webkit-input-placeholder {
-          color: #ddd;
-          transition: color 0.2s;
-        }
+        color: #ddd;
+        transition: color 0.2s;
+
         line-height: inherit;
         height: inherit;
         outline: none;
@@ -96,7 +98,6 @@
         -webkit-appearance: none;
         border: none;
         font-size: 14px;
-        color: #212121;
       }
     }
 
@@ -116,7 +117,10 @@
     &:hover {
       background: lighten($primary-color, 15%);
       i.material-icons,
-      input::-webkit-input-placeholder {
+      input {
+        color: #fff;
+      }
+      @include placeholder {
         color: #fff;
       }
     }
@@ -190,9 +194,9 @@
       }
       input {
         color: #212121;
-        &::-webkit-input-placeholder {
-          color: #757575;
-        }
+      }
+      @include placeholder {
+        color: #757575;
       }
       .form-popout {
         visibility: visible;

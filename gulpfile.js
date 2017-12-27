@@ -1,15 +1,12 @@
-const $ = require("gulp");
-const _ = require("gulp-util");
+const gulp = require("gulp");
+const util = require("gulp-util");
 const plumber = require("gulp-plumber");
 const imagemin = require("gulp-imagemin");
 const clean = require("gulp-clean");
 const changed = require("gulp-changed");
 const sass = require("gulp-sass");
-const rollup = require("rollup");
-const rollupResolve = require("rollup-plugin-node-resolve");
-const rollupCommonjs = require("rollup-plugin-commonjs");
-const ts = require("rollup-plugin-typescript");
-const uglify = require("rollup-plugin-uglify");
+const rollup = require("./buildtools/rollup");
+const lunr = require("./buildtools/lunr");
 const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
 
@@ -17,12 +14,11 @@ const htmlmin = require("gulp-htmlmin");
 const rev = require("gulp-rev");
 const replace = require("gulp-rev-replace");
 const $if = require("gulp-if");
-const runseq = require("run-sequence");
+const run = require("run-sequence");
 const pngquant = require("imagemin-pngquant");
 const cp = require("child_process");
 const fs = require("fs");
 const toml = require("toml");
-const lunr = require("hugo-lunr");
 
 const bs = require("browser-sync").create();
 
@@ -31,11 +27,12 @@ const siteConf = toml.parse(fs.readFileSync("./config.toml"));
 
 c.publishDir = siteConf.publishDir || "public";
 
-let prod = false;
+process.env.NODE_ENV = "dev";
+const isProd = () => process.env.NODE_ENV === "production";
 
 const src = {
+  js: "assets/style/**/*.js",
   css: "assets/style/**/*.scss",
-  jsdir: "assets/script/",
   static: "assets/static/**/*",
   img: "assets/image/**/*.{png,svg,jpg}"
 };
@@ -53,141 +50,125 @@ const publish = {
   css: c.publishDir + "/css",
   img: c.publicDir + "/img"
 };
-$.task("clean", () =>
-  $.src([dest.root, publish.root], { read: false }).pipe(clean())
+
+gulp.task("clean", () =>
+  gulp.src([dest.root, publish.root], { read: false }).pipe(clean())
 );
-$.task("copy:static", () =>
-  $.src(src.static).pipe($.dest(prod ? publish.root : dest.root))
+gulp.task("copy:static", () =>
+  gulp.src(src.static).pipe(gulp.dest(isProd() ? publish.root : dest.root))
 );
 
-$.task("style", () => {
-  return $.src(src.css)
+gulp.task("style", () => {
+  return gulp
+    .src(src.css)
     .pipe(plumber())
     .pipe(changed(dest.css))
-    .pipe($if(!prod, sourcemaps.init()))
+    .pipe($if(!isProd(), sourcemaps.init()))
     .pipe(sass().on("error", sass.logError))
-    .pipe($if(!prod, sourcemaps.write()))
+    .pipe($if(!isProd(), sourcemaps.write()))
     .pipe(
       $if(
-        prod,
+        isProd(),
         postcss([
-          require("autoprefixer")({ browsers: c.browserslist })
-          // require("cssnano")()
+          require("autoprefixer")({ browsers: c.browserslist }),
+          require("cssnano")()
         ])
       )
     )
-    .pipe($.dest(dest.css))
+    .pipe(gulp.dest(dest.css))
     .pipe(bs.stream({ match: "**/*.css" }));
 });
 
-function rollupMultiEntry(options) {
-  const watchOptions = [];
-  const plugins = [rollupResolve(), rollupCommonjs(), ts()];
-  const rollupResults = options.map(option => {
-    const inputOpts = {
-      input: option.entry,
-      globals: { jquery: "$" },
-      format: "iife",
-      plugins: prod ? plugins.concat([uglify()]) : plugins
-    };
-    const outputOpts = {
-      file: option.dest,
-      format: "iife",
-      sourcemap: !prod
-    };
-    watchOptions.push({ ...inputOpts, output: [outputOpts] });
-    return rollup.rollup(inputOpts).then(bundle => bundle.write(outputOpts));
-  });
-  return { promise: Promise.all(rollupResults), watchOptions };
-}
-
-$.task("script", () => {
-  const rollupResult = rollupMultiEntry([
-    { entry: `./${src.jsdir}/index.ts`, dest: `./${dest.js}/index.js` },
-    { entry: `./${src.jsdir}/canvas.ts`, dest: `./${dest.js}/canvas.js` }
-  ]);
-  if (!prod) {
-    //watch files in dev mode
-    const watcher = rollup.watch(rollupResult.watchOptions);
-    watcher.on("event", e => {
-      if (e.code === "END") {
-        _.log("rollup updated");
-        bs.reload();
-      }
-      if (e.code === "ERROR") {
-        _.log("rollup error: ", e);
-      }
-    });
-  }
-  return rollupResult.promise;
+gulp.task("script", () => {
+  const dir = "./assets/script/";
+  return rollup(
+    [
+      { entry: `${dir}/index.ts`, dest: `./${dest.js}/index.js` },
+      { entry: `${dir}/canvas.ts`, dest: `./${dest.js}/canvas.js` }
+    ],
+    () => bs.reload()
+  );
 });
 
-$.task("image", () => {
-  return $.src(src.img)
+gulp.task("image", () => {
+  return gulp
+    .src(src.img)
     .pipe(changed(dest.img))
     .pipe(
       $if(
-        prod,
+        isProd(),
         imagemin({
           progressive: true,
           use: [pngquant({ quality: 90 })]
         })
       )
     )
-    .pipe($.dest(dest.img));
+    .pipe(gulp.dest(dest.img));
 });
 
-$.task("hugo", cb => {
+gulp.task("hugo", cb => {
   const args = ["-d", `./${dest.root}`];
-  const hugo = cp.spawn("hugo", prod ? args : args.concat(["-w", "-b", "/."]));
-  hugo.stdout.on("data", data => _.log(data.toString()));
-  hugo.stderr.on("data", data => _.log("error: ", data.toString()));
+  const hugo = cp.spawn(
+    "hugo",
+    isProd() ? args : args.concat(["-w", "-b", "/."])
+  );
+  hugo.stdout.on("data", data => util.log(data.toString()));
+  hugo.stderr.on("data", data => util.log("error: ", data.toString()));
   hugo.on("exit", code => {
-    _.log("hugo process exited with code", code);
-    prod && cb();
+    util.log("hugo process exited with code", code);
+    isProd() && cb();
   });
-  !prod && cb();
+  !isProd() && cb();
 });
 
-$.task("rev", () => {
+gulp.task("rev", () => {
   const revExts = "png,svg,jpg,css,js";
-  return $.src(`${dest.root}/**/*.{${revExts}}`)
+  return gulp
+    .src(`${dest.root}/**/*.{${revExts}}`)
     .pipe(rev())
-    .pipe($.dest(publish.root))
+    .pipe(gulp.dest(publish.root))
     .pipe(rev.manifest("rev-manifest.json"))
-    .pipe($.dest(dest.root));
+    .pipe(gulp.dest(dest.root));
 });
-
-$.task("ref", () => {
+gulp.task("ref", () => {
   const refExts = "html,css,js,xml";
-  return $.src(`${publish.root}/**/*.{${refExts}}`)
-    .pipe(replace({ manifest: $.src(`${dest.root}/rev-manifest.json`) }))
-    .pipe($.dest(publish.root));
+  return gulp
+    .src(`${publish.root}/**/*.{${refExts}}`)
+    .pipe(replace({ manifest: gulp.src(`${dest.root}/rev-manifest.json`) }))
+    .pipe(gulp.dest(publish.root));
 });
-
-$.task("htmlmin", () => {
-  return $.src(`${dest.root}/**/*.{html,xml}`)
+gulp.task("htmlmin", () => {
+  return gulp
+    .src(`${dest.root}/**/*.{html,xml}`)
     .pipe($if("*.html", htmlmin({ collapseWhitespace: true })))
-    .pipe($.dest(publish.root));
+    .pipe(gulp.dest(publish.root));
+});
+gulp.task("lunr", () => {
+  const option = {
+    contextPath: "/posts/",
+    dir: "content/posts",
+    output: `${isProd() ? publish.root : dest.root}/index.json`
+  };
+  if (siteConf.metaDataFormat === "yaml") {
+    option.matterDelims = "---";
+    option.matterType = "yaml";
+  }
+
+  return lunr(option);
 });
 
-$.task("lunr", cb => {
-  const h = new lunr();
-  const file = `${prod ? publish.root : dest.root}/index.json`;
-  h.index("content/post/**", file);
-  cb();
+gulp.task("build:dev", ["clean"], cb => {
+  run("hugo", ["style", "script", "image", "copy:static"], "lunr", cb);
 });
 
-$.task("build:dev", ["clean"], cb => {
-  runseq("hugo", ["style", "script", "image", "copy:static"], "lunr", cb);
+gulp.task("build", ["clean"], cb => {
+  process.env.NODE_ENV = "production";
+  run("build:dev", ["rev", "htmlmin"], "ref", () => {
+    process.env.NODE_ENV = "dev" && cb();
+  });
 });
 
-$.task("build", ["clean"], cb => {
-  prod = true;
-  runseq("build:dev", ["rev", "htmlmin"], "ref", cb);
-});
-
-$.task("serve", ["build:dev"], () => {
+gulp.task("serve", ["build:dev"], () => {
   bs.init({
     reloadDebounce: 200,
     port: c.port,
@@ -196,12 +177,12 @@ $.task("serve", ["build:dev"], () => {
     }
   });
 
-  $.watch(src.css, ["style"]);
+  gulp.watch(src.css, ["style"]);
   // $.watch(src.js, ["script"]);
 
   const reloadSource = [
     dest.root + "/**/*.html",
     dest.img + "/**/*.{png,svg,jpg}"
   ];
-  $.watch(reloadSource).on("change", () => bs.reload());
+  gulp.watch(reloadSource).on("change", () => bs.reload());
 });

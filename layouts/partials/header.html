@@ -130,7 +130,7 @@
             <ul>
               {{ $key := .Identifier }} {{ $value := (index $.Site.Taxonomies .Identifier) }} {{ range $value.ByCount }}
               <li>
-                <a class="btn btn-secondary" href="{{$.Site.BaseURL}}/{{ $key }}/{{ .Name | urlize }}"> {{ .Name }}
+                <a class="btn btn-secondary" href='{{$.Site.BaseURL}}/{{ $key }}/{{ (replace .Name "#" "%23") | urlize }}'> {{ .Name }}
                   <span class="badge">{{ .Count }}</span>
                 </a>
               </li>

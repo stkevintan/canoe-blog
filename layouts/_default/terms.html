@@ -12,7 +12,7 @@
             <div class="card-content">
               {{ range $key, $value := .Data.Terms.Alphabetical }}
                   <div class="chip">
-                    <a class="unstyled" href="{{ $site.BaseURL }}/{{ $data.Plural }}/{{ $value.Name | urlize }}">
+                    <a class="unstyled" href='{{ $site.BaseURL }}/{{ $data.Plural }}/{{ (replace $value.Name "#" "%23") | urlize }}'>
                     {{ $value.Name }}
                     </a>
                   <sup class="tagcount">{{ $value.Count }}</sup>
