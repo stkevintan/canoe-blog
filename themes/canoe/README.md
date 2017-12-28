@@ -4,6 +4,9 @@ A beautifull and powerfull theme of hugo static blog generator.
 
 [demo](https://keyin.me)   
 
+![](https://raw.githubusercontent.com/stkevintan/canoe/master/images/screenshot.png)
+
+
 ## Feature
 
 1. Waterfall layout

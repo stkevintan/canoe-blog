@@ -3,15 +3,14 @@ languageCode = "zh-cn"
 title = "World of Forks"
 metaDataFormat = "yaml"
 
+theme = "canoe"
+
 
 # if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
 hasCJKLanguage = true
 
 # DO　NOT MODIFY THIS CONFIG/不要修改这个配置
 publishDir = "docs"
-
-
-
 
 
 [sitemap]
@@ -71,6 +70,8 @@ publishDir = "docs"
     weight = 6
     url = "/about/"
 
+
+
 # 文章归类 Taxonomy
 [[menu.taxonomy]]
   name = "Tag"
@@ -109,5 +110,3 @@ publishDir = "docs"
   pre = "<svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>"
   name = "Weibo"
   url = "http://weibo.com/kevinclasky"
-
-

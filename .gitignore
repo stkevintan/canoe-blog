@@ -1,8 +1,9 @@
 /static/
 /staging/
-/.tmp-server/
+/.tmp/
 node_modules/
 yarn.lock
 /docs/
 /backup/
 .directory
+/themes/canoe

@@ -7,12 +7,11 @@ const uglify = require("rollup-plugin-uglify");
 const ProdPlugins = [resolve(), commonjs(), ts(), uglify()];
 const devPlugins = [resolve(), commonjs(), ts()];
 
-function watchChanges(options, cb) {
+function watchChanges(options) {
   //watch files in dev mode
   rollup.watch(options).on("event", e => {
     if (e.code === "END") {
       console.log("Rollup complete");
-      cb && cb();
     }
     if (e.code === "ERROR") {
       console.error("Rollup error: ", e);
@@ -20,23 +19,23 @@ function watchChanges(options, cb) {
   });
 }
 
-module.exports = (options, cb) => {
+module.exports = (options, isDev) => {
   const watchOpts = [];
   if (!Array.isArray(options)) options = [options];
   const res = options.map(option => {
     const inOpts = {
       input: option.entry,
-      plugins: cb == null ? ProdPlugins : devPlugins
+      plugins: isDev ? devPlugins : ProdPlugins
     };
     const outOpts = {
       file: option.dest,
       format: "iife",
-      sourcemap: !!cb
+      sourcemap: isDev
     };
     watchOpts.push(Object.assign(inOpts, { output: [outOpts] }));
     return rollup.rollup(inOpts).then(bundle => bundle.write(outOpts));
   });
 
-  cb && watchChanges(watchOpts, cb);
+  isDev && watchChanges(watchOpts);
   return Promise.all(res);
 };

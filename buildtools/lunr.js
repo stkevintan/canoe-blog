@@ -66,6 +66,20 @@ function handle(filename, option) {
 
   return { uri, tags, content, title, oriTitle: meta.data.title };
 }
+function mkdirp(dir) {
+  if (fs.existsSync(dir)) {
+    return;
+  }
+
+  try {
+    fs.mkdirSync(dir);
+  } catch (err) {
+    if (err.code == "ENOENT") {
+      mkdirp(path.dirname(dir)); //create parent dir
+      mkdirp(dir); //create dir
+    }
+  }
+}
 
 module.exports = function(option = {}) {
   option = Object.assign({}, defaultOpt, option);
@@ -73,7 +87,10 @@ module.exports = function(option = {}) {
   return readdir(option.dir)
     .then(files => files.filter(file => exts.some(ext => file.endsWith(ext))))
     .then(files => JSON.stringify(files.map(file => handle(file, option))))
-    .then(index => writeFile(option.output, index, { encoding: "utf8" }));
+    .then(index => {
+      mkdirp(path.dirname(option.output));
+      return writeFile(option.output, index, { encoding: "utf8" });
+    });
 };
 
 function arrayfy(o) {
