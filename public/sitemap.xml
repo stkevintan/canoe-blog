@@ -570,15 +570,15 @@
   </url>
   
   <url>
-    <loc>https://keyin.me/categories/git/</loc>
-    <lastmod>2014-08-10T21:01:03+08:00</lastmod>
+    <loc>https://keyin.me/tags/git/</loc>
+    <lastmod>2017-01-20T00:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://keyin.me/tags/git/</loc>
-    <lastmod>2017-01-20T00:00:00+08:00</lastmod>
+    <loc>https://keyin.me/categories/git/</loc>
+    <lastmod>2014-08-10T21:01:03+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -703,15 +703,15 @@
   </url>
   
   <url>
-    <loc>https://keyin.me/categories/linux/</loc>
-    <lastmod>2017-03-20T00:00:00+08:00</lastmod>
+    <loc>https://keyin.me/tags/linux/</loc>
+    <lastmod>2014-10-13T20:42:42+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://keyin.me/tags/linux/</loc>
-    <lastmod>2014-10-13T20:42:42+08:00</lastmod>
+    <loc>https://keyin.me/categories/linux/</loc>
+    <lastmod>2017-03-20T00:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -745,15 +745,15 @@
   </url>
   
   <url>
-    <loc>https://keyin.me/categories/openwrt/</loc>
-    <lastmod>2017-02-07T00:00:00+08:00</lastmod>
+    <loc>https://keyin.me/tags/openwrt/</loc>
+    <lastmod>2017-01-20T00:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://keyin.me/tags/openwrt/</loc>
-    <lastmod>2017-01-20T00:00:00+08:00</lastmod>
+    <loc>https://keyin.me/categories/openwrt/</loc>
+    <lastmod>2017-02-07T00:00:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
@@ -787,14 +787,14 @@
   </url>
   
   <url>
-    <loc>https://keyin.me/categories/python/</loc>
+    <loc>https://keyin.me/tags/python/</loc>
     <lastmod>2016-11-09T00:55:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://keyin.me/tags/python/</loc>
+    <loc>https://keyin.me/categories/python/</loc>
     <lastmod>2016-11-09T00:55:47+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0</priority>
