@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on World of Forks</title>
+    <link>https://keyin.me/categories/web/</link>
+    <description>Recent content in Web on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Tue, 15 Aug 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/categories/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GraphQL Learn (1) - Queries and Mutations</title>
+      <link>https://keyin.me/posts/graphql-learn-1---queries-and-mutations/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/graphql-learn-1---queries-and-mutations/</guid>
+      <description>在此页面上，你将详细了解如何查询GrahQL服务器。 字段（Fields） 最简单的，GraphQL是关于要求对象上的特定字段。我们先来看一个非</description>
+    </item>
+    
+    <item>
+      <title>GraphQL Learn (2) - Schemas and Types</title>
+      <link>https://keyin.me/posts/graphql-learn-2---schemas-and-types/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/graphql-learn-2---schemas-and-types/</guid>
+      <description>&lt;p&gt;在此页面上，您将了解有关GraphQL类型系统的所有知识，以及如何描述可查询哪些数据。 由于GraphQL可以与任何后端框架或编程语言一起使用，因此我们将远离实现特定的详细信息，仅讨论概念。&lt;/p&gt;
+
+&lt;h3 id=&#34;类型系统-type-system&#34;&gt;类型系统（Type System）&lt;/h3&gt;
+
+&lt;p&gt;如果您以前看过GraphQL查询，那么你应该知道GraphQL查询语言基本上是在对象上选择字段。 所以在以下查询中：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-graphql&#34;&gt;{
+  hero {
+    name
+    appearsIn
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;data&amp;quot;: {
+    &amp;quot;hero&amp;quot;: {
+      &amp;quot;name&amp;quot;: &amp;quot;R2-D2&amp;quot;,
+      &amp;quot;appearsIn&amp;quot;: [
+        &amp;quot;NEWHOPE&amp;quot;,
+        &amp;quot;EMPIRE&amp;quot;,
+        &amp;quot;JEDI&amp;quot;
+      ]
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GraphQL Learn (3) - Validation</title>
+      <link>https://keyin.me/posts/graphql-learn-3---validation/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/graphql-learn-3---validation/</guid>
+      <description>&lt;p&gt;通过使用类型系统，可以预先确定GraphQL查询是否有效。 这样可以让服务器和客户端有效地通知开发人员在创建无效查询时，无需在运行时检查。&lt;/p&gt;
+
+&lt;p&gt;对于我们的星球大战示例，文件&lt;a href=&#34;https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsValidation-test.js&#34;&gt;starWarsValidation-test.js&lt;/a&gt;包含许多无效的查询，可以用来测试当前实现的验证器。&lt;/p&gt;
+
+&lt;p&gt;首先，我们来看一个复杂的有效查询。 这是一个嵌套查询，类似于上一节的一个示例，但将重复的字段分解成一个片段：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-graphql&#34;&gt;{
+  hero {
+    ...NameAndAppearances
+    friends {
+      ...NameAndAppearances
+      friends {
+        ...NameAndAppearances
+      }
+    }
+  }
+}
+
+fragment NameAndAppearances on Character {
+  name
+  appearsIn
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>GraphQL Learn (4) - Execution</title>
+      <link>https://keyin.me/posts/graphql-learn-4---execution/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/graphql-learn-4---execution/</guid>
+      <description>&lt;p&gt;经过验证，GraphQL查询由GraphQL服务器执行，然后返回一个与查询形状相同的结果，通常为JSON。&lt;/p&gt;
+
+&lt;p&gt;GraphQL无法执行没有类型系统的查询，让我们使用类型系统例子来说明执行查询，这个例子是我们教程中使用的类型系统中的一部分：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-graphql&#34;&gt;type Query {
+  human(id: ID!): Human
+}
+type Human {
+  name: String
+  appearsIn: [Episode]
+  starships: [Starship]
+}
+enum Episode {
+  NEWHOPE
+  EMPIRE
+  JEDI
+}
+type Starship {
+  name: String
+}
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>GraphQL Learn (5) - Introspection</title>
+      <link>https://keyin.me/posts/graphql-learn-5---introspection/</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/graphql-learn-5---introspection/</guid>
+      <description>&lt;p&gt;查询GraphQL架构有关它支持的查询的信息通常很有用。 GraphQL允许我们使用内省系统来做到这一点！对于我们的星球大战例子来说，文件&lt;a href=&#34;https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsIntrospection-test.js&#34;&gt;starWarsIntrospection-test.js&lt;/a&gt;包含许多查询内省系统的查询，并且是一个完整的按照规范实现的测试文件。&lt;/p&gt;
+
+&lt;p&gt;我们设计了类型系统，所以我们应该知道系统中可用的类型。但是如果不知道，我们还可以通过查询__schema字段来询问GraphQL。这个字段始终存在于根类型中。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Polymer 2.0 文档笔记(7) Helper Element</title>
+      <link>https://keyin.me/posts/polymer-2-7-helper-element/</link>
+      <pubDate>Sun, 02 Jul 2017 22:56:11 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/polymer-2-7-helper-element/</guid>
+      <description>Polymer提供一系列的自定义元素来简化一些共有的数据绑定逻辑： dom-repeat 遍历显示数组 array-selector 数组选择器 dom-if 条件显示 dom-bind 自动绑定 2.0 tip. The data binding helper elements are bundled in to the backward-compatible, polymer.html</description>
+    </item>
+    
+    <item>
+      <title>Polymer 2.0 文档笔记(6) Data Binding</title>
+      <link>https://keyin.me/posts/polymer-2-6-data-binding/</link>
+      <pubDate>Sun, 02 Jul 2017 22:55:28 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/polymer-2-6-data-binding/</guid>
+      <description>A data binding connects data from a custom element (the host element) to a property or attribute of an element in its local DOM (the child or target element). The host element data can be a property or sub-property represented by a data path, or data generated based on one or more paths. 数据绑定能够将host元素和tar</description>
+    </item>
+    
+    <item>
+      <title>Polymer 2.0 文档笔记(5) Observers &amp;&amp; Computed Properites</title>
+      <link>https://keyin.me/posts/polymer-2-5-observers-and-computed-properties/</link>
+      <pubDate>Sun, 02 Jul 2017 22:54:06 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/polymer-2-5-observers-and-computed-properties/</guid>
+      <description>有两种监听器： 简单监听器，只能监听单一的property 复杂监听器：可以监听一到多个property 每个监听器都有一个或多个 依赖 ，当依赖发生</description>
+    </item>
+    
+    <item>
+      <title>Polymer 2.0 文档笔记(4) Data System</title>
+      <link>https://keyin.me/posts/polymer-2-4-data-system/</link>
+      <pubDate>Sun, 02 Jul 2017 22:53:02 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/polymer-2-4-data-system/</guid>
+      <description>Polymer提供观察函数、计算属性、数据绑定三大模型功能： Observers Callbacks invoked when data changes. Computed properties Virtual properties computed based on other properties, and recomputed when the input data changes. Data bindings Annotations that update the properties, attributes, or text content of a DOM node when data changes.</description>
+    </item>
+    
+    <item>
+      <title>Polymer 2.0 文档笔记(3) Events</title>
+      <link>https://keyin.me/posts/polymer-2-3-events/</link>
+      <pubDate>Sun, 02 Jul 2017 22:52:21 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/polymer-2-3-events/</guid>
+      <description>Normal Events Polymer elements can use the standard DOM APIs for creating, dispatching, and listening for events. Polymer also provides annotated event listeners, which allow you to specify event listeners declaratively as part of the element&amp;rsquo;s DOM template. Add annotated event listeners 这个其实就是在标签上使用on-event属性。 &amp;lt;dom-module id=&amp;quot;x-custom&amp;quot;&amp;gt; &amp;lt;template&amp;gt; &amp;lt;button on-click=&amp;quot;handleClick&amp;quot;&amp;gt;Kick</description>
+    </item>
+    
+    <item>
+      <title>Polymer 2.0 文档笔记(2) ShadowDOM</title>
+      <link>https://keyin.me/posts/polymer-2-2-shadowdom/</link>
+      <pubDate>Sun, 02 Jul 2017 22:51:37 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/polymer-2-2-shadowdom/</guid>
+      <description>ShadowDOM API var div = document.createElement(&#39;div&#39;); var shadowRoot = div.attachShadow({mode: &#39;open&#39;}); shadowRoot.innerHTML = &#39;&amp;lt;h1&amp;gt;Hello Shadow DOM&amp;lt;/h1&amp;gt;&#39;; ShadowDOM Composition 主要概念： LightDOM: 元素的实际子孙节点，浏览器不会对LightDOM做任何的修改和移动。但是渲染的时候会渲染到相</description>
+    </item>
+    
+    <item>
+      <title>Polymer 2.0 文档笔记(1) Custom Elements</title>
+      <link>https://keyin.me/posts/polymer-2-1-custom-elements/</link>
+      <pubDate>Sun, 02 Jul 2017 22:49:25 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/polymer-2-1-custom-elements/</guid>
+      <description>https://www.polymer-project.org/2.0/docs/devguide/custom-elements Custom element names. By specification, the custom element&amp;rsquo;s name must start with a lower-case ASCII letter and must contain a dash (-). There&amp;rsquo;s also a short list of prohibited element names that match existing names. For details, see the Custom elements core concepts section in the HTML specification. 自定义元素的命名规则： 按照规范，自定义元素</description>
+    </item>
+    
+    <item>
+      <title>网易云音乐新API简述</title>
+      <link>https://keyin.me/posts/netease-music-api/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/netease-music-api/</guid>
+      <description>&lt;p&gt;新API采用了略微修改过的AES和RSA加密，主要用在登陆接口上，对新API进行简单的分析。&lt;/p&gt;
+
+&lt;h2 id=&#34;url&#34;&gt;Url&lt;/h2&gt;
+
+&lt;p&gt;估计会抓包的人都知道，Url中的api便成了weapi。比如手机登录：
+原来是：&lt;code&gt;http://music.163.com/api/login/cellphone/&lt;/code&gt;
+现在是：&lt;code&gt;http://music.163.com/weapi/login/cellphone/&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;加密算法&#34;&gt;加密算法&lt;/h2&gt;
+
+&lt;p&gt;核心过程如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Javascript&#34;&gt; aesRsaEncrypt = function (text, pubKey, modulus, nonce) {
+  const secKey = createSecretKey(16);  // 随机生成16位加密密钥
+  return {
+	params:  aesEncrypt(aesEncrypt(text, nonce), secKey),
+	encSecKey: rsaEncrypt(secKey, pubKey, modulus)
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JS DOM API分析</title>
+      <link>https://keyin.me/posts/dom-compatibility-note/</link>
+      <pubDate>Thu, 03 Nov 2016 05:07:21 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/dom-compatibility-note/</guid>
+      <description>Element.classList 返回DOMTokenList,IE version&amp;gt;=10不完全支持。 1. 不支持classList.contains的第二个参数(for</description>
+    </item>
+    
+  </channel>
+</rss>

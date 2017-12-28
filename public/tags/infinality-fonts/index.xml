@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infinality Fonts on World of Forks</title>
+    <link>https://keyin.me/tags/infinality-fonts/</link>
+    <description>Recent content in Infinality Fonts on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Thu, 12 Jan 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/tags/infinality-fonts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deepin初始化</title>
+      <link>https://keyin.me/posts/kubernetes--deepin-settings1-12/</link>
+      <pubDate>Thu, 12 Jan 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/kubernetes--deepin-settings1-12/</guid>
+      <description>Infinality and Harfbuzz 会发生冲突，这是今天Archlinux无法启动输入法界面的元凶。重新安装freetype2\fontconfig\cairo以替换in</description>
+    </item>
+    
+  </channel>
+</rss>

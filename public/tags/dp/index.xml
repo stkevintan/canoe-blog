@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dp on World of Forks</title>
+    <link>https://keyin.me/tags/dp/</link>
+    <description>Recent content in Dp on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Sat, 16 Aug 2014 00:56:19 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/tags/dp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HDU 4945 2048</title>
+      <link>https://keyin.me/posts/hdu-4945-2048/</link>
+      <pubDate>Sat, 16 Aug 2014 00:56:19 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/hdu-4945-2048/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;&lt;span style=&#34;font-family: Arial; font-size: 12px; font-weight: bold; color: green;&#34;&gt;Time Limit: &lt;sup&gt;3000&lt;/sup&gt;&amp;frasl;&lt;sub&gt;1500&lt;/sub&gt; MS (Java/Others)    Memory Limit: &lt;sup&gt;65536&lt;/sup&gt;&amp;frasl;&lt;sub&gt;65536&lt;/sub&gt; K (Java/Others)
+Total Submission(s): 590    Accepted Submission(s): 136
+&lt;/span&gt;&lt;/strong&gt;
+&lt;div class=&#34;panel_title&#34; align=&#34;left&#34;&gt;Problem Description&lt;/div&gt;
+&lt;div class=&#34;panel_content&#34;&gt;&lt;/p&gt;
+
+&lt;p&gt;Teacher Mai is addicted to game 2048. But finally he finds it&amp;rsquo;s too hard to get 2048. So he wants to change the rule:&lt;/p&gt;
+
+&lt;p&gt;You are given some numbers. Every time you can choose two numbers of the same value from them and merge these two numbers into their sum. And these two numbers disappear meanwhile.&lt;/p&gt;
+
+&lt;p&gt;If we can get 2048 from a set of numbers with this operation, Teacher Mai think this multiset is good.&lt;/p&gt;
+
+&lt;p&gt;You have n numbers, A&lt;sub&gt;1&lt;/sub&gt;,&amp;hellip;,A&lt;sub&gt;n&lt;/sub&gt;. Teacher Mai ask you how many subsequences of A are good.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

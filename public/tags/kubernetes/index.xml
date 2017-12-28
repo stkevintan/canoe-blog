@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on World of Forks</title>
+    <link>https://keyin.me/tags/kubernetes/</link>
+    <description>Recent content in Kubernetes on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Wed, 04 Jan 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes部署</title>
+      <link>https://keyin.me/posts/kubernetes%E9%83%A8%E7%BD%B21-5/</link>
+      <pubDate>Wed, 04 Jan 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/kubernetes%E9%83%A8%E7%BD%B21-5/</guid>
+      <description>MEOW 安装 curl -L git.io/meowproxy | bash # 建议安装目录 /usr/bin/ 复制自己的配置文件 # in local computer xclip -sel clipboard &amp;lt; ~/.meow/rc # in CentOS server mv ~/.meow/rc ~/.meow/rc.bak xclip -o -sel clipboard &amp;gt; ~/.meow/rc 运行 MEOW Hostname 执行下面脚本。不要执行多次 如果出错则手</description>
+    </item>
+    
+  </channel>
+</rss>

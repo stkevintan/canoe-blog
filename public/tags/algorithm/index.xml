@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Algorithm on World of Forks</title>
+    <link>https://keyin.me/tags/algorithm/</link>
+    <description>Recent content in Algorithm on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Wed, 01 Mar 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>斐波那契堆之Go实现</title>
+      <link>https://keyin.me/posts/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86%E4%B9%8Bgo%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Wed, 01 Mar 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86%E4%B9%8Bgo%E5%AE%9E%E7%8E%B0/</guid>
+      <description>&lt;p&gt;一个比二叉堆更高效的数据结构，但是实现起来非常复杂。本科的时候看《算法导论》的时候曾经研究过，不是很明白。今天终于对它有了一个比较清晰的了解。
+&lt;img src=&#34;https://ol1kreips.qnssl.com/image.png&#34; alt=&#34;enter description here&#34; title=&#34;image.png&#34; /&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Basic Algorithms in Go</title>
+      <link>https://keyin.me/posts/basic-algorithms-in-go/</link>
+      <pubDate>Tue, 10 Jan 2017 08:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/basic-algorithms-in-go/</guid>
+      <description>&lt;p&gt;最近学Go，感觉挺不错的。闲来无事用它写了几种常用的基础算法。&lt;/p&gt;
+
+&lt;h2 id=&#34;快排&#34;&gt;快排&lt;/h2&gt;
+
+&lt;p&gt;思想很简单，实现起来为了方便每次以left作为基准，也可以使用BFS来节省递归栈：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-golang&#34;&gt;// QuickSort returns a sorted slice
+func QuickSort(arr []int) {
+	if len(arr) &amp;lt;= 1 {
+		return
+	}
+	left, right := 0, len(arr)-1
+	for left &amp;lt; right {
+		if arr[left+1] &amp;gt; arr[left] {
+			arr[left+1], arr[right] = arr[right], arr[left+1]
+			right--
+		} else {
+			arr[left+1], arr[left] = arr[left], arr[left+1]
+			left++
+		}
+	}
+	QuickSort(arr[:left])
+	QuickSort(arr[left+1:])
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
