@@ -1,0 +1,41 @@
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script> {{ if eq true .Site.Params.nest_bg }}
+<script type="text/javascript" async color="96,125,139" zIndex="-2" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script> {{ end }}
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!--Import jQuery before materialize.js-->
+{{ if eq true .Site.Params.reveal_effect }}
+<script type="text/javascript" src="//cdn.bootcss.com/scrollReveal.js/3.3.6/scrollreveal.min.js"></script>
+<script>
+  var sr = ScrollReveal();
+  sr.reveal(".reveal", {
+    viewOffset: { top: 48 },
+    scale: 1,
+    distance: "-25px"
+  });
+</script> {{ end }}
+<script src="https://cdn.bootcss.com/lunr.js/2.1.5/lunr.min.js"></script>
+
+<!-- <script type="text/javascript" src="{{ $.Site.BaseURL }}/js/materialize.min.js"></script> -->
+<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/index.js"></script> 
+
+
+{{ with .Site.Params.analytics }}
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', '{{ . }}', 'auto');
+  ga('send', 'pageview');
+
+</script> {{ end }}
+
+</body>
+
+</html>

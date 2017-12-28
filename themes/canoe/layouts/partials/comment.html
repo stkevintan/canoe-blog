@@ -1,0 +1,50 @@
+{{ with $.Site.Params.comment }} 
+
+{{ if eq .type "disqus"}}
+<div class="comments">
+  <div id="disqus_thread"></div>
+</div>
+
+<script defer type="text/javascript">
+  /* * * CONFIGURATION VARIABLES * * */
+  var disqus_shortname = '{{ .disqus.shortname }}';
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function () {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a>
+</noscript>
+{{ end }} 
+
+{{ if eq .type "valine"}}
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script src='//unpkg.com/valine/dist/Valine.min.js' defer></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js" defer></script>
+<script defer>
+  var valineConfig = {
+      el: '#comment',
+      notify: false,
+      verify: false,
+      appId: '{{ .valine.id }}',
+      appKey: '{{ .valine.key }}',
+      placeholder: '{{ .valine.placeholder }}',
+      path: window.location.pathname,
+      avatar: '{{ .valine.avatar }}'
+    }
+  document.addEventListener('DOMContentLoaded', function () {
+    new Valine(valineConfig);
+  });
+</script> 
+
+{{ end }} 
+{{ end }}

@@ -1,0 +1,50 @@
+{{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }} {{ partial "header.html" . }}
+
+<main id="index" role="main" class="main-panel">
+  <section class="container">
+    <div class="inner">
+      {{ partial "breadcrumb.html" . }}
+      <div class="waterfall">
+        {{ range $paginator.Pages }}
+        <div class="waterfall__item">
+          <div class="card post-summary">
+            <div class="card-content">
+              <span class="card-title">
+                <a href="{{ .Permalink }}">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</a>
+              </span>
+              <span class="card-meta">
+                <time>{{ .Date.Format "Mon Jan 2 2006" }}</time>
+                {{ with .Params.categories }}
+                <address>
+                  {{ range . }}
+                  <a href='{{$.Site.BaseURL}}/categories/{{ (replace . "#" "%23") | urlize }}'>{{ . }}</a>
+                  {{ end }}
+                </address>
+                {{ end }}
+              </span>
+              <article class="article">
+                {{.Summary }}
+                <a href="{{ .Permalink }}" class="readmore">阅读全文</a>
+              </article>
+            </div>
+            {{ with .Params.tags }}
+            <div class="card-action">
+              {{ range . }}
+              <a class="btn btn-secondary" href='{{ $.Site.BaseURL }}/tags/{{ (replace . "#" "%23") | urlize }}'>#{{ . }}</a>{{ end }}
+            </div>
+            {{end}}
+          </div>
+        </div>
+        {{ end }}
+      </div>
+      <div class="center">
+        <div class="pagination">
+          {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }} {{ template "_internal/pagination.html" . }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ partial "footer.html" . }}
+</main>
+
+{{partial "script.html" .}}

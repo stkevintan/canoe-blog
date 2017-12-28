@@ -1,0 +1,14 @@
+
+name = "canoe"
+license = "MIT"
+licenselink = "https://github.com/stkevintan/canoe/blob/master/LICENSE.md"
+description = "A beautifull and powerfull material design theme of hugo"
+homepage = "https://github.com/stkevintan/canoe"
+tags = ['blog','material design']
+features = ['toc','waterfall layout','disqus']
+min_version = "0.31.1"
+
+[author]
+  name = "Kevin Tan"
+  homepage = "https://keyin.me"
+
