@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ide/Editor on World of Forks</title>
+    <link>https://keyin.me/categories/ide/editor/</link>
+    <description>Recent content in Ide/Editor on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Wed, 17 Sep 2014 00:45:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/categories/ide/editor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>用Sublime Text 3 dev 做网页开发的配置</title>
+      <link>https://keyin.me/posts/sublime-config-web/</link>
+      <pubDate>Wed, 17 Sep 2014 00:45:07 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/sublime-config-web/</guid>
+      <description>文件：click here</description>
+    </item>
+    
+  </channel>
+</rss>

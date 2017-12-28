@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>美化 on World of Forks</title>
+    <link>https://keyin.me/tags/%E7%BE%8E%E5%8C%96/</link>
+    <description>Recent content in 美化 on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Thu, 26 Feb 2015 06:57:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/tags/%E7%BE%8E%E5%8C%96/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hexo折腾笔记（二）博客优化与定制</title>
+      <link>https://keyin.me/posts/hexo-lightum-enhance/</link>
+      <pubDate>Thu, 26 Feb 2015 06:57:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/hexo-lightum-enhance/</guid>
+      <description>&lt;p&gt;首先我使用的是由&lt;a href=&#34;http://zipperary.com/&#34;&gt;zippera&lt;/a&gt;基于官方&lt;a href=&#34;https://github.com/hexojs/hexo-theme-light&#34;&gt;Light&lt;/a&gt;主题改进而来的&lt;a href=&#34;https://github.com/zippera/lightum&#34;&gt;Lightum&lt;/a&gt;主题,其他主题可能稍有出入。
+##速度优化
+参考之前的文章：&lt;a href=&#34;http://kevinsfork.info/2015/02/25/hexo-speedup-instantclick/&#34;&gt;静态页面优化&lt;/a&gt;。然后使用了&lt;a href=&#34;https://github.com/gyk001/hexo-qiniu-sync&#34;&gt;hexo-qiniu-sync&lt;/a&gt;这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）&lt;/p&gt;
+
+&lt;p&gt;对于处于body区域的script、style的引用尽可能的加入data-no-instant属性，避免InstantClick重复加载。
+##给instantclick加载进度条加上阴影效果&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSS&#34;&gt;#instantclick-bar{
+-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.56);
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.56);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;##加入Swiftype搜索
+去&lt;a href=&#34;https://swiftype.com/&#34;&gt;Swiftype&lt;/a&gt;官网申请代码，然后修改search.ejs文件为：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Html&#34;&gt;&amp;lt;div class=&amp;quot;search&amp;quot;&amp;gt;
+&amp;lt;form&amp;gt;
+&amp;lt;input type=&amp;quot;search&amp;quot; id=&amp;quot;st-search-input&amp;quot; placeholder=&amp;quot;&amp;lt;%= __(&#39;search&#39;) %&amp;gt;&amp;quot;&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

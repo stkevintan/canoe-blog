@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud Computing on World of Forks</title>
+    <link>https://keyin.me/categories/cloud-computing/</link>
+    <description>Recent content in Cloud Computing on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Wed, 04 Jan 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/categories/cloud-computing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kubernetes部署</title>
+      <link>https://keyin.me/posts/kubernetes%E9%83%A8%E7%BD%B21-5/</link>
+      <pubDate>Wed, 04 Jan 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/kubernetes%E9%83%A8%E7%BD%B21-5/</guid>
+      <description>MEOW 安装 curl -L git.io/meowproxy | bash # 建议安装目录 /usr/bin/ 复制自己的配置文件 # in local computer xclip -sel clipboard &amp;lt; ~/.meow/rc # in CentOS server mv ~/.meow/rc ~/.meow/rc.bak xclip -o -sel clipboard &amp;gt; ~/.meow/rc 运行 MEOW Hostname 执行下面脚本。不要执行多次 如果出错则手</description>
+    </item>
+    
+    <item>
+      <title>neutron源码分析</title>
+      <link>https://keyin.me/posts/neutron-code/</link>
+      <pubDate>Fri, 28 Oct 2016 22:52:02 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/neutron-code/</guid>
+      <description>&lt;h2 id=&#34;消息总线&#34;&gt;消息总线&lt;/h2&gt;
+
+&lt;p&gt;Openstack各项目之间通过RESTful API进行通信；而项目内部不同服务进程则需要通过消息总线通信。关于消息总线的实现，包含在Openstack.oslo.messaging库中。&lt;/p&gt;
+
+&lt;h3 id=&#34;rpc&#34;&gt;RPC&lt;/h3&gt;
+
+&lt;p&gt;远程过程调用，一个服务进程可以调用其他远程服务进程的方法，有两种方式：
+- call 远程方法会被同步执行，调用者会阻塞直到取得返回结果。
+- cast 远程方法会被异步执行，调用者需要通过其他方式查询这次远程调用的结果。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>只言片语 on World of Forks</title>
+    <link>https://keyin.me/tags/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD/</link>
+    <description>Recent content in 只言片语 on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Fri, 28 Nov 2014 08:24:29 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/tags/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>(转)慢慢的，就没有了，就像从未存在过</title>
+      <link>https://keyin.me/posts/man-man-de/</link>
+      <pubDate>Fri, 28 Nov 2014 08:24:29 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/man-man-de/</guid>
+      <description>&lt;p&gt;几年以前，我曾经嘲笑过某科技界大佬。当时他说：也许90后、95后会慢慢不知道谷歌是什么网站。&lt;/p&gt;
+
+&lt;p&gt;　　那一年，这对于我来说简直就是世界上最好笑的笑话。谷歌，全世界最卓越的互联网公司，活在互联网的一代中国人，会不知道他们的网站？&lt;/p&gt;
+
+&lt;p&gt;　　今天，我收回这句嘲笑。因为这件不可能的事，它慢慢变成了现实。&lt;/p&gt;
+
+&lt;p&gt;　　没有人再关注什么谷歌不谷歌。对他们来说，百度也蛮好用的，反正他们几乎没用过谷歌。没有谷歌又怎样？大家还是开心的刷微博，看微信，听歌，看娱乐节目。对于从来就不知道谷歌的人来说，少了谷歌又有什么影响？&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FFT求快速卷积的思考</title>
+      <link>https://keyin.me/posts/fft-thoughts/</link>
+      <pubDate>Fri, 07 Nov 2014 04:15:54 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/fft-thoughts/</guid>
+      <description>&lt;p&gt;离散型卷积的定义是：$$y(n)=\sum_{m=0}^{n} x(m)h(n-m)$$&lt;/p&gt;
+
+&lt;p&gt;注意，h函数是反转的。&lt;/p&gt;
+
+&lt;p&gt;在Chipher Messages一题中，b串需要反转再与a串匹配。&lt;/p&gt;
+
+&lt;p&gt;比如说：&lt;/p&gt;
+
+&lt;p&gt;a串： 110110110，则：&lt;/p&gt;
+
+&lt;p&gt;b`串：1011&amp;lt;&amp;mdash;&amp;mdash;这里才是原来b串的头。但是向上对应到a串时，已经是m-1这个位置了。所以说，小于m-1的卷积是没有意义的。&lt;/p&gt;
+
+&lt;p&gt;于是，base=m。整体匹配。
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>（转）关于卷积的一个血腥的讲解，看完给跪了</title>
+      <link>https://keyin.me/posts/intro-of-fft/</link>
+      <pubDate>Thu, 06 Nov 2014 04:40:10 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/intro-of-fft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>2014 Multi-University Training Contest 4</title>
+      <link>https://keyin.me/posts/2014-multi-university-training-contest-4/</link>
+      <pubDate>Fri, 01 Aug 2014 03:09:32 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/2014-multi-university-training-contest-4/</guid>
+      <description>心情就像倒数第二楼那样。 CLJ，我也保证不打死你…… PS:最后一楼朱大神还暴露了。</description>
+    </item>
+    
+  </channel>
+</rss>

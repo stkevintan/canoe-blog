@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on World of Forks</title>
+    <link>https://keyin.me/tags/centos/</link>
+    <description>Recent content in Centos on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Wed, 04 Jan 2017 00:21:43 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Centos初始化</title>
+      <link>https://keyin.me/posts/centos11-3/</link>
+      <pubDate>Wed, 04 Jan 2017 00:21:43 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/centos11-3/</guid>
+      <description>换源 备份 mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup 写入国内源(centos 7) ustc： https://lug.ustc.edu.cn/wiki/mirrors/help/centos 163： # CentOS-Base.repo # # The mirror system uses the connecting IP address of the client and the # update status of each mirror to pick mirrors that are updated to and # geographically close to the client. You should use</description>
+    </item>
+    
+    <item>
+      <title>Centos初始化2</title>
+      <link>https://keyin.me/posts/centos21-4/</link>
+      <pubDate>Wed, 04 Jan 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/centos21-4/</guid>
+      <description>proxychains-ng git clone https://github.com/rofl0r/proxychains-ng cd proxychains-ng ./configure --prefix=/usr --sysconfdir=/etc make make install make install-config # 生成配置文件 echo &#39;http 10.100.100.136 4411&#39; &amp;gt;&amp;gt; /etc/proxychains.conf # 输入代理设置 TMUX CentOS的版本太老，手动编译最新版本 yum install ncurses-devel libevent-devel curl -L https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz | tar xz cd tmux-2.3 ./configure make make</description>
+    </item>
+    
+  </channel>
+</rss>

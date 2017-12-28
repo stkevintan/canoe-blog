@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    Hexo折腾笔记（二）博客优化与定制 | World of Forks
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://keyin.me/posts/hexo-lightum-enhance/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://keyin.me/css/index.css">
+  
+  <link href="https://keyin.me/index.xml" rel="alternate" type="application/rss+xml" title="World of Forks" />
+  <link href="https://keyin.me/index.xml" rel="feed" type="application/rss+xml" title="World of Forks" />
+
+  
+  <link href="https://keyin.me/favicon.ico" rel="shortcut icon"> 
+  <script>
+    window.baseURL = "https://keyin.me";
+  </script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://keyin.me" class="brand-logo">
+            <i class="material-icons hide-on-med-and-down">restaurant_menu</i>
+            World of Forks
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://keyin.me/" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://keyin.me/archive/" class=''>
+                Archive
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://keyin.me/about/" class=''>
+                About
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://keyin.me/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel row">
+          
+          <div class="col s6">
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/acm'> acm
+                  <span class="badge">24</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/web'> web
+                  <span class="badge">14</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/linux'> linux
+                  <span class="badge">8</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/asp.net'> asp.net
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/cloud-computing'> cloud-computing
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/gfw'> gfw
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/git'> git
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/ide/editor'> ide/editor
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/openwrt'> openwrt
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/python'> python
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/tech-daily'> tech-daily
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/tool'> tool
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/wine'> wine
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class="col s6">
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/polymer'> polymer
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E5%9B%BE%E8%AE%BA'> 图论
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%95%B0%E8%AE%BA'> 数论
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%9A%B4%E5%8A%9B'> 暴力
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/graphql'> graphql
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/tarjan'> tarjan
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/de/wm'> de/wm
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/html'> html
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD'> 只言片语
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/lca'> lca
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/algorithm'> algorithm
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/asp.net-mvc4'> asp.net-mvc4
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/c%23'> c#
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/centos'> centos
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/golang'> golang
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/lcs'> lcs
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/shadowsocks'> shadowsocks
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%8B%9B%E8%81%98'> 招聘
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BD%91%E6%98%93'> 网易
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/api'> api
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/blog-generator'> blog-generator
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/chinadns'> chinadns
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/deepin'> deepin
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/docker'> docker
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/dom'> dom
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/dp'> dp
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/encryption'> encryption
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/git'> git
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/github'> github
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/gnome'> gnome
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/go'> go
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/gtk'> gtk
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/i3wm'> i3wm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/infinality-fonts'> infinality-fonts
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/instantclick'> instantclick
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/javascirpt'> javascirpt
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/kubernetes'> kubernetes
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/linux'> linux
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/meow'> meow
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/neutron'> neutron
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/octotree'> octotree
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/openstack'> openstack
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/openwrt'> openwrt
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/ppa'> ppa
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/prezto'> prezto
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/python'> python
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/rmq'> rmq
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/simplemembership'> simplemembership
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/sublime-text'> sublime-text
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/tmux'> tmux
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/xfce4'> xfce4
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E5%80%8D%E5%A2%9E'> 倍增
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%A0%91%E5%BD%A2dp'> 树形dp
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84'> 树的直径
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%9F%A9%E9%98%B5'> 矩阵
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BB%84%E5%90%88'> 组合
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90'> 网易云音乐
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BD%91%E7%BB%9C%E6%B5%81'> 网络流
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BE%8E%E5%8C%96'> 美化
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E8%B7%AF%E7%94%B1%E5%99%A8'> 路由器
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://keyin.me/" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://keyin.me/archive/" class=''>
+        Archive
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://keyin.me/about/" class=''>
+        About
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://keyin.me/categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://keyin.me/tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://keyin.me/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+   
+
+
+<main id="single" role="main" class="main-panel">
+  <section class="container">
+    <div class="inner">
+      <section class="post-wrapper">
+         
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#加入文章导航">加入文章导航</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+        <div class="post reveal ">
+          <div class="card">
+            <section class="breadcrumb-wrapper"><div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+   
+   
+   
+  
+    <a class="breadcrumb" href="https://keyin.me"><i class="material-icons">location_on</i>Home</a>
+    
+       
+      
+      
+      
+       
+    
+       
+      
+      
+      
+       
+        
+          <a class="breadcrumb" href='https://keyin.me/posts/'>Posts</a>
+         
+       
+    
+       
+      
+      
+      
+       
+        
+          <span class="breadcrumb">Hexo折腾笔记（二）博客优化与定制</span>
+         
+       
+    
+       
+      
+      
+      
+       
+     
+</div></section>
+            <div class="card-content">
+              
+              <section class="metadata-wrapper">
+                <span class="card-title">Hexo折腾笔记（二）博客优化与定制 </span>
+                <span class="card-meta">
+                  <time>
+                    
+                    <span>Thu Feb 26 2015</span>
+                  </time>
+
+                  
+                  <address>
+                    
+                    <a href="https://keyin.me/categories/hexo">Hexo</a>&nbsp; 
+                  </address>
+                  
+                </span>
+              </section>
+              
+              <article class="article">
+                <p>首先我使用的是由<a href="http://zipperary.com/">zippera</a>基于官方<a href="https://github.com/hexojs/hexo-theme-light">Light</a>主题改进而来的<a href="https://github.com/zippera/lightum">Lightum</a>主题,其他主题可能稍有出入。
+##速度优化
+参考之前的文章：<a href="http://kevinsfork.info/2015/02/25/hexo-speedup-instantclick/">静态页面优化</a>。然后使用了<a href="https://github.com/gyk001/hexo-qiniu-sync">hexo-qiniu-sync</a>这个项目，将静态的图片以及css、js同步到了七牛云。（PS：主题模板中包含了两个不同版本的jquery，分别在head.ejs与after-footer.ejs中，随便删除一个。）</p>
+
+<p>对于处于body区域的script、style的引用尽可能的加入data-no-instant属性，避免InstantClick重复加载。
+##给instantclick加载进度条加上阴影效果</p>
+
+<pre><code class="language-CSS">#instantclick-bar{
+-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.56);
+box-shadow: 0 0 8px rgba(0, 0, 0, 0.56);
+}
+</code></pre>
+
+<p>##加入Swiftype搜索
+去<a href="https://swiftype.com/">Swiftype</a>官网申请代码，然后修改search.ejs文件为：</p>
+
+<pre><code class="language-Html">&lt;div class=&quot;search&quot;&gt;
+&lt;form&gt;
+&lt;input type=&quot;search&quot; id=&quot;st-search-input&quot; placeholder=&quot;&lt;%= __('search') %&gt;&quot;&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>
+更具体的指导具体可以参考这篇文章：<a href="http://lukang.me/2015/optimization-of-hexo-2.html">click here</a>。
+##改进多说评论框
+###添加data-thread-key等属性</p>
+
+<pre><code class="language-Html">&lt;!-- 多说评论框 start --&gt;
+&lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= page.path %&gt;&quot; data-title=&quot;&lt;%= page.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;
+&lt;!-- 多说评论框 end --&gt;
+</code></pre>
+
+<p>###美化多说评论框
+进入多说评论的管理后台，将下面代码粘贴到‘设置-&gt;自定义CSS’中。</p>
+
+<pre><code>#ds-reset .ds-avatar img{width:54px;height:54px;border-radius:27px;-webkit-border-radius:27px;-moz-border-radius:27px;box-shadow:inset 0 -1px 0 #3333sf;-webkit-box-shadow:inset 0 -1px 0 #3333sf;-webkit-transition:0.4s;-webkit-transition:-webkit-transform 0.4s ease-out;transition:transform 0.4s ease-out;-moz-transition:-moz-transform 0.4s ease-out;}
+#ds-reset .ds-avatar img:hover{box-shadow:0 0 10px #fff;rgba(255,255,255,.6),inset 0 0 20px rgba(255,255,255,1);-webkit-box-shadow:0 0 10px #fff;rgba(255,255,255,.6),inset 0 0 20px rgba(255,255,255,1);transform:rotateZ(360deg);-webkit-transform:rotateZ(360deg);-moz-transform:rotateZ(360deg);}
+p.ds-powered-by,#ds-sync-checkbox,.ds-sync label{display:none!important;}
+#ds-reset .ds-rounded-top{-webkit-border-top-right-radius:0px;-webkit-border-top-left-radius:0px;border-top-right-radius:0px;border-top-left-radius:0px;}
+#ds-thread #ds-reset .ds-textarea-wrapper{background:#fff;border:0;margin-bottom:20px;padding-right:0px;}
+#ds-thread #ds-reset .ds-textarea-wrapper textarea{min-height:80px;border:1px solid #ccc;padding:10px;-webkit-appearance:none;border-radius:0;background-color:#FFFFFF;border-color:#cccccc;box-shadow:inset 0 1px 2px rgba(0,0,0,0.1);color:rgba(0,0,0,0.75);-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-transition:border-color 0.15s linear,background 0.15s linear;-moz-transition:border-color 0.15s linear,background 0.15s linear;-ms-transition:border-color 0.15s linear,background 0.15s linear;-o-transition:border-color 0.15s linear,background 0.15s linear;transition:border-color 0.15s linear,background 0.15s linear;}
+#ds-thread #ds-reset .ds-textarea-wrapper textarea:focus{border-color:#999999;background:#fafafa;outline:none;}
+#ds-thread #ds-reset .ds-post-options{border-bottom-left-radius:0px;-webkit-border-bottom-left-radius:0px;border:none;background:none!important;}
+#ds-thread #ds-reset .ds-post-button{border-bottom-right-radius:0px;-webkit-border-bottom-right-radius:0px;}
+#ds-reset .ds-textarea-wrapper textarea:focus{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+#ds-thread #ds-reset .ds-post-button{background-image:none;text-shadow:none;border:none;font-weight:normal;line-height:normal;position:absolute;-webkit-appearance:button;-moz-appearance:button;background-color:#008CBA;border-color:#007095;color:#FFFFFF;transition:background-color 300ms ease-out;}
+#ds-thread #ds-reset .ds-post-button:hover,#ds-thread #ds-reset .ds-post-button:focus{background-color:#007095;color:#FFFFFF;}
+</code></pre>
+
+<p>##加入多说最新评论
+修改&rsquo;theme/lightum/_config.yml&rsquo;文件，在widgets下面添加<code>- recent_comments</code>项。
+在主题文件的&rsquo;theme/lightum/layout/_widget&rsquo;目录中新建recent_comments.ejs文件，并放入如下代码：</p>
+
+<pre><code>&lt;div class=&quot;widget tag&quot;&gt;
+&lt;h3 class=&quot;title&quot;&gt;&lt;%= __('recent_comments')&lt;/h3&gt;
+&lt;div class=&quot;entry&quot;&gt;
+&lt;!-- 多说最新评论 start --&gt;
+    &lt;div class=&quot;ds-recent-comments&quot; data-num-items=&quot;5&quot; data-show-avatars=&quot;1&quot; data-show-time=&quot;1&quot; data-show-title=&quot;1&quot; data-show-admin=&quot;1&quot; data-excerpt-length=&quot;70&quot;&gt;&lt;/div&gt;
+&lt;!-- 多说最新评论 end --&gt;
+&lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;
+..........
+&lt;!-- 多说公共JS代码 end --&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p>然后在&rsquo;/languages/zh-CN.yml&rsquo;文件添加翻译：<code>recent_comments: 最新评论</code></p>
+
+<p>最后，原来的评论样式不太符合lightum主题，可以在&rsquo;/source/css/_partial&rsquo;里建立一个recent_comment.styl文件：</p>
+
+<pre><code class="language-language">.ds-recent-comments
+  li.ds-comment
+    &amp;:first-child
+      border-top none !important
+</code></pre>
+
+<p>然后在/theme/lightum/source/css/style中将之包括进来：<code>@import '_partial/recent_comments'</code></p>
+
+<p>多说的这个插件同样不兼容于instantclick。我们可以在这篇文章的基础上解决：<a href="/2015/02/25/hexo-speedup-instantclick/">click here</a>:
+- 将多说的公共JS放入head或加入&rsquo;data-no-instant&rsquo;属性放入body中，并删除recent.ejs与comment.ejs中重复的JS。
+- 修改change事件中的代码为：</p>
+
+<pre><code>if(typeof DUOSHUO !== 'undefined'){ //support 多说评论框
+if($(&quot;.ds-thread&quot;).length){
+    DUOSHUO.EmbedThread($('.ds-thread')[0]);
+}
+DUOSHUO.RecentComments($('.ds-recent-comments')[0]);
+}
+</code></pre>
+
+<p>这样虽然能够解决问题，但是会显示方面又会出现点小问题。可以加入下面css修复：</p>
+
+<pre><code class="language-language">span.caption{
+display: none;
+}
+</code></pre>
+
+<h2 id="加入文章导航">加入文章导航</h2>
+
+<p>修改&rsquo;/layout/_partical/article.ejs&rsquo;文件</p>
+
+<pre><code class="language-Html">&lt;article class=&quot;&lt;%= item.layout %&gt;&quot;&gt;
+  // ...
+  &lt;div class=&quot;entry&quot;&gt;
+    &lt;% if (item.excerpt &amp;&amp; index){ %&gt;
+      &lt;%- item.excerpt %&gt;
+    &lt;% } else { %&gt;
+      &lt;% if (!index){ %&gt;
+        // 插入文章导航
+        &lt;%- partial('toc') %&gt;
+      &lt;% } %&gt;
+      &lt;%- item.content %&gt;
+    &lt;% } %&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+</code></pre>
+
+<p>在&rsquo;\source\css_partial\article.styl&rsquo;文件后添加：</p>
+
+<pre><code class="language-language">  .toc-article
+    float right
+     
+  #toc
+    background #eee
+    margin 0 0 10px 20px
+    padding 12px
+    line-height 18px
+    font-size 10px
+    strong
+      font-size 15px
+    ol
+      margin-top 5px
+      margin-left 0
+    .toc
+      padding 0
+      li
+        list-style-type none
+    .toc-child
+      padding-left 20px
+</code></pre>
+
+<p>这样，我们就能在写文章的时候添加<code>toc: true</code>来启动文章导航功能。
+###扩展：浮动式导航
+实现当页面滑动到下方时将文章导航浮动到屏幕右侧。</p>
+
+<p>在&rsquo;\layout_partial\&lsquo;里新建文件：<code>float_nav.ejs</code></p>
+
+<pre><code class="language-Html">&lt;div id=&quot;menu-nav&quot;&gt;
+    &lt;div id=&quot;title-nav&quot;&gt;&lt;%= __('navigation') %&gt;&lt;div&gt;→&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;content-nav&quot;&gt;
+        &lt;%- toc(item.content) %&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+(function($, scrollSpeed, hiddenSpeed, fadeSpeed) {
+    var T = $('#toc');
+    var M = $('#menu-nav');
+    var C = $('#content-nav');
+    var Tx = T.position().top;
+    $(window).scroll(function() {
+        var top = $(this).scrollTop();
+        if (top &gt;= Tx + 300) {
+            M.stop().fadeIn(fadeSpeed);
+            T.stop().fadeTo(fadeSpeed, 0);
+        } else {
+            M.stop().fadeOut(fadeSpeed);
+            T.stop().fadeTo(fadeSpeed, 1);
+        }
+    });
+
+    $('.toc-link').click(function(e) {
+        //阻止默认跳转
+        e.preventDefault();
+        //定义滚动动画
+        var scrollTarget = $('#' + $(this).children('.toc-text').first().text());
+        $(&quot;html,body&quot;).animate({
+            scrollTop: scrollTarget.prev().offset().top
+        }, scrollSpeed);
+    });
+    C.click(function(e) {
+        e.stopPropagation();
+    });
+    M.click(function() {
+        C.toggle(hiddenSpeed, 'linear', function() {
+            var T = $('#title-nav div');
+            T.text() == '←' ? T.text('→') : T.text('←');
+        });
+    });
+})(jQuery, 500, 200, 100);
+&lt;/script&gt;
+</code></pre>
+
+<p>在&rsquo;layout/_partial/article.ejs&rsquo;中添加对其的引用：</p>
+
+<pre><code class="language-Html">&lt;% if(!index &amp;&amp; item.toc){ %&gt;
+  &lt;%- partial('float_nav') %&gt;
+&lt;% } %&gt;
+</code></pre>
+
+<p>添加css样式：</p>
+
+<pre><code class="language-language">navbcolor=rgba(100, 100, 100, 0.74)
+#menu-nav
+  position fixed;
+  display none;
+  cursor pointer;
+  z-index 150;
+  right 0;
+  top 20%;
+  box-shadow 0 0 5px rgba(0, 0, 0, 0.15);
+  color white;
+  background navbcolor;
+  #title-nav
+    display inline-block;
+    vertical-align middle;
+    width: 30px;
+    height: 100%;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 0;
+  #content-nav
+    display inline-block;
+    vertical-align middle;
+    white-space:nowrap;
+    border-left: 1px dashed #ccc;
+    box-sizing border-box;
+    padding 15px;
+    line-height 18px;
+    font-size 10px;
+    li
+      list-style-type none;
+      width 100%;
+      a
+        display block;
+        box-sizing border-box;
+        color #FFFFFF;
+        &amp;:hover
+          background rgba(100, 100, 100, 1);
+      .toc-child a
+        padding-left 20px;
+</code></pre>
+
+<p>###添加&rdquo;返回顶部&rdquo;
+与上一节相似，在&rsquo;layout/_widget/&lsquo;中添加<code>totop.ejs</code>文件：</p>
+
+<pre><code class="language-Html">&lt;div id=&quot;to-top&quot;&gt;↑&lt;/div&gt;
+&lt;script&gt;
+(function($, scrollSpeed, fadeSpeed) {
+    var T = $('#to-top');
+    $(window).scroll(function() {
+        var top = $(this).scrollTop();
+        if (top &gt;= 300) {
+            T.stop().fadeIn(fadeSpeed);
+        } else {
+            T.stop().fadeOut(fadeSpeed);
+        }
+    });
+    T.click(function() {
+        $(&quot;html,body&quot;).animate({
+            scrollTop: 0
+        }, scrollSpeed);
+    });
+})(jQuery, 500, 200);
+&lt;/script&gt;
+</code></pre>
+
+<p>在&rsquo;lightum/_config.yml&rsquo;中启用该挂件：</p>
+
+<pre><code class="language-language">widgets:
+- totop
+</code></pre>
+
+<p>添加css样式：</p>
+
+<pre><code class="language-language">#to-top
+  background navbcolor;
+  position fixed;
+  display none;
+  z-index 200;
+  right 40px;
+  bottom 10%;
+  box-shadow 0 0 5px rgba(0, 0, 0, 0.15);
+  font-size 14px;
+  color white;
+  padding 5px 15px;
+  cursor pointer;
+  font-size 12px;
+  text-align center;
+  &amp;:hover
+    background rgba(100,100,100,1);
+</code></pre>
+
+<p>##参考
+- <a href="http://deffi.info/2014/10/03/Hexo-%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E4%B8%BA%E5%8D%9A%E5%AE%A2%E5%AE%9E%E7%8E%B0%E6%9B%B4%E5%A4%9A%E5%8A%9F%E8%83%BD/">Hexo 主题修改:为博客实现更多功能</a>
+- <a href="https://luolei.org/duoshuo-css/">多说评论也玩圆角头像动画「自定义CSS:无压力小白级教程」</a>
+- <a href="http://lukang.me/2015/optimization-of-hexo-2.html">Hexo 优化与定制(二)</a></p>
+              </article>
+
+            </div>
+            
+            <div class="card-action card-action-links">
+              
+              <a class="btn btn-secondary" href="https://keyin.me/tags/%E7%BE%8E%E5%8C%96">美化</a> 
+              <a class="btn btn-secondary" href="https://keyin.me/tags/html">html</a> 
+            </div>
+            
+            <div class="card-action">
+               
+
+ 
+
+
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script src='//unpkg.com/valine/dist/Valine.min.js' defer></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js" defer></script>
+<script defer>
+  var valineConfig = {
+      el: '#comment',
+      notify: false,
+      verify: false,
+      appId: 'drenIDLMO3yTwiuCl7Hva9nq-gzGzoHsz',
+      appKey: 'rfotKaw6cevwHhOR8FvhwPAp',
+      placeholder: '写点什么吧...',
+      path: window.location.pathname,
+      avatar: 'retro'
+    }
+  document.addEventListener('DOMContentLoaded', function () {
+    new Valine(valineConfig);
+  });
+</script> 
+
+ 
+
+            </div>
+
+            
+            <div class="pagination-single">
+               
+              <span class="pagination-item previous">
+                <i class="material-icons">navigate_before</i>
+                <a href="https://keyin.me/posts/hexo-speedup-instantclick/" rel="prev">Hexo折腾笔记（一）博客加速以及instantclick的兼容</a>
+              </span>  
+              <span class="pagination-item next">
+                <i class="material-icons">navigate_next</i>
+                <a href="https://keyin.me/posts/neutron-code/" rel="next">neutron源码分析</a>
+              </span> 
+            </div>
+            
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  
+<footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">World of Forks</h5>
+          <p class="grey-text text-lighten-4">Theme
+            <a href="https://github.com/stkevintan/hugo-YAMT-theme" target="_blank">YAMT</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://twitter.com/kevinsfork" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="http://weibo.com/kevinclasky" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">My Friends</h5>
+          <ul>
+            
+            <li>
+              <a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a class="grey-text text-lighten-3" href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a class="grey-text text-lighten-3" href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script> 
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/scrollReveal.js/3.3.6/scrollreveal.min.js"></script>
+<script>
+  var sr = ScrollReveal();
+  sr.reveal(".reveal", {
+    viewOffset: { top: 48 },
+    scale: 1,
+    distance: "-25px"
+  });
+</script> 
+<script src="https://cdn.bootcss.com/lunr.js/2.1.5/lunr.min.js"></script>
+
+
+<script type="text/javascript" src="https://keyin.me/js/index.js"></script> 
+
+
+
+
+</body>
+
+</html>

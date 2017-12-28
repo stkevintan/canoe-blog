@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+
+  
+  <meta charset="UTF-8">
+  <title>
+    体验I3之美 | World of Forks
+  </title>
+
+
+  
+  <meta name="viewport" content="width=device-width,user-scalable=no,maximum-scale=1,initial-scale=1">
+
+  
+  <link rel="canonical" href="https://keyin.me/posts/beautifull-i3/" />
+
+  
+  
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/ocean.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://keyin.me/css/index.css">
+  
+  <link href="https://keyin.me/index.xml" rel="alternate" type="application/rss+xml" title="World of Forks" />
+  <link href="https://keyin.me/index.xml" rel="feed" type="application/rss+xml" title="World of Forks" />
+
+  
+  <link href="https://keyin.me/favicon.ico" rel="shortcut icon"> 
+  <script>
+    window.baseURL = "https://keyin.me";
+  </script>
+</head>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+  <div class="navbar-fixed">
+    <nav class="navbar">
+      <div class="nav-container container">
+        <div class="nav-wrapper inner">
+          <a href="javascript:void(0)" data-activates="sidebar" class="button-collapse hide-on-large-only">
+            <i class="material-icons">menu</i>
+          </a>
+          <a href="https://keyin.me" class="brand-logo">
+            <i class="material-icons hide-on-med-and-down">restaurant_menu</i>
+            World of Forks
+          </a>
+          
+          <ul class=" nav-menu tabs tabs-transparent hide-on-med-and-down">
+            
+            <li class="tab">
+              <a href="https://keyin.me/" class=''>
+                Home
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://keyin.me/archive/" class=''>
+                Archive
+              </a>
+            </li>
+            
+            <li class="tab">
+              <a href="https://keyin.me/about/" class=''>
+                About
+              </a>
+            </li>
+            
+          </ul>
+          
+
+          <form class="nav-form hide-on-small-and-down">
+            <div class="form-group">
+              <i class="material-icons">search</i>
+              <input type='text' placeholder="输入搜索关键字" />
+            </div>
+            <div class="form-popout">
+              <div class="search-result">
+                <label>暂无搜索结果</label>
+                <ul>
+                </ul>
+              </div>
+            </div>
+          </form>
+
+
+          <ul class=" nav-menu apps">
+            
+            <li>
+              <a class="search-btn hide-on-med-and-up" href='#search-panel'>
+                <i class="material-icons">search</i>
+              </a>
+            </li>
+            <li>
+              <a class="term-btn hide-on-small-and-down" href='#term-panel'>
+                <i class="material-icons">apps</i>
+              </a>
+            </li>
+            <li>
+              <a class="rss-btn hide-on-small-and-down" href='https://keyin.me/index.xml' target="_blank">
+                <i class="material-icons">rss_feed</i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  
+  <div class="mobile-search hide-on-med-and-up">
+  <div class="header">
+    
+    <i class="material-icons">search</i>
+    <input type='text' placeholder="输入搜索关键字" />
+    <i class="material-icons mobile-search-close">cancel</i>
+  </div>
+  <div class="content">
+    <label>暂无搜索结果</label>
+    <ul></ul>
+  </div>
+</div>
+  
+
+  <div class="taxonomy">
+    <div class="container">
+      <div class="inner">
+        <div class="taxonomy-panel row">
+          
+          <div class="col s6">
+            <label>Category</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/acm'> acm
+                  <span class="badge">24</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/web'> web
+                  <span class="badge">14</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/linux'> linux
+                  <span class="badge">8</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/asp.net'> asp.net
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/cloud-computing'> cloud-computing
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/gfw'> gfw
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/hexo'> hexo
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/git'> git
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/ide/editor'> ide/editor
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/openwrt'> openwrt
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/python'> python
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/tech-daily'> tech-daily
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/tool'> tool
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/categories/wine'> wine
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+          
+          <div class="col s6">
+            <label>Tag</label>
+            <ul>
+                
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/polymer'> polymer
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E5%9B%BE%E8%AE%BA'> 图论
+                  <span class="badge">7</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%95%B0%E8%AE%BA'> 数论
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%9A%B4%E5%8A%9B'> 暴力
+                  <span class="badge">6</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/graphql'> graphql
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/tarjan'> tarjan
+                  <span class="badge">5</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/de/wm'> de/wm
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/html'> html
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E5%8F%AA%E8%A8%80%E7%89%87%E8%AF%AD'> 只言片语
+                  <span class="badge">4</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/lca'> lca
+                  <span class="badge">3</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/algorithm'> algorithm
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/asp.net-mvc4'> asp.net-mvc4
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/c%23'> c#
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/centos'> centos
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/golang'> golang
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/lcs'> lcs
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/shadowsocks'> shadowsocks
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%8B%9B%E8%81%98'> 招聘
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BD%91%E6%98%93'> 网易
+                  <span class="badge">2</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/api'> api
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/blog-generator'> blog-generator
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/chinadns'> chinadns
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/deepin'> deepin
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/docker'> docker
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/dom'> dom
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/dp'> dp
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/encryption'> encryption
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/git'> git
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/github'> github
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/gnome'> gnome
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/go'> go
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/gtk'> gtk
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/hugo'> hugo
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/i3wm'> i3wm
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/infinality-fonts'> infinality-fonts
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/instantclick'> instantclick
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/javascirpt'> javascirpt
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/kubernetes'> kubernetes
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/linux'> linux
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/meow'> meow
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/neutron'> neutron
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/octotree'> octotree
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/openstack'> openstack
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/openwrt'> openwrt
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/ppa'> ppa
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/prezto'> prezto
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/python'> python
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/rmq'> rmq
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/simplemembership'> simplemembership
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/sublime-text'> sublime-text
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/tmux'> tmux
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/xfce4'> xfce4
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E5%80%8D%E5%A2%9E'> 倍增
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%A0%91%E5%BD%A2dp'> 树形dp
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84'> 树的直径
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%9F%A9%E9%98%B5'> 矩阵
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91'> 科学上网
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BB%84%E5%90%88'> 组合
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90'> 网易云音乐
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BD%91%E7%BB%9C%E6%B5%81'> 网络流
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E7%BE%8E%E5%8C%96'> 美化
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+              <li>
+                <a class="btn btn-secondary" href='https://keyin.me/tags/%E8%B7%AF%E7%94%B1%E5%99%A8'> 路由器
+                  <span class="badge">1</span>
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+           
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <ul class="side-nav" id="sidebar">
+    
+    <li>
+      <a href="https://keyin.me/" class=''>
+        Home
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://keyin.me/archive/" class=''>
+        Archive
+      </a>
+    </li>
+    
+    <li>
+      <a href="https://keyin.me/about/" class=''>
+        About
+      </a>
+    </li>
+    
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://keyin.me/categories/'>
+        Categories
+      </a>
+    </li>
+    <li>
+      <a class="term-btn-mobile hide-on-med-only" href='https://keyin.me/tags/'>
+        Tags
+      </a>
+    </li>
+    <li>
+      <a class="rss-btn-mobile hide-on-med-only" href='https://keyin.me/index.xml' target="_blank">
+        Rss
+      </a>
+    </li>
+  </ul>
+   
+
+
+<main id="single" role="main" class="main-panel">
+  <section class="container">
+    <div class="inner">
+      <section class="post-wrapper">
+         
+          <div class="toc-panel">
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#i3wm">i3WM</a></li>
+<li><a href="#配置细节">配置细节</a>
+<ul>
+<li><a href="#workspaces">Workspaces</a></li>
+<li><a href="#application">Application</a></li>
+<li><a href="#i3blocks">i3blocks</a></li>
+<li><a href="#compton">compton</a></li>
+</ul></li>
+<li><a href="#易用性建议">易用性建议</a></li>
+</ul></li>
+</ul>
+</nav>
+          </div>
+        
+        <div class="post reveal ">
+          <div class="card">
+            <section class="breadcrumb-wrapper"><div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
+   
+   
+   
+  
+    <a class="breadcrumb" href="https://keyin.me"><i class="material-icons">location_on</i>Home</a>
+    
+       
+      
+      
+      
+       
+    
+       
+      
+      
+      
+       
+        
+          <a class="breadcrumb" href='https://keyin.me/posts/'>Posts</a>
+         
+       
+    
+       
+      
+      
+      
+       
+        
+          <span class="breadcrumb">体验I3之美</span>
+         
+       
+    
+       
+      
+      
+      
+       
+     
+</div></section>
+            <div class="card-content">
+              
+              <section class="metadata-wrapper">
+                <span class="card-title">体验I3之美 </span>
+                <span class="card-meta">
+                  <time>
+                    
+                    <span>Mon Mar 20 2017</span>
+                  </time>
+
+                  
+                  <address>
+                    
+                    <a href="https://keyin.me/categories/linux">Linux</a>&nbsp; 
+                  </address>
+                  
+                </span>
+              </section>
+              
+              <article class="article">
+                
+
+<p><img src="https://ol1kreips.qnssl.com/%E6%88%AA%E5%9B%BE_2017-03-13_18-50-11.png" alt="enter description here" title="截图_2017-03-13_18-50-11" />
+先晒张日常桌面图。Gnome3用了半年了一直被其蹩脚的交互和层出不穷的Bug所折磨。虽然Gnome3很漂亮，很简洁，但是毕竟漂亮不能当饭吃。套餐这种东西虽然简单省事，但是终究不是为你所量身定制的，总有其中一样不合你口味。因此，我决定再次抛弃“开箱即用”的DE(Desktop Environment)，在WM(Window Manager)的基础上自己打造一套适合自己的桌面环境。
+<!-- more --></p>
+
+<h2 id="i3wm">i3WM</h2>
+
+<p>i3是一个比较知名的平铺式的窗口管理器（TilingWM），它可以通过快捷键来管理程序窗口，使他们像截图那样平铺在显示屏幕，控制他们的大小和位置。十分高效也有几分Geek的味道。<br />
+i3的所有配置全部使用shell写成，甚至顶部panel的各种指示器，都由用户自己写的bash脚本获得并显示。十分简单暴力。虽然没有图形界面那么直观，但是有一种一切尽在自己掌控之下的感觉。这种感觉其实是十分十分不错的。<br />
+我的I3WM配置文件托管在了<a href="https://github.com/stkevintan/i3dotfile">Github</a>。</p>
+
+<h2 id="配置细节">配置细节</h2>
+
+<p>I3配置文件的语法其实跟shell差不多，熟悉Linux的用户应该都能完全看懂。我的配置文件分为几大模块：</p>
+
+<h3 id="workspaces">Workspaces</h3>
+
+<p>工作区配置，我根据日常使用的程序类别一共设置了10个工作区(图标显示需要在本地电脑上安装Fontawesome字体）：</p>
+
+<pre><code class="language-bash">set $ws1 	     &quot;1: Browser&quot;
+set $ws2         &quot;2: Code&quot;
+set $ws3 		 &quot;3: Chat&quot;
+set $ws4 		 &quot;4: File&quot;
+set $ws5 		 &quot;5: Terminal&quot;
+set $ws6 		 &quot;6: Video&quot;
+set $ws7 	     &quot;7: Music&quot;
+set $ws8  	     &quot;8:  Graphic&quot;
+set $ws9 		 &quot;9: Game&quot;
+set $ws0 		 &quot;0: Fullscreen&quot;
+</code></pre>
+
+<p>然后，把属于各自类别的程序绑定到对应的工作区，这样打开这些程序的时候他们就能自动出现在合适的工作区了：</p>
+
+<pre><code class="language-bash">assign 	[class=&quot;google-chrome-stable&quot;] 			$ws1   # Browser
+assign 	[class=&quot;vivaldi&quot;] 						            $ws1   # Browser
+assign 	[class=&quot;firefox&quot;] 					            	$ws1   # Browser
+assign  [class=&quot;(?i)code&quot;]                                $ws2   # Code IDE
+# ...
+assign  [class=&quot;dota2&quot;]         		                   $ws0   # Fullscreen
+assign	[class=&quot;Minecraft 1.8.9&quot;]		              $ws0   # Fullscreen
+</code></pre>
+
+<h3 id="application">Application</h3>
+
+<p>在i3配置文件里面我们可以对常用的程序绑定快捷启动键：</p>
+
+<pre><code class="language-bash">bindsym F10 exec xfce4-appfinder
+bindsym Print exec xfce4-screenshooter
+
+# bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec pantheon-terminal
+
+bindsym $mod+Control+t exec telegram-desktop
+bindsym $mod+Control+g exec google-chrome-stable
+bindsym $mod+Control+v exec vivaldi
+bindsym $mod+Control+f exec nemo
+bindsym $mod+Control+c exec code
+bindsym $mod+Control+n exec nitrogen
+bindsym $mod+Control+w exec electronic-wechat
+bindsym $mod+Control+y exec youdao-dict
+</code></pre>
+
+<p>然后，对于特殊的不适合平铺的窗口，可以直接设置它们为浮动窗口：</p>
+
+<pre><code class="language-bash">for_window [class=&quot;Geany&quot;] floating enable border normal
+for_window [class=&quot;GParted&quot;] floating enable border normal
+for_window [class=&quot;Nitrogen&quot;] floating enable border normal
+for_window [class=&quot;(?i)virtualbox&quot;] floating enable border normal
+for_window [class=&quot;Youdao Dict&quot;] floating enable border normal
+# ...
+</code></pre>
+
+<p>PS：可以使用<code>xprop|grep WM_CLASS</code>来查看正在运行窗口的class名称。</p>
+
+<h3 id="i3blocks">i3blocks</h3>
+
+<p>i3blocks是I3顶部面板的一个可选组件。它使用ini格式的配置文件，支持多种终端脚本，还支持鼠标点击、滚动事件，十分强大。配置文件样本如下：</p>
+
+<pre><code class="language-ini">command=~/.config/i3/blocks/$BLOCK_NAME
+align=center
+color=#ffffff
+separator=true
+separator_block_width=13
+markup=pango
+
+[disk-home]
+label=
+command=~/.config/i3/blocks/disk $HOME
+instance=/home/kevin
+interval=30
+color=#FFCC80
+
+[weather]
+instance=1808926 # hangzhou's city code
+interval=60
+color=#90CAF9
+
+# ...
+</code></pre>
+
+<p>主要字段解释：
+- 首先前面无section的parameters属于默认配置项，为每个section的缺省配置。<br />
+- 然后每个section都对应顶栏上面的一个指示器，称为block。<br />
+- 每个block必须显示一定的数据，可以通过command配置项指定获取数据的命令，并使用interval来设置命令执行周期间隔。
+- instance为可以传递到command脚本中的环境变量。
+- color和label为颜色和标签，属于修饰性的配置项。</p>
+
+<p>所有可用的block命令可以参考我的配置文件夹：<a href="https://github.com/stkevintan/i3dotfile/tree/master/blocks">blocks</a></p>
+
+<h3 id="compton">compton</h3>
+
+<p>compton可以给i3带来透明和阴影效果的支持。如果只关心性能而不介意美观与否，你完全可以跳过此节。
+compton默认是不给顶栏加透明效果的，需要加入如下配置：</p>
+
+<pre><code>wintypes:
+{
+    dock = 
+    { 
+        opacity = 0.8;        
+    };
+};
+</code></pre>
+
+<p>同时，compton的阴影效果不适用于某些窗口，需要排除它们：</p>
+
+<pre><code>shadow-exclude = [
+    &quot;name = 'Notification'&quot;,
+    &quot;name *= 'compton'&quot;,
+    &quot;class_g = 'Conky'&quot;,
+    &quot;class_g = 'Firefox'&quot;,
+    &quot;class_g *= 'fcitx'&quot;,
+    &quot;class_g = 'Youdao Dict'&quot;
+];
+</code></pre>
+
+<h2 id="易用性建议">易用性建议</h2>
+
+<p>i3WM只是一个地基，我们可以在这之上搭建一个适合自己的环境。每个人的口味都不一样，所以我简单的罗列一下我个人比较喜欢的应用和配置以供参考。
+- dmenu: WM下使用最广泛的应用启动器，可以自动根据用户输入的命令进行提示。
+- rofi: dmenu的替代品
+- quickswitch.py:  跨工作区窗口快速跳转工具，可以整合到dmenu中。
+-  xfce4-appfinder:  xfce4的应用程序列表。能够自动搜索文件系统中的desktop文件，并生成应用列表。非常实用的工具。
+-  pantheon-terminal: elementaryOS的默认终端。小巧，依赖少，支持背景透明、多标签，很完美的终端模拟器。（需要使用dconf-editor来修改设置，位置：<code>/org/pantheon/terminal/settings/</code>）
+-  nemo: linuxmint的默认文件管理器，forks自nautilus，但是比nautilus好用得多。（使用之前需要使用dconf-editor设置<code>/org/nemo/desktop/show-desktop-icons</code>为<code>false</code>）
+-  nitrogen: 提供简单的图形界面来设置壁纸并在每次开机之后自动恢复。
+- clipit: 剪贴板支持
+- lightdm: 轻量级图形登录界面</p>
+
+              </article>
+
+            </div>
+            
+            <div class="card-action card-action-links">
+              
+              <a class="btn btn-secondary" href="https://keyin.me/tags/gnome">gnome</a> 
+              <a class="btn btn-secondary" href="https://keyin.me/tags/i3wm">i3wm</a> 
+            </div>
+            
+            <div class="card-action">
+               
+
+ 
+
+
+<div id="comment"></div>
+<style>
+  .v .vwrap .vheader .vinput:focus {
+    border-bottom-color: #607d8b;
+  }
+</style>
+<script src='//unpkg.com/valine/dist/Valine.min.js' defer></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js" defer></script>
+<script defer>
+  var valineConfig = {
+      el: '#comment',
+      notify: false,
+      verify: false,
+      appId: 'drenIDLMO3yTwiuCl7Hva9nq-gzGzoHsz',
+      appKey: 'rfotKaw6cevwHhOR8FvhwPAp',
+      placeholder: '写点什么吧...',
+      path: window.location.pathname,
+      avatar: 'retro'
+    }
+  document.addEventListener('DOMContentLoaded', function () {
+    new Valine(valineConfig);
+  });
+</script> 
+
+ 
+
+            </div>
+
+            
+            <div class="pagination-single">
+               
+              <span class="pagination-item previous">
+                <i class="material-icons">navigate_before</i>
+                <a href="https://keyin.me/posts/%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E5%A0%86%E4%B9%8Bgo%E5%AE%9E%E7%8E%B0/" rel="prev">斐波那契堆之Go实现</a>
+              </span>  
+              <span class="pagination-item next">
+                <i class="material-icons">navigate_next</i>
+                <a href="https://keyin.me/posts/polymer-2-1-custom-elements/" rel="next">Polymer 2.0 文档笔记(1) Custom Elements</a>
+              </span> 
+            </div>
+            
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+  
+<footer class="page-footer">
+  <div class="container">
+    <div class="inner">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">World of Forks</h5>
+          <p class="grey-text text-lighten-4">Theme
+            <a href="https://github.com/stkevintan/hugo-YAMT-theme" target="_blank">YAMT</a> designed by
+            <a href="https://github.com/stkevintan" target="_blank">Kevin Tan</a> with ❤</p>
+          <ul class='slink'>
+             
+            <li>
+              <a href="https://github.com/stkevintan" target="_blank" title="Github">
+                <svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="https://twitter.com/kevinsfork" target="_blank" title="Twitter">
+                <svg class='svg-icons svg-icons-twitter'><use xlink:href='#svg-icons-twitter'></use></svg>
+              </a>
+            </li>
+            
+            <li>
+              <a href="http://weibo.com/kevinclasky" target="_blank" title="Weibo">
+                <svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>
+              </a>
+            </li>
+             
+          </ul>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">My Friends</h5>
+          <ul>
+            
+            <li>
+              <a class="grey-text text-lighten-3" href="https://frantic1048.logdown.com/" target="_blank">Frantic1048</a>
+            </li>
+            
+            <li>
+              <a class="grey-text text-lighten-3" href="https://hclmaster.github.io/" target="_blank">HclMaster</a>
+            </li>
+            
+            <li>
+              <a class="grey-text text-lighten-3" href="https://whst.github.io/" target="_blank">WANG Hsü-Tung</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+      <div class="inner">Copyleft@Kevin Tan</div>
+    </div>
+  </div>
+</footer>
+</main>
+
+<script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script> 
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/scrollReveal.js/3.3.6/scrollreveal.min.js"></script>
+<script>
+  var sr = ScrollReveal();
+  sr.reveal(".reveal", {
+    viewOffset: { top: 48 },
+    scale: 1,
+    distance: "-25px"
+  });
+</script> 
+<script src="https://cdn.bootcss.com/lunr.js/2.1.5/lunr.min.js"></script>
+
+
+<script type="text/javascript" src="https://keyin.me/js/index.js"></script> 
+
+
+
+
+</body>
+
+</html>

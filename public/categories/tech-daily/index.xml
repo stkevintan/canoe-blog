@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tech Daily on World of Forks</title>
+    <link>https://keyin.me/categories/tech-daily/</link>
+    <description>Recent content in Tech Daily on World of Forks</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyleft@Kevin Tan</copyright>
+    <lastBuildDate>Fri, 20 Jan 2017 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://keyin.me/categories/tech-daily/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Tech Daily@1-20</title>
+      <link>https://keyin.me/posts/xiaomi-openwrt--git/</link>
+      <pubDate>Fri, 20 Jan 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://keyin.me/posts/xiaomi-openwrt--git/</guid>
+      <description>&lt;p&gt;小米路由器mini（Xiaomi mini R1CM）刷Openwrt&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;scp /path/to/PandoraBox-xxxx.bin root@192.168.1.1:/tmp/PandoraBox.bin
+mtd -r write /tmp/PandoraBox.bin firmware
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;從爬文中得知，小米路由器Mini 官方韌體是雙系統，由於 ROM 有16MB，官方韌體都小於8MB，所以會有一份備援系統（8MB+8MB），因此如果刷了大於 8MB 的第三方韌體的話，會覆蓋掉第二個分區的系統，導致未來刷回官方韌體時會有掉 SN 的問題，而且再也無法刷入 SSH，從此以後就只能乖乖用官方韌體，再也不能玩刷機，目前新版的 PandoraBox 韌體大約都在 10MB 左右，所以刷機還真要有點決心，除非完整備份小米路由器Mini 中所有分區的資料，才能在日後完整刷回官方韌體，當然，如果已經完全放棄官方韌體的話，這些問題都是不用考慮的。from -  &lt;a href=&#34;http://blog.icece.tw/MiWiFi-Mini-Flash-uboot&#34;&gt;http://blog.icece.tw/MiWiFi-Mini-Flash-uboot&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;disable-middle-button-of-mouse&#34;&gt;Disable middle button of mouse&lt;/h2&gt;
+
+&lt;p&gt;Execute those commands:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;xinput list
+⎡ Virtual core pointer                    	id=2	[master pointer  (3)]
+⎜   ↳ Virtual core XTEST pointer              	id=4	[slave  pointer  (2)]
+⎜   ↳ MI Dongle MI Wireless Mouse             	id=11	[slave  pointer  (2)]
+⎜   ↳ MI Dongle MI Wireless Mouse             	id=12	[slave  pointer  (2)]
+⎜   ↳ DLL0704:01 06CB:76AE Touchpad           	id=14	[slave  pointer  (2)]
+⎜   ↳ PS/2 Synaptics TouchPad                 	id=17	[slave  pointer  (2)]
+⎜   ↳ MiMouse                                 	id=21	[slave  pointer  (2)]
+
+xinput set-button-map 21 1 0 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
