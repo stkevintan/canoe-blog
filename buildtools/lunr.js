@@ -14,7 +14,6 @@ nodejieba.load({
 const { promisify } = require("util");
 
 const readdir = promisify(fs.readdir);
-const readfile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
 const defaultOpt = {
@@ -36,9 +35,12 @@ function urlize(str) {
 }
 
 function ChinsesCut(str) {
-  return str.replace(
-    /[\u4E00-\u9FA5\uF900-\uFA2D]+/gm,
-    match => ` ${nodejieba.cut(match).join(" ")} `
+  return (
+    str &&
+    str.replace(
+      /[\u4E00-\u9FA5\uF900-\uFA2D]+/gm,
+      match => ` ${nodejieba.cut(match).join(" ")} `
+    )
   );
 }
 
@@ -54,8 +56,7 @@ function handle(filename, option) {
 
   const plainText =
     pathinfo.ext === ".md" ? removeMd(meta.content) : striptags(meta.content);
-
-  const uri = path.join(option.contextPath, urlize(pathinfo.name));
+  let uri = path.join(option.contextPath, urlize(pathinfo.name));
 
   if (meta.data.slug != null) uri = path.dirname(uri) + meta.data.slug;
   if (meta.data.url != null) uri = meta.data.url;
@@ -66,6 +67,19 @@ function handle(filename, option) {
 
   return { uri, tags, content, title, oriTitle: meta.data.title };
 }
+
+module.exports = function(option = {}) {
+  option = Object.assign({}, defaultOpt, option);
+  const exts = arrayfy(option.extensions);
+  return readdir(option.dir)
+    .then(files => files.filter(file => exts.some(ext => file.endsWith(ext))))
+    .then(files => JSON.stringify(files.map(file => handle(file, option))))
+    .then(index => {
+      mkdirp(path.dirname(option.output));
+      return writeFile(option.output, index, { encoding: "utf8" });
+    });
+};
+
 function mkdirp(dir) {
   if (fs.existsSync(dir)) {
     return;
@@ -80,18 +94,6 @@ function mkdirp(dir) {
     }
   }
 }
-
-module.exports = function(option = {}) {
-  option = Object.assign({}, defaultOpt, option);
-  const exts = arrayfy(option.extensions);
-  return readdir(option.dir)
-    .then(files => files.filter(file => exts.some(ext => file.endsWith(ext))))
-    .then(files => JSON.stringify(files.map(file => handle(file, option))))
-    .then(index => {
-      mkdirp(path.dirname(option.output));
-      return writeFile(option.output, index, { encoding: "utf8" });
-    });
-};
 
 function arrayfy(o) {
   return Array.isArray(o) ? o : [o];

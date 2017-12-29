@@ -20,7 +20,7 @@ publishDir = "docs"
 
 [params]
   author = "Kevin Tan"
-  subtitle = "Tempora mutantur, nos et mutamur in illis ..."
+  description = "Tempora mutantur, nos et mutamur in illis ..."
   copyright = "Copyleft@Kevin Tan"
 
   # 用户头像地址, user avatar's url
@@ -29,14 +29,9 @@ publishDir = "docs"
   # 首页横幅的背景链接, home banner's background url.
   splash_bg = "/img/bg.jpg"
 
-  # 是否使用一言, if using hitokoto(dynamic moto in splash screen)
+  # 是否使用一言, if using hitokoto(dynamic moto phase in the home banner)
   hitokoto = true
 
-  # 是否使用Canvas动态背景, if using canvas dynamic background (nest.js)
-  nest_bg = false
-
-  # 是否使用动态加载效果, if using fade effect while loading (scroll-reveal.js)
-  reveal_effect = true
   
 # comment settings, support 'valine' and 'disqus'.
 # more about 'valine', ref: http://valine.js.org/

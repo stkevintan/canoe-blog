@@ -32,15 +32,10 @@
 
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="{{ $.Site.BaseURL }}/favicon.ico" rel="shortcut icon"> {{ if eq true .Site.Params.load_animation }}
-  <style>
-    .reveal {
-      visibility: hidden;
-    }
-  </style>
-  {{ end }}
+  <link href="{{ $.Site.BaseURL }}/favicon.ico" rel="shortcut icon">
+
   <script>
-    window.baseURL = {{ $.Site.BaseURL }};
+    window.baseURL = '{{ $.Site.BaseURL }}';
   </script>
 </head>
 

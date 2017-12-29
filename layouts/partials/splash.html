@@ -6,7 +6,7 @@
     {{ with .Site.Params.logo }}
     <img class="avatar reveal" src="{{ $.Site.BaseURL }}{{ . }}" /> {{ end }} {{ with .Site.Params.author }}
     <h3 class="nickname">{{ . }}</h3>{{ end }}
-    <p class="desc">{{ with .Site.Params.subtitle }}{{ . }}{{ end }}</p>
+    <p class="desc">{{ with .Site.Params.description }}{{ . }}{{ end }}</p>
   </div>
 </section>
 {{ if eq true .Site.Params.hitokoto }}

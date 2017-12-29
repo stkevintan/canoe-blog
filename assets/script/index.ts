@@ -5,7 +5,8 @@ import search from "./search";
 import toc from "./toc";
 import sidebar from "./sidebar";
 import tab from "./tab";
-import hitokoto from './hitokoto';
+import hitokoto from "./hitokoto";
+
 function loadSvg() {
   const url = baseURL + "/svg/icon.svg";
   const body = U.get("body");
@@ -32,9 +33,12 @@ function taxonomy() {
     panelW.classList.remove("active");
   });
 }
-
-
-
+function reveal() {
+  const reveals = U.getAll(".reveal");
+  for (let i = 0; i < reveals.length; i++) {
+    reveals[i].classList.add("enter");
+  }
+}
 U.domReady(() => {
   tab();
   toc();
@@ -42,5 +46,6 @@ U.domReady(() => {
   taxonomy();
   sidebar();
   loadSvg();
+  reveal();
   hitokoto();
 });

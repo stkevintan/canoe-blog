@@ -5,8 +5,6 @@ title = "Hugo Canoe Theme"
 
 theme = "canoe"
 
-# I prefer to yaml
-metaDataFormat = "yaml"
 
 
 # if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
@@ -16,7 +14,7 @@ hasCJKLanguage = true
 
 [params]
   author = "Kevin Tan"
-  subtitle = "Tempora mutantur, nos et mutamur in illis ..."
+  description = "Tempora mutantur, nos et mutamur in illis ..."
   copyright = "Copyleft@Kevin Tan"
 
   # 用户头像地址, user avatar's url

@@ -35,7 +35,6 @@ module.exports = (options, isDev) => {
     watchOpts.push(Object.assign(inOpts, { output: [outOpts] }));
     return rollup.rollup(inOpts).then(bundle => bundle.write(outOpts));
   });
-
   isDev && watchChanges(watchOpts);
   return Promise.all(res);
 };

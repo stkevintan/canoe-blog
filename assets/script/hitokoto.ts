@@ -20,6 +20,7 @@ function fadeIn() {
     easingFunctions.easeInCubic
   );
 }
+
 export default function() {
   if (!desc || !enableFlag) return;
   U.fetch(url)

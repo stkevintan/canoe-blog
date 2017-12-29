@@ -7,7 +7,6 @@
   "author": "stkevintan",
   "license": "MIT",
   "devDependencies": {
-    "@types/lunr": "^2.1.5",
     "autoprefixer": "7.2.3",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
@@ -48,7 +47,9 @@
     ]
   },
   "dependencies": {
+    "@types/lunr": "^2.1.5",
     "lunr": "^2.1.5",
+    "valine": "^1.1.8",
     "whatwg-fetch": "^2.0.3"
   }
 }

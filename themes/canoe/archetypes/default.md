@@ -1,6 +1,6 @@
-+++
-Description = ""
-Tags = ["Development", "golang"]
-Categories = ["Development", "GoLang"]
-toc = true
-+++
+---
+title: "{{ replace .TranslationBaseName "-" " " | title }}"
+date: {{ .Date }}
+draft: true
+toc: true
+---

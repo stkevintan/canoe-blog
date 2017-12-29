@@ -4,7 +4,7 @@
     <div class="inner">
         <div class="single-content-wrapper">
       {{ partial "breadcrumb.html" . }}
-        <ul class="collapsible popout" data-collapsible="accordion">
+        <ul class="collapsible popout reveal" data-collapsible="accordion">
           {{ $post := where (where $.Site.Pages "Type" "posts") "Kind" "page" }} {{ range $post.GroupByDate "01 - 2006" }}
           <li>
             <div class="collapsible-header">
