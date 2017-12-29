@@ -1,5 +1,3 @@
-import "whatwg-fetch";
-
 const parser = new DOMParser();
 const util = {
   fetch(url: string, options: any = {}) {

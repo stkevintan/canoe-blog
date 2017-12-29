@@ -1,5 +1,5 @@
 {
-  "name": "hugo-yamt-theme",
+  "name": "canoe-blog",
   "version": "1.0.0",
   "description": "A material design theme for hugo",
   "main": "gulpfile.js",
@@ -23,7 +23,6 @@
     "gulp-rev-replace": "^0.4.3",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "hugo-lunr": "^0.0.4",
     "imagemin-pngquant": "^5.0.1",
     "nodejieba": "^2.2.5",
     "postcss": "^6.0.9",
@@ -46,10 +45,5 @@
       "firefox >= 20"
     ]
   },
-  "dependencies": {
-    "@types/lunr": "^2.1.5",
-    "lunr": "^2.1.5",
-    "valine": "^1.1.8",
-    "whatwg-fetch": "^2.0.3"
-  }
+  "dependencies": {}
 }
