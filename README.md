@@ -28,7 +28,7 @@ Then, install the node dependencies with `yarn` or `npm`:
   yarn install # or npm install
 ```
 
-Finally, there are 2 gulp task we can run in the terminal:
+Finally, there are several gulp tasks we can run in the terminal:
 
 1. `gulp serve`: start a livereload dev server. equivalent to `hugo serve`.
 2. `gulp build`: generate static file to your publish dir. equivalent to `hugo`.
