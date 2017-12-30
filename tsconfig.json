@@ -5,6 +5,7 @@
         "target": "es5"
     },
     "include": [
+        "node_module/@types/**/*.ts",
         "script/script/**/*.ts"
     ],
     "exclude": [
