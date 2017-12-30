@@ -33,9 +33,11 @@ const themeDir = "themes/canoe";
 let env = "dev"; // dev , prod , theme
 
 gulp.task("clean", () =>
-  gulp
-    .src([devDir, prodDir, `${themeDir}/{layouts,static}`], { read: false })
-    .pipe(clean())
+  gulp.src([devDir, prodDir], { read: false }).pipe(clean())
+);
+
+gulp.task("clean:theme", () =>
+  gulp.src(`${themeDir}/{layouts,static}`).pipe(clean())
 );
 
 gulp.task("copy:static", () => {
@@ -155,7 +157,7 @@ gulp.task("lunr", () => {
   return lunr(option);
 });
 
-gulp.task("build:dev", ["clean"], cb => {
+gulp.task("build:dev", cb => {
   run("hugo", ["style", "script", "image", "copy:static", "lunr"], cb);
 });
 
@@ -189,7 +191,7 @@ gulp.task("copy:layouts", () => {
 gulp.task("theme", cb => {
   env = "theme";
   run(
-    ["clean"],
+    ["clean", "clean:theme"],
     ["script", "style", "image", "copy:static", "copy:layouts"],
     cb
   );
