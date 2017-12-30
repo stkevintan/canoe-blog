@@ -6,7 +6,7 @@ const clean = require("gulp-clean");
 const changed = require("gulp-changed");
 const sass = require("gulp-sass");
 const rollup = require("./buildtools/rollup");
-const lunr = require("./buildtools/lunr");
+const lunr = require("hugo-lunr-zh");
 const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
 const htmlmin = require("gulp-htmlmin");
@@ -143,10 +143,9 @@ gulp.task("htmlmin", () => {
 });
 
 gulp.task("lunr", () => {
+  const destDir = env === "dev" ? devDir : prodDir;
   const option = {
-    contextPath: "/posts/",
-    dir: "content/posts",
-    output: `${prodDir}/index.json`
+    output: `${destDir}/index.json`
   };
   if (siteConf.metaDataFormat === "yaml") {
     option.matterDelims = "---";
