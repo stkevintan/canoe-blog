@@ -18,7 +18,7 @@ body.covered {
     &>.container {
         position: relative;
         margin: 0 auto;
-        flex: 1;
+        flex: 1 1 auto;
         overflow:hidden;
     }
 }

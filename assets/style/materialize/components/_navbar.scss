@@ -64,7 +64,7 @@
     position: relative;
     background: lighten($primary-color, 10%);
     border-radius: 2px;
-    flex: 0 1 0;
+    flex: 0 1 auto;
     margin: 0 $gutter-width/2;
     transition: flex 0.2s, width 0.2s, -ms-flex 0.2s, background 0.2s;
     .form-group {
