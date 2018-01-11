@@ -1,5 +1,5 @@
-import U from "./domutil";
-import easingFunctions, { animate, cancelAnimate } from "./animate";
+import U from "./util";
+import animate, { easeInCubic } from "./animate";
 
 const tocPanel = U.get(".toc-panel");
 const toc = U.get("nav", tocPanel);
@@ -40,11 +40,11 @@ function scrollToElement(elem, cb) {
   const targetOffset = U.offset(elem).top - headerHeight;
   const deltaOffset = targetOffset - startOffset;
 
-  animateID && cancelAnimate(animateID);
-  animateID = animate(
+  animateID && animate.cancel(animateID);
+  animateID = animate.exec(
     percent => window.scroll(0, startOffset + deltaOffset * percent),
     400,
-    easingFunctions.easeInCubic,
+    easeInCubic,
     cb
   );
 }

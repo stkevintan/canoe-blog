@@ -1,5 +1,5 @@
-import easingFunctions, { animate, cancelAnimate } from "./animate";
-import U from "./domutil";
+import animate, { easeOutCubic } from "./animate";
+import U from "./util";
 
 //collapse
 const trigger = U.get(".navbar .button-collapse");
@@ -15,11 +15,11 @@ function showOverlay() {
   if (isInDom && overlay.style.opacity === "1") return;
   overlay.style.opacity = "0";
   if (!isInDom) document.body.appendChild(overlay);
-  animateID && cancelAnimate(animateID);
-  animateID = animate(
+  animateID && animate.cancel(animateID);
+  animateID = animate.exec(
     percent => (overlay.style.opacity = `${percent}`),
     200,
-    easingFunctions.easeOutCubic
+    easeOutCubic
   );
 }
 
@@ -30,11 +30,11 @@ function hideOverlay() {
     U.remove(overlay);
     return;
   }
-  animateID && cancelAnimate(animateID);
-  animateID = animate(
+  animateID && animate.cancel(animateID);
+  animateID = animate.exec(
     percent => (overlay.style.opacity = `${1 - percent}`),
     200,
-    easingFunctions.easeOutCubic,
+    easeOutCubic,
     () => U.remove(overlay)
   );
 }
@@ -45,11 +45,11 @@ export default function() {
   trigger.addEventListener("click", e => {
     e.preventDefault();
     showOverlay();
-    document.body.classList.add('mobile-sidebar-active');
+    document.body.classList.add("mobile-sidebar-active");
   });
   overlay.addEventListener("click", e => {
     e.stopPropagation();
-    document.body.classList.remove('mobile-sidebar-active');
+    document.body.classList.remove("mobile-sidebar-active");
     hideOverlay();
   });
 }

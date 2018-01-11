@@ -1,59 +1,21 @@
 const baseURL = window["baseURL"];
-const lunr = window["lunr"]; // import will cause js error.
+import lunr from "lunr";
+import U from "./util";
+import animate, { easeOutCubic } from "./animate";
 
-import U from "./domutil";
-import easingFunctions, { cancelAnimate, animate } from "./animate";
-
-lunr.trimmer = function(token) {
-  //check token is chinese then not replace
-  if (isChineseChar(token.str)) {
-    return token;
-  }
-  token.str = token.str.replace(/^\W+/, "").replace(/\W+$/, "");
-  return token;
-};
-
-function isChineseChar(str) {
-  var reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/;
-  return reg.test(str);
+interface ILunrPage {
+  uri: string;
+  title: string;
+  oriTitle: string;
+  tags: string[];
 }
 
-let db = null;
-
-function getIdx() {
-  if (db) return db;
-  const url = baseURL + "/index.json";
-  db = U.fetch(url)
-    .then(res => res.json())
-    .then(pages => {
-      const pageMap = Object.create(null);
-      for (const page of pages) {
-        pageMap[page.uri] = page;
-      }
-      const index = lunr(function() {
-        this.field("title", { boost: 10 });
-        this.field("tags", { boost: 5 });
-        this.field("content");
-        this.ref("uri");
-        pages.forEach(page => this.add(page));
-      });
-      return { pageMap: pageMap, index: index };
-    })
-    .catch(e => {
-      console && console.log("Error while getting lunr index file: ", e);
-    });
-  return db;
-}
-function search(query) {
-  return getIdx().then(data =>
-    data.index.search(query).map(item => data.pageMap[item.ref])
-  );
+interface IPageMap {
+  [key: string]: ILunrPage;
 }
 
-// const searchBtn = $('.search-btn');
 const navbar = U.get(".navbar");
 const searchForm = U.get(".nav-form", navbar);
-
 const formInput = U.get("input", searchForm) as HTMLInputElement;
 const formPanel = U.get(".search-result");
 const label = U.get("label", formPanel);
@@ -67,29 +29,74 @@ const mobileInput = U.get("input", mobilePanel) as HTMLInputElement;
 const mobileLabel = U.get("label", mobilePanel);
 const mobileList = U.get("ul", mobilePanel);
 
-function init(input, label, list) {
-  input.value = "";
-  const clear = (msg?) => {
-    label.textContent = msg || "暂无搜索结果";
-    list.innerHTML = "";
+const lunrLoader = (function() {
+  const trimmer = function(token) {
+    return token.update(str => {
+      if (/[\u4E00-\u9FA5\uF900-\uFA2D]/.test(str)) return str;
+      return str.replace(/^\W+/, "").replace(/\W+$/, "");
+    });
   };
-  const add = items => {
+  const lunr_zh = function() {
+    this.pipeline.reset();
+    this.pipeline.add(trimmer, lunr.stopWordFilter, lunr.stemmer);
+  };
+  lunr.Pipeline.registerFunction(trimmer, "trimmer-zh");
+  return U.memory(function() {
+    const url = baseURL + "/index.json";
+    return U.fetch(url)
+      .then(res => res.json())
+      .then((pages: ILunrPage[]) => {
+        const pageMap: IPageMap = Object.create(null);
+        pages.forEach(page => (pageMap[page.uri] = page));
+        const index = lunr(function() {
+          this.use(lunr_zh);
+          this.field("title");
+          this.field("tags");
+          this.field("content");
+          this.ref("uri");
+          pages.forEach(page => this.add(page));
+        });
+        return { pageMap, index };
+      })
+      .catch(e => {
+        console && console.log("Error while getting lunr index file: ", e);
+      });
+  });
+})();
+
+function common(inputEl, labelEl, listEl) {
+  inputEl.value = "";
+
+  const clear = (msg?: string) => {
+    labelEl.textContent = msg || "暂无搜索结果";
+    listEl.innerHTML = "";
+  };
+
+  const add = (items: ILunrPage[]) => {
     if (!items || !items.length) {
       clear();
       return;
     }
     if (!Array.isArray(items)) items = [items];
 
-    const itemStr = items.reduce(
-      (str, item) =>
-        `${str}<li><a href="${baseURL}${item.uri}">${item.oriTitle}</a></li>`,
-      ""
-    );
     clear(`搜到了${items.length}项结果`);
-    list.innerHTML = itemStr;
+
+    listEl.innerHTML = items
+      .map(t => `<li><a href="${baseURL}${t.uri}">${t.oriTitle}</a></li>`)
+      .join("");
   };
-  const doSearch = () => {
-    const query = ("" + input.value).trim();
+
+  const search = (query: string) => {
+    return lunrLoader().then(data => {
+      if (!data) return [];
+      return data.index.search(query).map(item => data.pageMap[item.ref]);
+    });
+  };
+
+  inputEl.addEventListener("keyup", e => {
+    e.preventDefault();
+    e.stopPropagation();
+    const query = ("" + inputEl.value).trim();
     if (query.length < 2) {
       clear();
       return;
@@ -98,20 +105,14 @@ function init(input, label, list) {
     search(query)
       .then(items => add(items))
       .catch(() => clear("搜索失败, 请检查网络"));
-  };
-  input.addEventListener("keyup", e => {
-    e.preventDefault();
-    e.stopPropagation();
-    doSearch();
   });
 }
 
-export default function() {
-  if (!searchBtn || !searchForm || !mobilePanel) return;
-  let searchOpened = false;
+function pc() {
+  let isOpen = false;
   searchForm.addEventListener("click", e => {
-    if (searchOpened) return;
-    searchOpened = true;
+    if (isOpen) return;
+    isOpen = true;
     navbar.classList.add("search-active");
   });
 
@@ -122,38 +123,48 @@ export default function() {
 
   document.addEventListener("click", e => {
     if (
-      !searchOpened ||
+      !isOpen ||
       searchForm === e.target ||
       searchForm.contains(e.target as Node)
     )
       return;
-    searchOpened = false;
+    isOpen = false;
     navbar.classList.remove("search-active");
   });
-  init(formInput, label, list);
 
+  common(formInput, label, list);
+}
+
+function mobile() {
   // mobile
   let animateID = null;
   searchBtn.addEventListener("click", () => {
     U.css(mobilePanel, "opacity", "0");
     document.body.classList.add("mobile-search-active");
     mobileInput.focus();
-    animateID && cancelAnimate(animateID);
-    animateID = animate(
+    animateID && animate.cancel(animateID);
+    animateID = animate.exec(
       percent => U.css(mobilePanel, "opacity", `${percent}`),
       200,
-      easingFunctions.easeOutCubic
+      easeOutCubic
     );
   });
   mobilePanelClose.addEventListener("click", () => {
-    animateID && cancelAnimate(animateID);
-    animateID = animate(
+    animateID && animate.cancel(animateID);
+    animateID = animate.exec(
       percent => U.css(mobilePanel, "opacity", `${1 - percent}`),
       200,
-      easingFunctions.easeOutCubic,
+      easeOutCubic,
       () => document.body.classList.remove("mobile-search-active")
     );
   });
 
-  init(mobileInput, mobileLabel, mobileList);
+  common(mobileInput, mobileLabel, mobileList);
+}
+
+export default function() {
+  if (!searchBtn || !searchForm || !mobilePanel) return;
+  lunrLoader();
+  pc();
+  mobile();
 }

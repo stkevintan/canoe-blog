@@ -21,7 +21,7 @@ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
 
 ustc： https://lug.ustc.edu.cn/wiki/mirrors/help/centos
 
-<!-- more -->
+<!--more-->
 
 163：
 

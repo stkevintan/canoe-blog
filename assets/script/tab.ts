@@ -1,5 +1,4 @@
-import U from "./domutil";
-import easingFunctions, { cancelAnimate, animate } from "./animate";
+import U from "./util";
 
 const tabul = U.get(".navbar ul.tabs");
 const tabs = U.getAll("li.tab", tabul);

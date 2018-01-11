@@ -40,14 +40,10 @@
 </head>
 
 {{ $path := split (replace .Permalink ( printf "%s" .Site.BaseURL) "") "/" }}
-
-
-
 <!-- -->
 
-
-
 {{ $curType := index $path (sub (len $path) 2)}}
+
 
 <body>
   <div class="navbar-fixed">

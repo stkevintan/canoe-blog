@@ -21,7 +21,7 @@ make install-config   # 生成配置文件
 echo 'http 10.100.100.136 4411' >> /etc/proxychains.conf  # 输入代理设置
 ```
 
-<!-- more -->
+<!--more-->
 
 ## TMUX
 

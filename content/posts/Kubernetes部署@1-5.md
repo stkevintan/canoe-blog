@@ -30,7 +30,7 @@ mv ~/.meow/rc ~/.meow/rc.bak
 xclip -o -sel clipboard > ~/.meow/rc
 ```
 
-<!-- more -->
+<!--more-->
 
 运行
 

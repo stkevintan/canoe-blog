@@ -170,11 +170,6 @@ $linkGap: 5px;
     }
   }
   .card-action {
-    i.material-icons {
-      font-size: 1.2em;
-      vertical-align: middle;
-      color: $card-link-color;
-    }
     &:last-child {
       border-radius: 0 0 2px 2px;
     }

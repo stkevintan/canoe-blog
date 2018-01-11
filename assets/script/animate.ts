@@ -5,94 +5,73 @@ export const requestAnimationFrame =
   window["msRequestAnimationFrame"] ||
   (cb => window.setTimeout(cb, 1000 / 60));
 
-let idx = 0;
-function makeID() {
-  return idx++;
-}
+// no easing, no acceleration
+export const linear = t => t;
+// accelerating from zero velocity
+export const easeInQuad = t => t * t;
+// decelerating to zero velocity
+export const easeOutQuad = t => t * (2 - t);
+// acceleration until halfway, then deceleration
+export const easeInOutQuad = t => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+// accelerating from zero velocity
+export const easeInCubic = t => t * t * t;
+// decelerating to zero velocity
+export const easeOutCubic = t => --t * t * t + 1;
+// acceleration until halfway, then deceleration
+export const easeInOutCubic = t =>
+  t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+// accelerating from zero velocity
+export const easeInQuart = t => t * t * t * t;
+// decelerating to zero velocity
+export const easeOutQuart = t => 1 - --t * t * t * t;
+// acceleration until halfway, then deceleration
+export const easeInOutQuart = t =>
+  t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
+// accelerating from zero velocity
+export const easeInQuint = t => t * t * t * t * t;
+// decelerating to zero velocity
+export const easeOutQuint = t => 1 + --t * t * t * t * t;
+// acceleration until halfway, then deceleration
+export const easeInOutQuint = t =>
+  t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
 
-let animateStateMap: any = {};
+class Animate {
+  private id = 0;
+  private active = {};
+  constructor() {}
 
-export function animate(
-  setter: Function,
-  duration: number,
-  easingFn: Function,
-  cb?: Function
-) {
-  const id = makeID();
-  animateStateMap[id] = true;
-  const start = performance.now();
-  const render = (now = performance.now()) => {
-    const delta = now - start;
-    if (!animateStateMap[id] || delta >= duration) {
-      setter(1);
-      delete animateStateMap[id];
-      cb && cb();
-      return;
-    }
-    setter(easingFn(delta / duration));
+  private uniqKey() {
+    return ++this.id;
+  }
+
+  exec(
+    transform: Function,
+    duration: number,
+    easingFn: Function = linear,
+    cb?: Function
+  ) {
+    const key = this.uniqKey();
+    this.active[key] = true;
+    const start = performance.now();
+    const render = (now = performance.now()) => {
+      const delta = now - start;
+      if (!this.active[key] || delta >= duration) {
+        transform(1);
+        delete this.active[key];
+        cb && cb();
+        return;
+      }
+      transform(easingFn(delta / duration));
+      requestAnimationFrame(render);
+    };
     requestAnimationFrame(render);
-  };
-  requestAnimationFrame(render);
-  return id;
-}
+  }
 
-export function cancelAnimate(id) {
-  if (animateStateMap[id] === true) {
-    animateStateMap[id] = false;
+  cancel(key: number) {
+    if (this.active[key] === true) {
+      this.active[key] = false;
+    }
   }
 }
 
-export default {
-  // no easing, no acceleration
-  linear: function(t) {
-    return t;
-  },
-  // accelerating from zero velocity
-  easeInQuad: function(t) {
-    return t * t;
-  },
-  // decelerating to zero velocity
-  easeOutQuad: function(t) {
-    return t * (2 - t);
-  },
-  // acceleration until halfway, then deceleration
-  easeInOutQuad: function(t) {
-    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-  },
-  // accelerating from zero velocity
-  easeInCubic: function(t) {
-    return t * t * t;
-  },
-  // decelerating to zero velocity
-  easeOutCubic: function(t) {
-    return --t * t * t + 1;
-  },
-  // acceleration until halfway, then deceleration
-  easeInOutCubic: function(t) {
-    return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
-  },
-  // accelerating from zero velocity
-  easeInQuart: function(t) {
-    return t * t * t * t;
-  },
-  // decelerating to zero velocity
-  easeOutQuart: function(t) {
-    return 1 - --t * t * t * t;
-  },
-  // acceleration until halfway, then deceleration
-  easeInOutQuart: function(t) {
-    return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * --t * t * t * t;
-  },
-  // accelerating from zero velocity
-  easeInQuint: function(t) {
-    return t * t * t * t * t;
-  },
-  // decelerating to zero velocity
-  easeOutQuint: function(t) {
-    return 1 + --t * t * t * t * t;
-  },
-  // acceleration until halfway, then deceleration
-  easeInOutQuint: function(t) {
-    return t < 0.5 ? 16 * t * t * t * t * t : 1 + 16 * --t * t * t * t * t;
-  }
-};
+export default new Animate();

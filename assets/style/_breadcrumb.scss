@@ -27,3 +27,9 @@
         }
     }
 }
+
+#index .breadcrumbs{
+    visibility: hidden;
+    font-size: 0;
+    height: 1.5*$gutter-width;
+}

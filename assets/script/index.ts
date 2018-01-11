@@ -1,5 +1,5 @@
 const baseURL = window["baseURL"];
-import U from "./domutil";
+import U from "./util";
 
 import search from "./search";
 import toc from "./toc";
@@ -39,7 +39,26 @@ function reveal() {
     reveals[i].classList.add("enter");
   }
 }
+
+function loadValine() {
+  const config = window["VALINECONFIG"];
+  if (!config) return;
+  const urls = [`${baseURL}/js/av-min.js`, `${baseURL}/js/Valine.min.js`];
+  const asyncloader = url =>
+    new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = url;
+      script.addEventListener("load", _ => resolve(), false);
+      script.addEventListener("error", _ => reject(), false);
+      document.body.appendChild(script);
+    });
+  Promise.all(urls.map(asyncloader))
+    .then(() => new window["Valine"](config))
+    .catch(e => U.log("load Valine Failed,", e));
+}
+
 U.domReady(() => {
+  loadValine();
   tab();
   toc();
   search();

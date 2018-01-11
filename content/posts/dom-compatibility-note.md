@@ -15,7 +15,7 @@ tags:
 2. add和remove方法不支持多参数
 3. SVG,MathML结点没有classList属性
 
-<!-- more -->
+<!--more-->
 ## Node种类
 ### Node.nodeName
 |Interface|nodeName|

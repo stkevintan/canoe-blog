@@ -25,16 +25,7 @@
   }
 </style>
 <script>
-  (function (u1, u2, v) {
-    var c = arguments - 1;
-    function a(u) {
-      var d = document, t = 'script', o = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      o.addEventListener('load', function () { --c || new Valine(v); }, false);
-      s.parentElement.insertBefore(o, s);
-    }
-    a(u1); a(u2);
-  })(window.baseURL + '/js/av-min.js', window.baseURL + '/js/Valine.min.js', {
+  window.VALINECONFIG = {
     el: '#comment',
     notify: false,
     verify: false,
@@ -43,5 +34,5 @@
     placeholder: '{{ .valine.placeholder }}',
     path: window.location.pathname,
     avatar: '{{ .valine.avatar }}'
-  });
+  }
 </script> {{ end }} {{ end }}

@@ -1,5 +1,15 @@
 const parser = new DOMParser();
 const util = {
+  log(...args) {
+    console && console.log(...args);
+  },
+  memory(Fn: Function) {
+    let ret;
+    return () => {
+      if (ret != null) return ret;
+      return (ret = Fn());
+    };
+  },
   fetch(url: string, options: any = {}) {
     if (options.credentials == null) options.credentials = "same-origin";
     return fetch(url, options).then(res => {
@@ -62,7 +72,7 @@ const util = {
       width = rect.width - horGap();
       height = rect.height - verGap();
     }
-    return { width: width, height: height };
+    return { width, height };
   }
 };
 

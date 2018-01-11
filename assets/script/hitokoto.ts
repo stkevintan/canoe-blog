@@ -1,23 +1,23 @@
-import U from "./domutil";
-import easingFunctions, { animate } from "./animate";
+import U from "./util";
+import animate, { easeOutCubic, easeInCubic } from "./animate";
 const enableFlag = window["getHitokoto"];
 const desc = U.get(".splash p.desc");
 const url = "https://sslapi.hitokoto.cn";
 
 function fadeOut(cb) {
-  animate(
+  animate.exec(
     percent => U.css(desc, "opacity", `${1 - percent}`),
     300,
-    easingFunctions.easeOutCubic,
+    easeOutCubic,
     cb
   );
 }
 
 function fadeIn() {
-  animate(
+  animate.exec(
     percent => U.css(desc, "opacity", `${percent}`),
     300,
-    easingFunctions.easeInCubic
+    easeInCubic
   );
 }
 

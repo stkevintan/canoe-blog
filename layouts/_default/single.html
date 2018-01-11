@@ -20,9 +20,8 @@
                 <span class="card-meta">
                   <time>
                     <!-- <i class="label material-icons">date_range</i> -->
-                    <span>{{ .Date.Format "Mon Jan 2 2006" }}</span>
+                    <span>{{ .Date.Format $.Site.Params.dateFormat }}</span>
                   </time>
-
                   {{ with .Params.categories }}
                   <address>
                     {{ range . }}
@@ -36,6 +35,9 @@
                 {{.Content }}
               </article>
 
+            </div>
+            <div class="card-action">
+                <i class="material-icons">mode_edit</i> Last Modified at <time>{{ .Lastmod.Format $.Site.Params.dateFormat }}</time>
             </div>
             {{ with .Params.tags }}
             <div class="card-action card-action-links">
@@ -66,7 +68,7 @@
       </section>
     </div>
   </section>
-  {{ partial "footer.html" . }}
+  {{ partialCached "footer.html" . }}
 </main>
 
-{{partial "script.html" .}}
+{{partialCached "script.html" .}}
