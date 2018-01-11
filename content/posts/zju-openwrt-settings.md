@@ -26,18 +26,17 @@ IPv6可谓是校园网的一大福利了。IPv6是没有IPv4的nat概念的。�
 
 >OpenWRT在默认情况下，会分配一个IPv6私网地址段，登录网页管理，在Network->Interfaces页面底下有Global network options->IPv6 ULA-Prefix这里应该有一个随机的fd开头的/64IPv6地址段，清空该地址并保存
 >SSH登录路由器，修改/etc/config/dhcp文件，添加如下部分，使用无状态地址自动配置（SLAAC）IPv6，不使用DHCPv6。
->```
->config dhcp 'lan'
->	option dhcpv6 'disabled'
->	option ra 'relay'
->	option ndp 'relay'
->config dhcp 'wan6'
->	option interface 'wan'
->	option dhcpv6 'disabled'
->	option ra 'relay'
->	option ndp 'relay'
->	option master '1'
->```
+>
+>       config dhcp 'lan'
+>           option dhcpv6 'disabled'
+>           option ra 'relay'
+>           option ndp 'relay'
+>       config dhcp 'wan6'
+>           option interface 'wan'
+>	        option dhcpv6 'disabled'
+>	        option ra 'relay'
+>	        option ndp 'relay'
+>	        option master '1'
 
 
 ## NexusHD 校内PT网站
