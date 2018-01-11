@@ -2,7 +2,6 @@
 title: ASP.NET MVC4笔记（一） 扩展Simplemembership
 date: '2015-02-24T18:45:07+08:00'
 tags:
-  - 'C#'
   - asp.net mvc4
   - simplemembership
 categories:

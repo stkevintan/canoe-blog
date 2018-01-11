@@ -1,7 +1,6 @@
 ---
 title: ASP.NET MVC 4笔记（二）
 tags:
-  - 'C#'
   - asp.net mvc4
 categories:
   - ASP.NET
