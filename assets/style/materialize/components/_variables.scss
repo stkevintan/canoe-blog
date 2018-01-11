@@ -39,6 +39,7 @@ $success-color: color("green", "base") !default;
 $error-color: color("red", "base") !default;
 $link-color: color("blue", "darken-1") !default;
 $hint-color: color("blue-grey","lighten-3") !default;
+$muted-color: #737373;
 $nav-bg-color: color("indigo","lighten-5") !default;
 // 2. Badges
 // ==========================================================================
@@ -192,7 +193,11 @@ $navbar-height-mobile: 56px !default;
 $navbar-line-height-mobile: $navbar-height-mobile !default;
 $navbar-font-size: 1.2rem !default;
 $navbar-font-color: #fff !default;
-$navbar-brand-font-size: 1.8rem !default;
+$navbar-brand-font-size: 1.5rem !default;
+
+// splash
+$splash-height: 344px !default;
+$splash-height-mobile: 250px !default;
 // 15. Side Navigation
 // ==========================================================================
 $sidenav-font-size: 14px !default;

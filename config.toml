@@ -1,14 +1,19 @@
-baseURL = "https://keyin.me/"
+baseURL = "https://keyin.me"
 languageCode = "zh-cn"
 title = "World of Forks"
+metaDataFormat = "yaml"
 
+theme = "canoe"
 
+# last mod time support
+enableGitInfo = true
 
 # if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
 hasCJKLanguage = true
 
 # DO　NOT MODIFY THIS CONFIG/不要修改这个配置
 publishDir = "docs"
+
 
 [sitemap]
   changefreq = "monthly"
@@ -17,14 +22,22 @@ publishDir = "docs"
 
 [params]
   author = "Kevin Tan"
-  subtitle = "Tempora mutantur, nos et mutamur in illis ..."
+  description = "Tempora mutantur, nos et mutamur in illis ..."
   copyright = "Copyleft@Kevin Tan"
+  # date format convert: http://fuckinggodateformat.com/
+  dateFormat = "2006年01月_2日"
+  # 用户头像地址, user avatar's url
   logo = "/img/avatar.jpg"
-  profile_background = "/img/20.jpg"
-  nest_bg = false
-  load_animation = true
   
-# 评论
+  # 首页横幅的背景链接, home banner's background url.
+  splash_bg = "/img/bg.jpg"
+
+  # 是否使用一言, if using hitokoto(dynamic moto phase in the home banner)
+  hitokoto = true
+
+  
+# comment settings, support 'valine' and 'disqus'.
+# more about 'valine', ref: http://valine.js.org/
 [params.comment]
   type = "valine"
 
@@ -38,38 +51,35 @@ publishDir = "docs"
   shortname = 'keyin'
 
 
-# 主菜单
+# Main menu
 [[menu.main]]
     name = "Home"
-    weight = 1
-    pre = "<i class='material-icons'>home</i>"
+    # associated with displaying order.
+    weight = 1 
     url = "/"
 
 [[menu.main]]
     name = "Archive"
     weight = 2
-    pre = "<i class='material-icons'>archive</i>"
     url = "/archive/"
-
-# [[menu.main]]
-#     name = "Category"
-#     weight = 3
-#     pre = "<i class='material-icons'>class</i>"
-#     url = "/categories/"
-
-# [[menu.main]]
-#     name = "Tag"
-#     weight = 4
-#     pre = "<i class='material-icons'>local_offer</i>"
-#     url = "/tags/"
-
+    
 [[menu.main]]
     name = "About"
     weight = 6
-    pre = "<i class='material-icons'>person</i>"
     url = "/about/"
 
-#  友情链接
+
+
+# 文章归类 Taxonomy
+[[menu.taxonomy]]
+  name = "Tag"
+  identifier="tags"
+
+[[menu.taxonomy]]
+  name = "Category"
+  identifier="categories"
+
+#  友情链接 Your Friend's blog links
 [[menu.friend]]
   name = "Frantic1048"
   url = "https://frantic1048.logdown.com/"
@@ -83,7 +93,7 @@ publishDir = "docs"
   url = "https://whst.github.io/"
 
 
-# 社交账号
+# 社交账号 Social Network
 [[menu.social]]
   pre = "<svg class='svg-icons svg-icons-github'><use xlink:href='#svg-icons-github'></use></svg>"
   name = "Github"
@@ -98,16 +108,3 @@ publishDir = "docs"
   pre = "<svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>"
   name = "Weibo"
   url = "http://weibo.com/kevinclasky"
-
-
-# # 文章归类类目
-# [[menu.taxonomy]]
-#   pre = "<i class='material-icons'>local_offer</i>"
-#   name = "Tag"
-#   identifier="tags"
-
-# [[menu.taxonomy]]
-#   pre = "<i class='material-icons'>class</i>"
-#   name = "Category"
-#   identifier="categories"
-

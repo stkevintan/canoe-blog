@@ -1,204 +1,198 @@
-const $ = require("gulp");
-const _ = require("gulp-util");
+const gulp = require("gulp");
+const util = require("gulp-util");
 const plumber = require("gulp-plumber");
 const imagemin = require("gulp-imagemin");
 const clean = require("gulp-clean");
 const changed = require("gulp-changed");
 const sass = require("gulp-sass");
-const rollup = require("rollup");
-const ts = require("rollup-plugin-typescript");
-const uglify = require("rollup-plugin-uglify");
+const rollup = require("./buildtools/rollup");
+const lunr = require("hugo-lunr-zh");
 const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
-
 const htmlmin = require("gulp-htmlmin");
 const rev = require("gulp-rev");
 const replace = require("gulp-rev-replace");
 const $if = require("gulp-if");
-const runseq = require("run-sequence");
+const run = require("run-sequence");
 const pngquant = require("imagemin-pngquant");
 const cp = require("child_process");
 const fs = require("fs");
 const toml = require("toml");
-const lunr = require("hugo-lunr");
 
 const bs = require("browser-sync").create();
 
 const c = Object.assign({}, require("./package").config);
 const siteConf = toml.parse(fs.readFileSync("./config.toml"));
 
-c.publishDir = siteConf.publishDir || "public";
+const srcDir = "assets";
 
-let prod = false;
+const devDir = ".tmp";
+const prodDir = siteConf.publishDir || "public";
+const themeDir = "themes/canoe";
 
-const src = {
-  css: "assets/style/**/*.scss",
-  jsdir: "assets/script/",
-  static: "assets/static/**/*",
-  img: "assets/image/**/*.{png,svg,jpg}"
-};
+let env = "dev"; // dev , prod , theme
 
-const dest = {
-  root: ".tmp-server",
-  css: ".tmp-server/css",
-  js: ".tmp-server/js",
-  img: ".tmp-server/img"
-};
-
-const publish = {
-  root: c.publishDir,
-  js: c.publishDir + "/js",
-  css: c.publishDir + "/css",
-  img: c.publicDir + "/img"
-};
-$.task("clean", () =>
-  $.src([dest.root, publish.root], { read: false }).pipe(clean())
-);
-$.task("copy:static", () =>
-  $.src(src.static).pipe($.dest(prod ? publish.root : dest.root))
+gulp.task("clean", () =>
+  gulp.src([devDir, prodDir], { read: false }).pipe(clean())
 );
 
-$.task("style", () => {
-  return $.src(src.css)
+gulp.task("clean:theme", () =>
+  gulp.src(`${themeDir}/{layouts,static}`).pipe(clean())
+);
+
+gulp.task("copy:static", () => {
+  const destDir =
+    env === "dev" ? devDir : env === "prod" ? prodDir : `${themeDir}/static`;
+  return gulp.src(`${srcDir}/static/**/*`).pipe(gulp.dest(destDir));
+});
+
+// => dev
+gulp.task("style", () => {
+  // cover the global destDir
+  const destDir = env === "theme" ? `${themeDir}/static/css` : `${devDir}/css`;
+  return gulp
+    .src(`${srcDir}/style/**/*.{scss,css}`)
     .pipe(plumber())
-    .pipe(changed(dest.css))
-    .pipe($if(!prod, sourcemaps.init()))
+    .pipe(changed(destDir))
+    .pipe($if(env === "dev", sourcemaps.init()))
     .pipe(sass().on("error", sass.logError))
-    .pipe($if(!prod, sourcemaps.write()))
+    .pipe($if(env === "dev", sourcemaps.write()))
     .pipe(
       $if(
-        prod,
+        env !== "dev",
         postcss([
           require("autoprefixer")({ browsers: c.browserslist }),
           require("cssnano")()
         ])
       )
     )
-    .pipe($.dest(dest.css))
+    .pipe(gulp.dest(destDir))
     .pipe(bs.stream({ match: "**/*.css" }));
 });
 
-function rollupMultiEntry(options) {
-  const watchOptions = [];
-  const rollupResults = options.map(option => {
-    const inputOpts = {
-      input: option.entry,
-      globals: { jquery: "$" },
-      format: "iife",
-      plugins: prod ? [ts(), uglify()] : [ts()]
-    };
-    const outputOpts = {
-      file: option.dest,
-      format: "iife",
-      sourcemap: !prod
-    };
-    watchOptions.push({ ...inputOpts, output: [outputOpts] });
-    return rollup.rollup(inputOpts).then(bundle => bundle.write(outputOpts));
-  });
-  return { promise: Promise.all(rollupResults), watchOptions };
-}
-
-$.task("script", () => {
-  const rollupResult = rollupMultiEntry([
-    { entry: `./${src.jsdir}/index.ts`, dest: `./${dest.js}/index.js` },
-    { entry: `./${src.jsdir}/canvas.ts`, dest: `./${dest.js}/canvas.js` }
-  ]);
-  if (!prod) {
-    //watch files in dev mode
-    const watcher = rollup.watch(rollupResult.watchOptions);
-    watcher.on("event", e => {
-      if (e.code === "END") {
-        _.log("rollup updated");
-        bs.reload();
-      }
-      if (e.code === "ERROR") {
-        _.log("rollup error: ", e);
-      }
-    });
-  }
-  return rollupResult.promise;
+//=> dev
+gulp.task("script", () => {
+  const destDir = env === "theme" ? `${themeDir}/static/js` : `${devDir}/js`;
+  return rollup(
+    [
+      { entry: `./${srcDir}/script/index.ts`, dest: `./${destDir}/index.js` },
+      { entry: `${srcDir}/script/canvas.ts`, dest: `./${destDir}/canvas.js` }
+    ],
+    env === "dev"
+  );
 });
 
-$.task("image", () => {
-  return $.src(src.img)
-    .pipe(changed(dest.img))
+// => dev
+gulp.task("image", () => {
+  const destDir = env === "theme" ? `${themeDir}/static/img` : `${devDir}/img`;
+  return gulp
+    .src(`${srcDir}/image/**/*.{png,jpg}`)
+    .pipe(changed(destDir))
     .pipe(
       $if(
-        prod,
+        env !== "dev",
         imagemin({
           progressive: true,
           use: [pngquant({ quality: 90 })]
         })
       )
     )
-    .pipe($.dest(dest.img));
+    .pipe(gulp.dest(destDir))
+    .pipe(bs.stream({ match: "**/*.{png,jpg}" }));
 });
 
-$.task("hugo", cb => {
-  const args = ["-d", `./${dest.root}`];
-  const hugo = cp.spawn("hugo", prod ? args : args.concat(["-w", "-b", "/."]));
-  hugo.stdout.on("data", data => _.log(data.toString()));
-  hugo.stderr.on("data", data => _.log("error: ", data.toString()));
+// => devDir
+gulp.task("hugo", cb => {
+  const prodArgs = ["-d", `./${devDir}`];
+  const devArgs = ["-d", `./${devDir}`, "-w", "-b", "/."];
+  const hugo = cp.spawn("hugo", env === "dev" ? devArgs : prodArgs);
+  hugo.stdout.on("data", data => util.log(data.toString()));
+  hugo.stderr.on("data", data => util.log("error: ", data.toString()));
   hugo.on("exit", code => {
-    _.log("hugo process exited with code", code);
-    prod && cb();
+    util.log("hugo process exited with code", code);
+    env !== "dev" && cb();
   });
-  !prod && cb();
+  // env == dev is in watch mode
+  env === "dev" && cb();
 });
 
-$.task("rev", () => {
+//devDir => prodDir
+gulp.task("rev", () => {
   const revExts = "png,svg,jpg,css,js";
-  return $.src(`${dest.root}/**/*.{${revExts}}`)
+  return gulp
+    .src(`${devDir}/**/*.{${revExts}}`)
     .pipe(rev())
-    .pipe($.dest(publish.root))
+    .pipe(gulp.dest(prodDir))
     .pipe(rev.manifest("rev-manifest.json"))
-    .pipe($.dest(dest.root));
+    .pipe(gulp.dest(devDir));
 });
 
-$.task("ref", () => {
-  const refExts = "html,css,js,xml";
-  return $.src(`${publish.root}/**/*.{${refExts}}`)
-    .pipe(replace({ manifest: $.src(`${dest.root}/rev-manifest.json`) }))
-    .pipe($.dest(publish.root));
+// prodDir => prodDir
+gulp.task("ref", () => {
+  const refExts = "html,css,js";
+  return gulp
+    .src(`${prodDir}/**/*.{${refExts}}`)
+    .pipe(replace({ manifest: gulp.src(`${devDir}/rev-manifest.json`) }))
+    .pipe(gulp.dest(prodDir));
 });
 
-$.task("htmlmin", () => {
-  return $.src(`${dest.root}/**/*.{html,xml}`)
+// devDir => target
+gulp.task("htmlmin", () => {
+  return gulp
+    .src(`${devDir}/**/*.{html,xml}`)
     .pipe($if("*.html", htmlmin({ collapseWhitespace: true })))
-    .pipe($.dest(publish.root));
+    .pipe(gulp.dest(prodDir));
 });
 
-$.task("lunr", cb => {
-  const h = new lunr();
-  const file = `${prod ? publish.root : dest.root}/index.json`;
-  h.index("content/post/**", file);
-  cb();
+gulp.task("lunr", () => {
+  const destDir = env === "dev" ? devDir : prodDir;
+  const option = {
+    output: `${destDir}/index.json`
+  };
+  if (siteConf.metaDataFormat === "yaml") {
+    option.matterDelims = "---";
+    option.matterType = "yaml";
+  }
+
+  return lunr(option);
 });
 
-$.task("build:dev", ["clean"], cb => {
-  runseq("hugo", ["style", "script", "image", "copy:static"], "lunr", cb);
+gulp.task("build:dev", cb => {
+  run("hugo", ["style", "script", "image", "copy:static", "lunr"], cb);
 });
 
-$.task("build", ["clean"], cb => {
-  prod = true;
-  runseq("build:dev", ["rev", "htmlmin"], "ref", cb);
+gulp.task("build", ["clean"], cb => {
+  env = "prod";
+  run("build:dev", ["rev", "htmlmin"], "ref", cb);
 });
 
-$.task("serve", ["build:dev"], () => {
+gulp.task("serve", ["build:dev"], () => {
   bs.init({
     reloadDebounce: 200,
     port: c.port,
     server: {
-      baseDir: dest.root
+      baseDir: devDir
     }
   });
+  //watch resources
+  gulp.watch(`${srcDir}/style/**/*.{scss,css}`, ["style"]);
+  gulp.watch(`${srcDir}/image/**/*.{png,jpg}`, ["image"]);
 
-  $.watch(src.css, ["style"]);
-  // $.watch(src.js, ["script"]);
+  const toReload = [`${devDir}/**/*.html`, `${devDir}/js/**/*.js`];
 
-  const reloadSource = [
-    dest.root + "/**/*.html",
-    dest.img + "/**/*.{png,svg,jpg}"
-  ];
-  $.watch(reloadSource).on("change", () => bs.reload());
+  gulp.watch(toReload).on("change", () => bs.reload());
+});
+
+// theme
+gulp.task("copy:layouts", () => {
+  gulp.src("layouts/**/*.html").pipe(gulp.dest(`${themeDir}/layouts`));
+});
+
+gulp.task("theme", cb => {
+  env = "theme";
+  run(
+    ["clean", "clean:theme"],
+    ["script", "style", "image", "copy:static", "copy:layouts"],
+    cb
+  );
 });

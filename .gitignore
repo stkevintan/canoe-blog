@@ -1,6 +1,10 @@
 /static/
 /staging/
-/.tmp-server/
+/.tmp/
 node_modules/
 yarn.lock
 /docs/
+/backup/
+.rpt2_cache
+.forestry/
+.directory

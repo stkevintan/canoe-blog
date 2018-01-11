@@ -1,8 +1,7 @@
 <div class="breadcrumbs" role="navigation" aria-label="breadcrumbs navigation">
   {{ $url := replace .Permalink ( printf "%s" .Site.BaseURL) "" }} 
   {{ $.Scratch.Add "path" .Site.BaseURL }} 
-  {{ $.Scratch.Add "currentURL" .URL }} 
-  {{ $pageNotFound := (eq (replace $.Site.BaseURL .Site.BaseURL "404.html") .URL) }}
+
     <a class="breadcrumb" href="{{ .Site.BaseURL }}"><i class="material-icons">location_on</i>Home</a>
     {{ range $index, $element := split $url "/" }}
       {{ $.Scratch.Add "path" $element }} 
@@ -10,12 +9,13 @@
       <!-- Check if the current list item is the last one -->
       {{ $isLast := eq ($.Scratch.Get "path") $.Permalink }}
       {{ if ne $element "" }} 
-        {{ if and (and (not $isLast) (not $pageNotFound)) }}
-          <a class="breadcrumb" href='{{ $.Scratch.Get "path" }}'>{{ title ( replace . "-" " ") }}</a>
-        {{ else if $pageNotFound }}
-          <span class="breadcrumb">404</span>
-        {{ else }}
+        {{ if $isLast }}
           <span class="breadcrumb">{{ $.Title }}</span>
+         
+        {{ else if eq $element "posts" }}
+          <!-- <span class="breadcrumb">Posts</span> -->
+        {{ else }}
+          <a class="breadcrumb" href='{{ $.Scratch.Get "path" }}'>{{ title ( replace . "-" " ") }}</a>
         {{ end }} 
       {{ end }} 
     {{ end }} 

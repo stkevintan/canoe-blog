@@ -1,86 +1,113 @@
-let isTocSelect = true;
-const $toc = $(".toc-panel nav");
-const $footer = $("footer.page-footer");
-const $post = $(".main-panel .container");
-const $header = $("nav.navbar");
-const gutterWidth = 20;
-const items = [].slice.call($toc.find("li a"));
+import U from "./util";
+import animate, { easeInCubic } from "./animate";
 
-//function animate above will convert float to int.
-const getAnchor = correction =>
-  items.map(elem =>
-    Math.floor($(elem.getAttribute("href")).offset().top - correction)
-  );
+const tocPanel = U.get(".toc-panel");
+const toc = U.get("nav", tocPanel);
+const footer = U.get("footer.page-footer");
+const post = U.get(".main-panel .container");
+const header = U.get("nav.navbar");
+const items: Element[] = [].slice.call(U.getAll("li a", toc));
+let isTocSelect, tocHeight, postOffset, headerHeight, anchor;
 
-const scrolltoElement = (elem, correction, cb) => {
-  const $elem = elem.href ? $(elem.getAttribute("href")) : $(elem);
-  $("html, body").animate(
-    { scrollTop: $elem.offset().top - correction + 1 },
+function getCurrentValue() {
+  postOffset = U.offset(post);
+  tocHeight = U.size(toc, true).height;
+  headerHeight = U.size(header).height;
+  anchor = getAnchor();
+  isTocSelect = true;
+}
+
+function getAnchorTarget(elem) {
+  //some id may be invalid, use attribute selector !
+  // do not use const target = U.get(elem.getAttribute("href"));
+  const id = elem.getAttribute("href").substr(1);
+  return U.get(`[id="${id}"]`);
+}
+
+function getAnchor() {
+  return items.map(elem => {
+    const target = getAnchorTarget(elem);
+    if (target == null) return 0;
+    return Math.round(U.offset(target).top - headerHeight - 20);
+  });
+}
+
+let animateID = null;
+function scrollToElement(elem, cb) {
+  if (elem.href) elem = getAnchorTarget(elem);
+  if (elem == null) return;
+  const startOffset = window.pageYOffset;
+  const targetOffset = U.offset(elem).top - headerHeight;
+  const deltaOffset = targetOffset - startOffset;
+
+  animateID && animate.cancel(animateID);
+  animateID = animate.exec(
+    percent => window.scroll(0, startOffset + deltaOffset * percent),
     400,
+    easeInCubic,
     cb
   );
-};
+}
+
+function onclick(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  const curEl = e.target as Element;
+  if (curEl.tagName !== "A") return;
+  const activeEl = U.get("a.active", toc);
+  if (activeEl) activeEl.classList.remove("active");
+  isTocSelect = false;
+  scrollToElement(curEl, () => {
+    isTocSelect = true;
+    curEl.classList.add("active");
+  });
+}
+
+function onscroll() {
+  if (!anchor) return;
+  const postHeight = U.size(post).height;
+  const scrollTop = window.pageYOffset;
+  const a_height = scrollTop + tocHeight + headerHeight;
+  const b_height = postOffset.top + postHeight;
+  const styles = getComputedStyle(toc);
+  const isFixed = styles.position === "fixed";
+  if (isFixed && a_height + headerHeight >= b_height) {
+    const top =
+      -tocPanel.getBoundingClientRect().top + b_height - a_height + "px";
+    U.css(toc, "cssText", `position:absolute;top: ${top}`);
+  }
+  if (!isFixed && a_height + headerHeight < b_height) {
+    U.css(toc, "cssText", "");
+  }
+
+  if (!isTocSelect) return;
+  //binary search.
+  let l = 0;
+  let r = anchor.length - 1;
+  let mid;
+  while (l < r) {
+    mid = (l + r + 1) >> 1;
+    if (anchor[mid] === scrollTop) l = r = mid;
+    else if (anchor[mid] < scrollTop) l = mid;
+    else r = mid - 1;
+  }
+
+  items.forEach((item, index) => {
+    if (index === l) item.classList.add("active");
+    else item.classList.remove("active");
+  });
+}
 
 export default function() {
-  let tocHeight = $toc.outerHeight(); // 包括内边距
-  let postOffset = $post.offset();
-  let headerHeight = $header.height();
-  let correction = headerHeight + gutterWidth;
-  let anchor = getAnchor(correction);
-  if ($toc.length === 0) return;
-
-  $toc.on("click", "a", e => {
-    e.preventDefault();
-    e.stopPropagation();
-    isTocSelect = false;
-    $toc.find("a").removeClass("active");
-    scrolltoElement(e.currentTarget, correction, () => {
-      isTocSelect = true;
-      $(e.currentTarget).addClass("active");
+  if (toc === null) return;
+  toc.addEventListener("click", onclick);
+  window.addEventListener("scroll", onscroll);
+  ["resize", "load"].map(evtName => {
+    window.addEventListener(evtName, () => {
+      getCurrentValue();
+      onscroll();
     });
   });
-
-  var onscroll = () => {
-    if (!anchor) return;
-    const postHeight = $post.height();
-    const scrollTop = $("html").scrollTop() || $("body").scrollTop();
-    const aheight = scrollTop + tocHeight + headerHeight;
-    const bheight = postOffset.top + postHeight;
-    if (aheight + headerHeight >= bheight) {
-      $toc.css({ top: bheight - aheight });
-    } else {
-      $toc.css({ top: "" });
-    }
-
-    if (isTocSelect) {
-      //binary search.
-      let l = 0;
-      let r = anchor.length - 1;
-      let mid;
-      while (l < r) {
-        mid = (l + r + 1) >> 1;
-        if (anchor[mid] === scrollTop) l = r = mid;
-        else if (anchor[mid] < scrollTop) l = mid;
-        else r = mid - 1;
-      }
-      $(items)
-        .removeClass("active")
-        .eq(l)
-        .addClass("active");
-    }
-  };
-
-  $(window).resize(() => {
-    anchor = getAnchor(correction);
-    postOffset = $post.offset();
-    tocHeight = $toc.outerHeight(); // 包括内边距
-    headerHeight = $header.height();
-    correction = headerHeight + 20;
-    isTocSelect = true;
-    onscroll();
-  });
-
-  $(window).scroll(() => onscroll());
-
+  getCurrentValue();
   onscroll();
 }

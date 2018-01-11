@@ -1,8 +1,9 @@
 .splash {
-  height: 250px;
+  height: $splash-height-mobile;
   @media #{$medium-and-up} {
-    height: 344px;
+    height: $splash-height;
   }
+
   width: 100%;
   background-color: $secondary-color;
   position: relative;
@@ -10,6 +11,7 @@
   .splash-bg {
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center 80%;
     position: absolute;
     top: 0;
     left: 0;

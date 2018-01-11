@@ -4,40 +4,27 @@
 
 .post-summary .article {
   h1 {
-      font-size: 25px;
-      line-height: 1.333334em;
+    font-size: 25px;
+    line-height: 1.333334em;
   }
   h2 {
-      font-size: 20px;
-      line-height: 1.4em;
-      padding: 0;
-      margin: 10px 0;
+    font-size: 20px;
+    line-height: 1.4em;
+    padding: 0;
+    margin: 10px 0;
   }
   h3,
   h4 {
-      font-size: 15px;
-      padding: 0;
-      margin: 10px 0;
+    font-size: 15px;
+    padding: 0;
+    margin: 10px 0;
   }
   pre {
-      padding: 0;
-      margin: 10px 0;
+    padding: 0;
+    margin: 10px 0;
   }
 }
-
-
-.post .card-action .btn{
-  line-height: 30px;
-  height: 30px;
-  padding: 0 1rem;
-  box-shadow: none;
-  background-color:$hint-color;
-  &:hover{
-      box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
-      background-color: $secondary-color;
-  }
-}
-.readmore{
+.readmore {
   display: inline-block;
 }
 
@@ -45,63 +32,54 @@
   margin: 0 auto;
   position: relative;
   .post {
-      .card{
-        margin: -9999px 0;
-        padding: 9999px 0;
-      }
+    .card {
+      margin: -9999px 0;
+      padding: 9999px 0;
+    }
+    &:not(.single-content-wrapper) {
       margin-right: 0;
-      @media(min-width: $article-min-width)  {
+      @media (min-width: $article-min-width) {
         margin-right: $toc-width;
       }
+    }
 
-      .breadcrumb-wrapper{
-        padding: 0 24px;
-        background-color: $nav-bg-color;
-        .breadcrumbs{
-          margin: 0;
+    .breadcrumb-wrapper {
+      padding: 0 24px;
+      background-color: $nav-bg-color;
+      .breadcrumbs {
+        margin: 0;
+      }
+    }
+    .card-header.postinfo {
+      background-color: $primary-color;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      .card-title {
+        color: #fff;
+        font-size: 2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+      @media #{$medium-and-up} {
+        min-height: 200px;
+        .card-title {
+          font-size: 2.5rem;
         }
       }
-      .metadata-wrapper{
-        background-color: $primary-color;
-        margin: -24px;
-        padding: 24px;
-        margin-bottom: $gutter-width;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: center;
-        .card-title{
+      .card-meta {
+        font-size: 15px;
+        time,
+        address a {
           color: #fff;
-          font-size: 2rem;
-          line-height: 1.2;
-          margin-bottom: 1rem;
         }
-        @media #{$medium-and-up} {
-          min-height:200px;
-          .card-title{
-            font-size: 2.5rem;
-          }
-        }
-        .card-meta{
-          font-size: 15px;
-          time,address a{
-            color: #fff;
-          }
-          address:before{
-            border-left-color: #fff;
-          }
-        }
-        .card-meta{
-          margin-bottom: 0;
+        address:before {
+          border-left-color: #fff;
         }
       }
-  }
-}
-
-.main-panel.no-toc {
-  .toc-panel {
-      display: none;
-  }
-  .post-wrapper .post {
-      margin-right: 0;
+      .card-meta {
+        margin-bottom: 0;
+      }
+    }
   }
 }

@@ -35,11 +35,19 @@ a.unstyled {
   text-overflow: ellipsis;
   overflow: hidden;
 }
+// change 
+@mixin placeholder {
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}  
+}
 
 @import "materialize/index";
 @import "svgIcon";
 @import "layout";
 @import "search";
+@import "taxonomy";
 @import "typo";
 @import "toc";
 @import "breadcrumb";
@@ -47,22 +55,36 @@ a.unstyled {
 @import "splash";
 @import "archive";
 
+
+.single-content-wrapper {
+  max-width: $container-max-width - $toc-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity .5s cubic-bezier(0.6, 0.2, 0.1, 1) ,transform .5s cubic-bezier(0.6, 0.2, 0.1, 1) ;
+  &.enter{
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
 .waterfall {
   columns: $waterfall-item-width;
   column-gap: 0;
   margin: $gutter-width/-2;
   &__item {
     padding: $gutter-width/2;
-    -webkit-column-break-inside: avoid;
     page-break-inside: avoid;
     break-inside: avoid-column;
     .card {
       margin: 0;
     }
   }
-}
-.main-container {
-  padding-top: $gutter-width* 1.5;
 }
 
 .pagination {
@@ -78,7 +100,7 @@ a.unstyled {
   }
   padding: 0 $gutter-width;
   background-color: $nav-bg-color;
-  
+
   .pagination-item {
     @extend .nowrap;
     width: 50%;
@@ -100,6 +122,48 @@ a.unstyled {
   }
 }
 
-#modal1 .modal-content {
-  padding: 0 24px;
+.btn.btn-secondary {
+  line-height: 30px;
+  height: 30px;
+  padding: 0 1rem;
+  box-shadow: none;
+  background-color: $hint-color;
+  &:hover {
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12),
+      0 3px 1px -1px rgba(0, 0, 0, 0.2);
+    background-color: $secondary-color;
+  }
+}
+
+#js-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 995;
+  cursor: pointer;
+  display: none;
+}
+
+.collection {
+  flex-flow: row wrap;
+  background: #fff;
+  columns: 400px;
+  padding: 12px 24px;
+  .collection-item {
+    display: block;
+    break-inside: avoid;
+    padding: 12px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: $off-black;
+    transition: all 0.2s;
+    &:hover {
+      background: #f7f7f7;
+    }
+  }
 }

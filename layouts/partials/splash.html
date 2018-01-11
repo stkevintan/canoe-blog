@@ -1,13 +1,14 @@
 <section class="splash">
-  <div class="splash-bg" style="background-image:url('{{ .Site.Params.profile_background }}')">
+  <div class="splash-bg" style="background-image:url('{{ .Site.Params.splash_bg }}')">
     <canvas id="canvas"></canvas>
   </div>
-  <div class="splash-content">
+  <div class="splash-content container">
     {{ with .Site.Params.logo }}
-      <img class="avatar reveal" src="{{ $.Site.BaseURL }}{{ . }}"/>
-    {{ end }}
-      {{ with .Site.Params.author }}<h3 class="nickname">{{ . }}</h3>{{ end }} 
-      {{ with .Site.Params.subtitle }}<p class="desc">{{ . }}</p>{{ end }}
+    <img class="avatar reveal" src="{{ $.Site.BaseURL }}{{ . }}" /> {{ end }} {{ with .Site.Params.author }}
+    <h3 class="nickname">{{ . }}</h3>{{ end }}
+    <p class="desc">{{ with .Site.Params.description }}{{ . }}{{ end }}</p>
   </div>
 </section>
-<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/canvas.js"></script> 
+{{ if eq true .Site.Params.hitokoto }}
+<script>window["getHitokoto"] = true;</script> {{ end }}
+<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/canvas.js"></script>
