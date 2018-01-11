@@ -3,9 +3,15 @@ const resolve = require("rollup-plugin-node-resolve");
 const commonjs = require("rollup-plugin-commonjs");
 const ts = require("rollup-plugin-typescript");
 const uglify = require("rollup-plugin-uglify");
+const devPlugins = [
+  resolve(),
+  commonjs(),
+  ts({
+    typescript: require("typescript")
+  })
+];
 
-const ProdPlugins = [resolve(), commonjs(), ts(), uglify()];
-const devPlugins = [resolve(), commonjs(), ts()];
+const ProdPlugins = [...devPlugins, uglify()];
 
 function watchChanges(options) {
   //watch files in dev mode

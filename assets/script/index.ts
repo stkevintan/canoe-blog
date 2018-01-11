@@ -1,4 +1,7 @@
 const baseURL = window["baseURL"];
+import "es6-promise/auto";
+
+
 import U from "./util";
 
 import search from "./search";

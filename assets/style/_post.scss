@@ -50,11 +50,8 @@
         margin: 0;
       }
     }
-    .metadata-wrapper {
+    .card-header.postinfo {
       background-color: $primary-color;
-      margin: -24px;
-      padding: 24px;
-      margin-bottom: $gutter-width;
       display: flex;
       flex-flow: column nowrap;
       justify-content: center;

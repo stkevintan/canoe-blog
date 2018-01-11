@@ -5,6 +5,8 @@ metaDataFormat = "yaml"
 
 theme = "canoe"
 
+# last mod time support
+enableGitInfo = true
 
 # if true, auto-detect Chinese/Japanese/Korean Languages in the content. (.Summary and .WordCount can work properly in CJKLanguage)
 hasCJKLanguage = true
@@ -22,6 +24,7 @@ publishDir = "docs"
   author = "Kevin Tan"
   description = "Tempora mutantur, nos et mutamur in illis ..."
   copyright = "Copyleft@Kevin Tan"
+  # date format convert: http://fuckinggodateformat.com/
   dateFormat = "2006年01月_2日"
   # 用户头像地址, user avatar's url
   logo = "/img/avatar.jpg"

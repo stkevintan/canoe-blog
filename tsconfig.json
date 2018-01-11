@@ -2,12 +2,20 @@
     "compilerOptions": {
         "module": "ES6",
         "removeComments": true,
-        "target": "es5"
+        "target": "es5",
+        "moduleResolution": "node",
+        "lib": [
+            "dom",
+            "es5",
+            "scripthost",
+            "es2015.promise"
+        ]
     },
-    "include": [
-        "node_module/@types/**/*.ts",
-        "script/script/**/*.ts"
-    ],
+    // "include": [
+    //     "node_module/@types/**/*.ts",
+    //     "assets/script/**/*.ts",
+    //     "node_module/es6-promise/es6-promise.d.ts"
+    // ],
     "exclude": [
         "**/*.spec.ts"
     ]

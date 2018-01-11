@@ -5,7 +5,7 @@ date: 2017-08-26T18:48:30+08:00
 tags:
 - hugo
 - blog generator
-title: 开始使用Hugo
+title: Hugo使用笔记
 ---
 
 Hugo是spf13大神写的一个静态博客生成器，拥有仅次于Hexo的用户量。相比于Hexo，Hugo使用Go编写，生成速度快了很多。除此之外，Hugo的设计更加合理，文档也比较详尽，比较适合我这种喜欢从零开始折腾的技术宅。本博客就是在hugo上搭建的，使用了自己编写的主题： [canoe](https://github.com/stkevintan/canoe-blog) 。

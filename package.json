@@ -7,7 +7,6 @@
   "author": "stkevintan",
   "license": "MIT",
   "devDependencies": {
-    "@types/lunr": "^2.1.5",
     "autoprefixer": "7.2.3",
     "browser-sync": "^2.18.13",
     "cssnano": "^3.10.0",
@@ -44,6 +43,8 @@
     ]
   },
   "dependencies": {
-    "lunr": "^2.1.5"
+    "es6-promise": "^4.2.2",
+    "lunr": "^2.1.5",
+    "whatwg-fetch": "^2.0.3"
   }
 }

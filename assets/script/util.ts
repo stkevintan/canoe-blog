@@ -1,3 +1,4 @@
+import "whatwg-fetch";
 const parser = new DOMParser();
 const util = {
   log(...args) {

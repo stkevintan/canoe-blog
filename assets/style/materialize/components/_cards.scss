@@ -21,6 +21,7 @@ $linkGap: 5px;
       cursor: pointer;
     }
     a {
+      // color: $off-black;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -128,44 +129,63 @@ $linkGap: 5px;
       margin: 0;
       color: inherit;
     }
-    .card-title {
-      display: block;
-      line-height: 32px;
-      margin-bottom: 12px;
-      i {
+  }
+  .card-header {
+    position: relative;
+    background-color: inherit;
+    border-bottom: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 16px 24px;
+    &.postinfo {
+      padding: 24px;
+      .card-title {
+        display: block;
         line-height: 32px;
+        i {
+          line-height: 32px;
+        }
       }
-    }
-    .card-meta {
-      display: block;
-      margin-bottom: 15px;
-      line-height: 20px;
-      i {
+      .card-meta {
+        display: block;
         line-height: 20px;
-        color: $muted-color;
-        vertical-align: middle;
-      }
-      time {
-        vertical-align: middle;
-        display: inline-block;
-        color: $muted-color;
-      }
-      address {
-        display: inline-block;
-        font-style: normal;
-        vertical-align: middle;
-        &:before {
-          content: "";
-          margin: 0 6px;
-          $width: 11px;
+        i {
+          line-height: 20px;
+          color: $muted-color;
+          vertical-align: middle;
+        }
+        time {
+          vertical-align: middle;
           display: inline-block;
-          height: $width;
-          border: {
-            top: $width/2 solid transparent;
-            bottom: $width/2 solid transparent;
-            left: $width solid $link-color;
+          color: $muted-color;
+        }
+        address {
+          display: inline-block;
+          font-style: normal;
+          vertical-align: middle;
+          &:before {
+            content: "";
+            margin: 0 6px;
+            $width: 11px;
+            display: inline-block;
+            height: $width;
+            border: {
+              top: $width/2 solid transparent;
+              bottom: $width/2 solid transparent;
+              left: $width solid $link-color;
+            }
           }
         }
+      }
+    }
+    &.lastmod {
+      color: $muted-color;
+      line-height: 25px;
+      i,
+      time {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      i{
+        font-size: 20px;
       }
     }
   }

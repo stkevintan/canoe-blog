@@ -1,43 +1,48 @@
-{{ partial "header.html" . }} 
+{{ partial "header.html" . }}
+<!---->
 {{ $tocable := and (index .Params "toc" | default true) (gt .WordCount 400) }}
+<!---->
 {{ $tocable := and (ne "" (print .TableOfContents)) $tocable }}
 <main id="single" role="main" class="main-panel">
   <section class="container">
     <div class="inner">
       <section class="post-wrapper">
-        {{if eq $tocable true}} 
-          <div class="toc-panel">
-            {{ .TableOfContents }}
-          </div>
+        {{if eq $tocable true}}
+        <div class="toc-panel">
+          {{ .TableOfContents }}
+        </div>
         {{ end }}
         <div class="post reveal {{if eq $tocable false}} single-content-wrapper {{end}}">
           <div class="card">
             <section class="breadcrumb-wrapper">{{ partial "breadcrumb.html" . }}</section>
+            {{ if ne .Params.type "about" }}
+            <div class="card-header postinfo">
+              <span class="card-title">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</span>
+              <span class="card-meta">
+                <time>
+                  <!-- <i class="label material-icons">date_range</i> -->
+                  <span>{{ .Date.Format $.Site.Params.dateFormat }}</span>
+                </time>
+                {{ with .Params.categories }}
+                <address>
+                  {{ range . }}
+                  <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
+                </address>
+                {{ end }}
+              </span>
+            </div>
+            <div class="card-header lastmod">
+              <i class="material-icons">mode_edit</i>
+              <time>最后修改：{{ .Lastmod.Format $.Site.Params.dateFormat }}
+              </time>
+            </div>
+            {{ end }}
             <div class="card-content">
-              {{ if ne .Params.type "about" }}
-              <section class="metadata-wrapper">
-                <span class="card-title">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</span>
-                <span class="card-meta">
-                  <time>
-                    <!-- <i class="label material-icons">date_range</i> -->
-                    <span>{{ .Date.Format $.Site.Params.dateFormat }}</span>
-                  </time>
-                  {{ with .Params.categories }}
-                  <address>
-                    {{ range . }}
-                    <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
-                  </address>
-                  {{ end }}
-                </span>
-              </section>
-              {{ end }}
+
               <article class="article">
                 {{.Content }}
               </article>
 
-            </div>
-            <div class="card-action">
-                <i class="material-icons">mode_edit</i> Last Modified at <time>{{ .Lastmod.Format $.Site.Params.dateFormat }}</time>
             </div>
             {{ with .Params.tags }}
             <div class="card-action card-action-links">
