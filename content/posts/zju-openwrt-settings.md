@@ -45,7 +45,7 @@ NexusHD只对浙大校园开放，里面的资源非常非常多而且速度也�
 
 1. **安装** ：`transmission-daemon-openssl` `transmission-remote-openssl`和`luci-app-transmission`
 2. **端口映射** ：设置transmission的Peer Port为51413，然后在防火墙里面打开51413端口以及转发wan的51413端口到lan上。
-3. **外接硬盘** ：插入并挂载一块移动硬盘，由于是NTFS格式的所以需要安装`ntfs-3g`,千万别看错了，`ntfs`只能只读挂载。
+3. **外接硬盘** ：插入并挂载一块移动硬盘(使用`blkid`查看硬盘的UUID)，由于是NTFS格式的所以需要安装`ntfs-3g`,千万别看错了，`ntfs`只能只读挂载。
 4. **samba服务** ：安装`luci-app-samba` 和`samba36-server`提供samba服务。这样我们就可以在任何联网设备中远程观看transmission下载下来视频了。
 
 
