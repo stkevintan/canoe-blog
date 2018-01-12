@@ -22,7 +22,7 @@
     "gulp-rev-replace": "^0.4.3",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "hugo-lunr-zh": "1.0.5",
+    "hugo-lunr-zh": "2.0.0",
     "imagemin-pngquant": "^5.0.1",
     "postcss": "^6.0.9",
     "rollup": "^0.52.3",

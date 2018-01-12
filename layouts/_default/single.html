@@ -18,23 +18,30 @@
             {{ if ne .Params.type "about" }}
             <div class="card-header postinfo">
               <span class="card-title">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</span>
-              <span class="card-meta">
-                <time>
-                  <!-- <i class="label material-icons">date_range</i> -->
-                  <span>{{ .Date.Format $.Site.Params.dateFormat }}</span>
-                </time>
-                {{ with .Params.categories }}
-                <address>
-                  {{ range . }}
-                  <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
-                </address>
-                {{ end }}
-              </span>
             </div>
-            <div class="card-header lastmod">
-              <i class="material-icons">mode_edit</i>
-              <time>最后修改：{{ .Lastmod.Format $.Site.Params.dateFormat }}
-              </time>
+            <div class="card-header date">
+              {{ with .Params.categories }}
+              <div class="group">
+                <i class="material-icons">book</i>
+                <address>
+                  归档：{{ range . }}<a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
+                </address>
+              </div>
+              {{ end }}
+              <div class="group">
+                <i class="material-icons">flag</i>
+                <time>创建于：{{ .Date.Format $.Site.Params.dateFormat }}
+                </time>
+              </div>
+              {{ if ne .Lastmod .Date }}
+              <div class="group">
+                <i class="material-icons">mode_edit</i>
+                <time>修改于：{{ .Lastmod.Format $.Site.Params.dateFormat }}
+                </time>
+              </div>
+              {{ end }}
+              <!---->
+
             </div>
             {{ end }}
             <div class="card-content">

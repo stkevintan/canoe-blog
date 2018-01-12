@@ -101,6 +101,24 @@ gulp.task("image", () => {
     .pipe(bs.stream({ match: "**/*.{png,jpg}" }));
 });
 
+gulp.task("pimg", () => {
+  const destDir = `${devDir}/pimg`;
+  return gulp
+    .src(`pimg/**/*.{png,jpg}`)
+    .pipe(changed(destDir))
+    .pipe(
+      $if(
+        env !== "dev",
+        imagemin({
+          progressive: true,
+          use: [pngquant({ quality: 90 })]
+        })
+      )
+    )
+    .pipe(gulp.dest(destDir))
+    .pipe(bs.stream({ match: "**/*.{png,jpg}" }));
+});
+
 // => devDir
 gulp.task("hugo", cb => {
   const prodArgs = ["-d", `./${devDir}`];
@@ -158,7 +176,7 @@ gulp.task("lunr", () => {
 });
 
 gulp.task("build:dev", cb => {
-  run("hugo", ["style", "script", "image", "copy:static", "lunr"], cb);
+  run("hugo", ["style", "script", "image","pimg", "copy:static", "lunr"], cb);
 });
 
 gulp.task("build", ["clean"], cb => {
@@ -177,7 +195,7 @@ gulp.task("serve", ["build:dev"], () => {
   //watch resources
   gulp.watch(`${srcDir}/style/**/*.{scss,css}`, ["style"]);
   gulp.watch(`${srcDir}/image/**/*.{png,jpg}`, ["image"]);
-
+  gulp.watch(`${srcDir}/pimg/**/*.{png,jpg}`, ['pimg']);
   const toReload = [`${devDir}/**/*.html`, `${devDir}/js/**/*.js`];
 
   gulp.watch(toReload).on("change", () => bs.reload());

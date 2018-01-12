@@ -1,236 +1,199 @@
-blockquote{
-    margin:$gutter-width 0;
+.article {
+  font-size: 16px;
+  line-height: 1.7em;
+  blockquote {
+    margin: $gutter-width 0;
     padding: 0 10px 0 16px;
-}
-.article {
-    font-size: 15px;
-    line-height: 1.7em
-}
+    border-left: 2px solid #3f51b5;
+    color: #4d4d4d;
+    background: #fafafa;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 1.333334em;
+    font-weight: bold;
+    padding-bottom: 0.5em;
+    margin: 0.67em 0;
+  }
 
-.article:after {
-    content: " ";
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0.8em 0;
+    line-height: 1.4em;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin: 1em 0;
+  }
+  h4 {
+    font-size: 20px;
+    margin: 1.2em 0;
+  }
+
+  h4 {
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  h3 a,
+  h4 a,
+  h5 a,
+  h6 a {
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  h1,
+  h2 {
+    color: #3f51b5;
+  }
+
+  h1 {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  }
+
+  p {
+    margin: 0;
+  }
+  // short code
+  code:not(.hljs) {
+    color: #3f51b5;
+    white-space: nowrap;
+    padding: 0.2em 0.4em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+  }
+  // code blocks
+  & > pre code:not(.hljs) {
+    overflow-x: auto;
     display: block;
-    clear: both
-}
-
-.article .wrapper {
-    padding: 116px 16px 92px
-}
-
-.article {
-    h1 {
-        font-size: 30px;
-        line-height: 1.333334em;
-    }
-    h2 {
-        font-size: 25px;
-        line-height: 1.4em;
-        // padding-top: 92px;
-        // margin-top: -56px
-    }
-    h3,
-    h4 {
-        font-size: 20px;
-        // padding-top: 76px;
-        // margin-top: -56px
-    }
-}
-
-.article h1,
-.article h2 {
-    color: $primary-color;
-}
-
-.article code:not(.hljs) {
-    background: #eee;
-    padding: 0 8px;
-    color: $primary-color;
-}
-
-.article pre code:not(.hljs){
-    width: 100%;
-    display:block;
     background: #2b303b;
     color: #c0c5c3;
-    padding: 0.5em;
-}
-
-.article kbd {
+    padding: 0.5em 24px;
+    border-radius: 0;
+  }
+  kbd {
     color: #555;
     background-color: #fcfcfc;
     border: 1px solid #ccc;
     border-bottom-color: #bbb;
     border-radius: 3px;
-    box-shadow: inset 0 -1px 0 #bbb
-}
+    -webkit-box-shadow: inset 0 -1px 0 #bbb;
+    box-shadow: inset 0 -1px 0 #bbb;
+  }
 
-.article h1 {
-    border-bottom: 1px solid rgba(0, 0, 0, .12)
-}
+  a {
+    color: #3f51b5;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+  }
 
-.article a {
-    border-bottom: 1px dotted
-}
+  a:focus,
+  a:hover {
+    color: #3f51b5;
+  }
 
-.article a:focus,
-.article a:hover {
-    color: $primary-color;
-}
+  .headerlink {
+    color: rgba(0, 0, 0, 0.26);
+    border: none;
+  }
 
-.article .headerlink {
-    color: rgba(0, 0, 0, .26);
-    border: none
-}
+  figure {
+    padding: 0 1.5px;
+  }
 
-.article table {
-    box-shadow: 0 1.5px 3px rgba(0, 0, 0, .24), 0 3px 8px rgba(0, 0, 0, .05);
-    border-radius: 3px
-}
-
-.article table th {
-    background: $primary-color;
-    color: #fff
-}
-
-.article table td {
-    border-top: 1px solid rgba(0, 0, 0, .05)
-}
-
-.article blockquote {
-    border-left: 2px solid $primary-color;
-    color: $off-black-light-1;
-    background: #fafafa;
-}
-
-.article .headerlink {
+  .headerlink {
     float: right;
     margin-left: 20px;
-    font-size: 14px
-}
+    font-size: 14px;
+  }
 
-h1 .article .headerlink {
-    display: none
-}
+  h1 .headerlink {
+    display: none;
+  }
 
-.article ol,
-.article p,
-.article ul {
-    margin-top: 1.5em
-}
+  ul,
+  ol {
+    padding-left: 0;
+    margin: 1.2em 0;
+    /* list-style-position: inside; */
+  }
 
-.article li,
-.article li ol,
-.article li ul {
-    margin-top: .75em
-}
+  li,
+  li ol,
+  li ul {
+    margin-top: 0.5em;
+  }
 
-.article li {
-    margin-left: 18px
-}
+  li {
+    margin-left: 18px;
+  }
 
-.article li p {
-    display: inline
-}
+  li p {
+    display: inline;
+  }
 
-//https://stackoverflow.com/questions/7250381/html-code-for-the-dot
-.article ul>li:before {
-    content: "\25CF";
-    display: block;
-    color: $off-black-light-1;
-    float: left;
-    font-size: 16px;
-    width: 1em;
-    margin-left: -1em;
-    vertical-align: middle;
-    line-height: 23px;
-}
-
-.article p>code {
+  p > code {
     word-break: break-all;
     word-wrap: break-word;
-    padding: 2px 4px
-}
+    padding: 2px 4px;
+  }
 
-.article kbd {
+  kbd {
     display: inline-block;
     padding: 3px 5px;
-    line-height: 10px
-}
+    line-height: 10px;
+  }
 
-.article hr {
-    margin-top: 1.5em
-}
+  hr {
+    margin-top: 1.5em;
+  }
 
-.article img {
-    max-width: 100%
-}
-
-.article pre {
-    padding: 16px 0;
+  img {
+    max-width: 100%;
+  }
+  & > pre {
     margin: 0 -24px;
+  }
+  pre {
+    padding: 10px 0;
     line-height: 1.5em;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-    code{
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-}
+  }
 
-.article table {
-    margin: 1.5em 0 1.5em;
+  pre code {
+    padding: 0.5em 24px;
+  }
+
+  table:not(.hljs-ln) {
+    margin: 1.5em 0;
     font-size: 13px;
-    overflow: hidden
-}
-
-.no-js .article table {
-    display: inline-block;
     max-width: 100%;
+    display:inline-block;
     overflow: auto;
-    -webkit-overflow-scrolling: touch
+    -webkit-box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.24),
+      0 3px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.24), 0 3px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 3px;
+    th {
+      background: #3f51b5;
+      color: #fff;
+      min-width: 100px;
+      font-size: 12px;
+      text-align: left;
+    }
+    td {
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    td,
+    th {
+      padding: 12px 16px;
+      vertical-align: top;
+    }
+  }
 }
-
-.article table th {
-    min-width: 100px;
-    font-size: 12px;
-    text-align: left
-}
-
-.article table td,
-.article table th {
-    padding: 12px 16px;
-    vertical-align: top
-}
-
-.article .data {
-    margin: 1.5em -16px;
-    padding: 1.5em 0;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-    text-align: center
-}
-
-.article .data table {
-    display: inline-block;
-    margin: 0 16px;
-    text-align: left
-}
-
-.article h3 {
-    font-weight: 700
-}
-
-.article h4 {
-    font-weight: 400;
-    font-style: italic
-}
-
-.article h2 a,
-.article h3 a,
-.article h4 a,
-.article h5 a,
-.article h6 a {
-    font-weight: 400;
-    font-style: normal
-}
-

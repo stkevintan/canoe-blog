@@ -275,7 +275,6 @@ function ChineseCut(str) {
 动画绝大情况可以使用css3 transition解决，但是还是有一些css无能为力的情况。比如说章节滚动等。因此我用`requestAnimate`写了一个简单的纯动画方法：
 
 ```typescript
-
 class Animate {
   private id = 0;
   private active = {};

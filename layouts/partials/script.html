@@ -1,15 +1,21 @@
 <script type="text/javascript" async src="//cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <script type="text/javascript" src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<!-- <script src="https://cdn.bootcss.com/highlightjs-line-numbers.js/2.1.0/highlightjs-line-numbers.min.js"></script> -->
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/go.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/languages/typescript.min.js"></script>
+<script>
+  hljs.configure({
+    tabReplace: '  '
+  })
+  hljs.registerLanguage("graphql", function (e) { return { aliases: ["gql"], k: { keyword: "query mutation subscription|10 type interface union scalar fragment|10 enum on ...", literal: "true false null" }, c: [e.HCM, e.QSM, e.NM, { cN: "type", b: "[^\\w][A-Z][a-z]", e: "\\W", eE: !0 }, { cN: "literal", b: "[^\\w][A-Z][A-Z]", e: "\\W", eE: !0 }, { cN: "variable", b: "\\$", e: "\\W", eE: !0 }, { cN: "keyword", b: "[.]{2}", e: "\\." }, { cN: "meta", b: "@", e: "\\W", eE: !0 }], i: /([;<']|BEGIN)/ } });
+  hljs.initHighlightingOnLoad();
+  // hljs.initLineNumbersOnLoad();
+</script>
 
 
 <!-- <script src="https://cdn.bootcss.com/lunr.js/2.1.5/lunr.min.js"></script> -->
 
-<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/index.js"></script> 
-
-
-{{ with .Site.Params.analytics }}
+<script type="text/javascript" src="{{ $.Site.BaseURL }}/js/index.js"></script> {{ with .Site.Params.analytics }}
 <script>
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {

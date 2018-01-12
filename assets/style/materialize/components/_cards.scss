@@ -176,17 +176,30 @@ $linkGap: 5px;
         }
       }
     }
-    &.lastmod {
+    &.date {
       color: $muted-color;
       line-height: 25px;
+      padding-right: 24px - 13px;
+      .group{
+        white-space: nowrap;
+        display: inline-block;
+        margin-right: 13px;
+        @media #{$small-and-down}{
+          display:block;
+        }
+      }
       i,
-      time {
+      time,address {
+        font-style: normal;
         display: inline-block;
         vertical-align: middle;
       }
       i{
         font-size: 20px;
       }
+      // a{
+      //   color: inherit;
+      // }
     }
   }
   .card-action {

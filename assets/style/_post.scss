@@ -19,10 +19,10 @@
     padding: 0;
     margin: 10px 0;
   }
-  pre {
-    padding: 0;
-    margin: 10px 0;
-  }
+  // pre {
+  //   padding: 0;
+  //   margin: 10px 0;
+  // }
 }
 .readmore {
   display: inline-block;
@@ -59,10 +59,10 @@
         color: #fff;
         font-size: 2rem;
         line-height: 1.2;
-        margin-bottom: 1rem;
+        margin: 0;
       }
       @media #{$medium-and-up} {
-        min-height: 200px;
+        min-height: 150px;
         .card-title {
           font-size: 2.5rem;
         }
@@ -74,7 +74,7 @@
           color: #fff;
         }
         address:before {
-          border-left-color: #fff;
+          display: none;
         }
       }
       .card-meta {

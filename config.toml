@@ -5,6 +5,9 @@ metaDataFormat = "yaml"
 
 theme = "canoe"
 
+# use typora to editor new posts
+NewContentEditor = "typora"
+
 # last mod time support
 enableGitInfo = true
 
@@ -108,3 +111,7 @@ publishDir = "docs"
   pre = "<svg class='svg-icons svg-icons-sina-weibo'><use xlink:href='#svg-icons-sina-weibo'></use></svg>"
   name = "Weibo"
   url = "http://weibo.com/kevinclasky"
+
+
+[blackfriday]
+  extensions = ["laxHtmlBlocks","noEmptyLineBeforeBlock","hardLineBreak"]
