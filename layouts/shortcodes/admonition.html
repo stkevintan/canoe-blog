@@ -4,8 +4,7 @@
   <p class="admonition-title">
     <i class="material-icons">
       {{ if eq $type "warning" }} warning {{ else }} assistant_photo {{ end }}
-    </i>
-    {{ $title }}
+    </i>{{ $title }}
   </p>
   <p>{{ printf "%s" .Inner | markdownify }}</p>
 </div>
