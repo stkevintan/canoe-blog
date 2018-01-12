@@ -1,7 +1,6 @@
 const baseURL = window["baseURL"];
 import "es6-promise/auto";
 
-
 import U from "./util";
 
 import search from "./search";
@@ -36,10 +35,25 @@ function taxonomy() {
     panelW.classList.remove("active");
   });
 }
+
+
 function reveal() {
   const reveals = U.getAll(".reveal");
   for (let i = 0; i < reveals.length; i++) {
     reveals[i].classList.add("enter");
+  }
+}
+
+function headerlink() {
+  const postsummary = U.get('.post-summary');
+  const article = U.get(".article");
+  if (!article || postsummary) return;
+  const headers = U.getAll("h1,h2,h3,h4,h5,h6", article);
+  for (let i = 0; i < headers.length; i++) {
+    const aHtml = `<a href="#${
+      headers[i].id
+    }" class="headerlink" title="Permanent link">#</a>`;
+    headers[i].appendChild(U.parseHtml(aHtml));
   }
 }
 
@@ -62,12 +76,15 @@ function loadValine() {
 
 U.domReady(() => {
   loadValine();
-  tab();
   toc();
+  loadSvg();
+  // headerlink();
+  // 文章未显示
+  reveal();
+  // 文章已显示
+  tab();
+  sidebar();
   search();
   taxonomy();
-  sidebar();
-  loadSvg();
-  reveal();
   hitokoto();
 });

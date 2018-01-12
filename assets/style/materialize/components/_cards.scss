@@ -2,7 +2,7 @@ $linkGap: 5px;
 .card-panel {
   transition: box-shadow 0.25s;
   padding: $card-padding;
-  margin: $element-top-margin 0 $element-bottom-margin 0;
+  margin: 0;
   border-radius: 2px;
   @extend .z-depth-1;
   background-color: $card-bg-color;
@@ -10,7 +10,7 @@ $linkGap: 5px;
 
 .card {
   position: relative;
-  margin: $element-top-margin 0 $element-bottom-margin 0;
+  margin: 0;
   background-color: $card-bg-color;
   transition: box-shadow 0.25s;
   border-radius: 2px;
@@ -211,9 +211,10 @@ $linkGap: 5px;
       i {
         font-size: 20px;
       }
-      // a{
-      //   color: inherit;
-      // }
+      a{
+        // color: inherit;
+        border-bottom: 1px dotted;
+      }
     }
   }
   .card-action {

@@ -6,7 +6,7 @@ metaDataFormat = "yaml"
 theme = "canoe"
 
 # use typora to editor new posts
-NewContentEditor = "typora"
+newContentEditor = "typora"
 
 # last mod time support
 enableGitInfo = true
@@ -31,7 +31,7 @@ publishDir = "docs"
   dateFormat = "2006年01月_2日"
   # 用户头像地址, user avatar's url
   logo = "/img/avatar.jpg"
-  
+
   # 首页横幅的背景链接, home banner's background url.
   splash_bg = "/img/bg.jpg"
 

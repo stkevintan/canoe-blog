@@ -1,29 +1,36 @@
 html,
-body
-{
-    height: 100%;
-    min-height: 100%;
+body {
+  height: 100%;
+  min-height: 100%;
 }
 
 body.covered {
-    overflow: hidden;
+  overflow: hidden;
 }
 // main
 .main-panel {
-    min-height: 100%;
-    transition: all .2s ease-in; // padding-left: $aside-width;
+  min-height: calc(100% - #{$navbar-height});
+  @media #{$small-and-down} {
+    min-height: calc(100% - #{$navbar-height-mobile});
+  }
+  transition: all 0.2s ease-in; // padding-left: $aside-width;
+  display: flex;
+  overflow: hidden;
+  flex-flow: column nowrap;
+  & > .container {
+    position: relative;
     display: flex;
-    overflow:hidden;
-    flex-flow: column nowrap;
-    &>.container {
-        position: relative;
+    margin: 0 auto;
+    flex: 1 1 auto;
+    overflow: hidden;
+    .inner{
+        flex:1 1 auto;
         margin: 0 auto;
-        flex: 1 1 auto;
-        overflow:hidden;
     }
+  }
 }
 
-.inner{
-    max-width: $container-max-width;
-    margin: auto;
+.inner {
+  max-width: $container-max-width;
+  margin: auto;
 }

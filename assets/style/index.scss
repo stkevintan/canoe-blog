@@ -81,9 +81,6 @@ a.unstyled {
     padding: $gutter-width/2;
     page-break-inside: avoid;
     break-inside: avoid-column;
-    .card {
-      margin: 0;
-    }
   }
 }
 

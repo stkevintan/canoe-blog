@@ -31,11 +31,12 @@
 
 .post-wrapper {
   margin: 0 auto;
+  height: 100%;
   position: relative;
   .post {
-    .card {
-      margin: -9999px 0;
-      padding: 9999px 0;
+    height: 100%;
+    .card{
+      min-height: 100%;
     }
     &:not(.single-content-wrapper) {
       margin-right: 0;
