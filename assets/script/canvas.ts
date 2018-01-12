@@ -3,19 +3,22 @@ import { requestAnimationFrame } from "./animate";
 const flakes = [];
 const canvas = document.getElementById("canvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d");
-const flakeCount = 400;
+let flakeCount = 400;
 let mX = -100;
 let mY = -100;
 
 function resize() {
   canvas.width = canvas.scrollWidth;
   canvas.height = canvas.scrollHeight;
+  flakeCount = Math.min(400, canvas.width / 5);
 }
 
 function snow() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (let i = 0; i < flakeCount; i++) {
+  if (flakeCount > flakes.length) {
+    for (let i = flakes.length; i < flakeCount; i++) flakes.push(create());
+  }
+  for (let i = 0; i < flakes.length; i++) {
     const flake = flakes[i],
       x = mX,
       y = mY,
@@ -48,21 +51,31 @@ function snow() {
     flake.x += flake.velX;
 
     if (flake.y >= canvas.height || flake.y <= 0) {
-      reset(flake);
+      if (reset(flake) === false) {
+        flakes.splice(i--, 1);
+        continue;
+      }
     }
 
     if (flake.x >= canvas.width || flake.x <= 0) {
-      reset(flake);
+      if (reset(flake) === false) {
+        flakes.splice(i--, 1);
+        continue;
+      }
     }
 
     ctx.beginPath();
     ctx.arc(flake.x, flake.y, flake.size, 0, Math.PI * 2);
     ctx.fill();
   }
+
   requestAnimationFrame(snow);
 }
 
 function reset(flake) {
+  if (flakeCount < flakes.length) {
+    return false;
+  }
   flake.x = Math.floor(Math.random() * canvas.width);
   flake.y = 0;
   flake.size = Math.random() * 3 + 2;
@@ -70,29 +83,34 @@ function reset(flake) {
   flake.velY = flake.speed;
   flake.velX = 0;
   flake.opacity = Math.random() * 0.5 + 0.3;
+  return true;
+}
+
+function create() {
+  const x = Math.floor(Math.random() * canvas.width),
+    y = Math.floor(Math.random() * canvas.height),
+    size = Math.random() * 3 + 2,
+    speed = Math.random() * 1 + 0.5,
+    opacity = Math.random() * 0.5 + 0.3;
+
+  return {
+    speed: speed,
+    velY: speed,
+    velX: 0,
+    x: x,
+    y: y,
+    size: size,
+    stepSize: Math.random() / 30,
+    step: 0,
+    opacity: opacity
+  };
 }
 
 function init() {
+  flakeCount = canvas.width / 5;
   for (let i = 0; i < flakeCount; i++) {
-    const x = Math.floor(Math.random() * canvas.width),
-      y = Math.floor(Math.random() * canvas.height),
-      size = Math.random() * 3 + 2,
-      speed = Math.random() * 1 + 0.5,
-      opacity = Math.random() * 0.5 + 0.3;
-
-    flakes.push({
-      speed: speed,
-      velY: speed,
-      velX: 0,
-      x: x,
-      y: y,
-      size: size,
-      stepSize: Math.random() / 30,
-      step: 0,
-      opacity: opacity
-    });
+    flakes.push(create());
   }
-
   snow();
 }
 

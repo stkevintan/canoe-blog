@@ -233,40 +233,7 @@ a {
     }
 }
 
-// Footer
-.page-footer {
-    position: relative;
-    z-index: 1;
-    padding-top: $gutter-width;
-    color: $footer-font-color;
-    background-color: $footer-bg-color;
-    a {
-        color: $footer-link-color;
-    }
-    ul.slink{
-        margin:$gutter-width  0;
-        list-style: none;
-        & > li{
-            display:inline-block;
-            a {
-                color: #fff;
-            }
-            svg {
-                fill: #fff;
-            }
-        }
-    }
-    .footer-copyright {
-        overflow: hidden;
-        min-height: 50px;
-        display: flex;
-        align-items: center;
-        padding: 10px 0px;
-        color: $footer-copyright-font-color;
-        background-color: $footer-copyright-bg-color;
-        @extend .light;
-    }
-}
+
 
 
 /*******************

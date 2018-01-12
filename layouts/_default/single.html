@@ -4,82 +4,85 @@
 <!---->
 {{ $tocable := and (ne "" (print .TableOfContents)) $tocable }}
 <main id="single" role="main" class="main-panel">
-  <section class="container">
-    <div class="inner">
-      <section class="post-wrapper">
-        {{if eq $tocable true}}
-        <div class="toc-panel">
-          {{ .TableOfContents }}
-        </div>
-        {{ end }}
-        <div class="post reveal {{if eq $tocable false}} single-content-wrapper {{end}}">
-          <div class="card">
-            <section class="breadcrumb-wrapper">{{ partial "breadcrumb.html" . }}</section>
-            {{ if ne .Params.type "about" }}
-            <div class="card-header postinfo">
-              <span class="card-title">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</span>
-            </div>
-            <div class="card-header date">
-              {{ with .Params.categories }}
-              <div class="group">
-                <i class="material-icons">book</i>
-                <address>
-                  归档：{{ range . }}<a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
-                </address>
-              </div>
-              {{ end }}
-              <div class="group">
-                <i class="material-icons">flag</i>
-                <time>创建于：{{ .Date.Format $.Site.Params.dateFormat }}
-                </time>
-              </div>
-              {{ if ne .Lastmod .Date }}
-              <div class="group">
-                <i class="material-icons">mode_edit</i>
-                <time>修改于：{{ .Lastmod.Format $.Site.Params.dateFormat }}
-                </time>
-              </div>
-              {{ end }}
-              <!---->
-
-            </div>
-            {{ end }}
-            <div class="card-content">
-
-              <article class="article">
-                {{.Content }}
-              </article>
-
-            </div>
-            {{ with .Params.tags }}
-            <div class="card-action card-action-links">
-              {{ range . }}
-              <a class="btn btn-secondary" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ . }}</a> {{ end }}
-            </div>
-            {{ end }}
-            <div class="card-action">
-              {{ partial "comment.html" . }}
-            </div>
-
-            {{ if eq .Type "posts" }}
-            <div class="pagination-single">
-              {{ with .Next }} {{if eq .Type "posts" }}
-              <span class="pagination-item previous">
-                <i class="material-icons">navigate_before</i>
-                <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a>
-              </span> {{ end }}{{ end }} {{ with .Prev }}{{if eq .Type "posts"}}
-              <span class="pagination-item next">
-                <i class="material-icons">navigate_next</i>
-                <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a>
-              </span> {{ end }}{{ end }}
-            </div>
-            {{ end }}
-
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <section class="post-wrapper">
+          {{if eq $tocable true}}
+          <div class="toc-panel">
+            {{ .TableOfContents }}
           </div>
-        </div>
-      </section>
+          {{ end }}
+          <div class="post reveal {{if eq $tocable false}} single-content-wrapper {{end}}">
+            <div class="card">
+              <section class="breadcrumb-wrapper">{{ partial "breadcrumb.html" . }}</section>
+              {{ if ne .Params.type "about" }}
+              <div class="card-header postinfo">
+                <span class="card-title">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</span>
+              </div>
+              <div class="card-header date">
+                {{ with .Params.categories }}
+                <div class="group">
+                  <i class="material-icons">book</i>
+                  <address>
+                    归档：{{ range . }}
+                    <a href="{{$.Site.BaseURL}}/categories/{{ . | urlize }}">{{ . }}</a>&nbsp; {{ end }}
+                  </address>
+                </div>
+                {{ end }}
+                <div class="group">
+                  <i class="material-icons">flag</i>
+                  <time>创建于：{{ .Date.Format $.Site.Params.dateFormat }}
+                  </time>
+                </div>
+                {{ if ne .Lastmod .Date }}
+                <div class="group">
+                  <i class="material-icons">mode_edit</i>
+                  <time>修改于：{{ .Lastmod.Format $.Site.Params.dateFormat }}
+                  </time>
+                </div>
+                {{ end }}
+                <!---->
+
+              </div>
+              {{ end }}
+              <div class="card-content">
+
+                <article class="article">
+                  {{.Content }}
+                </article>
+
+              </div>
+              {{ with .Params.tags }}
+              <div class="card-action card-action-links">
+                {{ range . }}
+                <a class="btn btn-secondary" href="{{ $.Site.BaseURL }}/tags/{{ . | urlize }}">{{ . }}</a> {{ end }}
+              </div>
+              {{ end }}
+              <div class="card-action">
+                {{ partial "comment.html" . }}
+              </div>
+
+              {{ if eq .Type "posts" }}
+              <div class="pagination-single">
+                {{ with .Next }} {{if eq .Type "posts" }}
+                <span class="pagination-item previous">
+                  <i class="material-icons">navigate_before</i>
+                  <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a>
+                </span> {{ end }}{{ end }} {{ with .Prev }}{{if eq .Type "posts"}}
+                <span class="pagination-item next">
+                  <i class="material-icons">navigate_next</i>
+                  <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a>
+                </span> {{ end }}{{ end }}
+              </div>
+              {{ end }}
+
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
-  </section>
+  </div>
   {{ partialCached "footer.html" . }}
 </main>
 

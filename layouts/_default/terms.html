@@ -1,29 +1,28 @@
-{{ partial "header.html" . }} 
-
-{{ $site := .Site }} 
-{{ $data := .Data }}
+{{ partial "header.html" . }} {{ $site := .Site }} {{ $data := .Data }}
 <main id="terms" role="main" class="main-panel no-toc">
-  <section class="container">
-    <div class="inner">
-      <div class="post-wrapper">
-        <div class="post reveal single-content-wrapper">
-          <div class="card">
-            <section class="breadcrumb-wrapper">  {{ partial "breadcrumb.html" . }} </section>
-            <div class="card-content">
-              {{ range $key, $value := .Data.Terms.Alphabetical }}
-                  <div class="chip">
-                    <a class="unstyled" href='{{ $site.BaseURL }}/{{ $data.Plural }}/{{ (replace $value.Name "#" "%23") | urlize }}'>
+  <div class="page-content">
+    <div class="container container-ex">
+      <div class="inner">
+        <div class="post-wrapper">
+          <div class="post reveal single-content-wrapper">
+            <div class="card">
+              <section class="breadcrumb-wrapper"> {{ partial "breadcrumb.html" . }} </section>
+              <div class="card-content">
+                {{ range $key, $value := .Data.Terms.Alphabetical }}
+                <div class="chip">
+                  <a class="unstyled" href='{{ $site.BaseURL }}/{{ $data.Plural }}/{{ (replace $value.Name "#" "%23") | urlize }}'>
                     {{ $value.Name }}
-                    </a>
+                  </a>
                   <sup class="tagcount">{{ $value.Count }}</sup>
-                </div>           
+                </div>
                 {{ end }}
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
   {{ partialCached "footer.html" . }}
 </main>
- {{partialCached "script.html" .}}
+{{partialCached "script.html" .}}

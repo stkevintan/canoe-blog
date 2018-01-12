@@ -16,14 +16,11 @@
     }
 }
 @media #{$small-and-down} {
-    section.container {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .card{
-        box-shadow:none;
+    .container.container-ex{
+        padding: 0;
     }
 }
+
 // @media #{$medium-and-up} {
 //     .container {
 //         width: 85%;
