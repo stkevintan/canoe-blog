@@ -1,13 +1,15 @@
 #archive {
   .breadcrumbs {
-    margin-left: 10px;
-    marign-right: 10px;
+    padding: 0 $card-padding;
+    @media #{$medium-and-down} {
+      padding: 0 $card-padding-mobile;
+    }
   }
   .collapsible {
     margin: 0;
-    padding: 0 $gutter-width;
+    padding: 0 $card-padding;
     @media #{$medium-and-down} {
-      padding: 0 $gutter-width/2;
+      padding: 0 $card-padding-mobile;
     }
     vertical-align: middle;
     .collapsible-header {

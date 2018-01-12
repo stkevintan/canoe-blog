@@ -1,0 +1,11 @@
+{{ $type := or (.Get "type") "note" }} {{ $title := or (.Get "title") "注意" }}
+
+<div class="admonition {{ $type }}">
+  <p class="admonition-title">
+    <i class="material-icons">
+      {{ if eq $type "warning" }} warning {{ else }} assistant_photo {{ end }}
+    </i>
+    {{ $title }}
+  </p>
+  <p>{{ printf "%s" .Inner | markdownify }}</p>
+</div>

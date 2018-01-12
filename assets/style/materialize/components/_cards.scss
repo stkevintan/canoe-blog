@@ -21,7 +21,8 @@ $linkGap: 5px;
       cursor: pointer;
     }
     a {
-      // color: $off-black;
+      color: $primary-color;
+      // font-weight: bold;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -123,7 +124,11 @@ $linkGap: 5px;
     }
   }
   .card-content {
-    padding: $card-padding;
+    padding: $card-padding-mobile $card-padding;
+    @media #{$small-and-down} {
+      padding-left: $card-padding-mobile;
+      padding-right: $card-padding-mobile;
+    }
     border-radius: 0 0 2px 2px;
     p {
       margin: 0;
@@ -135,8 +140,13 @@ $linkGap: 5px;
     background-color: inherit;
     border-bottom: 1px solid rgba(160, 160, 160, 0.2);
     padding: 16px 24px;
+    @media #{$small-and-down} {
+      padding-left: $card-padding-mobile;
+      padding-right: $card-padding-mobile;
+    }
     &.postinfo {
-      padding: 24px;
+      padding-top: 24px;
+      padding-bottom: 24px;
       .card-title {
         display: block;
         line-height: 32px;
@@ -179,22 +189,26 @@ $linkGap: 5px;
     &.date {
       color: $muted-color;
       line-height: 25px;
-      padding-right: 24px - 13px;
-      .group{
+      padding-right: $card-padding - 13px;
+      @media #{$small-and-down} {
+        padding-right: $card-padding-mobile - 13px;
+      }
+      .group {
         white-space: nowrap;
         display: inline-block;
         margin-right: 13px;
-        @media #{$small-and-down}{
-          display:block;
+        @media #{$small-and-down} {
+          display: block;
         }
       }
       i,
-      time,address {
+      time,
+      address {
         font-style: normal;
         display: inline-block;
         vertical-align: middle;
       }
-      i{
+      i {
         font-size: 20px;
       }
       // a{
@@ -209,14 +223,23 @@ $linkGap: 5px;
     position: relative;
     background-color: inherit;
     border-top: 1px solid rgba(160, 160, 160, 0.2);
-    padding: 16px $card-padding;
+    padding: $card-padding-mobile $card-padding;
+    @media #{$small-and-down} {
+      padding-left: $card-padding-mobile;
+      padding-right: $card-padding-mobile;
+    }
     &.card-action-links {
       display: flex;
       justify-content: flex-start;
       flex-flow: row wrap;
       align-items: center;
       align-content: flex-start;
-      padding: 16px $card-padding - $linkGap 16px - $linkGap $card-padding;
+      padding: $card-padding-mobile $card-padding - $linkGap
+        $card-padding-mobile - $linkGap $card-padding;
+      @media #{$small-and-down} {
+        padding-left: $card-padding-mobile;
+        padding-right: $card-padding-mobile - $linkGap;
+      }
       .btn {
         flex: 0 1 auto;
         margin: 0 5px 5px 0;

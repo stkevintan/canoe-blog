@@ -11,14 +11,14 @@
   h1 {
     font-size: 30px;
     line-height: 1.333334em;
-    font-weight: bold;
+    // font-weight: bold;
     padding-bottom: 0.5em;
     margin: 0.67em 0;
   }
 
   h2 {
     font-size: 25px;
-    font-weight: bold;
+    // font-weight: bold;
     margin: 0.8em 0;
     line-height: 1.4em;
   }
@@ -170,11 +170,22 @@
     padding: 0.5em 24px;
   }
 
+  @media #{$small-and-down} {
+    pre code {
+      padding-left: $card-padding-mobile;
+      padding-right: $card-padding-mobile;
+    }
+    & > pre {
+      margin-left: -$card-padding-mobile;
+      margin-right: -$card-padding-mobile;
+    }
+  }
+  
   table:not(.hljs-ln) {
     margin: 1.5em 0;
     font-size: 13px;
     max-width: 100%;
-    display:inline-block;
+    display: inline-block;
     overflow: auto;
     -webkit-box-shadow: 0 1.5px 3px rgba(0, 0, 0, 0.24),
       0 3px 8px rgba(0, 0, 0, 0.05);
@@ -194,6 +205,30 @@
     th {
       padding: 12px 16px;
       vertical-align: top;
+    }
+  }
+
+  .admonition {
+    margin: 20px (-$card-padding);
+    padding: 20px $card-padding;
+    @media #{$small-and-down} {
+      padding-left: $card-padding-mobile;
+      padding-right: $card-padding-mobile;
+      margin-left: -$card-padding-mobile;
+      margin-right: -$card-padding-mobile;
+    }
+    background: $admonition-note-bcolor;
+    color: #fff;
+    &.warning {
+      background: $admonition-warning-bcolor;
+    }
+    .admonition-title {
+      font-size: 20px;
+      i,
+      & {
+        vertical-align: top;
+      }
+      margin-bottom: 10px;
     }
   }
 }

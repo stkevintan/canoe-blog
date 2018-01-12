@@ -26,6 +26,7 @@
 }
 .readmore {
   display: inline-block;
+  margin-top: $gutter-width/2;
 }
 
 .post-wrapper {
@@ -44,7 +45,12 @@
     }
 
     .breadcrumb-wrapper {
-      padding: 0 24px;
+      padding: 0 $card-padding;
+      @media #{$small-and-down} {
+        padding-left: $card-padding-mobile;
+        padding-right: $card-padding-mobile;
+      }
+      
       background-color: $nav-bg-color;
       .breadcrumbs {
         margin: 0;
