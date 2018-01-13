@@ -4,6 +4,7 @@
   float: right;
   width: $toc-width;
   height: 100%;
+  padding-left: 10px;
   nav {
     top: $navbar-height-mobile;
     padding-top: $navbar-height-mobile;
@@ -37,7 +38,7 @@
     padding-left: 1em;
     ul > li {
       ul {
-        padding-left: 1em;
+        padding-left: 1.5em;
       }
       line-height: $toc-item-height;
       a {

@@ -1,25 +1,3 @@
-.container {
-    margin: 0 auto; // max-width: 1280px;
-    width: 100%;
-    padding: 0 $gutter-width;
-}
-
-@media #{$extra-large-and-up} {
-    .container {
-        padding: 0 $gutter-width * 1.5;
-    }
-}
-
-@media #{$medium-and-down} {
-    .container {
-        padding: 0 $gutter-width/2;
-    }
-}
-@media #{$small-and-down} {
-    .container.container-ex{
-        padding: 0;
-    }
-}
 
 // @media #{$medium-and-up} {
 //     .container {

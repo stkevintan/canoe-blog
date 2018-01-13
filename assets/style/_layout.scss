@@ -7,6 +7,29 @@ body {
 body.covered {
   overflow: hidden;
 }
+.container {
+  margin: 0 auto; // max-width: 1280px;
+  width: 100%;
+  padding: 0 $gutter-width;
+}
+
+@media #{$extra-large-and-up} {
+  .container {
+    padding: 0 $gutter-width * 1.5;
+  }
+}
+
+@media #{$medium-and-down} {
+  .container {
+    padding: 0 $gutter-width/2;
+  }
+}
+@media #{$small-and-down} {
+  .container.container-ex {
+    padding: 0;
+  }
+}
+
 // main
 .main-panel {
   min-height: calc(100% - #{$navbar-height});
@@ -24,10 +47,10 @@ body.covered {
   display: flex;
   flex: 1 1 auto;
   justify-content: center;
-  .container{
+  .container {
     flex: 1 1 auto;
     max-width: 100%;
-    .inner{
+    .inner {
       height: 100%;
     }
   }
@@ -39,6 +62,23 @@ body.covered {
   padding-top: $gutter-width;
   color: $footer-font-color;
   background-color: $footer-bg-color;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .group {
+    flex: 0 0 auto;
+    &.group-slink {
+      flex-basis: 66%;
+    }
+    &.group-flink {
+      flex-basis: 34%;
+    }
+    @media #{$small-and-down} {
+      min-width: 100%;
+    }
+  }
   a {
     color: $footer-link-color;
   }

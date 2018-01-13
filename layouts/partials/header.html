@@ -114,9 +114,9 @@
   <div class="taxonomy">
     <div class="container">
       <div class="inner">
-        <div class="taxonomy-panel row">
+        <div class="taxonomy-panel">
           {{ with .Site.Menus.taxonomy }}{{ range . }}
-          <div class="col s6">
+          <div class='group'>
             <label>{{ .Name | title }}</label>
             <ul>
               {{ $key := .Identifier }} {{ $value := (index $.Site.Taxonomies .Identifier) }} {{ range $value.ByCount }}

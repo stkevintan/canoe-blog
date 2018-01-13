@@ -100,21 +100,26 @@ a.unstyled {
   background-color: $nav-bg-color;
 
   .pagination-item {
-    @extend .nowrap;
     width: 50%;
     padding-right: $gutter-width/2;
+    float:left;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
     &.next {
+      justify-content: flex-end;
       padding-right: 0;
       padding-left: $gutter-width/2;
       float: right;
       text-align:right;
     }
-    a,
-    i {
-      vertical-align: middle;
-    }
     i {
       color: $secondary-color;
+      flex:none;
+    }
+    a{
+      @extend .nowrap;
+      flex: 1 2 auto;
     }
   }
 }
