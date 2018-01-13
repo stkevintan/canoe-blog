@@ -9,6 +9,7 @@ const rollup = require("./buildtools/rollup");
 const lunr = require("hugo-lunr-zh");
 const sourcemaps = require("gulp-sourcemaps");
 const postcss = require("gulp-postcss");
+const purifycss = require("gulp-purifycss");
 const htmlmin = require("gulp-htmlmin");
 const rev = require("gulp-rev");
 const replace = require("gulp-rev-replace");
@@ -57,15 +58,6 @@ gulp.task("style", () => {
     .pipe($if(env === "dev", sourcemaps.init()))
     .pipe(sass().on("error", sass.logError))
     .pipe($if(env === "dev", sourcemaps.write()))
-    .pipe(
-      $if(
-        env !== "dev",
-        postcss([
-          require("autoprefixer")({ browsers: c.browserslist }),
-          require("cssnano")()
-        ])
-      )
-    )
     .pipe(gulp.dest(destDir))
     .pipe(bs.stream({ match: "**/*.css" }));
 });
@@ -180,13 +172,27 @@ gulp.task("lunr", () => {
   return lunr(option);
 });
 
+gulp.task("purifycss", () => {
+  const base = env === "theme" ? `${themeDir}` : `${devDir}`;
+  return gulp
+    .src(`${base}/**/*.css`)
+    .pipe(purifycss([`${base}/**/*.html`, `${base}/**/*.js`]))
+    .pipe(
+      postcss([
+        require("autoprefixer")({ browsers: c.browserslist }),
+        require("cssnano")()
+      ])
+    )
+    .pipe(gulp.dest(base));
+});
+
 gulp.task("build:dev", cb => {
   run("hugo", ["style", "script", "image", "pimg", "copy:static", "lunr"], cb);
 });
 
 gulp.task("build", ["clean"], cb => {
   env = "prod";
-  run("build:dev", ["rev", "htmlmin"], "ref", cb);
+  run("build:dev", "purifycss", ["rev", "htmlmin"], "ref", cb);
 });
 
 gulp.task("serve", ["build:dev"], () => {
@@ -216,6 +222,7 @@ gulp.task("theme", cb => {
   run(
     ["clean", "clean:theme"],
     ["script", "style", "image", "copy:static", "copy:layouts"],
+    "purifycss",
     cb
   );
 });
