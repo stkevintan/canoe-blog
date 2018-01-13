@@ -1,5 +1,4 @@
 const baseURL = window["baseURL"];
-import "es6-promise/auto";
 
 import U from "./util";
 
@@ -36,7 +35,6 @@ function taxonomy() {
   });
 }
 
-
 function reveal() {
   const reveals = U.getAll(".reveal");
   for (let i = 0; i < reveals.length; i++) {
@@ -45,7 +43,7 @@ function reveal() {
 }
 
 function headerlink() {
-  const postsummary = U.get('.post-summary');
+  const postsummary = U.get(".post-summary");
   const article = U.get(".article");
   if (!article || postsummary) return;
   const headers = U.getAll("h1,h2,h3,h4,h5,h6", article);
@@ -75,8 +73,8 @@ function loadValine() {
 }
 
 U.domReady(() => {
-  loadValine();
   toc();
+  loadValine();
   loadSvg();
   // headerlink();
   // 文章未显示

@@ -1,12 +1,12 @@
 {{ partial "header.html" . }} {{ $site := .Site }} {{ $data := .Data }}
-<main id="terms" role="main" class="main-panel no-toc">
+<main id="terms" role="main" class="main-panel">
   <div class="page-content">
     <div class="container container-ex">
       <div class="inner">
         <div class="post-wrapper">
-          <div class="post reveal single-content-wrapper">
+          <div class="post reveal no-toc">
             <div class="card">
-              <section class="breadcrumb-wrapper"> {{ partial "breadcrumb.html" . }} </section>
+              {{ partial "breadcrumb.html" . }}
               <div class="card-content">
                 {{ range $key, $value := .Data.Terms.Alphabetical }}
                 <div class="chip">

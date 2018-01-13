@@ -1,12 +1,11 @@
 {
     "compilerOptions": {
-        "module": "ES6",
+        "module": "esnext",
         "removeComments": true,
         "target": "es5",
         "moduleResolution": "node",
         "lib": [
             "dom",
-            "es5",
             "scripthost",
             "es2015.promise"
         ]

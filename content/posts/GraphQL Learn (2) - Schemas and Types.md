@@ -25,7 +25,7 @@ grammar_cjkRuby: true
   }
 }
 ```
-
+<!--more-->
 ```json
 {
   "data": {
@@ -40,7 +40,7 @@ grammar_cjkRuby: true
   }
 }
 ```
-<!--more-->
+
 
 
 1. 从一个特殊的 "root"对象开始

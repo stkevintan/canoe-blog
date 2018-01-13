@@ -2,7 +2,7 @@
 <main id="archive" role="main" class="main-panel">
   <section class="container container-ex">
     <div class="inner">
-        <div class="single-content-wrapper">
+        <div class="no-toc">
       {{ partial "breadcrumb.html" . }}
         <ul class="collapsible popout reveal" data-collapsible="accordion">
           {{ $post := where (where $.Site.Pages "Type" "posts") "Kind" "page" }} {{ range $post.GroupByDate "01 - 2006" }}

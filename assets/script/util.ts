@@ -1,8 +1,14 @@
-import "whatwg-fetch";
 const parser = new DOMParser();
 const util = {
   log(...args) {
     console && console.log(...args);
+  },
+  fork(type: string, params, cb: Function) {
+    const worker = new Worker("/js/worker.js");
+    worker.addEventListener("message", e => {
+      if (e.data.type === type) cb(e.data.res);
+    });
+    worker.postMessage({ type, params });
   },
   memory(Fn: Function) {
     let ret;

@@ -1,6 +1,8 @@
 <div class="container container-ex">
   <div class="inner">
+    {{ if not .IsHome }}
     {{ partial "breadcrumb.html" . }}
+    {{ end }}
     <div class="waterfall">
       {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }} {{ range $paginator.Pages }}
       <div class="waterfall__item">

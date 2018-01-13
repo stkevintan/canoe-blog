@@ -14,14 +14,12 @@ Polymer提供一系列的自定义元素来简化一些共有的数据绑定逻�
 - `dom-if` 条件显示
 - `dom-bind` 自动绑定
 
-
 >**2.0 tip.** The data binding helper elements are bundled in to the backward-compatible,
 `polymer.html` import. If you aren't using the legacy import, you'll need to import the
 helper elements you're using.
 
 为了向前兼容，`polymer.html`引入了所有的helper元素，而2.0的`polymer.Element`则要按照需要一个个手动引入。
-
-
+<!--more-->
 
 ## Template repeater (dom-repeat)
 

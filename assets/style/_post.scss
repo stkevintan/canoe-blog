@@ -35,23 +35,17 @@
   position: relative;
   .post {
     height: 100%;
-    .card{
+    .card {
       min-height: 100%;
     }
-    &:not(.single-content-wrapper) {
+    &:not(.no-toc) {
       margin-right: 0;
       @media (min-width: $article-min-width) {
         margin-right: $toc-width;
       }
     }
 
-    .breadcrumb-wrapper {
-      padding: 0 $card-padding;
-      @media #{$small-and-down} {
-        padding-left: $card-padding-mobile;
-        padding-right: $card-padding-mobile;
-      }
-      
+    .breadcrumb-root {
       background-color: $nav-bg-color;
       .breadcrumbs {
         margin: 0;

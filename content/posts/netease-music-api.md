@@ -14,8 +14,8 @@ grammar_cjkRuby: true
 新API采用了略微修改过的AES和RSA加密，主要用在登陆接口上，对新API进行简单的分析。
 ## Url
 估计会抓包的人都知道，Url中的api便成了weapi。比如手机登录：
-原来是：`http://music.163.com/api/login/cellphone/`
-现在是：`http://music.163.com/weapi/login/cellphone/`
+原来是：http://music.163.com/api/login/cellphone/
+现在是：http://music.163.com/weapi/login/cellphone/
 
 ## 加密算法
 核心过程如下：

@@ -7,6 +7,7 @@ $container-min-width: 960px;
 $container-max-width: 1300px;
 $article-min-width: 1000px;
 $toc-width: 320px;
+$toc-item-height: 25px;
 $footer-height: 225px;
 body {
   background: $body-bg;
@@ -56,7 +57,7 @@ a.unstyled {
 @import "archive";
 
 
-.single-content-wrapper {
+.no-toc {
   max-width: $container-max-width - $toc-width;
   margin-left: auto;
   margin-right: auto;
@@ -106,11 +107,10 @@ a.unstyled {
       padding-right: 0;
       padding-left: $gutter-width/2;
       float: right;
-      direction: rtl;
+      text-align:right;
     }
     a,
     i {
-      direction: ltr;
       vertical-align: middle;
     }
     i {

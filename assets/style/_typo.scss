@@ -14,7 +14,6 @@
     // font-weight: bold;
     padding-bottom: 0.5em;
     margin: 0.67em 0;
-
   }
 
   h2 {
@@ -116,7 +115,14 @@
   h1 .headerlink {
     display: none;
   }
-
+  ul,
+  ul > li {
+    list-style-type: disc;
+  }
+  li ul,
+  li ul li {
+    list-style-type: circle;
+  }
   ul,
   ol {
     padding-left: 0;
@@ -127,7 +133,7 @@
   li,
   li ol,
   li ul {
-    margin-top: 0.5em;
+    margin: 0.5em 0;
   }
 
   li {
@@ -225,7 +231,7 @@
     }
     .admonition-title {
       font-size: 20px;
-      i{
+      i {
         margin-right: 5px;
         vertical-align: top;
       }

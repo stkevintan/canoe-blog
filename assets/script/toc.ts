@@ -7,6 +7,9 @@ const footer = U.get("footer.page-footer");
 const post = U.get(".main-panel .container");
 const header = U.get("nav.navbar");
 const items: Element[] = [].slice.call(U.getAll("li a", toc));
+
+let activeItem = null;
+
 let isTocSelect, tocHeight, postOffset, headerHeight, anchor;
 
 function getCurrentValue() {
@@ -48,18 +51,41 @@ function scrollToElement(elem, cb) {
     cb
   );
 }
+const indicatorFn = U.memory(() => {
+  const str = `<div class="indicator"></div>`;
+  const el = U.parseHtml(str);
+  toc.appendChild(el);
+  return el;
+});
+
+function setactive(el) {
+  console.log(el);
+  if (activeItem === el) return;
+  if (activeItem) {
+    activeItem.classList.remove("active");
+    el.classList.add("active");
+  } else {
+    for (const item of items) {
+      if (item === el) item.classList.add("active");
+      else item.classList.remove("active");
+    }
+  }
+
+  activeItem = el;
+  const indicator = indicatorFn();
+  U.css(indicator, "top", `${el.offsetTop}px`);
+  indicator.classList.add("show");
+}
 
 function onclick(e) {
   e.preventDefault();
   e.stopPropagation();
   const curEl = e.target as Element;
   if (curEl.tagName !== "A") return;
-  const activeEl = U.get("a.active", toc);
-  if (activeEl) activeEl.classList.remove("active");
   isTocSelect = false;
+  setactive(curEl);
   scrollToElement(curEl, () => {
     isTocSelect = true;
-    curEl.classList.add("active");
   });
 }
 
@@ -91,11 +117,7 @@ function onscroll() {
     else if (anchor[mid] < scrollTop) l = mid;
     else r = mid - 1;
   }
-
-  items.forEach((item, index) => {
-    if (index === l) item.classList.add("active");
-    else item.classList.remove("active");
-  });
+  setactive(items[l]);
 }
 
 export default function() {

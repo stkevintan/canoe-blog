@@ -75,8 +75,13 @@ gulp.task("script", () => {
   const destDir = env === "theme" ? `${themeDir}/static/js` : `${devDir}/js`;
   return rollup(
     [
+      {
+        entry: `./${srcDir}/script/polyfill.ts`,
+        dest: `./${destDir}/polyfill.js`
+      },
       { entry: `./${srcDir}/script/index.ts`, dest: `./${destDir}/index.js` },
-      { entry: `${srcDir}/script/canvas.ts`, dest: `./${destDir}/canvas.js` }
+      { entry: `./${srcDir}/script/canvas.ts`, dest: `./${destDir}/canvas.js` }
+      // { entry: `${srcDir}/script/worker.ts`, dest: `./${destDir}/worker.js` }
     ],
     env === "dev"
   );
@@ -176,7 +181,7 @@ gulp.task("lunr", () => {
 });
 
 gulp.task("build:dev", cb => {
-  run("hugo", ["style", "script", "image","pimg", "copy:static", "lunr"], cb);
+  run("hugo", ["style", "script", "image", "pimg", "copy:static", "lunr"], cb);
 });
 
 gulp.task("build", ["clean"], cb => {
@@ -195,7 +200,7 @@ gulp.task("serve", ["build:dev"], () => {
   //watch resources
   gulp.watch(`${srcDir}/style/**/*.{scss,css}`, ["style"]);
   gulp.watch(`${srcDir}/image/**/*.{png,jpg}`, ["image"]);
-  gulp.watch(`${srcDir}/pimg/**/*.{png,jpg}`, ['pimg']);
+  gulp.watch(`${srcDir}/pimg/**/*.{png,jpg}`, ["pimg"]);
   const toReload = [`${devDir}/**/*.html`, `${devDir}/js/**/*.js`];
 
   gulp.watch(toReload).on("change", () => bs.reload());

@@ -1,45 +1,73 @@
 .toc-panel {
-    position: relative;
-    display:none;
-    float: right;
+  position: relative;
+  display: none;
+  float: right;
+  width: $toc-width;
+  height: 100%;
+  nav {
+    top: $navbar-height-mobile;
+    padding-top: $navbar-height-mobile;
+    @media #{$medium-and-up} {
+      top: $navbar-height;
+      padding-top: $navbar-height;
+    }
     width: $toc-width;
-    height: 100%;
-    nav {
-        top: $navbar-height-mobile;
-        padding-top: $navbar-height-mobile;
-        @media #{$medium-and-up} {
-            top: $navbar-height;
-            padding-top: $navbar-height;
-        }
-        width: $toc-width;
-        position: fixed;
+    position: fixed;
+    .indicator {
+      position: absolute;
+      z-index:-1;
+      display:none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: $toc-item-height;
+      border-left: 3px solid $primary-color;
+      background-color: darken($body-bg, 5);
+      &.show {
+        display:block;
+        transition: top .2s ease-in;
+      }
     }
-    nav>ul {
-        margin: 0;
-        margin: 0;
-        font-size: 13px;
-        padding: 0 $gutter-width /2;
-        &>li a {
-            color: $off-black;
-            display: block;
-            line-height: 1.5rem;
-            transition: all .2s ease-in;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            width: 100%;
-            padding: 3px 10px;
-            border-left: 3px solid transparent;
-            &.active {
-                border-left: 3px solid $primary-color;
-                background-color: darken($body-bg, 5);
-            }
-        }
+  }
+  nav > ul {
+    margin: 0;
+    margin: 0;
+    font-size: 13px;
+    padding: 0 $gutter-width /2;
+    padding-left: 1em;
+    ul > li {
+      ul {
+        padding-left: 1em;
+      }
+      line-height: $toc-item-height;
+      a {
+        color: $off-black;
+        outline: none;
+        display: block;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+        // padding: 0px 10px;
+        // border-left: 3px solid transparent;
+        // &.active {
+        //   border-left: 3px solid $primary-color;
+        //   background-color: darken($body-bg, 5);
+        // }
+      }
     }
+    & > li {
+      &:before {
+        display: none;
+        content: "";
+      }
+    }
+  }
 }
 
-@media(min-width: $article-min-width) {
-    .toc-panel {
-        display: block;
-    }
+@media (min-width: $article-min-width) {
+  .toc-panel {
+    display: block;
+  }
 }

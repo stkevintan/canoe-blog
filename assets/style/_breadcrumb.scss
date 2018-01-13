@@ -1,35 +1,36 @@
 .breadcrumbs {
-    height: $navbar-height-mobile;
-    line-height: $navbar-line-height-mobile;
-    @media #{$medium-and-up} {
-        height: $navbar-height;
-        line-height: $navbar-line-height;
+  height: $navbar-height-mobile;
+  line-height: $navbar-line-height-mobile;
+  @media #{$medium-and-up} {
+    height: $navbar-height;
+    line-height: $navbar-line-height;
+  }
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  &,
+  a,
+  .breadcrumb:before {
+    color: $link-color;
+  }
+  .breadcrumb:last-child,
+  span.breadcrumb,
+  span.breadcrumb:before {
+    color: $muted-color;
+  }
+  .breadcrumb {
+    i.material-icons {
+      vertical-align: top;
+      margin-right: 10px;
+      float: none;
+      line-height: inherit;
     }
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    &,
-    a,
-    .breadcrumb:before {
-        color: $link-color;
-    }
-    .breadcrumb:last-child,
-    span.breadcrumb,
-    span.breadcrumb:before {
-        color: $muted-color;
-    }
-    .breadcrumb {
-        i.material-icons {
-            vertical-align: top;
-            margin-right: 10px;
-            float: none;
-            line-height: inherit;
-        }
-    }
+  }
 }
-
-#index .breadcrumbs{
-    visibility: hidden;
-    font-size: 0;
-    height: 1.5*$gutter-width;
+.breadcrumb-root {
+  padding: 0 $card-padding;
+  @media #{$small-and-down} {
+    padding-left: $card-padding-mobile;
+    padding-right: $card-padding-mobile;
+  }
 }

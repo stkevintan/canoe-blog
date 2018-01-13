@@ -7,6 +7,7 @@
   width: 100%;
   background-color: $secondary-color;
   position: relative;
+  margin-bottom: 1.5*$gutter-width;
   @extend .z-depth-1;
   .splash-bg {
     background-repeat: no-repeat;

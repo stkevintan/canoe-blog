@@ -13,7 +13,7 @@ grammar_cjkRuby: true
 对于我们的星球大战示例，文件[starWarsValidation-test.js](https://github.com/graphql/graphql-js/blob/master/src/__tests__/starWarsValidation-test.js)包含许多无效的查询，可以用来测试当前实现的验证器。
 
 首先，我们来看一个复杂的有效查询。 这是一个嵌套查询，类似于上一节的一个示例，但将重复的字段分解成一个片段：
-
+<!--more-->
 ```
 {
   hero {
@@ -32,7 +32,7 @@ fragment NameAndAppearances on Character {
   appearsIn
 }
 ```
-<!--more-->
+
 ```json
 {
   "data": {

@@ -13,9 +13,9 @@
             {{ .TableOfContents }}
           </div>
           {{ end }}
-          <div class="post reveal {{if eq $tocable false}} single-content-wrapper {{end}}">
+          <div class="post reveal {{if eq $tocable false}} no-toc {{end}}">
             <div class="card">
-              <section class="breadcrumb-wrapper">{{ partial "breadcrumb.html" . }}</section>
+              {{ partial "breadcrumb.html" . }}
               {{ if ne .Params.type "about" }}
               <div class="card-header postinfo">
                 <span class="card-title">{{ .Title }} {{ if .Draft }}:: DRAFT{{end}}</span>
@@ -32,13 +32,13 @@
                 {{ end }}
                 <div class="group">
                   <i class="material-icons">flag</i>
-                  <time>创建于：{{ .Date.Format $.Site.Params.dateFormat }}
+                  <time>创建：{{ .Date.Format $.Site.Params.dateFormat }}
                   </time>
                 </div>
                 {{ if ne .Lastmod .Date }}
                 <div class="group">
                   <i class="material-icons">mode_edit</i>
-                  <time>修改于：{{ .Lastmod.Format $.Site.Params.dateFormat }}
+                  <time>修改：{{ .Lastmod.Format $.Site.Params.dateFormat }}
                   </time>
                 </div>
                 {{ end }}
@@ -65,14 +65,16 @@
 
               {{ if eq .Type "posts" }}
               <div class="pagination-single">
-                {{ with .Next }} {{if eq .Type "posts" }}
+                {{ with .Prev }} {{if eq .Type "posts" }}
                 <span class="pagination-item previous">
                   <i class="material-icons">navigate_before</i>
                   <a href="{{ .Permalink }}" rel="prev">{{ .Title }}</a>
-                </span> {{ end }}{{ end }} {{ with .Prev }}{{if eq .Type "posts"}}
+                </span> {{ end }}{{ end }} 
+                <!---->
+                {{ with .Next }}{{if eq .Type "posts"}}
                 <span class="pagination-item next">
-                  <i class="material-icons">navigate_next</i>
                   <a href="{{ .Permalink }}" rel="next">{{ .Title }}</a>
+                  <i class="material-icons">navigate_next</i>
                 </span> {{ end }}{{ end }}
               </div>
               {{ end }}
