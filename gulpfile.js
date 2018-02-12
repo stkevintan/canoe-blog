@@ -186,13 +186,35 @@ gulp.task("purifycss", () => {
     .pipe(gulp.dest(base));
 });
 
+gulp.task('generate-service-worker', function(callback) {
+  var swPrecache = require('sw-precache');
+  var rootDir = prodDir;
+  swPrecache.write(`${rootDir}/service-worker.js`, {
+    staticFileGlobs: [rootDir + '/**/*.{js,html,css,png,jpg,gif,svg,eot,ttf,woff,json,woff2}'],
+    stripPrefix: rootDir,
+    runtimeCaching: [{
+      urlPattern: "/*",
+      handler: 'cacheFirst',
+      options: { origin: "cdn.bootcss.com" }
+    }, {
+      urlPattern: "/*",
+      handler: 'cacheFirst',
+      options: { origin: "fonts.cat.net" }
+    }, {
+      urlPattern: "/*",
+      handler: 'cacheFirst',
+      options: { origin: "gstatic.cat.net" }
+    }]
+  }, callback);
+});
+
 gulp.task("build:dev", cb => {
   run("hugo", ["style", "script", "image", "pimg", "copy:static", "lunr"], cb);
 });
 
 gulp.task("build", ["clean"], cb => {
   env = "prod";
-  run("build:dev", "purifycss", ["rev", "htmlmin"], "ref", cb);
+  run("build:dev", "purifycss", ["rev", "htmlmin"], "ref", "generate-service-worker",cb);
 });
 
 gulp.task("serve", ["build:dev"], () => {
