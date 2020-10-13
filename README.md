@@ -1,5 +1,7 @@
 # hugo-YAMT-theme
 
+## No Longer Maintained
+
 Yet Another Material Theme for hugo. [demo](https://keyin.me).
 
 ![](https://raw.githubusercontent.com/stkevintan/canoe/master/images/screenshot.png)
